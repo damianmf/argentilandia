@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de la Actualidad</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #05050a;
+        overflow: hidden;
+      }
+      #game {
+        width: 100vw;
+        height: 100vh;
+      }
+      .error {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 16px;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #ffffff;
+      }
+      .error h1 {
+        margin: 0;
+        color: #ff5555;
+        letter-spacing: 3px;
+        font-size: 28px;
+      }
+      .error pre {
+        margin: 0;
+        max-width: 80%;
+        white-space: pre-wrap;
+        background: #1c1c28;
+        padding: 24px 32px;
+        border-radius: 8px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

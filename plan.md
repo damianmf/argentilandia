@@ -53,13 +53,20 @@ Reglas para toda sesión de ejecución:
 
 **Gate para pasar a Fase 1:**
 
-- [ ] `npm run validate` termina en 0.
-- [ ] `npm run dev` muestra la pantalla título del demo con título/emoji/duración/intro tomados del JSON.
-- [ ] Editar el `title` en el JSON y recargar → cambia en pantalla (prueba de que no hay nada hardcodeado).
-- [ ] Sacar un campo requerido del JSON → pantalla de error legible, no blanca.
-- [ ] Commit `checkpoint-0`.
+- [x] `npm run validate` termina en 0.
+- [x] `npm run dev` muestra la pantalla título del demo con título/emoji/duración/intro tomados del JSON.
+- [x] Editar el `title` en el JSON y recargar → cambia en pantalla (prueba de que no hay nada hardcodeado).
+- [x] Sacar un campo requerido del JSON → pantalla de error legible, no blanca.
+- [x] Commit `checkpoint-0`.
 
-**Notas de fase:** —
+**Notas de fase:**
+
+- No había Node en la máquina: instalado Node v24.21.0 en `~/.local/node` (binario oficial, PATH en `~/.zshenv`).
+- `validate.mjs` importa `src/schemas.ts` directamente (Node ≥23.6 transforma TS nativo); no hay esquemas duplicados.
+- `SourceRef`: `title`+`url` obligatorios, `outlet`/`type` opcionales, cubre Event y outro con un solo tipo.
+- Pantalla de error: overlay DOM, no escena Phaser (el error puede ocurrir antes del boot).
+- JUGAR en Fase 0 muestra un aviso en pantalla; en Fase 1 pasa a la escena Catcher.
+- `phaser@3.90` y `typescript@5` fijados por la convención de stack (npm trajo Phaser 4 / TS 7 por defecto).
 
 ---
 

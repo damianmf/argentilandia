@@ -1,0 +1,33 @@
+{
+  "game": "catcher",
+  "title": "LOS CAPYBARAS TOMAN NORDELTA",
+  "emoji": "🦫🌊",
+  "duration": 45,
+  "intro": "Una familia de capybaras invadió las piletas de Nordelta. Ayudá a Capi, el líder, a juntar chorizos y mates de la parrilla antes de que llegue el drone de seguridad.",
+  "player": { "emoji": "🦫", "label": "Capi, el líder" },
+  "catch": [
+    { "emoji": "🌭", "label": "Chori parrillero", "points": 100, "weight": 3 },
+    { "emoji": "🧉", "label": "Mate amargo", "points": 150, "weight": 2 }
+  ],
+  "avoid": [
+    { "emoji": "🛥️", "label": "Lancha de vecino enojado", "points": -50, "weight": 2 },
+    { "emoji": "🥂", "label": "Copa tirada del quincho", "points": -30, "weight": 2 }
+  ],
+  "special": [
+    { "emoji": "🚁", "label": "Drone de seguridad", "points": -200, "weight": 1, "effect": "none" }
+  ],
+  "difficulty": 5,
+  "outro": {
+    "whatHappened": "Nada de esto pasó. Es una noticia inventada para probar el motor: los capybaras siguen tranquilos en el humedal y Nordelta sigue igual que siempre.",
+    "facts": [
+      "Este evento es ficticio y existe solo como contenido de prueba de la POC.",
+      "Los capybaras (Hydrochoerus hydrochaeris) viven de forma natural en los humedales del delta del Paraná.",
+      "Nordelta es un barrio privado construido sobre humedales en Tigre, provincia de Buenos Aires."
+    ],
+    "fiction": "Todo: no hubo toma de Nordelta, ni capybaras organizados con líder, ni drones de seguridad. El conflicto entre humanos y capybaras en el delta existe como fenómeno real, pero esta noticia es inventada de punta a punta.",
+    "sources": [
+      { "title": "[Placeholder] Capybaras y humedales del delta", "url": "https://example.com/capybaras-delta" },
+      { "title": "[Placeholder] Nordelta y los humedales de Tigre", "url": "https://example.com/nordelta-humedales" }
+    ]
+  }
+}
