@@ -90,12 +90,19 @@ Reglas para toda sesión de ejecución:
 
 **Gate para pasar a Fase 2:**
 
-- [ ] Checklist jugable (~1 min): se mueve con teclado Y mouse; bueno suma, malo resta, especial resta más; el juego termina solo a los `duration` s; REINTENTAR reinicia el loop completo.
-- [ ] Con `difficulty: 1` vs `difficulty: 10` en el demo, se nota a simple vista la diferencia de velocidad y densidad.
-- [ ] `npm run validate` en 0.
-- [ ] Commit `checkpoint-1`.
+- [x] Checklist jugable (~1 min): se mueve con teclado Y mouse; bueno suma, malo resta, especial resta más; el juego termina solo a los `duration` s; REINTENTAR reinicia el loop completo.
+- [x] Con `difficulty: 1` vs `difficulty: 10` en el demo, se nota a simple vista la diferencia de velocidad y densidad.
+- [x] `npm run validate` en 0.
+- [x] Commit `checkpoint-1`.
 
-**Notas de fase:** —
+**Notas de fase:**
+
+- Bug corregido en playtest: `elapsed`, `score` y `drops` eran estado de instancia sin reset en `create()`; la segunda partida arrancaba con `elapsed ≈ duration` y terminaba al instante. Ahora el estado se resetea por partida.
+- Bug corregido en playtest: `targetX` sin inicializar hacía que el jugador spawneara pegado al borde izquierdo.
+- El teclado no es verificable con el navegador embebido de ZCode (no entrega eventos de teclado a la página; probado con tres canales de automatización). Se verificó con Chrome headless + CDP (`Input.dispatchKeyEvent`): el desplazamiento con la flecha mantenida coincide con la velocidad del jugador. Pendiente de confirmación humana de 10 segundos con teclado físico.
+- Dificultad 1 vs 10 verificada midiendo desplazamiento de objetos en 500 ms: ~77 px vs ~300 px, y mayor densidad en pantalla.
+- Puntaje negativo verificado: partida automática a dificultad 10 con el jugador quieto terminó en -310, mostrado en rojo en el placeholder de GameOver.
+- Feedback de captura: tween de escala ×1.6 + fade en 180 ms. Sin partículas ni assets, como se pidió.
 
 ---
 

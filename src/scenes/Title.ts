@@ -46,15 +46,6 @@ export class Title extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
-    const hint = this.add
-      .text(cx, 575, 'La mecánica se juega en la Fase 1', {
-        fontFamily: FONT,
-        fontSize: '16px',
-        color: '#ffd166',
-      })
-      .setOrigin(0.5)
-      .setVisible(false);
-
     const play = this.add
       .text(cx, 515, 'JUGAR', {
         fontFamily: FONT,
@@ -69,6 +60,6 @@ export class Title extends Phaser.Scene {
 
     play.on('pointerover', () => play.setBackgroundColor('#4a9bef'));
     play.on('pointerout', () => play.setBackgroundColor('#2e86de'));
-    play.on('pointerup', () => hint.setVisible(true));
+    play.on('pointerup', () => this.scene.start('Catcher'));
   }
 }
