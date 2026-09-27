@@ -36,6 +36,21 @@ export interface SpecialObject extends CatchObject {
 export interface PlayerSpec {
   emoji: string;
   label: string;
+  image?: string;
+}
+
+export interface ThemeDecor {
+  emoji: string;
+  x: number;
+  y: number;
+  size?: number;
+  alpha?: number;
+}
+
+export interface ThemeSpec {
+  background: string;
+  hud?: { score?: string; time?: string };
+  decor?: ThemeDecor[];
 }
 
 export interface Outro {
@@ -56,6 +71,8 @@ export interface GameSpecCatcher {
   avoid: CatchObject[];
   special: SpecialObject[];
   difficulty: number;
+  theme?: ThemeSpec;
+  sound?: boolean;
   outro: Outro;
 }
 
@@ -68,6 +85,8 @@ export interface GameSpecDodge {
   player: PlayerSpec;
   obstacles: CatchObject[];
   difficulty: number;
+  theme?: ThemeSpec;
+  sound?: boolean;
   outro: Outro;
 }
 

@@ -55,6 +55,9 @@ async function main(): Promise<void> {
     return;
   }
   const play = spec.game === 'dodge' ? new Dodge(spec) : new Catcher(spec);
+  if (spec.player.image) {
+    spec.player.image = `content/events/${id}/${spec.player.image}`;
+  }
   new Phaser.Game({
     type: Phaser.AUTO,
     width: WIDTH,

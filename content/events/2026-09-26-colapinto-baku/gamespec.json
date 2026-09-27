@@ -4,7 +4,20 @@
   "emoji": "🏎️🧱",
   "duration": 45,
   "intro": "Vuelta 36 en Bakú: frenos fríos, neumáticos fríos y una primera curva que no perdona. Esquivá todo lo que se te cruce, que hoy chocar no suma puntos... ni siquiera con tu propio compañero.",
-  "player": { "emoji": "🏎️", "label": "El Alpine de Franco" },
+  "player": { "emoji": "🏎️", "label": "El Alpine de Franco", "image": "avatar.svg" },
+  "theme": {
+    "background": "#101c2c",
+    "hud": { "score": "#ffffff", "time": "#ffd166" },
+    "decor": [
+      { "emoji": "🏙️", "x": 24, "y": 12, "size": 90, "alpha": 0.45 },
+      { "emoji": "🌙", "x": 88, "y": 8, "size": 44, "alpha": 0.8 },
+      { "emoji": "🇦🇷", "x": 8, "y": 18, "size": 40, "alpha": 0.85 },
+      { "emoji": "🧱", "x": 4, "y": 55, "size": 40, "alpha": 0.45 },
+      { "emoji": "🧱", "x": 96, "y": 45, "size": 40, "alpha": 0.45 },
+      { "emoji": "🏁", "x": 14, "y": 80, "size": 44, "alpha": 0.35 }
+    ]
+  },
+  "sound": true,
   "obstacles": [
     { "emoji": "🩷", "label": "Gasly, tu compañero", "points": -100, "weight": 3 },
     { "emoji": "🟥", "label": "McLaren de Norris", "points": -100, "weight": 2 },

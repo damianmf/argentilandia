@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Event, GameSpec, GameSpecDodge } from './types';
+import type { Event, GameSpec, GameSpecDodge, ThemeSpec } from './types';
 
 export const sourceRefSchema = z.object({
   title: z.string().min(1),
@@ -41,20 +41,48 @@ export const outroSchema = z.object({
   sources: z.array(sourceRefSchema).min(1),
 });
 
+const hexColor = z.string().regex(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/, 'color hex inválido');
+
+const themeSchema: z.ZodType<ThemeSpec> = z.object({
+  background: hexColor,
+  hud: z
+    .object({
+      score: hexColor,
+      time: hexColor,
+    })
+    .optional(),
+  decor: z
+    .array(
+      z.object({
+        emoji: z.string().min(1),
+        x: z.number().min(0).max(100),
+        y: z.number().min(0).max(100),
+        size: z.number().int().min(8).max(300).optional(),
+        alpha: z.number().min(0).max(1).optional(),
+      }),
+    )
+    .optional(),
+});
+
+export const playerSchema = z.object({
+  emoji: z.string().min(1),
+  label: z.string().min(1),
+  image: z.string().min(1).optional(),
+});
+
 export const gameSpecCatcherSchema: z.ZodType<GameSpec> = z.object({
   game: z.literal('catcher'),
   title: z.string().min(1),
   emoji: z.string().min(1),
   duration: z.number().int().min(1),
   intro: z.string().min(1),
-  player: z.object({
-    emoji: z.string().min(1),
-    label: z.string().min(1),
-  }),
+  player: playerSchema,
   catch: z.array(catchObjectSchema).min(1),
   avoid: z.array(catchObjectSchema).min(1),
   special: z.array(specialObjectSchema),
   difficulty: z.number().int().min(1).max(10),
+  theme: themeSchema.optional(),
+  sound: z.boolean().optional(),
   outro: outroSchema,
 });
 
@@ -64,12 +92,11 @@ export const gameSpecDodgeSchema: z.ZodType<GameSpecDodge> = z.object({
   emoji: z.string().min(1),
   duration: z.number().int().min(1),
   intro: z.string().min(1),
-  player: z.object({
-    emoji: z.string().min(1),
-    label: z.string().min(1),
-  }),
+  player: playerSchema,
   obstacles: z.array(catchObjectSchema).min(1),
   difficulty: z.number().int().min(1).max(10),
+  theme: themeSchema.optional(),
+  sound: z.boolean().optional(),
   outro: outroSchema,
 });
 

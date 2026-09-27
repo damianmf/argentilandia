@@ -39,6 +39,10 @@ export class Outro extends Phaser.Scene {
     const width = this.scale.width;
     const height = this.scale.height;
 
+    if (this.spec.theme) {
+      this.cameras.main.setBackgroundColor(this.spec.theme.background);
+    }
+
     this.cursors = this.input.keyboard!.createCursorKeys();
 
     this.add

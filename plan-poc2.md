@@ -68,11 +68,24 @@ themado, avatar caricatura y portada con punchline.
 
 **Gate para pasar a Fase 1:**
 
-- [ ] Los 3 juegos existentes validan (`npm run validate` en 0) y se ven iguales que antes (theme es opcional y ausente).
-- [ ] Con un `theme` agregado al JSON de un evento, el escenario cambia sin tocar código.
-- [ ] Al menos un evento juega con avatar caricatura y otro sin él (fallback emoji) sin romperse.
-- [ ] Beeps audibles en captura/choque, y silencio si el GameSpec no los pide.
-- [ ] Commit `poc2-checkpoint-0`.
+- [x] Los 3 juegos existentes validan (`npm run validate` en 0) y se ven iguales que antes (theme es opcional y ausente).
+- [x] Con un `theme` agregado al JSON de un evento, el escenario cambia sin tocar código.
+- [x] Al menos un evento juega con avatar caricatura y otro sin él (fallback emoji) sin romperse.
+- [x] Beeps audibles en captura/choque, y silencio si el GameSpec no los pide.
+- [x] Commit `poc2-checkpoint-0`.
+
+**Notas de fase 0:**
+
+- Sin generador de imágenes IA disponible en la sesión, los avatares se escribieron
+  como SVG plano a mano por la sesión (misma regla editorial, mismo resultado estático);
+  el método queda documentado en `content/prompts/avatar-generation.md`.
+- El avatar es del `player` del juego. En el evento Supercopa el player es Herrera
+  (el árbitro), no Verón: el avatar es la caricatura del árbitro con la copa.
+- `theme` en el Outro pinta solo el fondo, sin decoración: el texto largo necesita legibilidad.
+- Los emojis de decoración con caja opaca (🏙️, 🏟️) se ubican fuera del título: su
+  "sticker" tapa texto si van al centro.
+- Sonido: mecanismo verificado (initAudio en el click de JUGAR, beeps en captura/choque/fin,
+  silencio si `sound` no está); la audibilidad real queda para el primer playtest humano.
 
 ---
 

@@ -1,6 +1,9 @@
 import Phaser from 'phaser';
 import type { CatchObject, GameSpecDodge } from '../types';
 import { difficultyParams } from '../engine/difficulty';
+import { applyTheme, hudColors } from '../engine/theme';
+import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
+import { sfx } from '../engine/audio';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const PLAYER_SPEED = 560;
@@ -9,7 +12,7 @@ const DODGE_BONUS = 25;
 export class Dodge extends Phaser.Scene {
   private spec: GameSpecDodge;
   private params: ReturnType<typeof difficultyParams>;
-  private player!: Phaser.GameObjects.Text;
+  private player!: PlayerSprite;
   private scoreText!: Phaser.GameObjects.Text;
   private timeText!: Phaser.GameObjects.Text;
   private drops: Phaser.GameObjects.Text[] = [];
@@ -24,24 +27,26 @@ export class Dodge extends Phaser.Scene {
     this.params = difficultyParams(spec.difficulty);
   }
 
+  preload(): void {
+    preloadPlayer(this, this.spec);
+  }
+
   create(): void {
+    applyTheme(this, this.spec);
+    const colors = hudColors(this.spec);
     this.cursors = this.input.keyboard!.createCursorKeys();
     this.targetX = this.scale.width / 2;
     this.score = 0;
     this.elapsed = 0;
     this.drops = [];
 
-    this.player = this.add
-      .text(this.scale.width / 2, this.scale.height - 46, this.spec.player.emoji, {
-        fontSize: '52px',
-      })
-      .setOrigin(0.5);
+    this.player = createPlayer(this, this.spec, this.scale.width / 2, this.scale.height - 46);
 
     this.scoreText = this.add.text(24, 16, this.hudScore(), {
       fontFamily: FONT,
       fontSize: '28px',
       fontStyle: 'bold',
-      color: '#ffffff',
+      color: colors.score,
     });
 
     this.timeText = this.add
@@ -49,7 +54,7 @@ export class Dodge extends Phaser.Scene {
         fontFamily: FONT,
         fontSize: '28px',
         fontStyle: 'bold',
-        color: '#cfcfe8',
+        color: colors.time,
       })
       .setOrigin(1, 0);
 
@@ -89,6 +94,7 @@ export class Dodge extends Phaser.Scene {
     const remaining = Math.max(0, Math.ceil((this.spec.duration * 1000 - this.elapsed) / 1000));
     this.timeText.setText(`${remaining}s`);
     if (this.elapsed >= this.spec.duration * 1000) {
+      sfx.end();
       this.scene.start('Outro', { score: this.score });
       return;
     }
@@ -136,6 +142,7 @@ export class Dodge extends Phaser.Scene {
     this.score += points;
     this.scoreText.setText(this.hudScore());
     this.drops = this.drops.filter((d) => d !== drop);
+    sfx.crash();
     this.tweens.add({
       targets: this.player,
       alpha: 0.2,
