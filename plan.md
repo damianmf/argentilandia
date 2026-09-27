@@ -158,13 +158,20 @@ Reglas para toda sesión de ejecución:
 
 **Gate para pasar a Fase 4:**
 
-- [ ] `npm run validate` en 0 con el nuevo evento.
-- [ ] `?game=<id>` carga el juego nuevo sin tocar una línea de código.
-- [ ] Checklist editorial: título/intro/objetos son reconocibles como la noticia; los facts del outro no repiten la ficción del juego; las fuentes abren y efectivamente hablan del hecho.
-- [ ] Regla de fuentes verificada fact por fact.
-- [ ] Commit `checkpoint-3`.
+- [x] `npm run validate` en 0 con el nuevo evento.
+- [x] `?game=<id>` carga el juego nuevo sin tocar una línea de código.
+- [x] Checklist editorial: título/intro/objetos son reconocibles como la noticia; los facts del outro no repiten la ficción del juego; las fuentes abren y efectivamente hablan del hecho.
+- [x] Regla de fuentes verificada fact por fact.
+- [x] Commit `checkpoint-3`.
 
-**Notas de fase:** —
+**Notas de fase:**
+
+- Elección editorial: de 3 candidatos que pasaron el umbral (Colapinto en Bakú 9/8/7 — visita papal y pase Manzano los otros dos), se eligió Colapinto; y de los 3 pitches, el pitch 2 **dodge** ("BAKÚ SIN FRENO") en vez del catcher recomendado. Eso invalidó la premisa "sin tocar código": se implementó el branch `dodge` de la unión (tipos, esquema Zod, `src/scenes/Dodge.ts`, routing en `main.ts`/`Title.ts`). El catcher no cambió de comportamiento (demo re-verificado de punta a punta).
+- Dodge: reusa la tabla de dificultad existente (`fallSpeed`/`spawnInterval`; `goodRatio` no aplica). Bonus de +25 por obstáculo esquivado; el choque resta los `points` del obstáculo. Esquema nuevo: `obstacles` en vez de `catch`/`avoid`/`special`; `parseGamespec` ahora resuelve la unión por el campo `game`.
+- Playtest verificado en navegador: título desde JSON, partida completa de 45 s (esquivadas suman, choques restan, timer termina solo), outro con puntaje (positivo en verde, −100 en rojo), scroll completo, VOLVER A JUGAR → título sin recargar, y link de fuente que abre la URL exacta de Clarín en pestaña nueva.
+- Regla de fuentes fact por fact: los 4 facts del outro salen del artículo de Clarín sobre el choque (verificado fetch completo); el fact de Norris además de la nota con su frase textual ("Si provocas un choque en un reinicio como este, deberías tener al menos una carrera de sanción"). Sin placeholders.
+- Descartados del día: Juegos Suramericanos (gameability 6), boom pagos QR (4 de humor), conflicto Milei–Lula (pico de la noticia en julio, hoy es viejo), periodistas presos en Formosa (sin humor sin mal gusto).
+- Prompts escritos: `content/prompts/event-analysis.md` (6 criterios, umbral gameability>=7 + fuente, mapeo a los 4 scores del schema documentado) y `content/prompts/game-generation.md` (3 pitches → elección humana → GameSpec con regla de fuentes).
 
 ---
 

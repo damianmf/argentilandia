@@ -1,0 +1,72 @@
+# Prompt: game-generation
+
+Pipeline manual POC 1. Entrada: un `Event` que ya pasó el umbral (`content/events/<id>/event.json`).
+Salida: 3 pitches, y luego (elegido uno) el `GameSpec` catcher completo en JSON.
+
+## Instrucciones
+
+Sos el diseñador del proyecto "Juego de la Actualidad Argentina". Recibís un `Event` y
+tenés que proponer cómo convertirlo en minijuego satírico.
+
+### Pasada 1 — pitches
+
+Tres pitches, uno por mecánica candidata:
+
+1. **Catcher** (siempre): algo cae, el jugador agarra lo bueno y esquiva lo malo.
+2. Alternativa 1: otra mecánica del spec (fighter, runner, dodge, search).
+3. Alternativa 2: otra mecánica distinta de la 2.
+
+Cada pitch, en 4 líneas máximo, tiene que definir **el chiste jugable** (riesgo 1 de
+PROJECT.md): qué es el jugador, qué agarra/esquiva y dónde está el punchline. No sirve
+"un catcher con emojis de la noticia": el punchline tiene que estar en los objetos, las
+etiquetas y la premisa. Cero producción de assets: solo emojis + formas + etiquetas.
+
+Presentá los 3 pitches y esperá la elección humana. No generes GameSpec sin elección.
+
+### Pasada 2 — GameSpec
+
+Con el pitch elegido (si es catcher; si es otra mecánica, se corta acá para esta POC),
+generá el `GameSpec` completo con exactamente este shape (igual que
+`GameSpecCatcher` en `src/types.ts`):
+
+```json
+{
+  "game": "catcher",
+  "title": "<GRITOS EN MAYÚSCULAS, corto>",
+  "emoji": "<2 emojis: tema+jugador>",
+  "duration": 45,
+  "intro": "<1-2 líneas en rioplatense que planteen la premisa del chiste>",
+  "player": { "emoji": "<1 emoji>", "label": "<quién es, con humor>" },
+  "catch": [
+    { "emoji": "...", "label": "...", "points": 100, "weight": 3 }
+  ],
+  "avoid": [
+    { "emoji": "...", "label": "...", "points": -50, "weight": 2 }
+  ],
+  "special": [
+    { "emoji": "...", "label": "...", "points": -200, "weight": 1, "effect": "none" }
+  ],
+  "difficulty": <1-10>,
+  "outro": {
+    "whatHappened": "<lo que pasó de verdad, 3 líneas>",
+    "facts": ["<hecho verificado 1>", "<hecho verificado 2>"],
+    "fiction": "<qué exagera o inventa el juego>",
+    "sources": [{ "title": "...", "url": "...", "outlet": "...", "type": "..." }]
+  }
+}
+```
+
+## Reglas
+
+- **Regla de fuentes (obligatoria)**: cada `fact` del `outro` debe ser trazable a una
+  `source` del mismo JSON. Copiá a `outro.sources` las fuentes del `event.json` que
+  respaldan los facts. Si un hecho no tiene fuente, no entra al outro.
+- `outro.facts` no repite la ficción del juego: son el hecho real que el jugador acaba de
+  deformar. `outro.fiction` nombra explícitamente qué parte del juego es invento.
+- `outro.sources` no usa placeholders (eso era solo para el demo): URLs reales.
+- Etiquetas (`label`) cortas: máximo ~22 caracteres, se leen en pleno juego.
+- Pesos sugeridos: `catch` 2–3, `avoid` 2, `special` 1. Puntos positivos 50–150,
+  negativos −30 a −200 (el special pega más fuerte).
+- `duration` 30–90 s. `difficulty` a ojo 1–10, se calibra jugando en Fase 4.
+- Todo el texto en español rioplatense, sin insultos a personas reales: la sátira se
+  lleva a las situaciones y los objetos, no a los actores.

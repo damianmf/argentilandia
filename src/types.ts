@@ -1,4 +1,4 @@
-export type GameType = 'catcher';
+export type GameType = 'catcher' | 'dodge';
 
 export interface SourceRef {
   title: string;
@@ -46,7 +46,7 @@ export interface Outro {
 }
 
 export interface GameSpecCatcher {
-  game: GameType;
+  game: Extract<GameType, 'catcher'>;
   title: string;
   emoji: string;
   duration: number;
@@ -59,4 +59,16 @@ export interface GameSpecCatcher {
   outro: Outro;
 }
 
-export type GameSpec = GameSpecCatcher;
+export interface GameSpecDodge {
+  game: Extract<GameType, 'dodge'>;
+  title: string;
+  emoji: string;
+  duration: number;
+  intro: string;
+  player: PlayerSpec;
+  obstacles: CatchObject[];
+  difficulty: number;
+  outro: Outro;
+}
+
+export type GameSpec = GameSpecCatcher | GameSpecDodge;

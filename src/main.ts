@@ -3,6 +3,7 @@ import { parseGamespec } from './schemas';
 import type { GameSpec } from './types';
 import { Title } from './scenes/Title';
 import { Catcher } from './scenes/Catcher';
+import { Dodge } from './scenes/Dodge';
 import { Outro } from './scenes/Outro';
 
 const WIDTH = 960;
@@ -53,6 +54,7 @@ async function main(): Promise<void> {
     showError((error as Error).message);
     return;
   }
+  const play = spec.game === 'dodge' ? new Dodge(spec) : new Catcher(spec);
   new Phaser.Game({
     type: Phaser.AUTO,
     width: WIDTH,
@@ -63,7 +65,7 @@ async function main(): Promise<void> {
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
     },
-    scene: [new Title(spec), new Catcher(spec), new Outro(spec)],
+    scene: [new Title(spec), play, new Outro(spec)],
   });
 }
 

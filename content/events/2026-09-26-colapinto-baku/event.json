@@ -1,0 +1,32 @@
+{
+  "id": "2026-09-26-colapinto-baku",
+  "date": "2026-09-26",
+  "event": "Colapinto chocó a su compañero Gasly en el GP de Azerbaiyán y desató la polémica por sanciones",
+  "category": "sports",
+  "actors": ["Franco Colapinto", "Pierre Gasly", "Lando Norris"],
+  "conflict": "Choque entre compañeros de equipo que reabre el debate de sanciones",
+  "facts": [
+    "Colapinto frenó pasado en la curva 1 durante la reanudación tras el Safety Car (vuelta 36) y golpeó al Alpine de su compañero Pierre Gasly: los dos abandonaron.",
+    "Lando Norris se estrelló contra el muro al esquivar la maniobra, también abandonó, y pidió que provocar un choque así valga al menos una carrera de sanción.",
+    "La FIA aplicó a Colapinto una penalización de 5 posiciones en la grilla para el GP de Malasia.",
+    "Colapinto se disculpó por radio ('Perdón, perdón, perdón a Pierre') y conserva 4 puntos de superlicencia, a 8 de la suspensión."
+  ],
+  "sources": [
+    {
+      "title": "Colapinto golpeó a Gasly, quedó fuera de la carrera en Bakú y puede traerle consecuencias a Alpine",
+      "url": "https://www.clarin.com/deportes/franco-colapinto-maniobra-dejo-carrera-paso-choco-gasly-puede-traerle-consecuencias-alpine_0_eUEsCWt4l4.html",
+      "outlet": "Clarín",
+      "type": "media"
+    },
+    {
+      "title": "Lando Norris, muy duro contra Franco Colapinto: \"Si provocas un choque, deberías tener una carrera de sanción\"",
+      "url": "https://www.clarin.com/deportes/lando-norris-duro-franco-colapinto-provocas-choque-deberias-tener-carrera-sancion_0_z8UylwmnRy.html",
+      "outlet": "Clarín",
+      "type": "media"
+    }
+  ],
+  "virality": 10,
+  "gameability": 9,
+  "humorPotential": 9,
+  "shareability": 9
+}

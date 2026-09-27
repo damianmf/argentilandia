@@ -60,6 +60,6 @@ export class Title extends Phaser.Scene {
 
     play.on('pointerover', () => play.setBackgroundColor('#4a9bef'));
     play.on('pointerout', () => play.setBackgroundColor('#2e86de'));
-    play.on('pointerup', () => this.scene.start('Catcher'));
+    play.on('pointerup', () => this.scene.start(this.spec.game === 'dodge' ? 'Dodge' : 'Catcher'));
   }
 }

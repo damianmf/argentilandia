@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Event, GameSpec } from './types';
+import type { Event, GameSpec, GameSpecDodge } from './types';
 
 export const sourceRefSchema = z.object({
   title: z.string().min(1),
@@ -58,12 +58,34 @@ export const gameSpecCatcherSchema: z.ZodType<GameSpec> = z.object({
   outro: outroSchema,
 });
 
+export const gameSpecDodgeSchema: z.ZodType<GameSpecDodge> = z.object({
+  game: z.literal('dodge'),
+  title: z.string().min(1),
+  emoji: z.string().min(1),
+  duration: z.number().int().min(1),
+  intro: z.string().min(1),
+  player: z.object({
+    emoji: z.string().min(1),
+    label: z.string().min(1),
+  }),
+  obstacles: z.array(catchObjectSchema).min(1),
+  difficulty: z.number().int().min(1).max(10),
+  outro: outroSchema,
+});
+
 export type ParseResult<T> = { ok: true; data: T } | { ok: false; error: string };
 
 export function parseGamespec(json: unknown): ParseResult<GameSpec> {
-  const result = gameSpecCatcherSchema.safeParse(json);
+  const game = (json as { game?: unknown } | null)?.game;
+  const primary = game === 'dodge' ? gameSpecDodgeSchema : gameSpecCatcherSchema;
+  const secondary = game === 'dodge' ? gameSpecCatcherSchema : gameSpecDodgeSchema;
+  const result = primary.safeParse(json);
   if (result.success) {
-    return { ok: true, data: result.data };
+    return { ok: true, data: result.data as GameSpec };
+  }
+  const fallback = secondary.safeParse(json);
+  if (fallback.success) {
+    return { ok: true, data: fallback.data as GameSpec };
   }
   const issues = result.error.issues.map((issue) => {
     const path = issue.path.length > 0 ? issue.path.join('.') : 'raíz';

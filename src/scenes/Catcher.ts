@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import type { CatchObject, GameSpec } from '../types';
+import type { CatchObject, GameSpecCatcher } from '../types';
 import { difficultyParams } from '../engine/difficulty';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
@@ -7,7 +7,7 @@ const PLAYER_SPEED = 520;
 const CATCH_RANGE_Y = 42;
 
 export class Catcher extends Phaser.Scene {
-  private spec: GameSpec;
+  private spec: GameSpecCatcher;
   private params: ReturnType<typeof difficultyParams>;
   private player!: Phaser.GameObjects.Text;
   private scoreText!: Phaser.GameObjects.Text;
@@ -18,7 +18,7 @@ export class Catcher extends Phaser.Scene {
   private score = 0;
   private elapsed = 0;
 
-  constructor(spec: GameSpec) {
+  constructor(spec: GameSpecCatcher) {
     super('Catcher');
     this.spec = spec;
     this.params = difficultyParams(spec.difficulty);
