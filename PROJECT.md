@@ -12,6 +12,22 @@ Spec fuente: `init.spec.rtf`. Este documento es el plan vivo; lo que no está ac
 | Distribución | Solo local. Métricas de compartir/retorno diferidas hasta deploy |
 | Validación de hechos | Diferida: el outro lo redacta la IA directo de las fuentes; validación manual recién cuando la POC funcione |
 
+## Decisiones POC 2 (2026-09-27)
+
+El plan por fases vive en [plan-poc2.md](plan-poc2.md). Decisiones tomadas al abrirlo:
+
+| Tema | Decisión |
+|---|---|
+| Deploy | Diferido explícitamente: POC 2 se valida local; fase opcional al final |
+| Personajes | Avatares caricatura por IA en build-time, archivos estáticos por evento, fallback emoji. Runtime client-side |
+| Violencia / humor | Línea editorial escrita: caricatura sí (piñas, humo, caídas), víctimas reales y ensañarse con personas, no |
+| Motores nuevos | Search y runner (fighter queda para una POC 3) |
+| Narrativa | Outro v2: frase del día (cita textual trazable a fuente) + momentos concretos, aditivo y opcional |
+| Sonido | Beeps WebAudio sin assets, opt-in por GameSpec |
+| Web diaria | `index.html` estático generado desde `content/`, se abre local |
+| Automatización | Radar de actualidad auto-draft + aprobación humana obligatoria (nunca auto-publicar) |
+| Dificultad | Default de arranque `5` para todo evento nuevo (lección POC 1) |
+
 ## Entregable Slice 0 — definición de listo
 
 Un catcher jugable en el browser, generado a partir de un evento real:
@@ -127,7 +143,7 @@ Vite + TypeScript + Phaser 3. Cero backend, cero base de datos en este slice. SQ
 
 ## Plan de ejecución
 
-El detalle por fase (tareas, entregables, gate de validación, checkboxes de seguimiento) vive en [plan.md](plan.md). Este archivo conserva decisiones, modelos y reglas; plan.md, la ejecución.
+El detalle por fase (tareas, entregables, gate de validación, checkboxes de seguimiento) vive en [plan.md](plan.md) (POC 1) y [plan-poc2.md](plan-poc2.md) (POC 2). Este archivo conserva decisiones, modelos y reglas; los planes, la ejecución.
 
 ## Regla mínima mientras no haya validación manual
 
