@@ -89,7 +89,7 @@ export class Catcher extends Phaser.Scene {
     const remaining = Math.max(0, Math.ceil((this.spec.duration * 1000 - this.elapsed) / 1000));
     this.timeText.setText(`${remaining}s`);
     if (this.elapsed >= this.spec.duration * 1000) {
-      this.scene.start('GameOver', { score: this.score });
+      this.scene.start('Outro', { score: this.score });
       return;
     }
 

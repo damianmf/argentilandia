@@ -3,7 +3,7 @@ import { parseGamespec } from './schemas';
 import type { GameSpec } from './types';
 import { Title } from './scenes/Title';
 import { Catcher } from './scenes/Catcher';
-import { GameOver } from './scenes/GameOver';
+import { Outro } from './scenes/Outro';
 
 const WIDTH = 960;
 const HEIGHT = 600;
@@ -63,7 +63,7 @@ async function main(): Promise<void> {
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
     },
-    scene: [new Title(spec), new Catcher(spec), new GameOver()],
+    scene: [new Title(spec), new Catcher(spec), new Outro(spec)],
   });
 }
 

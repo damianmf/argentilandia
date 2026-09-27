@@ -123,12 +123,18 @@ Reglas para toda sesión de ejecución:
 
 **Gate para pasar a Fase 3:**
 
-- [ ] Loop completo: JUGAR → 45 s → outro con puntaje → VOLVER A JUGAR → título. Sin recargar.
-- [ ] Los links de fuentes usan las URLs del JSON y abren al clickear.
-- [ ] Agregar al demo un `fact` de dos líneas → el outro scrollea y no se corta.
-- [ ] `npm run validate` en 0. Commit `checkpoint-2`.
+- [x] Loop completo: JUGAR → 45 s → outro con puntaje → VOLVER A JUGAR → título. Sin recargar.
+- [x] Los links de fuentes usan las URLs del JSON y abren al clickear.
+- [x] Agregar al demo un `fact` de dos líneas → el outro scrollea y no se corta.
+- [x] `npm run validate` en 0. Commit `checkpoint-2`.
 
-**Notas de fase:** —
+**Notas de fase:**
+
+- Verificación con `duration: 3` temporal y un `fact` de dos líneas temporal (luego revertidos, el demo quedó como estaba): el outro scrolleó completo con rueda del mouse y no cortó texto.
+- Scroll: contenedor con geometry mask; rueda del mouse, arrastre (con umbral de 8 px para no disparar links al arrastrar) y flechas ↑↓ del teclado.
+- Links de fuentes: `window.open(url, '_blank', 'noopener')` al pointerup; verificado que abren la URL exacta del JSON en pestaña nueva.
+- Layout: puntaje fijo arriba, contenido scrolleable al medio, VOLVER A JUGAR fijo abajo. Puntaje negativo en rojo (heredado del placeholder de Fase 1).
+- "SE TERMINÓ EL TIEMPO" se mantiene como encabezado del outro.
 
 ---
 
