@@ -11,7 +11,7 @@
     { "emoji": "🚙", "label": "El Safety Car", "points": -75, "weight": 2 },
     { "emoji": "🧱", "label": "La pared de Bakú", "points": -300, "weight": 1 }
   ],
-  "difficulty": 7,
+  "difficulty": 5,
   "outro": {
     "whatHappened": "En la vuelta 36 del GP de Azerbaiyán, en la reanudación tras el Safety Car, Colapinto frenó pasado en la primera curva: con frenos y neumáticos fríos, bloqueó las ruedas y golpeó a su compañero de Alpine, Pierre Gasly. Norris, que esquivaba la maniobra, se estrelló contra el muro: los tres abandonaron. La FIA lo penalizó con 5 puestos en la grilla para el GP de Malasia.",
     "facts": [

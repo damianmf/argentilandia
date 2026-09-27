@@ -1,0 +1,32 @@
+{
+  "id": "2026-09-26-supercopa-veron",
+  "date": "2026-09-26",
+  "event": "Rosario Central ganó la Supercopa Internacional con un penal polémico, la final terminó a las piñas y Verón le dijo 'ladrón' al árbitro",
+  "category": "sports",
+  "actors": ["Juan Sebastián Verón", "Darío Herrera", "Ángel Di María", "Rosario Central", "Estudiantes"],
+  "conflict": "Título ganado con penal discutido y escándalo final",
+  "facts": [
+    "Rosario Central le ganó 3-1 a Estudiantes y se consagró campeón de la Supercopa Internacional en el Estadio Único de Santiago del Estero, con dos goles de Di María: uno de tiro libre y otro de penal.",
+    "El árbitro Darío Herrera convalidó el penal del 2-1 tras el llamado del VAR; desde Estudiantes reclamaron por varias decisiones del arbitraje.",
+    "Tras el 3-1 final hubo piñas entre jugadores de ambos equipos.",
+    "Verón bajó a la cancha, mandó a sus jugadores al vestuario y le dijo a Herrera: 'Es toda tuya, sos un ladrón'. Después volvió a aparecer para entregar las medallas de subcampeón."
+  ],
+  "sources": [
+    {
+      "title": "Ángel Di María: golazo y doblete para Rosario Central ante Estudiantes por la Supercopa Internacional",
+      "url": "https://www.tycsports.com/liga-profesional-de-futbol/angel-di-maria-golazo-y-doblete-para-rosario-central-ante-estudiantes-por-la-supercopa-internacional-id763162.html",
+      "outlet": "TyC Sports",
+      "type": "media"
+    },
+    {
+      "title": "Verón lo fue a buscar a Herrera: \"Es toda tuya, sos un ladrón\"",
+      "url": "https://www.ole.com.ar/futbol-primera/veron-buscar-herrera-arbitro-ladron-toda-video-ironica-reaccion-penal-di-maria-gol-rosario-central-respuesta-estudiantes_0_hAHN7PHKmb.html",
+      "outlet": "Olé",
+      "type": "media"
+    }
+  ],
+  "virality": 10,
+  "gameability": 9,
+  "humorPotential": 9,
+  "shareability": 9
+}

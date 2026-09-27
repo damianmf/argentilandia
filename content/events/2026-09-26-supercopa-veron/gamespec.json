@@ -1,0 +1,44 @@
+{
+  "game": "catcher",
+  "title": "EL ROBO DEL AÑO",
+  "emoji": "🏆🥊",
+  "duration": 45,
+  "intro": "La Supercopa terminó a las piñas y Herrera tiene que juntar los trofeos de la entrega antes de que se le venga arriba todo el estadio. Agarrá la plata... digo, los premios, y esquivá al presidente más enojado del fútbol argentino.",
+  "player": { "emoji": "🦓", "label": "Herrera, el juez 'ladrón'" },
+  "catch": [
+    { "emoji": "🏆", "label": "Trofeo de campeón", "points": 100, "weight": 3 },
+    { "emoji": "🥇", "label": "Medalla pa' Verón", "points": 50, "weight": 2 }
+  ],
+  "avoid": [
+    { "emoji": "👊", "label": "Piña de jugador", "points": -50, "weight": 2 },
+    { "emoji": "🧣", "label": "Banderazo canalla", "points": -30, "weight": 2 }
+  ],
+  "special": [
+    { "emoji": "😡", "label": "Verón enojado", "points": -200, "weight": 1, "effect": "none" }
+  ],
+  "difficulty": 5,
+  "outro": {
+    "whatHappened": "Rosario Central le ganó 3-1 a Estudiantes y se quedó con la Supercopa Internacional en Santiago del Estero, con dos goles de Di María: un golazo de tiro libre y un penal convalidado por el VAR. El final fue escandaloso: piñas entre los planteles, Verón bajó a la cancha, mandó a sus jugadores al vestuario, encaró al árbitro Darío Herrera y le dijo: 'Es toda tuya, sos un ladrón'. Después volvió a aparecer para entregar las medallas de subcampeón.",
+    "facts": [
+      "Rosario Central le ganó 3-1 a Estudiantes y se consagró campeón de la Supercopa Internacional en el Estadio Único de Santiago del Estero, con dos goles de Di María: uno de tiro libre y otro de penal.",
+      "El árbitro Darío Herrera convalidó el penal del 2-1 tras el llamado del VAR; desde Estudiantes reclamaron por varias decisiones del arbitraje.",
+      "Tras el 3-1 final hubo piñas entre jugadores de ambos equipos.",
+      "Verón bajó a la cancha, mandó a sus jugadores al vestuario y le dijo a Herrera: 'Es toda tuya, sos un ladrón'. Después volvió a aparecer para entregar las medallas de subcampeón."
+    ],
+    "fiction": "Nadie repartió trofeos desde el cielo ni a Herrera le llovieron piñas mientras juntaba copas: la entrega de premios fue aburrida y pacífica. El 'robo' es la acusación de Verón, no un hecho: el penal del 2-1 existió y el VAR lo convalidó. Acá Verón cae del cielo como obstáculo; en la realidad solo lo encaró al final y después le entregó las medallas a sus propios jugadores.",
+    "sources": [
+      {
+        "title": "Ángel Di María: golazo y doblete para Rosario Central ante Estudiantes por la Supercopa Internacional",
+        "url": "https://www.tycsports.com/liga-profesional-de-futbol/angel-di-maria-golazo-y-doblete-para-rosario-central-ante-estudiantes-por-la-supercopa-internacional-id763162.html",
+        "outlet": "TyC Sports",
+        "type": "media"
+      },
+      {
+        "title": "Verón lo fue a buscar a Herrera: \"Es toda tuya, sos un ladrón\"",
+        "url": "https://www.ole.com.ar/futbol-primera/veron-buscar-herrera-arbitro-ladron-toda-video-ironica-reaccion-penal-di-maria-gol-rosario-central-respuesta-estudiantes_0_hAHN7PHKmb.html",
+        "outlet": "Olé",
+        "type": "media"
+      }
+    ]
+  }
+}

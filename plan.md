@@ -191,11 +191,16 @@ Reglas para toda sesión de ejecución:
 
 **Gate de cierre de POC 1:**
 
-- [ ] Una persona externa a la sesión juega los dos juegos sin explicación previa: entiende qué hacer, termina, y lee el outro.
-- [ ] Minutos de producción de ambos eventos anotados.
-- [ ] `npm run validate` en 0. Commit `checkpoint-4` + tag `poc-1`.
+- [ ] Una persona externa a la sesión juega los dos juegos sin explicación previa: entiende qué hacer, termina, y lee el outro. *(pendiente de confirmación humana)*
+- [x] Minutos de producción de ambos eventos anotados.
+- [x] `npm run validate` en 0. Commit `checkpoint-4` + tag `poc-1`.
 
-**Notas de fase:** —
+**Notas de fase:**
+
+- Playtest automatizado de dificultad (jugador bot con Chrome headless + CDP) se intentó y se abandonó: la máquina cuelga `Runtime.evaluate` después de navegar. El playtest humano es el gate.
+- Calibración: el evento real (dodge) bajó de `difficulty: 7` a `5`; a 7 hay pares de obstáculos consecutivos imposibles de esquivar. La tabla no cambió: el problema era el valor elegido, no la interpolación. `5` pasa a ser default de arranque de todo evento nuevo.
+- Segundo evento punta a punta: `2026-09-26-supercopa-veron` (catcher "EL ROBO DEL AÑO", escándalo Central–Estudiantes–Verón–Herrera), sin una línea de código. Tiempos reales en `produccion.md`: ~47–57 min vs ~110 estimados del primero. Se cumple la meta de PROJECT.md (menos de la mitad).
+- Retrospectiva en `docs/retrospectiva-poc1.md`: H1 sostiene con matices (diversión sin medir), H2 sostiene (el punchline vive en objetos/etiquetas), próxima mecánica: **search**, y lo primero a romper del pipeline: el radar de actualidad.
 
 ---
 
