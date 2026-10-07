@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Event, GameSpec, GameSpecDodge, ThemeSpec } from './types';
+import type { Event, GameSpec, GameSpecDodge, GameSpecSearch, ThemeSpec } from './types';
 
 export const sourceRefSchema = z.object({
   title: z.string().min(1),
@@ -100,19 +100,55 @@ export const gameSpecDodgeSchema: z.ZodType<GameSpecDodge> = z.object({
   outro: outroSchema,
 });
 
+export const searchItemSchema = z.object({
+  emoji: z.string().min(1),
+  label: z.string().min(1),
+  points: z.number(),
+});
+
+export const gameSpecSearchSchema: z.ZodType<GameSpecSearch> = z.object({
+  game: z.literal('search'),
+  title: z.string().min(1),
+  emoji: z.string().min(1),
+  duration: z.number().int().min(1),
+  intro: z.string().min(1),
+  player: playerSchema,
+  grid: z.object({
+    width: z.number().int().min(4).max(14),
+    height: z.number().int().min(4).max(14),
+  }),
+  find: z.array(searchItemSchema).min(1),
+  traps: z.array(searchItemSchema).min(1),
+  maxTouches: z.number().int().min(1),
+  difficulty: z.number().int().min(1).max(10),
+  theme: themeSchema.optional(),
+  sound: z.boolean().optional(),
+  outro: outroSchema,
+});
+
+const gameSchemas: Record<string, z.ZodType<GameSpec>> = {
+  catcher: gameSpecCatcherSchema,
+  dodge: gameSpecDodgeSchema,
+  search: gameSpecSearchSchema,
+};
+
 export type ParseResult<T> = { ok: true; data: T } | { ok: false; error: string };
 
 export function parseGamespec(json: unknown): ParseResult<GameSpec> {
   const game = (json as { game?: unknown } | null)?.game;
-  const primary = game === 'dodge' ? gameSpecDodgeSchema : gameSpecCatcherSchema;
-  const secondary = game === 'dodge' ? gameSpecCatcherSchema : gameSpecDodgeSchema;
-  const result = primary.safeParse(json);
+  const known = typeof game === 'string' ? gameSchemas[game] : undefined;
+  const order = known
+    ? [known, ...Object.values(gameSchemas).filter((schema) => schema !== known)]
+    : Object.values(gameSchemas);
+  for (const schema of order) {
+    const result = schema.safeParse(json);
+    if (result.success) {
+      return { ok: true, data: result.data as GameSpec };
+    }
+  }
+  const result = (known ?? order[0]).safeParse(json);
   if (result.success) {
     return { ok: true, data: result.data as GameSpec };
-  }
-  const fallback = secondary.safeParse(json);
-  if (fallback.success) {
-    return { ok: true, data: fallback.data as GameSpec };
   }
   const issues = result.error.issues.map((issue) => {
     const path = issue.path.length > 0 ? issue.path.join('.') : 'raíz';

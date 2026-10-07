@@ -6,6 +6,8 @@ import { initAudio } from '../engine/audio';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 
+const SCENE_BY_GAME = { catcher: 'Catcher', dodge: 'Dodge', search: 'Search' } as const;
+
 export class Title extends Phaser.Scene {
   private spec: GameSpec;
 
@@ -90,7 +92,7 @@ export class Title extends Phaser.Scene {
     play.on('pointerout', () => play.setBackgroundColor('#2e86de'));
     play.on('pointerup', () => {
       initAudio(this.spec.sound === true);
-      this.scene.start(this.spec.game === 'dodge' ? 'Dodge' : 'Catcher');
+      this.scene.start(SCENE_BY_GAME[this.spec.game]);
     });
   }
 }

@@ -1,0 +1,33 @@
+{
+  "game": "search",
+  "title": "LOS CHORIZOS DE NORDELTA",
+  "emoji": "🦫🔍",
+  "duration": 45,
+  "intro": "El drone de seguridad detectó movimientos sospechosos en los quinchos. Capi escondió el botín de la parrilla por todo el barrio: encontrá todos antes de que se acabe el tiempo, y no toques lo que no corresponde.",
+  "player": { "emoji": "🦫", "label": "Capi, el líder" },
+  "grid": { "width": 8, "height": 6 },
+  "find": [
+    { "emoji": "🌭", "label": "Chori parrillero", "points": 100 },
+    { "emoji": "🧉", "label": "Mate amargo", "points": 150 },
+    { "emoji": "🍖", "label": "Vacío robado", "points": 200 }
+  ],
+  "traps": [
+    { "emoji": "🚁", "label": "Drone de seguridad", "points": -100 },
+    { "emoji": "🥂", "label": "Copa del vecino", "points": -75 }
+  ],
+  "maxTouches": 3,
+  "difficulty": 5,
+  "outro": {
+    "whatHappened": "Nada de esto pasó. Es una noticia inventada para probar el motor de búsqueda: los capybaras no esconden chorizos en los quinchos de Nordelta y la seguridad del barrio sigue mirando cámaras de por sí.",
+    "facts": [
+      "Este evento es ficticio y existe solo como contenido de prueba de la POC.",
+      "Los capybaras (Hydrochoerus hydrochaeris) son herbívoros: no roban chorizos ni hacen asados.",
+      "Nordelta es un barrio privado construido sobre humedales en Tigre, provincia de Buenos Aires."
+    ],
+    "fiction": "Todo: no hubo operativo de búsqueda, ni botín escondido, ni drones revolviendo quinchos. El conflicto entre humanos y capybaras en el delta existe como fenómeno real, pero esta noticia es inventada de punta a punta.",
+    "sources": [
+      { "title": "[Placeholder] Capybaras y humedales del delta", "url": "https://example.com/capybaras-delta" },
+      { "title": "[Placeholder] Nordelta y los humedales de Tigre", "url": "https://example.com/nordelta-humedales" }
+    ]
+  }
+}

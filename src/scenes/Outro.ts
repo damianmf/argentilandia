@@ -13,6 +13,7 @@ const DRAG_THRESHOLD = 8;
 export class Outro extends Phaser.Scene {
   private spec: GameSpec;
   private score = 0;
+  private headline = 'SE TERMINÓ EL TIEMPO';
   private content!: Phaser.GameObjects.Container;
   private viewport!: Phaser.Geom.Rectangle;
   private scrollY = 0;
@@ -28,8 +29,9 @@ export class Outro extends Phaser.Scene {
     this.spec = spec;
   }
 
-  init(data: { score?: number }): void {
+  init(data: { score?: number; headline?: string }): void {
     this.score = data.score ?? 0;
+    this.headline = data.headline ?? 'SE TERMINÓ EL TIEMPO';
     this.scrollY = 0;
     this.dragging = false;
     this.dragMoved = false;
@@ -46,7 +48,7 @@ export class Outro extends Phaser.Scene {
     this.cursors = this.input.keyboard!.createCursorKeys();
 
     this.add
-      .text(width / 2, 46, 'SE TERMINÓ EL TIEMPO', {
+      .text(width / 2, 46, this.headline, {
         fontFamily: FONT,
         fontSize: '34px',
         fontStyle: 'bold',

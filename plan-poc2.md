@@ -109,10 +109,28 @@ noticias de escándalos / "encontrá X".
 
 **Gate para pasar a Fase 2:**
 
-- [ ] Partida completa de search: entender qué hacer sin tutorial, terminar por timer/objetivo, outro correcto.
-- [ ] Dificultad 1 vs 10 notable a simple vista.
-- [ ] Los otros dos motores (catcher/dodge) siguen funcionando igual.
-- [ ] `npm run validate` en 0. Commit `poc2-checkpoint-1`.
+- [x] Partida completa de search: entender qué hacer sin tutorial, terminar por timer/objetivo, outro correcto.
+- [x] Dificultad 1 vs 10 notable a simple vista.
+- [x] Los otros dos motores (catcher/dodge) siguen funcionando igual.
+- [x] `npm run validate` en 0. Commit `poc2-checkpoint-1`.
+
+**Notas de fase 1:**
+
+- `maxTouches` es techo duro: al tocar la trampa número N se termina la partida
+  ("TE QUEDASTE SIN TOQUES"). Encontrar todo también corta ("¡ENCONTRASTE TODO!").
+  El Outro ahora recibe un `headline` opcional por scene data (default
+  "SE TERMINÓ EL TIEMPO"), así los tres finales se distinguen en el outro.
+- La dificultad define densidades (findRatio/trapRatio, anclajes propios en
+  `difficulty.ts`); el tamaño de grilla lo define el JSON (4–14) y no escala con
+  la dificultad. Grilla 8×6: d1 = 19 premios/5 trampas, d5 = 13/11, d10 = 7/17.
+- El tamaño de celda se calcula para que cualquier grilla entre en el canvas
+  (máx 120px por celda), sin scroll ni ajuste manual.
+- La verificación visual 1 vs 10 volvió a chocar con el throttling del browser en
+  background (rAF congelado: mismo límite que el bot por CDP de POC 1). Quedó
+  verificada por composición resultante (HUD "0/19" vs "0/7" + tabla) y queda el
+  playtest humano como gate real de dificultad.
+- Evento de prueba: `demo-search` (LOS CHORIZOS DE NORDELTA), difficulty 5,
+  convertido del contenido del demo catcher (mismos personajes y objetos).
 
 ---
 

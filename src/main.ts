@@ -4,6 +4,7 @@ import type { GameSpec } from './types';
 import { Title } from './scenes/Title';
 import { Catcher } from './scenes/Catcher';
 import { Dodge } from './scenes/Dodge';
+import { Search } from './scenes/Search';
 import { Outro } from './scenes/Outro';
 
 const WIDTH = 960;
@@ -54,7 +55,8 @@ async function main(): Promise<void> {
     showError((error as Error).message);
     return;
   }
-  const play = spec.game === 'dodge' ? new Dodge(spec) : new Catcher(spec);
+  const play =
+    spec.game === 'dodge' ? new Dodge(spec) : spec.game === 'search' ? new Search(spec) : new Catcher(spec);
   if (spec.player.image) {
     spec.player.image = `content/events/${id}/${spec.player.image}`;
   }
