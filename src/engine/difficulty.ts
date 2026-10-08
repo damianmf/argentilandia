@@ -9,6 +9,12 @@ export interface SearchParams {
   trapRatio: number;
 }
 
+export interface RunnerParams {
+  speed: number;
+  spawnInterval: number;
+  prizeRatio: number;
+}
+
 interface Anchor {
   difficulty: number;
 }
@@ -23,6 +29,12 @@ const SEARCH_ANCHORS: (Anchor & { params: SearchParams })[] = [
   { difficulty: 1, params: { findRatio: 0.4, trapRatio: 0.1 } },
   { difficulty: 5, params: { findRatio: 0.28, trapRatio: 0.22 } },
   { difficulty: 10, params: { findRatio: 0.15, trapRatio: 0.38 } },
+];
+
+const RUNNER_ANCHORS: (Anchor & { params: RunnerParams })[] = [
+  { difficulty: 1, params: { speed: 260, spawnInterval: 1500, prizeRatio: 0.45 } },
+  { difficulty: 5, params: { speed: 420, spawnInterval: 1000, prizeRatio: 0.35 } },
+  { difficulty: 10, params: { speed: 640, spawnInterval: 600, prizeRatio: 0.25 } },
 ];
 
 export function difficultyParams(difficulty: number): DifficultyParams {
@@ -56,6 +68,23 @@ export function searchParams(difficulty: number): SearchParams {
     }
   }
   return SEARCH_ANCHORS[SEARCH_ANCHORS.length - 1].params;
+}
+
+export function runnerParams(difficulty: number): RunnerParams {
+  const d = clamp(difficulty);
+  for (let i = 0; i < RUNNER_ANCHORS.length - 1; i++) {
+    const a = RUNNER_ANCHORS[i];
+    const b = RUNNER_ANCHORS[i + 1];
+    if (d <= b.difficulty) {
+      const t = (d - a.difficulty) / (b.difficulty - a.difficulty);
+      return {
+        speed: lerp(a.params.speed, b.params.speed, t),
+        spawnInterval: lerp(a.params.spawnInterval, b.params.spawnInterval, t),
+        prizeRatio: lerp(a.params.prizeRatio, b.params.prizeRatio, t),
+      };
+    }
+  }
+  return RUNNER_ANCHORS[RUNNER_ANCHORS.length - 1].params;
 }
 
 function clamp(difficulty: number): number {

@@ -5,6 +5,7 @@ import { Title } from './scenes/Title';
 import { Catcher } from './scenes/Catcher';
 import { Dodge } from './scenes/Dodge';
 import { Search } from './scenes/Search';
+import { Runner } from './scenes/Runner';
 import { Outro } from './scenes/Outro';
 
 const WIDTH = 960;
@@ -56,7 +57,13 @@ async function main(): Promise<void> {
     return;
   }
   const play =
-    spec.game === 'dodge' ? new Dodge(spec) : spec.game === 'search' ? new Search(spec) : new Catcher(spec);
+    spec.game === 'dodge'
+      ? new Dodge(spec)
+      : spec.game === 'search'
+        ? new Search(spec)
+        : spec.game === 'runner'
+          ? new Runner(spec)
+          : new Catcher(spec);
   if (spec.player.image) {
     spec.player.image = `content/events/${id}/${spec.player.image}`;
   }

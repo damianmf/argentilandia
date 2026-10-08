@@ -152,9 +152,33 @@ para persecuciones y huidas.
 
 **Gate para pasar a Fase 3:**
 
-- [ ] Partida completa runner jugable con teclado y mouse (los dos controles).
-- [ ] 4 motores conviven: `?game=` carga catcher, dodge, search o runner según JSON.
-- [ ] `npm run validate` en 0 con los 4. Commit `poc2-checkpoint-2`.
+- [x] Partida completa runner jugable con teclado y mouse (los dos controles).
+- [x] 4 motores conviven: `?game=` carga catcher, dodge, search o runner según JSON.
+- [x] `npm run validate` en 0 con los 4. Commit `poc2-checkpoint-2`.
+
+**Notas de fase 2:**
+
+- Controles: teclado (Espacio/↑ salta, ↓ sostenido agacha) y mouse (click izquierdo
+  salta, click derecho sostenido agacha, con context menu deshabilitado en el
+  canvas). Verificados los dos canales por automatización con capturas: squash
+  visible con duck sostenido y salto con subida/bajada por gravedad.
+- `kind` por obstáculo en el JSON: `jump` = apoyado en el piso (se salta),
+  `duck` = a la altura de la cabeza (se esquiva agachándose, Clearance 38px).
+- Física constante, no escala con dificultad: salto de ~121px y ~0.72s de aire.
+  La dificultad escala velocidad (260→640 px/s), frecuencia de spawn (1500→600 ms)
+  y proporción de premios (0.45→0.25). El gap entre obstáculos sale de
+  velocidad×intervalo y queda casi plano (~390–420 px) en toda la tabla.
+- Puntaje = distancia (0.1 pts/px) + bonus de premios y golpes; sin vidas: el
+  golpe resta puntos y el obstáculo explota, igual que en dodge.
+- Riesgo conocido en d10: el gap (384 px) es menor que lo que cubre un salto
+  (458 px), así que puede haber pares de obstáculos imposibles en secuencia
+  desfavorable — mismo problema que dodge en d7, se recalibra con playtest.
+- Evento de prueba `demo-runner` (LA GRAN FUGA DE NORDELTA) convertido del demo
+  catcher, difficulty 5 (default). La intro del evento explica los controles
+  entre paréntesis; es la única línea de tutorial del runner.
+- Verificación: la primera partida automatizada llegó al Outro por timer antes de
+  probar controles; la segunda se jugó con los 4 controles, sufrió colisiones
+  reales ("Muro del vecino -50") y terminó en Outro con puntaje 1280.
 
 ---
 

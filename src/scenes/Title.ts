@@ -6,7 +6,7 @@ import { initAudio } from '../engine/audio';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 
-const SCENE_BY_GAME = { catcher: 'Catcher', dodge: 'Dodge', search: 'Search' } as const;
+const SCENE_BY_GAME = { catcher: 'Catcher', dodge: 'Dodge', search: 'Search', runner: 'Runner' } as const;
 
 export class Title extends Phaser.Scene {
   private spec: GameSpec;

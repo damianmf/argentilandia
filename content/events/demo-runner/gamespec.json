@@ -1,0 +1,33 @@
+{
+  "game": "runner",
+  "title": "LA GRAN FUGA DE NORDELTA",
+  "emoji": "🦫🏃",
+  "duration": 45,
+  "intro": "El drone de seguridad encontró el botín de la parrilla y Capi salió corriendo con todo. Saltá los muros y las vallas, agachate bajo el drone y los carteles: cada chori y cada mate del camino suma. (Espacio o click: saltar — ↓ o click derecho: agacharse)",
+  "player": { "emoji": "🦫", "label": "Capi, el líder" },
+  "obstacles": [
+    { "emoji": "🧱", "label": "Muro del vecino", "points": -50, "weight": 3, "kind": "jump" },
+    { "emoji": "🚧", "label": "Valla de obra", "points": -40, "weight": 2, "kind": "jump" },
+    { "emoji": "🚁", "label": "Drone de seguridad", "points": -100, "weight": 2, "kind": "duck" },
+    { "emoji": "🪧", "label": "Cartel 'NO CAPYBARAS'", "points": -40, "weight": 2, "kind": "duck" }
+  ],
+  "prizes": [
+    { "emoji": "🌭", "label": "Chori parrillero", "points": 100, "weight": 3 },
+    { "emoji": "🧉", "label": "Mate amargo", "points": 150, "weight": 2 },
+    { "emoji": "🍖", "label": "Vacío robado", "points": 200, "weight": 1 }
+  ],
+  "difficulty": 5,
+  "outro": {
+    "whatHappened": "Nada de esto pasó. Es una noticia inventada para probar el motor de persecución: los capybaras no escapan de nadie, y en Nordelta siguen tomando el sol sobre los muelles como si fueran dueños.",
+    "facts": [
+      "Este evento es ficticio y existe solo como contenido de prueba de la POC.",
+      "Los capybaras (Hydrochoerus hydrochaeris) viven de forma natural en los humedales del delta del Paraná.",
+      "Nordelta es un barrio privado construido sobre humedales en Tigre, provincia de Buenos Aires."
+    ],
+    "fiction": "Todo: no hubo fuga, ni persecución con drones, ni capybaras huyendo con un botín de parrilla. El conflicto entre humanos y capybaras en el delta existe como fenómeno real, pero esta noticia es inventada de punta a punta.",
+    "sources": [
+      { "title": "[Placeholder] Capybaras y humedales del delta", "url": "https://example.com/capybaras-delta" },
+      { "title": "[Placeholder] Nordelta y los humedales de Tigre", "url": "https://example.com/nordelta-humedales" }
+    ]
+  }
+}

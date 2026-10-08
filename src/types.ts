@@ -1,4 +1,4 @@
-export type GameType = 'catcher' | 'dodge' | 'search';
+export type GameType = 'catcher' | 'dodge' | 'search' | 'runner';
 
 export interface SourceRef {
   title: string;
@@ -118,4 +118,23 @@ export interface GameSpecSearch {
   outro: Outro;
 }
 
-export type GameSpec = GameSpecCatcher | GameSpecDodge | GameSpecSearch;
+export interface RunnerObstacle extends CatchObject {
+  kind: 'jump' | 'duck';
+}
+
+export interface GameSpecRunner {
+  game: Extract<GameType, 'runner'>;
+  title: string;
+  emoji: string;
+  duration: number;
+  intro: string;
+  player: PlayerSpec;
+  obstacles: RunnerObstacle[];
+  prizes: CatchObject[];
+  difficulty: number;
+  theme?: ThemeSpec;
+  sound?: boolean;
+  outro: Outro;
+}
+
+export type GameSpec = GameSpecCatcher | GameSpecDodge | GameSpecSearch | GameSpecRunner;

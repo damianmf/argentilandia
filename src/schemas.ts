@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Event, GameSpec, GameSpecDodge, GameSpecSearch, ThemeSpec } from './types';
+import type { Event, GameSpec, GameSpecDodge, GameSpecRunner, GameSpecSearch, ThemeSpec } from './types';
 
 export const sourceRefSchema = z.object({
   title: z.string().min(1),
@@ -126,10 +126,30 @@ export const gameSpecSearchSchema: z.ZodType<GameSpecSearch> = z.object({
   outro: outroSchema,
 });
 
+export const runnerObstacleSchema = catchObjectSchema.extend({
+  kind: z.enum(['jump', 'duck']),
+});
+
+export const gameSpecRunnerSchema: z.ZodType<GameSpecRunner> = z.object({
+  game: z.literal('runner'),
+  title: z.string().min(1),
+  emoji: z.string().min(1),
+  duration: z.number().int().min(1),
+  intro: z.string().min(1),
+  player: playerSchema,
+  obstacles: z.array(runnerObstacleSchema).min(1),
+  prizes: z.array(catchObjectSchema).min(1),
+  difficulty: z.number().int().min(1).max(10),
+  theme: themeSchema.optional(),
+  sound: z.boolean().optional(),
+  outro: outroSchema,
+});
+
 const gameSchemas: Record<string, z.ZodType<GameSpec>> = {
   catcher: gameSpecCatcherSchema,
   dodge: gameSpecDodgeSchema,
   search: gameSpecSearchSchema,
+  runner: gameSpecRunnerSchema,
 };
 
 export type ParseResult<T> = { ok: true; data: T } | { ok: false; error: string };
