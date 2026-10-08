@@ -53,10 +53,24 @@ export interface ThemeSpec {
   decor?: ThemeDecor[];
 }
 
+export interface OutroQuote {
+  text: string;
+  who: string;
+  source: string;
+}
+
+export interface OutroMoment {
+  emoji: string;
+  text: string;
+  source: string;
+}
+
 export interface Outro {
   whatHappened: string;
   facts: string[];
   fiction: string;
+  quote?: OutroQuote;
+  moments?: OutroMoment[];
   sources: SourceRef[];
 }
 

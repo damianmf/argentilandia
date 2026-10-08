@@ -19,6 +19,28 @@
   "difficulty": 5,
   "outro": {
     "whatHappened": "Nada de esto pasó. Es una noticia inventada para probar el motor de persecución: los capybaras no escapan de nadie, y en Nordelta siguen tomando el sol sobre los muelles como si fueran dueños.",
+    "quote": {
+      "text": "Yo no me fui: vine por un chori y me llevé el barrio",
+      "who": "Capi, líder de la familia, ya en el delta",
+      "source": "https://example.com/capybaras-delta"
+    },
+    "moments": [
+      {
+        "emoji": "🚁",
+        "text": "7:32: el drone detectó movimientos sospechosos cerca del quincho",
+        "source": "https://example.com/nordelta-humedales"
+      },
+      {
+        "emoji": "🦫",
+        "text": "Capi saltó el primer muro con un mate en una mano y un vacío en la otra",
+        "source": "https://example.com/capybaras-delta"
+      },
+      {
+        "emoji": "🪧",
+        "text": "Lo perdieron de vista entre los carteles 'NO CAPYBARAS' del barrio",
+        "source": "https://example.com/nordelta-humedales"
+      }
+    ],
     "facts": [
       "Este evento es ficticio y existe solo como contenido de prueba de la POC.",
       "Los capybaras (Hydrochoerus hydrochaeris) viven de forma natural en los humedales del delta del Paraná.",

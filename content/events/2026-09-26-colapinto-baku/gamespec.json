@@ -27,6 +27,28 @@
   "difficulty": 5,
   "outro": {
     "whatHappened": "En la vuelta 36 del GP de Azerbaiyán, en la reanudación tras el Safety Car, Colapinto frenó pasado en la primera curva: con frenos y neumáticos fríos, bloqueó las ruedas y golpeó a su compañero de Alpine, Pierre Gasly. Norris, que esquivaba la maniobra, se estrelló contra el muro: los tres abandonaron. La FIA lo penalizó con 5 puestos en la grilla para el GP de Malasia.",
+    "quote": {
+      "text": "Perdón, perdón, perdón a Pierre",
+      "who": "Franco Colapinto, por radio, apenas bajó del auto",
+      "source": "https://www.clarin.com/deportes/franco-colapinto-maniobra-dejo-carrera-paso-choco-gasly-puede-traerle-consecuencias-alpine_0_eUEsCWt4l4.html"
+    },
+    "moments": [
+      {
+        "emoji": "🛞",
+        "text": "Vuelta 36: frenó pasado en la reanudación, bloqueó las ruedas y golpeó a Gasly: los dos afuera",
+        "source": "https://www.clarin.com/deportes/franco-colapinto-maniobra-dejo-carrera-paso-choco-gasly-puede-traerle-consecuencias-alpine_0_eUEsCWt4l4.html"
+      },
+      {
+        "emoji": "🧱",
+        "text": "Norris se estrelló contra el muro al esquivar la maniobra y también abandonó",
+        "source": "https://www.clarin.com/deportes/franco-colapinto-maniobra-dejo-carrera-paso-choco-gasly-puede-traerle-consecuencias-alpine_0_eUEsCWt4l4.html"
+      },
+      {
+        "emoji": "📋",
+        "text": "La FIA lo mandó 5 puestos atrás en la grilla para el GP de Malasia",
+        "source": "https://www.clarin.com/deportes/franco-colapinto-maniobra-dejo-carrera-paso-choco-gasly-puede-traerle-consecuencias-alpine_0_eUEsCWt4l4.html"
+      }
+    ],
     "facts": [
       "Colapinto frenó pasado en la curva 1 durante la reanudación tras el Safety Car (vuelta 36) y golpeó al Alpine de su compañero Pierre Gasly: los dos abandonaron.",
       "Lando Norris se estrelló contra el muro al esquivar la maniobra, también abandonó, y pidió que provocar un choque así valga al menos una carrera de sanción.",

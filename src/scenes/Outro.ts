@@ -78,13 +78,13 @@ export class Outro extends Phaser.Scene {
       y += text.height + gap;
     };
 
-    const heading = (text: string): Phaser.GameObjects.Text =>
+    const heading = (text: string, color = HEADING_COLOR): Phaser.GameObjects.Text =>
       this.add
         .text(0, 0, text, {
           fontFamily: FONT,
           fontSize: '26px',
           fontStyle: 'bold',
-          color: HEADING_COLOR,
+          color,
         })
         .setName('heading');
 
@@ -99,6 +99,39 @@ export class Outro extends Phaser.Scene {
 
     push(heading('¿QUÉ PASÓ REALMENTE?'), 10);
     push(body(this.spec.outro.whatHappened), 26);
+
+    const quote = this.spec.outro.quote;
+    if (quote) {
+      push(heading('LA FRASE DEL DÍA', '#ffd166'), 12);
+      const quoteText = this.add.text(0, 0, `"${quote.text}"`, {
+        fontFamily: FONT,
+        fontSize: '28px',
+        fontStyle: 'italic bold',
+        color: HEADING_COLOR,
+        wordWrap: { width: CONTENT_WIDTH },
+        lineSpacing: 6,
+      });
+      push(quoteText, 6);
+      push(
+        this.add.text(0, 0, `— ${quote.who}`, {
+          fontFamily: FONT,
+          fontSize: '18px',
+          color: '#8f8fb0',
+        }),
+        6,
+      );
+      const quoted = this.spec.outro.sources.find((source) => source.url === quote.source);
+      if (quoted) push(this.link(quoted), 26);
+      else y += 26;
+    }
+
+    if (this.spec.outro.moments && this.spec.outro.moments.length > 0) {
+      push(heading('MOMENTOS'), 10);
+      for (const moment of this.spec.outro.moments) {
+        push(body(`${moment.emoji} ${moment.text}`), 8);
+      }
+      y += 18;
+    }
 
     push(heading('¿QUÉ SABEMOS?'), 10);
     for (const fact of this.spec.outro.facts) {

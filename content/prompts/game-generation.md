@@ -25,9 +25,8 @@ Presentá los 3 pitches y esperá la elección humana. No generes GameSpec sin e
 
 ### Pasada 2 — GameSpec
 
-Con el pitch elegido (si es catcher; si es otra mecánica, se corta acá para esta POC),
-generá el `GameSpec` completo con exactamente este shape (igual que
-`GameSpecCatcher` en `src/types.ts`):
+Con el pitch elegido, generá el `GameSpec` completo del motor elegido con exactamente
+el shape de su branch en `src/types.ts` (acá el ejemplo con catcher):
 
 ```json
 {
@@ -46,9 +45,17 @@ generá el `GameSpec` completo con exactamente este shape (igual que
   "special": [
     { "emoji": "...", "label": "...", "points": -200, "weight": 1, "effect": "none" }
   ],
-  "difficulty": <1-10>,
+  "difficulty": 5,
   "outro": {
     "whatHappened": "<lo que pasó de verdad, 3 líneas>",
+    "quote": {
+      "text": "<cita textual exacta, con el gancho del evento>",
+      "who": "<quién la dijo y en qué contexto, breve>",
+      "source": "<url EXACTA de una source de abajo>"
+    },
+    "moments": [
+      { "emoji": "<1 emoji>", "text": "<momento concreto del hecho real, 1 línea>", "source": "<url EXACTA de una source de abajo>" }
+    ],
     "facts": ["<hecho verificado 1>", "<hecho verificado 2>"],
     "fiction": "<qué exagera o inventa el juego>",
     "sources": [{ "title": "...", "url": "...", "outlet": "...", "type": "..." }]
@@ -61,12 +68,23 @@ generá el `GameSpec` completo con exactamente este shape (igual que
 - **Regla de fuentes (obligatoria)**: cada `fact` del `outro` debe ser trazable a una
   `source` del mismo JSON. Copiá a `outro.sources` las fuentes del `event.json` que
   respaldan los facts. Si un hecho no tiene fuente, no entra al outro.
+- **LA FRASE DEL DÍA (`outro.quote`)**: una cita textual EXACTA que alguien dijo de
+  verdad en el evento — la que se va a repetir mañana en todos los chats. Nunca
+  parafrasear: si la fuente no la dice textual, no hay quote (es opcional y puede
+  faltar). `who` es breve y concreto ("Verón, en la cancha, al árbitro"). `source`
+  tiene que ser, carácter por carácter, una URL de `outro.sources`: el validador
+  rechaza quotes sin trazabilidad.
+- **`outro.moments`**: 2–4 momentos concretos del hecho real, en orden cronológico,
+  cada uno con un emoji y su `source` trazable a `outro.sources` (misma regla del
+  validador). Son la cronología que el jugador acaba de deformar, no chistes: el
+  humor ya pasó en el juego.
 - `outro.facts` no repite la ficción del juego: son el hecho real que el jugador acaba de
   deformar. `outro.fiction` nombra explícitamente qué parte del juego es invento.
 - `outro.sources` no usa placeholders (eso era solo para el demo): URLs reales.
 - Etiquetas (`label`) cortas: máximo ~22 caracteres, se leen en pleno juego.
 - Pesos sugeridos: `catch` 2–3, `avoid` 2, `special` 1. Puntos positivos 50–150,
   negativos −30 a −200 (el special pega más fuerte).
-- `duration` 30–90 s. `difficulty` a ojo 1–10, se calibra jugando en Fase 4.
+- `duration` 30–90 s. `difficulty` arranca en `5` (default de POC 2) y se calibra
+  jugando.
 - Todo el texto en español rioplatense, sin insultos a personas reales: la sátira se
   lleva a las situaciones y los objetos, no a los actores.

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Event, GameSpec, GameSpecDodge, GameSpecRunner, GameSpecSearch, ThemeSpec } from './types';
+import type { Event, GameSpec, GameSpecDodge, GameSpecRunner, GameSpecSearch, Outro, ThemeSpec } from './types';
 
 export const sourceRefSchema = z.object({
   title: z.string().min(1),
@@ -34,12 +34,50 @@ export const specialObjectSchema = catchObjectSchema.extend({
   effect: z.literal('none'),
 });
 
-export const outroSchema = z.object({
-  whatHappened: z.string().min(1),
-  facts: z.array(z.string().min(1)),
-  fiction: z.string().min(1),
-  sources: z.array(sourceRefSchema).min(1),
+export const tracedRefSchema = z.object({
+  source: z.url(),
 });
+
+const outroSchema: z.ZodType<Outro> = z
+  .object({
+    whatHappened: z.string().min(1),
+    facts: z.array(z.string().min(1)),
+    fiction: z.string().min(1),
+    quote: tracedRefSchema
+      .extend({
+        text: z.string().min(1),
+        who: z.string().min(1),
+      })
+      .optional(),
+    moments: z
+      .array(
+        tracedRefSchema.extend({
+          emoji: z.string().min(1),
+          text: z.string().min(1),
+        }),
+      )
+      .optional(),
+    sources: z.array(sourceRefSchema).min(1),
+  })
+  .superRefine((outro, ctx) => {
+    const urls = new Set(outro.sources.map((source) => source.url));
+    if (outro.quote && !urls.has(outro.quote.source)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['quote', 'source'],
+        message: 'la frase debe trazarse a una source del mismo JSON',
+      });
+    }
+    (outro.moments ?? []).forEach((moment, index) => {
+      if (!urls.has(moment.source)) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['moments', index, 'source'],
+          message: 'el momento debe trazarse a una source del mismo JSON',
+        });
+      }
+    });
+  });
 
 const hexColor = z.string().regex(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/, 'color hex inválido');
 

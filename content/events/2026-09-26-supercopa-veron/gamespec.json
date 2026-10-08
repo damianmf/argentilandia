@@ -32,6 +32,28 @@
   "difficulty": 5,
   "outro": {
     "whatHappened": "Rosario Central le ganó 3-1 a Estudiantes y se quedó con la Supercopa Internacional en Santiago del Estero, con dos goles de Di María: un golazo de tiro libre y un penal convalidado por el VAR. El final fue escandaloso: piñas entre los planteles, Verón bajó a la cancha, mandó a sus jugadores al vestuario, encaró al árbitro Darío Herrera y le dijo: 'Es toda tuya, sos un ladrón'. Después volvió a aparecer para entregar las medallas de subcampeón.",
+    "quote": {
+      "text": "Es toda tuya, sos un ladrón",
+      "who": "Verón, en plena cancha, cara a cara con el árbitro Herrera",
+      "source": "https://www.ole.com.ar/futbol-primera/veron-buscar-herrera-arbitro-ladron-toda-video-ironica-reaccion-penal-di-maria-gol-rosario-central-respuesta-estudiantes_0_hAHN7PHKmb.html"
+    },
+    "moments": [
+      {
+        "emoji": "⚽",
+        "text": "Di María hizo los dos goles: golazo de tiro libre y penal convalidado por el VAR",
+        "source": "https://www.tycsports.com/liga-profesional-de-futbol/angel-di-maria-golazo-y-doblete-para-rosario-central-ante-estudiantes-por-la-supercopa-internacional-id763162.html"
+      },
+      {
+        "emoji": "👊",
+        "text": "Tras el 3-1, piñas entre los planteles de Central y Estudiantes",
+        "source": "https://www.ole.com.ar/futbol-primera/veron-buscar-herrera-arbitro-ladron-toda-video-ironica-reaccion-penal-di-maria-gol-rosario-central-respuesta-estudiantes_0_hAHN7PHKmb.html"
+      },
+      {
+        "emoji": "🚶",
+        "text": "Verón mandó a su equipo al vestuario, encaró a Herrera y después volvió a entregar las medallas",
+        "source": "https://www.ole.com.ar/futbol-primera/veron-buscar-herrera-arbitro-ladron-toda-video-ironica-reaccion-penal-di-maria-gol-rosario-central-respuesta-estudiantes_0_hAHN7PHKmb.html"
+      }
+    ],
     "facts": [
       "Rosario Central le ganó 3-1 a Estudiantes y se consagró campeón de la Supercopa Internacional en el Estadio Único de Santiago del Estero, con dos goles de Di María: uno de tiro libre y otro de penal.",
       "El árbitro Darío Herrera convalidó el penal del 2-1 tras el llamado del VAR; desde Estudiantes reclamaron por varias decisiones del arbitraje.",

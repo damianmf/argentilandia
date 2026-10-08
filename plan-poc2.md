@@ -200,9 +200,29 @@ para persecuciones y huidas.
 
 **Gate para pasar a Fase 4:**
 
-- [ ] El outro muestra frase del día + momentos + facts + fuentes, todo scrolleable y sin cortar.
-- [ ] Cada quote/momento es trazable a una source del mismo JSON.
-- [ ] `npm run validate` en 0. Commit `poc2-checkpoint-3`.
+- [x] El outro muestra frase del día + momentos + facts + fuentes, todo scrolleable y sin cortar.
+- [x] Cada quote/momento es trazable a una source del mismo JSON.
+- [x] `npm run validate` en 0. Commit `poc2-checkpoint-3`.
+
+**Notas de fase 3:**
+
+- La trazabilidad es una barrera automática, no solo editorial: `quote.source` y cada
+  `moments[].source` tienen que ser una URL exacta de `outro.sources` y Zod lo valida
+  (superRefine) con mensaje legible. Probado en negativo: quote/momento huérfano →
+  gamespec inválido. Es la versión pequeña de la lección "checklist mecanizado" de la
+  retrospectiva POC 1 (queda pendiente la versión por similitud de texto para facts).
+- En el outro, la quote muestra su fuente como link clickeable justo debajo de la
+  atribución; los momentos no llevan link individual (queda en el JSON, como los facts).
+- demo y demo-search quedaron sin v2 a propósito: prueban el camino opcional (outro
+  idéntico al de POC 1, verificado en browser). demo-runner lleva quote ficticia de Capi
+  trazada a sus sources placeholder, coherente con su tono.
+- Verificación visual: dos eventos desechables de `duration: 1` (runner con v2, catcher
+  sin v2) permitieron llegar al Outro en ~1 s y recorrerlo con rueda; borrados después
+  del chequeo. El scroll llegó al fondo sin cortar nada y el botón VOLVER A JUGAR siguió
+  visible.
+- `game-generation.md` quedó actualizado para cualquier motor (decía "si es otra
+  mecánica se corta acá", herencia de POC 1): la pasada 2 genera el GameSpec del motor
+  elegido según su branch en `src/types.ts`.
 
 ---
 
