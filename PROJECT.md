@@ -28,6 +28,14 @@ El plan por fases vive en [plan-poc2.md](plan-poc2.md). Decisiones tomadas al ab
 | Automatización | Radar de actualidad auto-draft + aprobación humana obligatoria (nunca auto-publicar) |
 | Dificultad | Default de arranque `5` para todo evento nuevo (lección POC 1) |
 
+## Decisión de iteración (2026-10-08)
+
+| Tema | Decisión |
+|---|---|
+| Automatización | Jornada **FULL-AUTO** durante la iteración de POC 2: el cron de 9:00 produce radar → draft → juego → web → commit sin aprobación humana. La calidad la garantizan las barreras existentes (umbral de jugabilidad, línea editorial, regla de fuentes, validación Zod). Ante duda editorial, no se genera |
+| Aprobación humana | Suspendida para iterar; **se reintroduce como obligatoria antes de cualquier deploy** (la fase opcional no arranca sin volver al modo con aprobación del runbook) |
+| Fase 5 | Las dos jornadas del cierre se miden como corridas automáticas; el humano itera sobre lo producido (juega la web, lee drafts, ajusta prompts) |
+
 ## Entregable Slice 0 — definición de listo
 
 Un catcher jugable en el browser, generado a partir de un evento real:

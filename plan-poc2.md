@@ -297,6 +297,13 @@ juegos.
 
 **Objetivo:** validar POC 2 entera produciendo dos jornadas de verdad.
 
+**Nota (decisión 08/10, ver PROJECT.md):** modo FULL-AUTO — las dos jornadas las
+produce la automatización sin aprobación humana. El gate de "jornada" pasa a ser
+que dos corridas automáticas del cron dejen la web del día lista sin intervención;
+el cronometraje humano y la pregunta de retrospectiva se reencuadran: ya no es
+"¿cuánto trabaja el humano?" sino "¿qué calidad produce solo, y qué tiene que
+arreglar el humano después?".
+
 **Precondiciones:** gate de Fase 4 verde.
 
 **Tareas:**
