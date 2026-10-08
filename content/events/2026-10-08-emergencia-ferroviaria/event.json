@@ -1,0 +1,27 @@
+{
+  "id": "2026-10-08-emergencia-ferroviaria",
+  "date": "2026-10-08",
+  "event": "El 75% de los trenes eléctricos del Área Metropolitana (Roca, Sarmiento y Mitre) tiene revisiones atrasadas, incluido el sistema de frenos",
+  "category": "misc",
+  "actors": ["Trenes Argentinos", "Sociedad Operadora Ferroviaria", "Gobierno nacional"],
+  "conflict": "Servicio ferroviario degradado por revisiones y repuestos atrasados",
+  "facts": [
+    "El 75% de los trenes eléctricos de las líneas Roca, Sarmiento y Mitre (más de 500 coches) presenta revisiones programadas atrasadas, incluido el sistema de frenos, según información oficial de Trenes Argentinos.",
+    "El Gobierno reconoció el deterioro del sistema ferroviario en los fundamentos del Decreto 312/2026, publicado el 4 de mayo en el Boletín Oficial.",
+    "La emergencia ferroviaria fue declarada en junio de 2024 y está prorrogada hasta el 14 de junio de 2028.",
+    "Las 24 locomotoras CSR SDD7 de la línea San Martín necesitan reparación general: la licitación se adjudicó a fines de 2023, pero las órdenes de compra recién se emitieron en febrero de 2025, según la AGN.",
+    "En agosto el Gobierno informó que gestionaba repuestos originales para los frenos de más de 700 coches eléctricos de las tres líneas."
+  ],
+  "sources": [
+    {
+      "title": "Emergencia ferroviaria: tres de cada cuatro trenes del Roca, Sarmiento y Mitre tienen revisiones atrasadas",
+      "url": "https://www.ambito.com/informacion-general/emergencia-ferroviaria-tres-cada-cuatro-trenes-del-roca-sarmiento-y-mitre-tienen-revisiones-atrasadas-n6331789",
+      "outlet": "Ámbito",
+      "type": "media"
+    }
+  ],
+  "virality": 9,
+  "gameability": 8,
+  "humorPotential": 7,
+  "shareability": 7
+}

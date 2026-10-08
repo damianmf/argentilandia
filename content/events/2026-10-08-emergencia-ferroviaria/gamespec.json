@@ -1,0 +1,71 @@
+{
+  "game": "runner",
+  "title": "EL FRENITO INFINITO",
+  "emoji": "🚆💨",
+  "duration": 45,
+  "intro": "Tres de cada cuatro trenes eléctricos no tienen la revisión al día y el tuyo salió igual: los frenos están \"en gestión\" desde agosto. Corré, esquivá lo que se cruce y juntá repuestos, que frenar no es una opción. (Espacio o click: saltar — ↓ o click derecho: agacharse)",
+  "player": { "emoji": "🚆", "label": "El Roca sin control", "image": "avatar.svg" },
+  "obstacles": [
+    { "emoji": "🧳", "label": "Bolso olvidado", "points": -50, "weight": 3, "kind": "jump" },
+    { "emoji": "📋", "label": "Expediente atascado", "points": -75, "weight": 2, "kind": "jump" },
+    { "emoji": "🚏", "label": "Aviso de suspensión", "points": -100, "weight": 2, "kind": "duck" },
+    { "emoji": "🎟️", "label": "Boleto volador", "points": -30, "weight": 2, "kind": "duck" }
+  ],
+  "prizes": [
+    { "emoji": "🛞", "label": "Repuesto de freno", "points": 100, "weight": 3 },
+    { "emoji": "🔧", "label": "Llave inglesa", "points": 150, "weight": 2 },
+    { "emoji": "📄", "label": "Orden de compra '23", "points": 200, "weight": 1 }
+  ],
+  "difficulty": 5,
+  "theme": {
+    "background": "#0f1626",
+    "decor": [
+      { "emoji": "🌙", "x": 85, "y": 10, "size": 40, "alpha": 0.85 },
+      { "emoji": "🏙️", "x": 8, "y": 32, "size": 60, "alpha": 0.4 },
+      { "emoji": "🚉", "x": 92, "y": 34, "size": 46, "alpha": 0.4 },
+      { "emoji": "🛤️", "x": 90, "y": 78, "size": 36, "alpha": 0.35 }
+    ]
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "Según la información oficial que difundió Trenes Argentinos, el 75% de los trenes eléctricos de Roca, Sarmiento y Mitre (más de 500 coches) tiene revisiones programadas atrasadas, incluido el sistema de frenos. El propio Gobierno reconoció el deterioro del sistema en los fundamentos del Decreto 312/2026, y la emergencia ferroviaria, declarada en junio de 2024, está prorrogada hasta junio de 2028.",
+    "quote": {
+      "text": "el deterioro de los diferentes componentes del sistema ferroviario pone en riesgo no solo la calidad del servicio sino, principalmente, la salud de los pasajeros",
+      "who": "Decreto 312/2026, en los fundamentos publicados en el Boletín Oficial",
+      "source": "https://www.ambito.com/informacion-general/emergencia-ferroviaria-tres-cada-cuatro-trenes-del-roca-sarmiento-y-mitre-tienen-revisiones-atrasadas-n6331789"
+    },
+    "moments": [
+      {
+        "emoji": "🚆",
+        "text": "Trenes Argentinos informó que 3 de cada 4 trenes eléctricos del AMBA tienen revisiones atrasadas, también de frenos",
+        "source": "https://www.ambito.com/informacion-general/emergencia-ferroviaria-tres-cada-cuatro-trenes-del-roca-sarmiento-y-mitre-tienen-revisiones-atrasadas-n6331789"
+      },
+      {
+        "emoji": "📋",
+        "text": "El Decreto 312/2026, publicado el 4 de mayo, reconoce el deterioro del sistema ferroviario",
+        "source": "https://www.ambito.com/informacion-general/emergencia-ferroviaria-tres-cada-cuatro-trenes-del-roca-sarmiento-y-mitre-tienen-revisiones-atrasadas-n6331789"
+      },
+      {
+        "emoji": "🛠️",
+        "text": "En agosto el Gobierno dijo que gestionaba repuestos originales para los frenos de más de 700 coches",
+        "source": "https://www.ambito.com/informacion-general/emergencia-ferroviaria-tres-cada-cuatro-trenes-del-roca-sarmiento-y-mitre-tienen-revisiones-atrasadas-n6331789"
+      }
+    ],
+    "facts": [
+      "El 75% de los trenes eléctricos de las líneas Roca, Sarmiento y Mitre (más de 500 coches) presenta revisiones programadas atrasadas, incluido el sistema de frenos, según información oficial de Trenes Argentinos.",
+      "El Gobierno reconoció el deterioro del sistema ferroviario en los fundamentos del Decreto 312/2026, publicado el 4 de mayo en el Boletín Oficial.",
+      "La emergencia ferroviaria fue declarada en junio de 2024 y está prorrogada hasta el 14 de junio de 2028.",
+      "Las 24 locomotoras CSR SDD7 de la línea San Martín necesitan reparación general: la licitación se adjudicó a fines de 2023, pero las órdenes de compra recién se emitieron en febrero de 2025, según la AGN.",
+      "En agosto el Gobierno informó que gestionaba repuestos originales para los frenos de más de 700 coches eléctricos de las tres líneas."
+    ],
+    "fiction": "Ningún tren salió realmente a las vías sin frenos: el dato del día es que las revisiones están atrasadas, no que los trenes corran a traqueteo limpio. En el juego la vía es infinita, los bolsos y los expedientes aparecen de la nada, y los repuestos de freno se agarran al vuelo como monedas en vez de llegar 'en gestión' por licitación.",
+    "sources": [
+      {
+        "title": "Emergencia ferroviaria: tres de cada cuatro trenes del Roca, Sarmiento y Mitre tienen revisiones atrasadas",
+        "url": "https://www.ambito.com/informacion-general/emergencia-ferroviaria-tres-cada-cuatro-trenes-del-roca-sarmiento-y-mitre-tienen-revisiones-atrasadas-n6331789",
+        "outlet": "Ámbito",
+        "type": "media"
+      }
+    ]
+  }
+}

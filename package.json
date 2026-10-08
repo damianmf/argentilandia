@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "radar": "node scripts/radar.mjs",
+    "index": "node scripts/build-index.mjs"
   },
   "dependencies": {
     "phaser": "^3.90.0",

@@ -252,10 +252,44 @@ juegos.
 
 **Gate para pasar a Fase 5:**
 
-- [ ] Un día simulado completo: radar produce draft → humano aprueba → juego generado → aparece en la web diaria sin tocar código.
-- [ ] Sin aprobación humana no se publica nada (verificar que el flujo se corta).
-- [ ] La web diaria abre local y lista los juegos con sus avatares/theming.
-- [ ] Commit `poc2-checkpoint-4`.
+- [x] Un día simulado completo: radar produce draft → humano aprueba → juego generado → aparece en la web diaria sin tocar código.
+- [x] Sin aprobación humana no se publica nada (verificar que el flujo se corta).
+- [x] La web diaria abre local y lista los juegos con sus avatares/theming.
+- [x] Commit `poc2-checkpoint-4`.
+
+**Notas de fase 4:**
+
+- División del trabajo radar: `scripts/radar.mjs` hace solo el fetch/parse
+  determinista de feeds (5 outlets verificados el 08/10: Clarín, La Nación,
+  Infobae, Ámbito, Perfil; El Destape estaba muerto —redirect a 404— y se sacó).
+  El análisis (elección de evento, facts, quote) es el paso 2 de sesión con
+  `content/prompts/radar-diario.md`: la variante "script hace todo" no existe sin
+  LLM y el plan lo permitía ("o flujo equivalente de la sesión"). El script
+  tolera feeds caídos y corta con error si ninguno responde (no escribe nada).
+- La barrera "sin aprobación no se publica" es procedural, no de código: draft con
+  `ESTADO` + runbook + prompt del cron. Verificada en negativo: con el draft
+  ESPERANDO APROBACIÓN no existía directorio del evento en `content/events/` ni
+  mención en la web (5 juegos, 0 coincidencias).
+- Día simulado completo con evento real de hoy (emergencia ferroviaria del AMBA,
+  nota de Ámbito): draft → aprobación → EL FRENITO INFINITO (runner) en la web con
+  avatar y theme, sin tocar código. **La aprobación la simuló la sesión** (etiquetada
+  en el draft y en produccion.md): las jornadas con humano real son el gate de
+  Fase 5. Trabajo de sesión ~38 min, dentro del objetivo de <60.
+- Primera quote del proyecto trazable a fuente oficial: la frase del día es del
+  propio Decreto 312/2026 (citado textualmente por la nota). Los descartes duros
+  del radar (Maradona, aluvión, fusilamiento) muestran a la línea editorial
+  filtrando antes de pensar mecánicas.
+- Web diaria: vive en `web/index.html` (no en la raíz, para no pisar el entry de
+  Vite); links relativos `../index.html?game=<id>`, avatar o emoji por card y
+  acento con `theme.background`. `build-index.mjs` valida cada gamespec con Zod y
+  **no genera la web si alguno es inválido** (misma filosofía de barrera dura).
+- Verificación visual en browser (web + título + gameplay con colisión real y
+  HUD) detectó el decor pisando el título con su caja opaca: reposicionado
+  (misma lección de Fase 0). La primera partida automatizada del runner chocó el
+  click fuera del canvas escalado; segunda con coordenadas de viewport OK.
+- Cron: automatización `Radar diario — todos los días a las 9:00`
+  (automation-d97b2697), con el draft quedando esperando aprobación. Se ajusta o
+  borra desde la página Automations.
 
 ---
 

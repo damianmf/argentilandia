@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de la Actualidad</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 32px 24px 48px;
+        background: #05050a;
+        color: #ffffff;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      header { max-width: 1100px; margin: 0 auto 28px; }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 34px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      header p { margin: 0; color: #9aa0b5; }
+      .grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        display: block;
+        background: #101018;
+        border: 1px solid #262636;
+        border-top: 4px solid #ffd166;
+        border-radius: 12px;
+        padding: 22px;
+        color: inherit;
+        text-decoration: none;
+      }
+      .card:hover { border-color: #ffd166; }
+      .avatar { height: 64px; display: flex; align-items: center; margin-bottom: 12px; }
+      .avatar img { height: 64px; }
+      .avatar .emoji { font-size: 48px; line-height: 1; }
+      .card h2 { margin: 0 0 8px; font-size: 21px; letter-spacing: 1px; }
+      .intro {
+        margin: 0 0 14px;
+        color: #c6cad8;
+        font-size: 14px;
+        line-height: 1.45;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .meta {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        color: #9aa0b5;
+        font-size: 13px;
+      }
+      .badge {
+        background: #262636;
+        color: #ffd166;
+        padding: 2px 10px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+      footer {
+        max-width: 1100px;
+        margin: 28px auto 0;
+        color: #6b7085;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Juego de la Actualidad</h1>
+      <p>La noticia del día, jugable. Elegí un juego, jugá y mirá qué pasó de verdad.</p>
+    </header>
+    <main class="grid">
+      <a class="card" href="../index.html?game=demo-search">
+        <div class="avatar"><span class="emoji">🦫</span></div>
+        <h2>LOS CHORIZOS DE NORDELTA</h2>
+        <p class="intro">El drone de seguridad detectó movimientos sospechosos en los quinchos. Capi escondió el botín de la parrilla por todo el barrio: encontrá todos antes de que se acabe el tiempo, y no toques lo que no corresponde.</p>
+        <div class="meta">
+          <span class="badge">search</span>
+          <span>⏱ 45s</span>
+          <span>📅 s/fecha</span>
+        </div>
+      </a>
+      <a class="card" href="../index.html?game=demo-runner">
+        <div class="avatar"><span class="emoji">🦫</span></div>
+        <h2>LA GRAN FUGA DE NORDELTA</h2>
+        <p class="intro">El drone de seguridad encontró el botín de la parrilla y Capi salió corriendo con todo. Saltá los muros y las vallas, agachate bajo el drone y los carteles: cada chori y cada mate del camino suma. (Espacio o click: saltar — ↓ o click derecho: agacharse)</p>
+        <div class="meta">
+          <span class="badge">runner</span>
+          <span>⏱ 45s</span>
+          <span>📅 s/fecha</span>
+        </div>
+      </a>
+      <a class="card" href="../index.html?game=demo">
+        <div class="avatar"><span class="emoji">🦫</span></div>
+        <h2>LOS CAPYBARAS TOMAN NORDELTA</h2>
+        <p class="intro">Una familia de capybaras invadió las piletas de Nordelta. Ayudá a Capi, el líder, a juntar chorizos y mates de la parrilla antes de que llegue el drone de seguridad.</p>
+        <div class="meta">
+          <span class="badge">catcher</span>
+          <span>⏱ 45s</span>
+          <span>📅 s/fecha</span>
+        </div>
+      </a>
+      <a class="card" style="border-top-color: #0f1626" href="../index.html?game=2026-10-08-emergencia-ferroviaria">
+        <div class="avatar"><img src="../content/events/2026-10-08-emergencia-ferroviaria/avatar.svg" alt="El Roca sin control" /></div>
+        <h2>EL FRENITO INFINITO</h2>
+        <p class="intro">Tres de cada cuatro trenes eléctricos no tienen la revisión al día y el tuyo salió igual: los frenos están &quot;en gestión&quot; desde agosto. Corré, esquivá lo que se cruce y juntá repuestos, que frenar no es una opción. (Espacio o click: saltar — ↓ o click derecho: agacharse)</p>
+        <div class="meta">
+          <span class="badge">runner</span>
+          <span>⏱ 45s</span>
+          <span>📅 2026-10-08</span>
+        </div>
+      </a>
+      <a class="card" style="border-top-color: #132a17" href="../index.html?game=2026-09-26-supercopa-veron">
+        <div class="avatar"><img src="../content/events/2026-09-26-supercopa-veron/avatar.svg" alt="Herrera, el juez 'ladrón'" /></div>
+        <h2>EL ROBO DEL AÑO</h2>
+        <p class="intro">La Supercopa terminó a las piñas y Herrera tiene que juntar los trofeos de la entrega antes de que se le venga arriba todo el estadio. Agarrá la plata... digo, los premios, y esquivá al presidente más enojado del fútbol argentino.</p>
+        <div class="meta">
+          <span class="badge">catcher</span>
+          <span>⏱ 45s</span>
+          <span>📅 2026-09-26</span>
+        </div>
+      </a>
+      <a class="card" style="border-top-color: #101c2c" href="../index.html?game=2026-09-26-colapinto-baku">
+        <div class="avatar"><img src="../content/events/2026-09-26-colapinto-baku/avatar.svg" alt="El Alpine de Franco" /></div>
+        <h2>BAKÚ SIN FRENO</h2>
+        <p class="intro">Vuelta 36 en Bakú: frenos fríos, neumáticos fríos y una primera curva que no perdona. Esquivá todo lo que se te cruce, que hoy chocar no suma puntos... ni siquiera con tu propio compañero.</p>
+        <div class="meta">
+          <span class="badge">dodge</span>
+          <span>⏱ 45s</span>
+          <span>📅 2026-09-26</span>
+        </div>
+      </a>
+    </main>
+    <footer>Generado por <code>npm run index</code> el 2026-10-08 19:53 — 6 juegos. Para jugar: <code>npm run dev</code> y abrí esta página.</footer>
+  </body>
+</html>
