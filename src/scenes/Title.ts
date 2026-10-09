@@ -1,12 +1,18 @@
 import Phaser from 'phaser';
 import type { GameSpec } from '../types';
 import { applyTheme } from '../engine/theme';
-import { createPlayer, preloadPlayer } from '../engine/avatar';
+import { createAvatarSprite, createPlayer, preloadAvatarImage, preloadPlayer, RIVAL_KEY } from '../engine/avatar';
 import { initAudio } from '../engine/audio';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 
-const SCENE_BY_GAME = { catcher: 'Catcher', dodge: 'Dodge', search: 'Search', runner: 'Runner' } as const;
+const SCENE_BY_GAME = {
+  catcher: 'Catcher',
+  dodge: 'Dodge',
+  search: 'Search',
+  runner: 'Runner',
+  fighter: 'Fighter',
+} as const;
 
 export class Title extends Phaser.Scene {
   private spec: GameSpec;
@@ -18,6 +24,9 @@ export class Title extends Phaser.Scene {
 
   preload(): void {
     preloadPlayer(this, this.spec);
+    if (this.spec.game === 'fighter') {
+      preloadAvatarImage(this, RIVAL_KEY, this.spec.rival.image);
+    }
   }
 
   create(): void {
@@ -46,16 +55,33 @@ export class Title extends Phaser.Scene {
       onComplete: () => this.cameras.main.shake(140, 0.008),
     });
 
-    const avatar = createPlayer(this, this.spec, cx, 225, this.spec.player.image ? 130 : 96);
-    avatar.setScale(avatar.scaleY * 0.4);
-    this.tweens.add({
-      targets: avatar,
-      scaleY: avatar.scaleY * (1 / 0.4),
-      scaleX: avatar.scaleX * (1 / 0.4),
-      duration: 420,
-      delay: 180,
-      ease: 'Back.Out',
-    });
+    if (this.spec.game === 'fighter') {
+      const left = createPlayer(this, this.spec, cx - 64, 225, this.spec.player.image ? 112 : 84);
+      const right = createAvatarSprite(this, RIVAL_KEY, this.spec.rival.emoji, cx + 64, 225, this.spec.rival.image ? 112 : 84);
+      if ('setFlipX' in right) right.setFlipX(true);
+      for (const sprite of [left, right]) {
+        sprite.setScale(sprite.scaleY * 0.4);
+        this.tweens.add({
+          targets: sprite,
+          scaleY: sprite.scaleY * (1 / 0.4),
+          scaleX: sprite.scaleX * (1 / 0.4),
+          duration: 420,
+          delay: 180,
+          ease: 'Back.Out',
+        });
+      }
+    } else {
+      const avatar = createPlayer(this, this.spec, cx, 225, this.spec.player.image ? 130 : 96);
+      avatar.setScale(avatar.scaleY * 0.4);
+      this.tweens.add({
+        targets: avatar,
+        scaleY: avatar.scaleY * (1 / 0.4),
+        scaleX: avatar.scaleX * (1 / 0.4),
+        duration: 420,
+        delay: 180,
+        ease: 'Back.Out',
+      });
+    }
 
     this.add
       .text(cx, 350, this.spec.intro, {

@@ -1,29 +1,24 @@
 {
-  "game": "search",
-  "title": "LA ROJA EQUIVOCADA",
-  "emoji": "🟥🕵️",
+  "game": "fighter",
+  "title": "SE ARMÓ LA PIÑA",
+  "emoji": "🥊😤",
   "duration": 45,
-  "intro": "A los 4 minutos hizo la falta Salas, pero la roja se la comió Soria. Vos sos el árbitro de la Reserva: encontrá todas las polémicas del partido antes del final y no toques al inocente, que ya hubo un equivocado.",
-  "player": { "emoji": "🕵️", "label": "Árbitro de la Reserva", "image": "avatar.svg" },
-  "grid": { "width": 8, "height": 6 },
-  "find": [
-    { "emoji": "🧑‍🦱", "label": "La falta de Salas", "points": 200 },
-    { "emoji": "🟥", "label": "Roja al otro Joaquín", "points": 100 },
-    { "emoji": "⚽", "label": "Gol picado en la línea", "points": 150 },
-    { "emoji": "🥅", "label": "Penal al travesaño", "points": 120 },
-    { "emoji": "😤", "label": "Exceso verbal", "points": 90 },
-    { "emoji": "👔", "label": "DT expulsado", "points": 80 }
-  ],
-  "traps": [
-    { "emoji": "🧑", "label": "Soria, el inocente", "points": -100 },
-    { "emoji": "✅", "label": "Jugada limpia", "points": -60 },
-    { "emoji": "🤝", "label": "Saludo entre rivales", "points": -50 }
-  ],
-  "maxTouches": 3,
+  "intro": "La batalla del alambrado, edición de caricatura: azul de Talleres contra rojo del Decano, piñas con estrellitas y nadie lastimado de verdad. Te movés con ← → o el mouse, y pegás con espacio o click. El primero en meter 10 trompadas limpia el alambrado.",
+  "player": { "emoji": "😤", "label": "El azul de Talleres", "image": "avatar.svg" },
+  "rival": { "emoji": "😠", "label": "El rojo del Decano", "image": "rival.svg" },
+  "crowd": ["🧣", "🧢", "🎒", "📣", "🍺", "🧣", "🧢", "📣", "🎒", "🍺"],
+  "koHits": 10,
+  "punchPoints": 100,
+  "hitPenalty": -75,
   "difficulty": 5,
   "theme": {
     "background": "#0e2a18",
-    "hud": { "score": "#ffd166", "time": "#a8d8b0" }
+    "decor": [
+      { "emoji": "🚧", "x": 50, "y": 40, "size": 80, "alpha": 0.22 },
+      { "emoji": "🏟️", "x": 6, "y": 24, "size": 56, "alpha": 0.3 },
+      { "emoji": "🏟️", "x": 94, "y": 24, "size": 56, "alpha": 0.3 },
+      { "emoji": "🚩", "x": 92, "y": 70, "size": 34, "alpha": 0.35 }
+    ]
   },
   "sound": true,
   "outro": {
@@ -63,7 +58,7 @@
       "El primer gol de Atlético Tucumán, de Germán Vallejo, se convalidó aunque las imágenes no permitieron confirmar si la pelota entró completa.",
       "Al final del partido se produjo una batalla campal junto al alambrado, con golpes de puño y sillazos; el médico de Talleres fue golpeado con una silla."
     ],
-    "fiction": "En el juego sos el árbitro revisando una grilla de jugadas y perdés si tocás al inocente; en el partido el error fue uno solo y no se sabe si fue por el nombre o por la persona, porque el árbitro no dio versiones. Las piñas, los sillazos y la pelea real no están en el juego: hubo gente golpeada de verdad, y eso queda fuera de broma.",
+    "fiction": "En el juego la pelea es un 1 contra 1 de caricatura entre dos hinchas con camiseta, con estrellitas y knockbacks, como en los dibujos animados; en el partido real hubo una batalla campal con varias personas, sillazos y un médico golpeado: eso no se juega y no aparece acá. Los peleadores no son nadie real: son un azul y un rojo. Y el error que encendió todo fue uno solo: la roja al Joaquín equivocado, que el árbitro nunca explicó.",
     "sources": [
       {
         "title": "El escándalo a las piñas entre Talleres y Atlético Tucumán por el torneo de Reserva",

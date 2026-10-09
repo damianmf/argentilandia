@@ -6,6 +6,7 @@ import { Catcher } from './scenes/Catcher';
 import { Dodge } from './scenes/Dodge';
 import { Search } from './scenes/Search';
 import { Runner } from './scenes/Runner';
+import { Fighter } from './scenes/Fighter';
 import { Outro } from './scenes/Outro';
 
 const WIDTH = 960;
@@ -63,9 +64,14 @@ async function main(): Promise<void> {
         ? new Search(spec)
         : spec.game === 'runner'
           ? new Runner(spec)
-          : new Catcher(spec);
+          : spec.game === 'fighter'
+            ? new Fighter(spec)
+            : new Catcher(spec);
   if (spec.player.image) {
     spec.player.image = `content/events/${id}/${spec.player.image}`;
+  }
+  if (spec.game === 'fighter' && spec.rival.image) {
+    spec.rival.image = `content/events/${id}/${spec.rival.image}`;
   }
   new Phaser.Game({
     type: Phaser.AUTO,

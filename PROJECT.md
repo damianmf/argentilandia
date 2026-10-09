@@ -36,6 +36,14 @@ El plan por fases vive en [plan-poc2.md](plan-poc2.md). Decisiones tomadas al ab
 | Aprobación humana | Suspendida para iterar; **se reintroduce como obligatoria antes de cualquier deploy** (la fase opcional no arranca sin volver al modo con aprobación del runbook) |
 | Fase 5 | Las dos jornadas del cierre se miden como corridas automáticas; el humano itera sobre lo producido (juega la web, lee drafts, ajusta prompts) |
 
+## Decisión de iteración (2026-10-09)
+
+| Tema | Decisión |
+|---|---|
+| Motor fighter | POC 3 se abre por pedido de iteración: el humano quiere el evento Talleres–Tucumán como juego de piñas con equipos diferenciables. Primer slice: escena 1v1 de caricatura (SVGs por kit, estrellitas, knockback), schema + tabla de dificultad. Las piñas de caricatura pasan del texto editorial a mecánica |
+| Gráfica | Se mantiene la regla de cero assets: la "mejor gráfica" es diferenciación (camisetas) + feedback (partículas, shake), que es código, no producción de arte |
+| Pendiente | Motor `kick` (apuntar/patada con temporizador) propuesto para los chistes del homenaje a Messi ("errarle con la derecha"); ver plan-poc3.md |
+
 ## Entregable Slice 0 — definición de listo
 
 Un catcher jugable en el browser, generado a partir de un evento real:

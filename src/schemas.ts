@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Event, GameSpec, GameSpecDodge, GameSpecRunner, GameSpecSearch, Outro, ThemeSpec } from './types';
+import type { Event, GameSpec, GameSpecDodge, GameSpecFighter, GameSpecRunner, GameSpecSearch, Outro, ThemeSpec } from './types';
 
 export const sourceRefSchema = z.object({
   title: z.string().min(1),
@@ -183,11 +183,30 @@ export const gameSpecRunnerSchema: z.ZodType<GameSpecRunner> = z.object({
   outro: outroSchema,
 });
 
+export const gameSpecFighterSchema: z.ZodType<GameSpecFighter> = z.object({
+  game: z.literal('fighter'),
+  title: z.string().min(1),
+  emoji: z.string().min(1),
+  duration: z.number().int().min(1),
+  intro: z.string().min(1),
+  player: playerSchema,
+  rival: playerSchema,
+  crowd: z.array(z.string().min(1)).optional(),
+  koHits: z.number().int().min(1),
+  punchPoints: z.number(),
+  hitPenalty: z.number(),
+  difficulty: z.number().int().min(1).max(10),
+  theme: themeSchema.optional(),
+  sound: z.boolean().optional(),
+  outro: outroSchema,
+});
+
 const gameSchemas: Record<string, z.ZodType<GameSpec>> = {
   catcher: gameSpecCatcherSchema,
   dodge: gameSpecDodgeSchema,
   search: gameSpecSearchSchema,
   runner: gameSpecRunnerSchema,
+  fighter: gameSpecFighterSchema,
 };
 
 export type ParseResult<T> = { ok: true; data: T } | { ok: false; error: string };

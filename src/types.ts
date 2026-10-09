@@ -1,4 +1,4 @@
-export type GameType = 'catcher' | 'dodge' | 'search' | 'runner';
+export type GameType = 'catcher' | 'dodge' | 'search' | 'runner' | 'fighter';
 
 export interface SourceRef {
   title: string;
@@ -151,4 +151,22 @@ export interface GameSpecRunner {
   outro: Outro;
 }
 
-export type GameSpec = GameSpecCatcher | GameSpecDodge | GameSpecSearch | GameSpecRunner;
+export interface GameSpecFighter {
+  game: Extract<GameType, 'fighter'>;
+  title: string;
+  emoji: string;
+  duration: number;
+  intro: string;
+  player: PlayerSpec;
+  rival: PlayerSpec;
+  crowd?: string[];
+  koHits: number;
+  punchPoints: number;
+  hitPenalty: number;
+  difficulty: number;
+  theme?: ThemeSpec;
+  sound?: boolean;
+  outro: Outro;
+}
+
+export type GameSpec = GameSpecCatcher | GameSpecDodge | GameSpecSearch | GameSpecRunner | GameSpecFighter;
