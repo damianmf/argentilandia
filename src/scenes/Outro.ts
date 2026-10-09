@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import type { GameSpec, SourceRef } from '../types';
+import { SCENE_BY_GAME, urlGameId } from '../engine/routes';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const LINK_COLOR = '#4a9bef';
@@ -10,10 +11,19 @@ const CONTENT_X = 60;
 const CONTENT_WIDTH = 840;
 const DRAG_THRESHOLD = 8;
 
+interface FightStats {
+  landed: number;
+  received: number;
+  strip: string;
+  verdict: string;
+  difficulty: number;
+}
+
 export class Outro extends Phaser.Scene {
   private spec: GameSpec;
   private score = 0;
   private headline = 'SE TERMINÓ EL TIEMPO';
+  private stats?: FightStats;
   private content!: Phaser.GameObjects.Container;
   private viewport!: Phaser.Geom.Rectangle;
   private scrollY = 0;
@@ -29,9 +39,10 @@ export class Outro extends Phaser.Scene {
     this.spec = spec;
   }
 
-  init(data: { score?: number; headline?: string }): void {
+  init(data: { score?: number; headline?: string; stats?: FightStats }): void {
     this.score = data.score ?? 0;
     this.headline = data.headline ?? 'SE TERMINÓ EL TIEMPO';
+    this.stats = data.stats;
     this.scrollY = 0;
     this.dragging = false;
     this.dragMoved = false;
@@ -65,6 +76,32 @@ export class Outro extends Phaser.Scene {
         color,
       })
       .setOrigin(0.5);
+
+    let recordLine = '';
+    if (this.stats) {
+      const key = `record-${urlGameId()}${this.stats.difficulty >= 8 ? '-pro' : ''}`;
+      try {
+        const previous = Number(localStorage.getItem(key) ?? 0) || 0;
+        if (this.score > previous) {
+          localStorage.setItem(key, String(this.score));
+          recordLine = '¡NUEVO RÉCORD LOCAL!';
+        } else {
+          recordLine = `Récord local: ${previous}`;
+        }
+      } catch {
+        // sin localStorage no hay récord, el resto sigue
+      }
+      if (recordLine) {
+        this.add
+          .text(width / 2, 122, recordLine, {
+            fontFamily: FONT,
+            fontSize: '16px',
+            fontStyle: 'bold',
+            color: '#ffd166',
+          })
+          .setOrigin(0.5);
+      }
+    }
 
     const viewTop = 130;
     const viewBottom = height - 96;
@@ -174,8 +211,47 @@ export class Outro extends Phaser.Scene {
       this.dragging = false;
     });
 
+    const share = this.add
+      .text(width / 2 - 215, height - 48, '📋 COMPARTIR', {
+        fontFamily: FONT,
+        fontSize: '24px',
+        fontStyle: 'bold',
+        color: '#ffffff',
+        backgroundColor: '#218c5b',
+        padding: { x: 30, y: 14 },
+      })
+      .setOrigin(0.5)
+      .setInteractive({ useHandCursor: true });
+
+    share.on('pointerover', () => share.setBackgroundColor('#2aa871'));
+    share.on('pointerout', () => share.setBackgroundColor('#218c5b'));
+    share.on('pointerup', () => {
+      const lines = [`${this.spec.emoji} ${this.spec.title} — ${this.score} pts`];
+      if (this.stats) {
+        lines.push(`"${this.stats.verdict}"${this.stats.difficulty >= 8 ? ' · PRO' : ''}`);
+      }
+      if (this.stats?.strip) {
+        lines.push(this.stats.strip);
+      }
+      const quote = this.spec.outro.quote;
+      if (quote) {
+        lines.push(`"${quote.text}" — ${quote.who}`);
+      }
+      try {
+        navigator.clipboard
+          .writeText(lines.join('\n'))
+          .then(() => {
+            share.setText('¡COPIADO! ✓');
+            window.setTimeout(() => share.setText('📋 COMPARTIR'), 1600);
+          })
+          .catch(() => share.setText('NO SE PUDO COPIAR'));
+      } catch {
+        share.setText('NO SE PUDO COPIAR');
+      }
+    });
+
     const replay = this.add
-      .text(width / 2, height - 48, 'VOLVER A JUGAR', {
+      .text(width / 2 + 200, height - 48, 'VOLVER A JUGAR', {
         fontFamily: FONT,
         fontSize: '28px',
         fontStyle: 'bold',
@@ -188,7 +264,7 @@ export class Outro extends Phaser.Scene {
 
     replay.on('pointerover', () => replay.setBackgroundColor('#4a9bef'));
     replay.on('pointerout', () => replay.setBackgroundColor('#2e86de'));
-    replay.on('pointerup', () => this.scene.start('Title'));
+    replay.on('pointerup', () => this.scene.start(SCENE_BY_GAME[this.spec.game]));
   }
 
   update(_time: number, delta: number): void {

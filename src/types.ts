@@ -162,6 +162,7 @@ export interface GameSpecFighter {
   crowd?: string[];
   punchWords?: string[];
   rivalWords?: string[];
+  verdicts?: string[];
   koHits: number;
   punchPoints: number;
   hitPenalty: number;

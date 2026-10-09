@@ -1,18 +1,11 @@
 import Phaser from 'phaser';
-import type { GameSpec } from '../types';
+import type { GameSpec, GameSpecFighter } from '../types';
 import { applyTheme } from '../engine/theme';
 import { createAvatarSprite, createPlayer, preloadAvatarImage, preloadPlayer, RIVAL_KEY } from '../engine/avatar';
 import { initAudio } from '../engine/audio';
+import { SCENE_BY_GAME, urlGameId } from '../engine/routes';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
-
-const SCENE_BY_GAME = {
-  catcher: 'Catcher',
-  dodge: 'Dodge',
-  search: 'Search',
-  runner: 'Runner',
-  fighter: 'Fighter',
-} as const;
 
 export class Title extends Phaser.Scene {
   private spec: GameSpec;
@@ -56,20 +49,7 @@ export class Title extends Phaser.Scene {
     });
 
     if (this.spec.game === 'fighter') {
-      const left = createPlayer(this, this.spec, cx - 64, 225, this.spec.player.image ? 112 : 84);
-      const right = createAvatarSprite(this, RIVAL_KEY, this.spec.rival.emoji, cx + 64, 225, this.spec.rival.image ? 112 : 84);
-      if ('setFlipX' in right) right.setFlipX(true);
-      for (const sprite of [left, right]) {
-        sprite.setScale(sprite.scaleY * 0.4);
-        this.tweens.add({
-          targets: sprite,
-          scaleY: sprite.scaleY * (1 / 0.4),
-          scaleX: sprite.scaleX * (1 / 0.4),
-          duration: 420,
-          delay: 180,
-          ease: 'Back.Out',
-        });
-      }
+      this.attractFight(cx, this.spec);
     } else {
       const avatar = createPlayer(this, this.spec, cx, 225, this.spec.player.image ? 130 : 96);
       avatar.setScale(avatar.scaleY * 0.4);
@@ -102,23 +82,123 @@ export class Title extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
-    const play = this.add
-      .text(cx, 530, 'JUGAR', {
-        fontFamily: FONT,
-        fontSize: '32px',
-        fontStyle: 'bold',
-        color: '#ffffff',
-        backgroundColor: '#2e86de',
-        padding: { x: 40, y: 16 },
-      })
-      .setOrigin(0.5)
-      .setInteractive({ useHandCursor: true });
+    const record = this.localRecord();
+    if (record > 0) {
+      this.add
+        .text(cx, 480, `⭐ RÉCORD LOCAL: ${record}`, {
+          fontFamily: FONT,
+          fontSize: '18px',
+          fontStyle: 'bold',
+          color: '#ffd166',
+        })
+        .setOrigin(0.5);
+    }
 
-    play.on('pointerover', () => play.setBackgroundColor('#4a9bef'));
-    play.on('pointerout', () => play.setBackgroundColor('#2e86de'));
-    play.on('pointerup', () => {
+    const start = (difficulty?: number): void => {
       initAudio(this.spec.sound === true);
-      this.scene.start(SCENE_BY_GAME[this.spec.game]);
+      this.scene.start(SCENE_BY_GAME[this.spec.game], difficulty ? { difficulty } : undefined);
+    };
+
+    if (this.spec.game === 'fighter') {
+      const play = this.add
+        .text(cx - 95, 535, 'JUGAR', {
+          fontFamily: FONT,
+          fontSize: '32px',
+          fontStyle: 'bold',
+          color: '#ffffff',
+          backgroundColor: '#2e86de',
+          padding: { x: 40, y: 16 },
+        })
+        .setOrigin(0.5)
+        .setInteractive({ useHandCursor: true });
+      play.on('pointerover', () => play.setBackgroundColor('#4a9bef'));
+      play.on('pointerout', () => play.setBackgroundColor('#2e86de'));
+      play.on('pointerup', () => start());
+
+      const pro = this.add
+        .text(cx + 110, 535, 'PRO 🔥', {
+          fontFamily: FONT,
+          fontSize: '32px',
+          fontStyle: 'bold',
+          color: '#ffffff',
+          backgroundColor: '#c0392b',
+          padding: { x: 34, y: 16 },
+        })
+        .setOrigin(0.5)
+        .setInteractive({ useHandCursor: true });
+      pro.on('pointerover', () => pro.setBackgroundColor('#e04a38'));
+      pro.on('pointerout', () => pro.setBackgroundColor('#c0392b'));
+      pro.on('pointerup', () => start(10));
+    } else {
+      const play = this.add
+        .text(cx, 530, 'JUGAR', {
+          fontFamily: FONT,
+          fontSize: '32px',
+          fontStyle: 'bold',
+          color: '#ffffff',
+          backgroundColor: '#2e86de',
+          padding: { x: 40, y: 16 },
+        })
+        .setOrigin(0.5)
+        .setInteractive({ useHandCursor: true });
+      play.on('pointerover', () => play.setBackgroundColor('#4a9bef'));
+      play.on('pointerout', () => play.setBackgroundColor('#2e86de'));
+      play.on('pointerup', () => start());
+    }
+  }
+
+  private attractFight(cx: number, spec: GameSpecFighter): void {
+    const y = 182;
+    const left = createPlayer(this, spec, cx - 160, y, 70);
+    const right = createAvatarSprite(this, RIVAL_KEY, spec.rival.emoji, cx + 160, y, 70);
+    if ('setFlipX' in right) right.setFlipX(true);
+    for (const sprite of [left, right]) {
+      sprite.setScale(sprite.scaleY * 0.4);
+      this.tweens.add({
+        targets: sprite,
+        scaleY: sprite.scaleY * (1 / 0.4),
+        scaleX: sprite.scaleX * (1 / 0.4),
+        duration: 420,
+        delay: 180,
+        ease: 'Back.Out',
+      });
+    }
+    this.tweens.add({ targets: left, x: cx + 95, duration: 1500, yoyo: true, repeat: -1, ease: 'Sine.InOut' });
+    this.tweens.add({ targets: right, x: cx - 95, duration: 1500, yoyo: true, repeat: -1, ease: 'Sine.InOut' });
+    const words = [...(spec.punchWords ?? []), ...(spec.rivalWords ?? []), '¡PUM!', '¡ZAS!'];
+    this.time.addEvent({
+      delay: 950,
+      loop: true,
+      callback: () => {
+        const comic = this.add
+          .text(cx + Phaser.Math.Between(-160, 160), y - Phaser.Math.Between(24, 58), Phaser.Utils.Array.GetRandom(words), {
+            fontFamily: FONT,
+            fontSize: '25px',
+            fontStyle: 'bold',
+            color: Phaser.Utils.Array.GetRandom(['#ffd166', '#ff6b6b', '#ffffff']),
+            stroke: '#101018',
+            strokeThickness: 4,
+            padding: { x: 5, y: 2 },
+          })
+          .setOrigin(0.5)
+          .setAlpha(0.6)
+          .setAngle(Phaser.Math.Between(-9, 9));
+        this.tweens.add({
+          targets: comic,
+          y: comic.y - 18,
+          alpha: 0,
+          duration: 780,
+          onComplete: () => comic.destroy(),
+        });
+      },
     });
+  }
+
+  private localRecord(): number {
+    try {
+      return Number(localStorage.getItem(`record-${urlGameId()}`) ?? 0) || 0;
+    } catch {
+      return 0;
+    }
   }
 }

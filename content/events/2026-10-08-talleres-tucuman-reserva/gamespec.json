@@ -9,6 +9,7 @@
   "crowd": ["🧣", "🧢", "🎒", "📣", "🍺", "🧣", "🧢", "📣", "🎒", "🍺"],
   "punchWords": ["¡AQUÍ NO!", "¡ARRÉ!", "¿VIJO?", "¡NI GARRÓN!"],
   "rivalWords": ["¡ANDÁ PA' ALLÁ!", "¡CHANGUITO!", "¡CUMPA!", "¡CHAMUYO!"],
+  "verdicts": ["Auxiliar del alambrado", "Separador oficial del brawl", "Brazo derecho de Laucha", "Leyenda del Salmoiraghi"],
   "koHits": 10,
   "punchPoints": 100,
   "hitPenalty": -75,

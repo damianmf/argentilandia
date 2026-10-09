@@ -25,7 +25,7 @@ const PUNCH_WORDS = ['¡PUM!', '¡ZAS!', '¡TROMPA!', '¡BAM!'];
 
 export class Fighter extends Phaser.Scene {
   private spec: GameSpecFighter;
-  private params: ReturnType<typeof fighterParams>;
+  private params!: ReturnType<typeof fighterParams>;
   private player!: PlayerSprite;
   private rival!: PlayerSprite;
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -43,6 +43,13 @@ export class Fighter extends Phaser.Scene {
   private crowd: Phaser.GameObjects.Text[] = [];
   private punchWords: string[] = PUNCH_WORDS;
   private rivalWords: string[] = PUNCH_WORDS;
+  private difficulty = 0;
+  private usedDifficulty = 5;
+  private log: ('p' | 'r' | 'w')[] = [];
+
+  init(data: { difficulty?: number }): void {
+    this.difficulty = data?.difficulty ?? 0;
+  }
   private scoreText!: Phaser.GameObjects.Text;
   private timeText!: Phaser.GameObjects.Text;
   private playerBar!: Phaser.GameObjects.Rectangle;
@@ -51,7 +58,6 @@ export class Fighter extends Phaser.Scene {
   constructor(spec: GameSpecFighter) {
     super('Fighter');
     this.spec = spec;
-    this.params = fighterParams(spec.difficulty);
   }
 
   preload(): void {
@@ -62,6 +68,8 @@ export class Fighter extends Phaser.Scene {
   create(): void {
     applyTheme(this, this.spec);
     const colors = hudColors(this.spec);
+    this.usedDifficulty = this.difficulty > 0 ? this.difficulty : this.spec.difficulty;
+    this.params = fighterParams(this.usedDifficulty);
     this.cursors = this.input.keyboard!.createCursorKeys();
     this.targetX = this.scale.width * 0.32;
     this.score = 0;
@@ -72,6 +80,7 @@ export class Fighter extends Phaser.Scene {
     this.playerCooldown = 0;
     this.rivalCooldown = 0;
     this.rivalRetarget = 0;
+    this.log = [];
     this.punchWords = this.spec.punchWords && this.spec.punchWords.length > 0 ? this.spec.punchWords : PUNCH_WORDS;
     this.rivalWords = this.spec.rivalWords && this.spec.rivalWords.length > 0 ? this.spec.rivalWords : PUNCH_WORDS;
 
@@ -181,6 +190,7 @@ export class Fighter extends Phaser.Scene {
     this.time.delayedCall(90, () => {
       if (this.finished) return;
       if (Math.abs(defender.x - attacker.x) < REACH + LUNGE) {
+        this.log.push(points > 0 ? 'p' : 'r');
         if (points > 0) this.rivalHp -= 1;
         else this.playerHp -= 1;
         this.score += points;
@@ -201,6 +211,7 @@ export class Fighter extends Phaser.Scene {
         if (this.rivalHp <= 0) this.finish('¡TROMPADA FINAL!');
         else if (this.playerHp <= 0) this.finish('TE ROMPIERON LA CAMISETA');
       } else {
+        if (this.log.length < 40) this.log.push('w');
         sfx.catch();
         this.comicFx(attacker.x + dir * 64, FLOOR_Y - 130, '¡FIU!', '#b8bdd1', 24);
       }
@@ -321,8 +332,29 @@ export class Fighter extends Phaser.Scene {
     this.finished = true;
     sfx.whistle();
     this.comicFx(this.scale.width / 2, 150, '🧑‍⚖️ ¡PIIIII!', '#ffffff', 58);
+    const landed = this.log.filter((entry) => entry === 'p').length;
+    const received = this.log.filter((entry) => entry === 'r').length;
+    const strip = this.log
+      .slice(0, 30)
+      .map((entry) => (entry === 'p' ? '🟦' : entry === 'r' ? '🟥' : '⬜'))
+      .join('');
+    const verdicts =
+      this.spec.verdicts && this.spec.verdicts.length === 4
+        ? this.spec.verdicts
+        : ['Novato del alambrado', 'Se hizo respetar', 'Dueño de la pelea', 'Leyenda del alambrado'];
+    const tier = this.score < 0 ? 0 : this.score < 450 ? 1 : this.score < 900 ? 2 : 3;
     this.time.delayedCall(END_DELAY, () => {
-      this.scene.start('Outro', { score: this.score, headline });
+      this.scene.start('Outro', {
+        score: this.score,
+        headline,
+        stats: {
+          landed,
+          received,
+          strip,
+          verdict: verdicts[tier],
+          difficulty: this.usedDifficulty,
+        },
+      });
     });
   }
 }
