@@ -20,6 +20,8 @@ const REACH = 95;
 const LUNGE = 20;
 const KNOCKBACK = 48;
 const END_DELAY = 700;
+const HIT_STOP = 75;
+const PUNCH_WORDS = ['¡PUM!', '¡ZAS!', '¡TROMPA!', '¡BAM!'];
 
 export class Fighter extends Phaser.Scene {
   private spec: GameSpecFighter;
@@ -37,6 +39,8 @@ export class Fighter extends Phaser.Scene {
   private rivalCooldown = 0;
   private rivalOffset = 75;
   private rivalRetarget = 0;
+  private hitStopUntil = 0;
+  private crowd: Phaser.GameObjects.Text[] = [];
   private scoreText!: Phaser.GameObjects.Text;
   private timeText!: Phaser.GameObjects.Text;
   private playerBar!: Phaser.GameObjects.Rectangle;
@@ -71,10 +75,11 @@ export class Fighter extends Phaser.Scene {
       const width = this.scale.width;
       const step = width / this.spec.crowd.length;
       this.spec.crowd.forEach((emoji, i) => {
-        this.add
+        const fan = this.add
           .text(step * i + step / 2, FLOOR_Y - 128 + (i % 2) * 26, emoji, { fontSize: '36px' })
           .setOrigin(0.5)
           .setAlpha(0.45);
+        this.crowd.push(fan);
       });
     }
 
@@ -107,6 +112,9 @@ export class Fighter extends Phaser.Scene {
 
     this.refreshBars();
 
+    sfx.bell();
+    this.comicFx(this.scale.width / 2, 180, '¡DING DING!', '#ffffff', 40);
+
     this.input.on('pointermove', (pointer: Phaser.Input.Pointer) => {
       this.targetX = pointer.x;
     });
@@ -116,6 +124,7 @@ export class Fighter extends Phaser.Scene {
 
   update(_time: number, delta: number): void {
     if (this.finished) return;
+    if (this.time.now < this.hitStopUntil) return;
     const dt = delta / 1000;
     this.elapsed += delta;
     this.playerCooldown = Math.max(0, this.playerCooldown - delta);
@@ -174,14 +183,22 @@ export class Fighter extends Phaser.Scene {
         defender.x = Phaser.Math.Clamp(defender.x + dir * KNOCKBACK, 50, this.scale.width - 50);
         this.hitFx(defender, points);
         this.cameras.main.shake(110, 0.007);
-        if (points > 0) sfx.catch();
-        else sfx.crash();
+        this.hitStopUntil = this.time.now + HIT_STOP;
+        this.crowdBounce();
+        if (points > 0) {
+          sfx.punch();
+          this.flashEdge(0xffffff, 0.12);
+        } else {
+          sfx.crash();
+          this.flashEdge(0xff3b30, 0.22);
+        }
         this.scoreText.setText(`Puntos: ${this.score}`);
         this.refreshBars();
         if (this.rivalHp <= 0) this.finish('¡TROMPADA FINAL!');
         else if (this.playerHp <= 0) this.finish('TE ROMPIERON LA CAMISETA');
       } else {
-        this.floatFx(attacker.x + dir * 62, FLOOR_Y - 120, '💨');
+        sfx.catch();
+        this.comicFx(attacker.x + dir * 64, FLOOR_Y - 130, '¡FIU!', '#b8bdd1', 24);
       }
     });
   }
@@ -193,6 +210,8 @@ export class Fighter extends Phaser.Scene {
     this.time.delayedCall(150, () => {
       if ('clearTint' in target) target.clearTint();
     });
+    const word = Phaser.Utils.Array.GetRandom(PUNCH_WORDS);
+    this.comicFx(x, y - 46, word, points > 0 ? '#ffd166' : '#ff6b6b', points > 0 ? 46 : 40);
     for (let i = 0; i < 3; i++) {
       const star = this.add
         .text(x + Phaser.Math.Between(-18, 18), y + Phaser.Math.Between(-14, 8), i === 0 ? '💥' : '⭐', {
@@ -209,8 +228,61 @@ export class Fighter extends Phaser.Scene {
         onComplete: () => star.destroy(),
       });
     }
-    const label = points > 0 ? `+${points} ¡piña!` : `${points} ¡piña recibida!`;
-    this.floatFx(x, y - 64, label);
+    const label = points > 0 ? `+${points}` : `${points}`;
+    this.floatFx(x, y + 22, label);
+  }
+
+  private comicFx(x: number, y: number, text: string, color: string, size: number): void {
+    const comic = this.add
+      .text(x, y, text, {
+        fontFamily: FONT,
+        fontSize: `${size}px`,
+        fontStyle: 'bold',
+        color,
+        stroke: '#101018',
+        strokeThickness: Math.max(4, Math.round(size / 7)),
+        padding: { x: 6, y: 2 },
+      })
+      .setOrigin(0.5)
+      .setDepth(20)
+      .setAngle(Phaser.Math.Between(-10, 10))
+      .setScale(0.3);
+    this.tweens.add({
+      targets: comic,
+      scale: 1,
+      duration: 160,
+      ease: 'Back.Out',
+      onComplete: () => {
+        this.tweens.add({
+          targets: comic,
+          y: comic.y - 26,
+          alpha: 0,
+          delay: 320,
+          duration: 420,
+          onComplete: () => comic.destroy(),
+        });
+      },
+    });
+  }
+
+  private flashEdge(color: number, alpha: number): void {
+    const flash = this.add
+      .rectangle(this.scale.width / 2, this.scale.height / 2, this.scale.width, this.scale.height, color)
+      .setDepth(30)
+      .setAlpha(alpha);
+    this.tweens.add({ targets: flash, alpha: 0, duration: 180, onComplete: () => flash.destroy() });
+  }
+
+  private crowdBounce(): void {
+    for (const fan of this.crowd) {
+      this.tweens.add({
+        targets: fan,
+        scaleY: fan.scaleY * 1.3,
+        duration: 90,
+        yoyo: true,
+        ease: 'Quad.Out',
+      });
+    }
   }
 
   private floatFx(x: number, y: number, text: string): void {
@@ -243,7 +315,8 @@ export class Fighter extends Phaser.Scene {
   private finish(headline: string): void {
     if (this.finished) return;
     this.finished = true;
-    sfx.end();
+    sfx.whistle();
+    this.comicFx(this.scale.width / 2, 150, '🧑‍⚖️ ¡PIIIII!', '#ffffff', 58);
     this.time.delayedCall(END_DELAY, () => {
       this.scene.start('Outro', { score: this.score, headline });
     });

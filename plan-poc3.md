@@ -37,6 +37,15 @@ rival IA simple. El motor no conoce la noticia.
 - Balance de arranque d5: jugador pega cada 600 ms; rival 210 px/s, pide pelea
   1 piña/segundo esperado con cooldown 950 ms; koHits 10. Pendiente de playtest
   humano como todos los recalibres.
+- **Iteración "sonido visible" (09/10, pedido del humano: impacto para gente
+  con tema de oído):** onomatopeyas de historieta por evento (¡DING DING! al
+  arrancar, ¡PUM!/¡ZAS!/¡TROMPA!/¡BAM! al conectar, rojo al recibirla, ¡FIU! al
+  fallar, 🧑‍⚖️ ¡PIIIII! con silbato al cierre), hit-stop de 75 ms, flash de
+  pantalla (blanco al conectar, rojo al recibir) y la hinchada rebota en cada
+  golpe. Audio sintetizado nuevo sin assets: thud con pitch aleatorio, campana
+  y silbato de árbitro (trill WebAudio). El texto y los emojis son los assets:
+  la capa accesible es la misma que la capa de impacto. Pendiente: exportar las
+  onomatopeyas a los otros cuatro motores.
 
 ---
 

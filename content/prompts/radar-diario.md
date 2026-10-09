@@ -59,8 +59,8 @@ ESTADO: ESPERANDO APROBACIÓN
 - Fuentes: solo URLs que estén en `candidatos.md` o verificadas al leer la nota
   (mismo outlet). No inventar URLs ni fechas: la regla de fuentes de PROJECT.md
   aplica al `Event`, no solo al outro.
-- Los pitches proponen motores ya implementados (catcher, dodge, search, runner).
-  Un pitch sin chiste jugable claro se rehace, no se aprueba.
+- Los pitches proponen motores ya implementados (catcher, dodge, search, runner,
+  fighter). Un pitch sin chiste jugable claro se rehace, no se aprueba.
 - Si ningún candidato pasa el umbral, el draft se escribe igual con
   `ESTADO: SIN CANDIDATOS`, la lista de descartes con razones, y ningún Event.
   Un día sin juego es un resultado válido del radar.

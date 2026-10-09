@@ -14,6 +14,7 @@ mecánica.
 | Versión 1 | search "LA ROJA EQUIVOCADA" (validada y publicada el 09/10 a la madrugada) |
 | Iteración | Pedido humano: "piñas y diferenciar a los del equipo" → motor fighter |
 | Versión 2 | fighter "SE ARMÓ LA PIÑA": azul vs rojo, koHits 10, difficulty 5 |
+| Iteración sonido visible (09/10) | onomatopeyas + hit-stop + flash + hinchada que rebota + thud/campana/silbato sintetizados (motor, no JSON) |
 
 ## Notas
 
