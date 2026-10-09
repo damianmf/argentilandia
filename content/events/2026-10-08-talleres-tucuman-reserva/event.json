@@ -1,0 +1,28 @@
+{
+  "id": "2026-10-08-talleres-tucuman-reserva",
+  "date": "2026-10-08",
+  "event": "El árbitro de la Reserva expulsó al Joaquín equivocado (la falta la hizo Salas, la roja fue para Soria) en la derrota de Talleres ante Atlético Tucumán, y el partido terminó en escándalo",
+  "category": "sports",
+  "actors": ["Talleres", "Atlético Tucumán", "Árbitro Valentín Ibáñez Mesa", "Lautaro Acosta", "Rodrigo Acosta"],
+  "conflict": "Roja al jugador equivocado y escándalo en la Reserva",
+  "facts": [
+    "En la fecha 12 del Torneo Proyección, Atlético Tucumán le ganó 2-0 a Talleres como visitante, en el Complejo José Salmoiraghi.",
+    "A los 4 minutos, Joaquín Salas hizo la falta, pero el árbitro Valentín Ibáñez Mesa mostró la tarjeta roja a otro jugador: Joaquín Soria, tal como lo informó el club cordobés.",
+    "Talleres terminó con nueve por la expulsión de Daniel Ribera a los 44 minutos, por exceso verbal.",
+    "En el entretiempo fueron expulsados el entrenador Rodrigo Acosta y su ayudante Lautaro Acosta por protestar.",
+    "El primer gol de Atlético Tucumán, de Germán Vallejo, se convalidó aunque las imágenes no permitieron confirmar si la pelota entró completa: el remate pegó en el travesaño y picó cerca de la línea.",
+    "Al final del partido se produjo una batalla campal junto al alambrado, con golpes de puño y sillazos; el médico de Talleres fue golpeado con una silla y los agresores fueron retirados por sus propios dirigidos."
+  ],
+  "sources": [
+    {
+      "title": "El escándalo a las piñas entre Talleres y Atlético Tucumán por el torneo de Reserva",
+      "url": "https://www.lanacion.com.ar/deportes/futbol/el-escandalo-a-las-pinas-entre-talleres-y-atletico-tucuman-por-el-torneo-de-reserva-nid08102026/",
+      "outlet": "La Nación",
+      "type": "media"
+    }
+  ],
+  "virality": 8,
+  "gameability": 9,
+  "humorPotential": 8,
+  "shareability": 8
+}

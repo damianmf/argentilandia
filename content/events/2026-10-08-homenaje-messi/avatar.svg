@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <g stroke="#9aa0b5" stroke-width="5" stroke-linecap="round" opacity="0.7">
+    <line x1="14" y1="34" x2="44" y2="34"/>
+    <line x1="116" y1="34" x2="146" y2="34"/>
+  </g>
+  <rect x="24" y="40" width="10" height="18" fill="#39415a"/>
+  <rect x="126" y="40" width="10" height="18" fill="#39415a"/>
+  <rect x="34" y="54" width="92" height="58" rx="16" fill="#e8edf4"/>
+  <rect x="34" y="54" width="92" height="20" rx="10" fill="#3a6fd8"/>
+  <circle cx="62" cy="88" r="12" fill="#ffffff"/>
+  <circle cx="98" cy="88" r="12" fill="#ffffff"/>
+  <circle cx="64" cy="90" r="4.5" fill="#22314a"/>
+  <circle cx="96" cy="90" r="4.5" fill="#22314a"/>
+  <ellipse cx="80" cy="104" rx="7" ry="5" fill="#22314a"/>
+  <g transform="rotate(-14 80 122)">
+    <rect x="66" y="112" width="28" height="18" rx="4" fill="#22314a"/>
+    <circle cx="80" cy="121" r="6" fill="#6fb7ff"/>
+  </g>
+  <circle cx="137" cy="108" r="10" fill="#ffffff"/>
+  <path d="M137 100 l4 6 -4 6 -4 -6 z" fill="#22314a"/>
+  <path d="M146 58 q5 10 0 14 q-6 -4 0 -14" fill="#6fb7ff"/>
+</svg>

@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-08-homenaje-messi",
+  "date": "2026-10-08",
+  "event": "La productora del homenaje a Messi en el Monumental reconoció fallas técnicas (pantalla ausente, shows laterales, sonido cortado, drones con la pierna derecha) y apuntó contra River, en un nuevo round entre la AFA y el club",
+  "category": "sports",
+  "actors": ["AFA", "River Plate", "Marketing Sports (productora)", "Lionel Messi"],
+  "conflict": "Fallas del homenaje a Messi terminan en cruce productora-River",
+  "facts": [
+    "La pantalla LED gigante del Monumental ya no estaba en el homenaje: se desmontó entre comienzos de septiembre y el 13/09 por las obras del estadio.",
+    "Los shows musicales se montaron en espacios laterales, junto a los bancos de suplentes y detrás de un vallado: la mayoría de las 85.000 personas no veía a los artistas.",
+    "El sonido se cortó de golpe durante la presentación de Sergio Torres (Grupo Cali), que no terminó su primer tema.",
+    "El show de drones arrancó con el logo de un sponsor y mostró una silueta de Messi pateando con la pierna derecha, siendo zurdo.",
+    "La productora Marketing Sports, contratada por la AFA, atribuyó las fallas a River: sin autorización de pantalla alternativa ni escenario central, y con sonido y suministro eléctrico a cargo del club. River no respondió."
+  ],
+  "sources": [
+    {
+      "title": "La despedida de Messi: la productora explicó las fallas del homenaje y apuntó contra River",
+      "url": "https://www.lanacion.com.ar/deportes/la-despedida-de-messi-la-productora-explico-las-fallas-del-homenaje-y-apunto-contra-river-nid08102026/",
+      "outlet": "La Nación",
+      "type": "media"
+    },
+    {
+      "title": "La despedida de Lionel Messi provocó un nuevo round entre la AFA y River: la explicación de los desperfectos técnicos en el Monumental",
+      "url": "https://www.clarin.com/deportes/despedida-lionel-messi-provoco-nuevo-round-afa-river-explicacion-desperfectos-tecnicos-monumental_0_eXk5ckrVwT.html",
+      "outlet": "Clarín",
+      "type": "media"
+    }
+  ],
+  "virality": 9,
+  "gameability": 7,
+  "humorPotential": 7,
+  "shareability": 9
+}

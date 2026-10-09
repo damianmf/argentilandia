@@ -1,0 +1,76 @@
+{
+  "game": "search",
+  "title": "LA ROJA EQUIVOCADA",
+  "emoji": "🟥🕵️",
+  "duration": 45,
+  "intro": "A los 4 minutos hizo la falta Salas, pero la roja se la comió Soria. Vos sos el árbitro de la Reserva: encontrá todas las polémicas del partido antes del final y no toques al inocente, que ya hubo un equivocado.",
+  "player": { "emoji": "🕵️", "label": "Árbitro de la Reserva", "image": "avatar.svg" },
+  "grid": { "width": 8, "height": 6 },
+  "find": [
+    { "emoji": "🧑‍🦱", "label": "La falta de Salas", "points": 200 },
+    { "emoji": "🟥", "label": "Roja al otro Joaquín", "points": 100 },
+    { "emoji": "⚽", "label": "Gol picado en la línea", "points": 150 },
+    { "emoji": "🥅", "label": "Penal al travesaño", "points": 120 },
+    { "emoji": "😤", "label": "Exceso verbal", "points": 90 },
+    { "emoji": "👔", "label": "DT expulsado", "points": 80 }
+  ],
+  "traps": [
+    { "emoji": "🧑", "label": "Soria, el inocente", "points": -100 },
+    { "emoji": "✅", "label": "Jugada limpia", "points": -60 },
+    { "emoji": "🤝", "label": "Saludo entre rivales", "points": -50 }
+  ],
+  "maxTouches": 3,
+  "difficulty": 5,
+  "theme": {
+    "background": "#0e2a18",
+    "hud": { "score": "#ffd166", "time": "#a8d8b0" }
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "Atlético Tucumán le ganó 2-0 a Talleres por la fecha 12 del Torneo Proyección, pero el partido se lo llevó el árbitro: a los 4 minutos, Joaquín Salas hizo la falta y Valentín Ibáñez Mesa le mostró la roja al otro Joaquín, Soria, tal como lo denunció el club cordobés. Talleres terminó con nueve, el DT Rodrigo Acosta y su hermano Lautaro se fueron expulsados en el entretiempo por protestar, y el gol de Vallejo se convalidó aunque las imágenes no mostraron si la pelota entró. Al final hubo una batalla campal junto al alambrado, con sillazos.",
+    "quote": {
+      "text": "El gran culpable de todo es el referí",
+      "who": "Lautaro Acosta, histórico mediocampista de Talleres, a TyC Sports",
+      "source": "https://www.lanacion.com.ar/deportes/futbol/el-escandalo-a-las-pinas-entre-talleres-y-atletico-tucuman-por-el-torneo-de-reserva-nid08102026/"
+    },
+    "moments": [
+      {
+        "emoji": "🟥",
+        "text": "4': la falta fue de Joaquín Salas, pero la roja fue para Joaquín Soria, según denunció Talleres",
+        "source": "https://www.lanacion.com.ar/deportes/futbol/el-escandalo-a-las-pinas-entre-talleres-y-atletico-tucuman-por-el-torneo-de-reserva-nid08102026/"
+      },
+      {
+        "emoji": "🥅",
+        "text": "Jeremías Gallardo erró un penal por encima del travesaño",
+        "source": "https://www.lanacion.com.ar/deportes/futbol/el-escandalo-a-las-pinas-entre-talleres-y-atletico-tucuman-por-el-torneo-de-reserva-nid08102026/"
+      },
+      {
+        "emoji": "⚽",
+        "text": "El gol de Germán Vallejo se convalidó con la pelota picando cerca de la línea, sin imágenes claras",
+        "source": "https://www.lanacion.com.ar/deportes/futbol/el-escandalo-a-las-pinas-entre-talleres-y-atletico-tucuman-por-el-torneo-de-reserva-nid08102026/"
+      },
+      {
+        "emoji": "🪑",
+        "text": "Al final hubo una batalla campal junto al alambrado: el médico de Talleres fue golpeado con una silla",
+        "source": "https://www.lanacion.com.ar/deportes/futbol/el-escandalo-a-las-pinas-entre-talleres-y-atletico-tucuman-por-el-torneo-de-reserva-nid08102026/"
+      }
+    ],
+    "facts": [
+      "En la fecha 12 del Torneo Proyección, Atlético Tucumán le ganó 2-0 a Talleres como visitante, en el Complejo José Salmoiraghi.",
+      "A los 4 minutos, Joaquín Salas hizo la falta, pero el árbitro Valentín Ibáñez Mesa mostró la tarjeta roja a otro jugador: Joaquín Soria, tal como lo informó el club cordobés.",
+      "Talleres terminó con nueve por la expulsión de Daniel Ribera a los 44 minutos, por exceso verbal.",
+      "En el entretiempo fueron expulsados el entrenador Rodrigo Acosta y su ayudante Lautaro Acosta por protestar.",
+      "El primer gol de Atlético Tucumán, de Germán Vallejo, se convalidó aunque las imágenes no permitieron confirmar si la pelota entró completa.",
+      "Al final del partido se produjo una batalla campal junto al alambrado, con golpes de puño y sillazos; el médico de Talleres fue golpeado con una silla."
+    ],
+    "fiction": "En el juego sos el árbitro revisando una grilla de jugadas y perdés si tocás al inocente; en el partido el error fue uno solo y no se sabe si fue por el nombre o por la persona, porque el árbitro no dio versiones. Las piñas, los sillazos y la pelea real no están en el juego: hubo gente golpeada de verdad, y eso queda fuera de broma.",
+    "sources": [
+      {
+        "title": "El escándalo a las piñas entre Talleres y Atlético Tucumán por el torneo de Reserva",
+        "url": "https://www.lanacion.com.ar/deportes/futbol/el-escandalo-a-las-pinas-entre-talleres-y-atletico-tucuman-por-el-torneo-de-reserva-nid08102026/",
+        "outlet": "La Nación",
+        "type": "media"
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "game": "catcher",
+  "title": "PATEÓ CON LA DERECHA",
+  "emoji": "🛸⚽",
+  "duration": 45,
+  "intro": "El homenaje a Messi falló en todo: la pantalla no estaba, el sonido se cortó y el drone lo mostró pateando con la derecha, siendo zurdo. Vos sos ese drone: agarrá las tomas de la zurda y no te confundás de patita, que hay 85.000 testigos.",
+  "player": { "emoji": "🛸", "label": "El drone despistado", "image": "avatar.svg" },
+  "catch": [
+    { "emoji": "⚽", "label": "Zurda de Messi", "points": 100, "weight": 3 },
+    { "emoji": "🎬", "label": "Toma que salió bien", "points": 150, "weight": 2 }
+  ],
+  "avoid": [
+    { "emoji": "🦵", "label": "Pierna derecha", "points": -75, "weight": 2 },
+    { "emoji": "🔌", "label": "Corte de luz", "points": -50, "weight": 2 }
+  ],
+  "special": [
+    { "emoji": "📺", "label": "La pantalla no estaba", "points": -200, "weight": 1, "effect": "none" }
+  ],
+  "difficulty": 5,
+  "theme": {
+    "background": "#101a33",
+    "decor": [
+      { "emoji": "🌙", "x": 10, "y": 10, "size": 22, "alpha": 0.5 },
+      { "emoji": "🏟️", "x": 6, "y": 30, "size": 60, "alpha": 0.35 },
+      { "emoji": "🎆", "x": 92, "y": 20, "size": 44, "alpha": 0.4 },
+      { "emoji": "🎥", "x": 88, "y": 72, "size": 36, "alpha": 0.3 }
+    ]
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "El homenaje a Lionel Messi en el Monumental quedó tapado por los desperfectos: la pantalla gigante ya no estaba (la desmontaron por las obras del estadio), los shows quedaron en laterales detrás de un vallado, el sonido se cortó en plena presentación y los drones mostraron a Messi pateando con la derecha, siendo zurdo. La productora del espectáculo, Marketing Sports, contratada por la AFA, salió dos días después a apuntar contra River: dice que el club no autorizó la pantalla alternativa ni el escenario central y que el corte eléctrico fue provisto por River. River no respondió.",
+    "quote": {
+      "text": "Durante el primer tema se produjo un corte en el suministro eléctrico provisto por el Club Atlético River Plate, que dejó sin continuidad este emotivo momento",
+      "who": "Marketing Sports, la productora del homenaje, en el comunicado con el que apuntó contra River",
+      "source": "https://www.lanacion.com.ar/deportes/la-despedida-de-messi-la-productora-explico-las-fallas-del-homenaje-y-apunto-contra-river-nid08102026/"
+    },
+    "moments": [
+      {
+        "emoji": "📺",
+        "text": "La pantalla LED del Monumental ya no estaba: se desmontó por las obras antes del homenaje",
+        "source": "https://www.lanacion.com.ar/deportes/la-despedida-de-messi-la-productora-explico-las-fallas-del-homenaje-y-apunto-contra-river-nid08102026/"
+      },
+      {
+        "emoji": "🎤",
+        "text": "Los shows quedaron en espacios laterales, detrás de un vallado: la mayoría de las 85.000 personas no veía nada",
+        "source": "https://www.lanacion.com.ar/deportes/la-despedida-de-messi-la-productora-explico-las-fallas-del-homenaje-y-apunto-contra-river-nid08102026/"
+      },
+      {
+        "emoji": "🔊",
+        "text": "El sonido se cortó durante el primer tema de Grupo Cali y la presentación quedó sin continuidad",
+        "source": "https://www.lanacion.com.ar/deportes/la-despedida-de-messi-la-productora-explico-las-fallas-del-homenaje-y-apunto-contra-river-nid08102026/"
+      },
+      {
+        "emoji": "🛸",
+        "text": "El show de drones mostró una silueta de Messi pateando con la pierna derecha, siendo zurdo",
+        "source": "https://www.lanacion.com.ar/deportes/la-despedida-de-messi-la-productora-explico-las-fallas-del-homenaje-y-apunto-contra-river-nid08102026/"
+      }
+    ],
+    "facts": [
+      "La pantalla LED gigante del Monumental ya no estaba en el homenaje: se desmontó por las obras del estadio.",
+      "Los shows musicales se montaron en espacios laterales, junto a los bancos de suplentes y detrás de un vallado: la mayoría de las 85.000 personas no veía a los artistas.",
+      "El sonido se cortó de golpe durante la presentación de Sergio Torres (Grupo Cali), que no terminó su primer tema.",
+      "El show de drones arrancó con el logo de un sponsor y mostró una silueta de Messi pateando con la pierna derecha, siendo zurdo.",
+      "La productora Marketing Sports, contratada por la AFA, atribuyó las fallas a River: sin autorización de pantalla alternativa ni escenario central, y con sonido y suministro eléctrico a cargo del club. River no respondió."
+    ],
+    "fiction": "En el juego el drone es un personaje que agarra tomas que caen del cielo y las zurdas llueven: la fuente no explica por qué el show mostró la pierna derecha, y acá la culpa es toda del que juega. El cruce productora-River es real y queda en el outro; el juego no se moja entre ellos: la única culpable es tu mano.",
+    "sources": [
+      {
+        "title": "La despedida de Messi: la productora explicó las fallas del homenaje y apuntó contra River",
+        "url": "https://www.lanacion.com.ar/deportes/la-despedida-de-messi-la-productora-explico-las-fallas-del-homenaje-y-apunto-contra-river-nid08102026/",
+        "outlet": "La Nación",
+        "type": "media"
+      },
+      {
+        "title": "La despedida de Lionel Messi provocó un nuevo round entre la AFA y River: la explicación de los desperfectos técnicos en el Monumental",
+        "url": "https://www.clarin.com/deportes/despedida-lionel-messi-provoco-nuevo-round-afa-river-explicacion-desperfectos-tecnicos-monumental_0_eXk5ckrVwT.html",
+        "outlet": "Clarín",
+        "type": "media"
+      }
+    ]
+  }
+}
