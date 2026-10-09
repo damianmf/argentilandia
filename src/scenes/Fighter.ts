@@ -41,6 +41,8 @@ export class Fighter extends Phaser.Scene {
   private rivalRetarget = 0;
   private hitStopUntil = 0;
   private crowd: Phaser.GameObjects.Text[] = [];
+  private punchWords: string[] = PUNCH_WORDS;
+  private rivalWords: string[] = PUNCH_WORDS;
   private scoreText!: Phaser.GameObjects.Text;
   private timeText!: Phaser.GameObjects.Text;
   private playerBar!: Phaser.GameObjects.Rectangle;
@@ -70,6 +72,8 @@ export class Fighter extends Phaser.Scene {
     this.playerCooldown = 0;
     this.rivalCooldown = 0;
     this.rivalRetarget = 0;
+    this.punchWords = this.spec.punchWords && this.spec.punchWords.length > 0 ? this.spec.punchWords : PUNCH_WORDS;
+    this.rivalWords = this.spec.rivalWords && this.spec.rivalWords.length > 0 ? this.spec.rivalWords : PUNCH_WORDS;
 
     if (this.spec.crowd && this.spec.crowd.length > 0) {
       const width = this.scale.width;
@@ -210,7 +214,7 @@ export class Fighter extends Phaser.Scene {
     this.time.delayedCall(150, () => {
       if ('clearTint' in target) target.clearTint();
     });
-    const word = Phaser.Utils.Array.GetRandom(PUNCH_WORDS);
+    const word = Phaser.Utils.Array.GetRandom(points > 0 ? this.punchWords : this.rivalWords);
     this.comicFx(x, y - 46, word, points > 0 ? '#ffd166' : '#ff6b6b', points > 0 ? 46 : 40);
     for (let i = 0; i < 3; i++) {
       const star = this.add

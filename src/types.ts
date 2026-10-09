@@ -160,6 +160,8 @@ export interface GameSpecFighter {
   player: PlayerSpec;
   rival: PlayerSpec;
   crowd?: string[];
+  punchWords?: string[];
+  rivalWords?: string[];
   koHits: number;
   punchPoints: number;
   hitPenalty: number;

@@ -7,6 +7,8 @@
   "player": { "emoji": "😤", "label": "El azul de Talleres", "image": "avatar.svg" },
   "rival": { "emoji": "😠", "label": "El rojo del Decano", "image": "rival.svg" },
   "crowd": ["🧣", "🧢", "🎒", "📣", "🍺", "🧣", "🧢", "📣", "🎒", "🍺"],
+  "punchWords": ["¡AQUÍ NO!", "¡ARRÉ!", "¿VIJO?", "¡NI GARRÓN!"],
+  "rivalWords": ["¡ANDÁ PA' ALLÁ!", "¡CHANGUITO!", "¡CUMPA!", "¡CHAMUYO!"],
   "koHits": 10,
   "punchPoints": 100,
   "hitPenalty": -75,

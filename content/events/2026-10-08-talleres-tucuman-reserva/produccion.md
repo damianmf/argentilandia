@@ -15,6 +15,7 @@ mecánica.
 | Iteración | Pedido humano: "piñas y diferenciar a los del equipo" → motor fighter |
 | Versión 2 | fighter "SE ARMÓ LA PIÑA": azul vs rojo, koHits 10, difficulty 5 |
 | Iteración sonido visible (09/10) | onomatopeyas + hit-stop + flash + hinchada que rebota + thud/campana/silbato sintetizados (motor, no JSON) |
+| Iteración latiguillos (09/10) | `punchWords` cordobeses (¡AQUÍ NO!, ¡ARRÉ!, ¿VIJO?, ¡NI GARRÓN!) y `rivalWords` norteños (¡ANDÁ PA' ALLÁ!, ¡CHANGUITO!, ¡CUMPA!, ¡CHAMUYO!): lo que grita cada lado al conectar es contenido del GameSpec |
 
 ## Notas
 

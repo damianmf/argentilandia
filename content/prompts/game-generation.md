@@ -82,6 +82,12 @@ el shape de su branch en `src/types.ts` (acá el ejemplo con catcher):
   deformar. `outro.fiction` nombra explícitamente qué parte del juego es invento.
 - `outro.sources` no usa placeholders (eso era solo para el demo): URLs reales.
 - Etiquetas (`label`) cortas: máximo ~22 caracteres, se leen en pleno juego.
+- **Latiguillos regionales (solo fighter, `punchWords`/`rivalWords`)**: si el evento
+  enfrenta identidades regionales claras (provincias, ciudades), cargá 3–4 gritos
+  autóctonos por lado, cortos, en mayúsculas, afectuosos (slang sí, insulto a nadie).
+  Lo grita el lado que conecta la piña: `punchWords` es el jugador, `rivalWords` el
+  rival. Si no hay identidad regional, omití los campos: el motor cae a las
+  onomatopeyas genéricas (¡PUM!, ¡ZAS!).
 - Pesos sugeridos: `catch` 2–3, `avoid` 2, `special` 1. Puntos positivos 50–150,
   negativos −30 a −200 (el special pega más fuerte).
 - `duration` 30–90 s. `difficulty` arranca en `5` (default de POC 2) y se calibra

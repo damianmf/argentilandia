@@ -192,6 +192,8 @@ export const gameSpecFighterSchema: z.ZodType<GameSpecFighter> = z.object({
   player: playerSchema,
   rival: playerSchema,
   crowd: z.array(z.string().min(1)).optional(),
+  punchWords: z.array(z.string().min(1)).optional(),
+  rivalWords: z.array(z.string().min(1)).optional(),
   koHits: z.number().int().min(1),
   punchPoints: z.number(),
   hitPenalty: z.number(),
