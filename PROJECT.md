@@ -43,6 +43,7 @@ El plan por fases vive en [plan-poc2.md](plan-poc2.md). Decisiones tomadas al ab
 | Motor fighter | POC 3 se abre por pedido de iteración: el humano quiere el evento Talleres–Tucumán como juego de piñas con equipos diferenciables. Primer slice: escena 1v1 de caricatura (SVGs por kit, estrellitas, knockback), schema + tabla de dificultad. Las piñas de caricatura pasan del texto editorial a mecánica |
 | Gráfica | Se mantiene la regla de cero assets: la "mejor gráfica" es diferenciación (camisetas) + feedback (partículas, shake), que es código, no producción de arte |
 | Pendiente | Motor `kick` (apuntar/patada con temporizador) propuesto para los chistes del homenaje a Messi ("errarle con la derecha"); ver plan-poc3.md |
+| Personajes públicos | Se autoriza el muñeco de atributos para cargos públicos en ejercicio, actuando como cargo: símbolos del cargo y rasgos icónicos (banda, patillas), nunca foto ni rostro, sátira a la política y no a la persona. Regla escrita en linea-editorial.md; primer caso: SE REMATA EL PAÍS (privatización de AySA) |
 
 ## Entregable Slice 0 — definición de listo
 

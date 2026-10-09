@@ -1,0 +1,78 @@
+{
+  "game": "catcher",
+  "title": "SE REMATA EL PAÍS",
+  "emoji": "🔨💧",
+  "duration": 45,
+  "intro": "Adjudicaron AySA por 30 años y el remate no para: sos el Presidente con el martillo y el país entero cae del cielo. Agarrá cada empresa antes de que se enfríe la oferta y esquivá lo que frena el martillo. ¡Se vende, señores!",
+  "player": { "emoji": "🔨", "label": "Milei, el rematador", "image": "avatar.svg" },
+  "catch": [
+    { "emoji": "💧", "label": "AySA, 30 años", "points": 100, "weight": 3 },
+    { "emoji": "🚆", "label": "Trenes", "points": 150, "weight": 2 },
+    { "emoji": "⚡", "label": "Energía", "points": 150, "weight": 2 },
+    { "emoji": "✈️", "label": "Aerolíneas", "points": 200, "weight": 1 }
+  ],
+  "avoid": [
+    { "emoji": "🚩", "label": "Banderazo", "points": -50, "weight": 2 },
+    { "emoji": "📋", "label": "Amparo judicial", "points": -75, "weight": 2 }
+  ],
+  "special": [
+    { "emoji": "🚱", "label": "33% sin cloacas", "points": -200, "weight": 1, "effect": "none" }
+  ],
+  "difficulty": 5,
+  "theme": {
+    "background": "#2f2416",
+    "decor": [
+      { "emoji": "🔨", "x": 88, "y": 14, "size": 44, "alpha": 0.5 },
+      { "emoji": "🏛️", "x": 7, "y": 28, "size": 56, "alpha": 0.3 },
+      { "emoji": "💰", "x": 91, "y": 66, "size": 36, "alpha": 0.3 }
+    ]
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "Se abrieron los sobres y quedó adjudicada la concesión de AySA por al menos 30 años: el consorcio encabezado por Rowing S.A. (con capitales de Brasil y Países Bajos) ofreció 340,2 millones de dólares por el 90% de las acciones, casi 20% más que Grupo Roggio. El Ministerio de Economía celebró el resultado llamando a AySA \"un modelo de disfunción administrativa\" y espera los dólares antes de fin de año. La toma de control se concretaría entre enero y febrero de 2027. AySA le da agua a 14 millones de personas del AMBA, donde un tercio de la zona todavía no tiene cloacas.",
+    "quote": {
+      "text": "AySA era un modelo de disfunción administrativa",
+      "who": "Ministerio de Economía, en la publicación oficial del resultado del remate",
+      "source": "https://www.infobae.com/economia/2026/10/09/cuando-ingresaran-los-dolares-de-la-privatizacion-de-aysa-y-que-efecto-tendran-en-el-programa-financiero/"
+    },
+    "moments": [
+      {
+        "emoji": "💧",
+        "text": "Sobres abiertos: USD 340,2 millones por el 90% de las acciones de AySA, concesión de 30 años",
+        "source": "https://www.infobae.com/economia/2026/10/09/cuando-ingresaran-los-dolares-de-la-privatizacion-de-aysa-y-que-efecto-tendran-en-el-programa-financiero/"
+      },
+      {
+        "emoji": "🥈",
+        "text": "Grupo Roggio quedó a casi 20%: ofreció USD 285 millones",
+        "source": "https://www.infobae.com/economia/2026/10/09/cuando-ingresaran-los-dolares-de-la-privatizacion-de-aysa-y-que-efecto-tendran-en-el-programa-financiero/"
+      },
+      {
+        "emoji": "📅",
+        "text": "La toma de control se concretaría entre enero y febrero de 2027",
+        "source": "https://www.infobae.com/economia/2026/10/09/cuando-ingresaran-los-dolares-de-la-privatizacion-de-aysa-y-que-efecto-tendran-en-el-programa-financiero/"
+      },
+      {
+        "emoji": "🚱",
+        "text": "AySA atiende a 14 millones de personas del AMBA; un tercio de la zona aún sin agua y cloacas",
+        "source": "https://www.infobae.com/economia/2026/10/09/cuando-ingresaran-los-dolares-de-la-privatizacion-de-aysa-y-que-efecto-tendran-en-el-programa-financiero/"
+      }
+    ],
+    "facts": [
+      "Se adjudicó la concesión de AySA por al menos 30 años, extensibles 10 más.",
+      "El consorcio encabezado por Rowing S.A. ofreció USD 340,2 millones por el 90% de las acciones; Grupo Roggio se quedó a casi 20%, con USD 285 millones.",
+      "La toma de control se concretaría entre enero y febrero de 2027; Economía espera los dólares antes de fin de año.",
+      "El Ministerio de Economía publicó que \"AySA era un modelo de disfunción administrativa\".",
+      "AySA brinda servicio a 14 millones de habitantes del AMBA, donde un tercio de la zona aún no tiene acceso a agua y cloacas.",
+      "Entre 2006 y 2023 AySA recibió más de USD 13.400 millones en transferencias del Tesoro."
+    ],
+    "fiction": "El muñeco del juego no es una persona: es la caricatura del cargo de presidente, con patillas y banda, como en las editoriales políticas de los diarios de hace un siglo. Que TODO el país esté en remate es el chiste: lo confirmado es la concesión de AySA; trenes, energía y aerolíneas que caen del cielo no están en venta ninguna. Y el remate real fue con sobres y una comisión evaluadora, no a los gritos con martillo.",
+    "sources": [
+      {
+        "title": "Cuándo ingresarán los dólares de la privatización de AySA y qué efecto tendrán en el programa financiero",
+        "url": "https://www.infobae.com/economia/2026/10/09/cuando-ingresaran-los-dolares-de-la-privatizacion-de-aysa-y-que-efecto-tendran-en-el-programa-financiero/",
+        "outlet": "Infobae",
+        "type": "media"
+      }
+    ]
+  }
+}

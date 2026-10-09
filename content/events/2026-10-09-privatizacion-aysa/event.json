@@ -1,0 +1,28 @@
+{
+  "id": "2026-10-09-privatizacion-aysa",
+  "date": "2026-10-09",
+  "event": "Se adjudicó la concesión de AySA por 30 años: el consorcio encabezado por Rowing S.A. ofreció USD 340,2 millones por el 90% de las acciones, 20% más que Grupo Roggio",
+  "category": "politics",
+  "actors": ["Ministerio de Economía", "AySA", "Consorcio Rowing S.A.", "Grupo Roggio"],
+  "conflict": "Remate de la empresa de agua del AMBA por 340 millones de dólares",
+  "facts": [
+    "Se abrieron los sobres con ofertas económicas y se adjudicó la concesión de AySA por al menos 30 años, extensibles 10 más.",
+    "El consorcio ganador, encabezado por Rowing S.A. (con Transclor S.A., Arcos Saneamento e Participações del Grupo Equipav brasileño y PHX Aqua de Países Bajos), ofreció USD 340,2 millones por el 90% de las acciones.",
+    "Superó por casi 20% al otro finalista: Grupo Roggio ofreció USD 285 millones.",
+    "La toma de control se concretaría entre enero y febrero de 2027, y Economía espera que los dólares ingresen al Tesoro antes de fin de año.",
+    "El Ministerio de Economía publicó que \"AySA era un modelo de disfunción administrativa\".",
+    "AySA brinda servicio a 14 millones de habitantes del AMBA, donde un tercio de la zona aún no tiene acceso a agua y cloacas; entre 2006 y 2023 recibió más de USD 13.400 millones en transferencias del Tesoro."
+  ],
+  "sources": [
+    {
+      "title": "Cuándo ingresarán los dólares de la privatización de AySA y qué efecto tendrán en el programa financiero",
+      "url": "https://www.infobae.com/economia/2026/10/09/cuando-ingresaran-los-dolares-de-la-privatizacion-de-aysa-y-que-efecto-tendran-en-el-programa-financiero/",
+      "outlet": "Infobae",
+      "type": "media"
+    }
+  ],
+  "virality": 8,
+  "gameability": 8,
+  "humorPotential": 7,
+  "shareability": 8
+}

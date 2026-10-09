@@ -31,6 +31,24 @@ a las **situaciones**, nunca a las personas.
 - **Ficción presentada como hecho**: la separación juego/outro es sagrada; el outro
   dice siempre qué parte es invento (regla de fuentes de PROJECT.md).
 
+## Personajes de carga pública (decisión 09/10)
+
+Quien ejerce un **cargo público electo, actuando en su rol público**, puede
+aparecer como **muñeco de atributos**: la tradición de la caricatura política
+argentina (Landrú, Nik, Caras y Caretas).
+
+1. **Atributos, nunca rostro**: el personaje se reconoce por símbolos del cargo y
+   rasgos icónicos de caricatura (banda presidencial, patillas, uniforme,
+   motosierra). Prohibido reproducir el rostro real o usar fotos.
+2. **La sátira va a la política, no a la persona**: se satiriza la medida, el
+   acto, la situación de gobierno. Nunca la vida privada, el cuerpo ni la familia.
+3. **Sin insultos ni ensañamiento**: el muñeco puede ser ridículo por la situación
+   (rematador, cantor, corredor), no por degradación de la persona.
+4. **Fuera del cargo público o en hecho privado**: rige el no-likeness de siempre
+   (deportistas, vecinos, víctimas: roles genéricos, no retratos).
+5. En el `outro.fiction` se aclara siempre que el muñeco es la caricatura del
+   cargo, y qué parte es exageración satírica versus hecho confirmado.
+
 ## Reglas para la generación de avatares
 
 Los avatares son **caricaturas de situación, no retratos de la persona**:
