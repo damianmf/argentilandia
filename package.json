@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && npm run validate && npm run index && npm run site",
+    "site": "node scripts/build-site.mjs",
     "preview": "vite preview",
     "validate": "node scripts/validate.mjs",
     "radar": "node scripts/radar.mjs",
@@ -16,6 +17,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "sharp": "^0.35.5",
     "typescript": "^5.9.3",
     "vite": "^8.3.1"
   }

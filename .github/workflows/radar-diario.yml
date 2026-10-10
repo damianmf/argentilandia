@@ -1,0 +1,50 @@
+# Radar hospedado — Etapa 1 del plan POC 3.
+#
+# Hoy corre SOLO a mano (workflow_dispatch): mientras el draft y la generación
+# sigan siendo pasos de sesión (Etapa 2), el radar diario lo hace el cron del
+# entorno. Para el corte: habilitar el `schedule` de abajo, crear el secret
+# no hace falta (radar es solo HTTP + commit).
+#
+# La generación completa en CI (draft + pasada 2 del GameSpec con LLM) se suma
+# en la Etapa 2 del plan; hasta entonces este workflow NO corre en horario.
+
+name: radar-diario
+
+on:
+  workflow_dispatch:
+    inputs:
+      fecha:
+        description: 'Fecha YYYY-MM-DD (vacío = hoy, UTC)'
+        required: false
+  # schedule:
+  #   - cron: '0 12 * * *'  # 9:00 Argentina; habilitar en el corte de la Etapa 2
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-diario
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run radar -- ${{ github.event.inputs.fecha }}
+      - name: Commit de candidatos
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/radar/
+          if git diff --cached --quiet; then
+            echo "Sin candidatos nuevos"
+          else
+            git commit -m "radar-${GITHUB_EVENT_INPUTS_FECHA:-$(date -u +%F)}"
+            git push
+          fi

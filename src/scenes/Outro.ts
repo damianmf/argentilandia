@@ -237,6 +237,11 @@ export class Outro extends Phaser.Scene {
       if (quote) {
         lines.push(`"${quote.text}" — ${quote.who}`);
       }
+      const gameId = urlGameId();
+      const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+      if (gameId && !isLocal) {
+        lines.push(`▶ Jugálo acá: ${window.location.origin}/juego/${encodeURIComponent(gameId)}/`);
+      }
       try {
         navigator.clipboard
           .writeText(lines.join('\n'))

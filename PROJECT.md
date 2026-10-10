@@ -44,6 +44,8 @@ El plan por fases vive en [plan-poc2.md](plan-poc2.md). Decisiones tomadas al ab
 | Gráfica | Se mantiene la regla de cero assets: la "mejor gráfica" es diferenciación (camisetas) + feedback (partículas, shake), que es código, no producción de arte |
 | Pendiente | Motor `kick` (apuntar/patada con temporizador) propuesto para los chistes del homenaje a Messi ("errarle con la derecha"); ver plan-poc3.md |
 | Personajes públicos | Se autoriza el muñeco de atributos para cargos públicos en ejercicio, actuando como cargo: símbolos del cargo y rasgos icónicos (banda, patillas), nunca foto ni rostro, sátira a la política y no a la persona. Regla escrita en linea-editorial.md; primer caso: SE REMATA EL PAÍS (privatización de AySA) |
+| Aprobación humana | Reintroducida el 09/10 (plan POC 3, Etapa 1): el cron de 9:00 corta en el draft esperando el OK (2 minutos). Lo publicado se des-publica con un commit: la web es estática y versionada |
+| Deploy | El sitio público se ensambla con `npm run build` (dist/ autocontenido: landings OG por juego + tarjetas PNG 1200×630 + content jugable). Hosting previsto: Cloudflare Pages; el cron de este entorno sigue pusheando hasta el corte a GitHub Actions |
 
 ## Entregable Slice 0 — definición de listo
 

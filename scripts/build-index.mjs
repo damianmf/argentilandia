@@ -173,7 +173,7 @@ const html = `<!doctype html>
     </header>
     <main class="grid">${cards.join('')}
     </main>
-    <footer>Generado por <code>npm run index</code> el ${stamp} — ${cards.length} juegos. Para jugar: <code>npm run dev</code> y abrí esta página.</footer>
+    <footer>La noticia del día, jugable — ${cards.length} juegos. Generado el ${stamp}.</footer>
   </body>
 </html>
 `;

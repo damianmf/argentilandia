@@ -26,19 +26,25 @@ pipeline full-auto con dos pasos todavía en sesión (draft y pasada 2).
 **Objetivo:** que un link de WhatsApp abra el juego del día en cualquier
 teléfono, con tarjeta rica al compartir, sin nada corriendo en tu máquina.
 
-1. **Hosting estático**: Cloudflare Pages (gratis) — `dist/` (Vite build) +
+1. [ ] **Hosting estático**: Cloudflare Pages (gratis) — `dist/` (Vite build) +
    `content/` son 100% client-side; `npm run build` + deploy por push.
-2. **Tarjetas OG por juego**: script que genera meta tags por `?game=` (title =
-   título del juego + veredicto ganador, description = intro, image = avatar en
-   PNG). Sin backend: router estático o fallback único con JS.
-3. **Cron hospedado**: GitHub Actions (gratis en repo público) corriendo
-   `npm run radar` + generación (ver etapa 2) y pusheando el commit del día.
-   Interin: el cron de este entorno sigue y pushea.
-4. **Restaurar la barrera humana pre-publicación** (runbook): el draft espera tu
-   OK (2 minutos: leer draft, sí/no); publicado lo que sale mal se des-publica
-   con un commit (la web es estática y versionada).
-5. **Métricas mínimas gratis**: Cloudflare Web Analytics (visitas, referrers).
-   El "COMPARTIR" queda local (clipboard) hasta tener un contador.
+   El build ya ensambla el dist/ autocontenido (app + content jugable + chooser
+   + `_redirects`); falta el alta en Cloudflare Pages (pasos en `docs/deploy.md`).
+2. [x] **Tarjetas OG por juego**: `scripts/build-site.mjs` genera landings
+   `/juego/<id>/` con meta tags OG (title = título, description = intro) y
+   tarjetas 1200×630 en PNG (avatar rasterizado con sharp + banda del tema; los
+   crawlers no renderizan SVG ni JS). COMPARTIR copia texto + link a la landing.
+3. [ ] **Cron hospedado**: workflow `.github/workflows/radar-diario.yml`
+   (solo manual hasta que la Etapa 2 automatice draft/generación; el schedule
+   está comentado). Interin: el cron de este entorno sigue y pushea.
+4. [x] **Restaurar la barrera humana pre-publicación**: desde el 09/10 el cron
+   de 9:00 corta en `ESPERANDO APROBACIÓN` (runbook + PROJECT.md actualizados);
+   publicado lo que sale mal se des-publica con un commit (la web es estática y
+   versionada).
+5. [ ] **Métricas mínimas gratis**: Cloudflare Web Analytics — el beacon se
+   inyecta en el build con `CLOUDFLARE_WEB_ANALYTICS_TOKEN`; falta crear el
+   sitio para obtener el token. El "COMPARTIR" queda local (clipboard) hasta
+   tener un contador.
 
 **Gate:** un contacto abre el link, elige juego, juega y lee el outro desde su
 teléfono; el share produce un link con tarjeta al re-compartirlo.

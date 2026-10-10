@@ -2,10 +2,10 @@
 
 Pipeline: **radar → draft → aprobación → generación → validación → web**.
 
-**Modo actual (desde el 08/10): FULL-AUTO.** Por decisión de iteración
-(ver PROJECT.md), la automatización produce la jornada completa sin aprobación
-humana. El humano itera sobre lo producido. La aprobación obligatoria se
-reintroduce antes de cualquier deploy.
+**Modo actual (desde el 09/10): CON APROBACIÓN.** Restaurada la barrera humana
+antes de publicar (plan POC 3, Etapa 1): la automatización produce hasta el draft
+y corta esperando tu OK (2 minutos: leer draft, sí/no). Lo que salga mal una vez
+publicado se des-publica con un commit (la web es estática y versionada).
 
 ## Qué corre solo (9:00, todos los días)
 
@@ -20,17 +20,22 @@ cualquier bloqueo:
 3. **Draft**: `content/prompts/radar-diario.md` →
    `content/radar/<fecha>/draft.md`. Si nada pasa el umbral, `ESTADO: SIN
    CANDIDATOS` y termina: día sin juego es un resultado válido.
-4. **Auto-aprobación**: `ESTADO: APROBADO (AUTO)` y elige el mejor pitch.
-5. **Generación**: pasada 2 de `game-generation.md` → `content/events/<id>/`
-   (event.json, gamespec.json con `difficulty: 5`, avatar, produccion.md).
+4. **Aprobación humana**: `ESTADO: ESPERANDO APROBACIÓN` — presenta el evento
+   recomendado + los 3 pitches y **termina la corrida sin generar**.
+5. **Generación (tras tu OK)**: respondés en la sesión con **evento + pitch**
+   (o "no"); recién ahí corre la pasada 2 de `game-generation.md` →
+   `content/events/<id>/` (event.json, gamespec.json con `difficulty: 5`,
+   avatar, produccion.md).
 6. **Validación**: `npm run validate`; si no corrige el error, borra el evento
    del día (`ESTADO: RECHAZADO POR VALIDACIÓN`) y no toca la web.
 7. **Web**: `npm run index` → card nueva en `web/index.html`.
 8. **Commit**: `jornada-<fecha>` (nunca toca tags ni commits anteriores).
 9. **Reporte** en la sesión: evento, por qué, descartes, fuente, validate/index.
 
-## Qué hace el humano (iteración)
+## Qué hace el humano (2 minutos por día + iteración)
 
+- Responder la corrida de las 9:00 con el OK: **evento + pitch** (leer el draft
+  es opcional; el mensaje de la corrida ya trae el resumen).
 - Jugar la web del día (`npm run dev` → http://localhost:5173/web/index.html) y
   anotar qué falló: tono, fuentes, dificultad, el chiste.
 - Leer los drafts (`content/radar/<fecha>/draft.md`) y los reportes de cada
@@ -40,14 +45,10 @@ cualquier bloqueo:
 - Para regenerar el radar a mano: `npm run radar [fecha]` y pedir el paso 3 del
   cron en una sesión.
 
-## Antes del deploy: volver a modo con aprobación
+## Des-publicar
 
-Cuando se decida publicar (fase opcional), restaurar la barrera humana:
-
-1. Editar el paso 4 del cron: `ESTADO: ESPERANDO APROBACIÓN`, presentar el draft
-   y terminar (no generar).
-2. La aprobación humana responde con **evento + pitch**; recién ahí se genera
-   (pasos 5–9 idénticos).
+La web es estática y versionada: lo que salió mal se des-publica con un commit
+(quitar el evento y regenerar el índice). Sin backend que apagar.
 
 ## Reglas duras
 
