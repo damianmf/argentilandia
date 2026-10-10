@@ -28,8 +28,8 @@ no valida, no hay sitio.
 
 ## Alta en Cloudflare Pages (gratis)
 
-1. Crear el repo en GitHub y pushear este proyecto (repo **público**: Actions
-   gratis y sin límite).
+1. Repo: https://github.com/damianmf/juego-de-la-actualidad (público, creado
+   el 10/10 desde el CLI; remote `origin` configurado).
 2. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git →
    elegir el repo.
    - Build command: `npm run build`
