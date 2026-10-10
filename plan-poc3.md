@@ -1,71 +1,126 @@
-# Plan de ejecución — POC 3 (fighter y lo que siga)
+# Plan — POC 3 y roadmap del producto
 
-POC 3 era "motores caros" según PROJECT.md (fighter primero). Se abre el 09/10
-por pedido de iteración del humano sobre el evento Talleres–Tucumán. Mismo
-formato que POC 2: fases con gate, checkpoint por fase. Los lineamientos de
-diseño (tono, acidez, dispositivos, elección de motor) viven en
-`docs/lineamientos-del-juego.md`: este plan define en qué orden se construye;
-esa biblia define qué se construye.
+POC 2 cerró (tag `poc-2`). Este plan cubre lo que sigue, en etapas ordenadas por
+dependencia: primero hostear (sin URL no hay "llegar a la gente"), después
+iterar la generación (el cuello de botella real), después mejorar el juego y
+recién ahí meter al usuario adentro. Los lineamientos de diseño viven en
+`docs/lineamientos-del-juego.md`.
 
----
-
-## Fase 0 — Motor fighter (1v1 de caricatura) — HECHA el 09/10
-
-**Objetivo:** quinto motor: pelea 1 contra 1 vista de lado, piñas de caricatura,
-rival IA simple. El motor no conoce la noticia.
-
-1. `fighter` en la unión discriminada: `player` vs `rival` (dos `PlayerSpec` con
-   avatar propio), `crowd` (emojis de hinchada de fondo, opcional), `koHits`
-   (piñas para ganar), `punchPoints` / `hitPenalty`.
-2. `src/scenes/Fighter.ts`: movimiento (←→ o mouse), piña (espacio o click) con
-   cooldown, reach y knockback; IA que persigue, respeta distancia y pega por
-   probabilidad; estrellitas ⭐💥, tint de golpe, screen shake; tres finales con
-   headline ("¡TROMPADA FINAL!", "TE ROMPIERON LA CAMISETA", "SE TERMINÓ EL
-   TIEMPO").
-3. Tabla de dificultad fighter: velocidad del rival, agresión (piñas/segundo en
-   rango), cooldown del rival.
-4. Title con los dos peleadores enfrentados (solo para fighter).
-
-**Gate:**
-- [x] `npm run validate` con el evento convertido (Talleres–Tucumán) en 0.
-- [x] Partida completa en browser: Title → pelea con piñas conectadas → Outro con headline.
-- [x] Los otros cuatro motores siguen funcionando (schemas y ruteo intactos).
-
-**Notas de fase 0:**
-- Sin animaciones cuadro a cuadro: la piña es un tween de estirada + partículas.
-  La regla de cero assets se mantiene; los SVG son poses fijas (una por
-  personaje), el "golpe" lo pone el código.
-- El rival se espeja con `setFlipX` (si es Text de emoji, se saltea: los emojis
-  ya miran al frente).
-- Balance de arranque d5: jugador pega cada 600 ms; rival 210 px/s, pide pelea
-  1 piña/segundo esperado con cooldown 950 ms; koHits 10. Pendiente de playtest
-  humano como todos los recalibres.
-- **Iteración "sonido visible" (09/10, pedido del humano: impacto para gente
-  con tema de oído):** onomatopeyas de historieta por evento (¡DING DING! al
-  arrancar, ¡PUM!/¡ZAS!/¡TROMPA!/¡BAM! al conectar, rojo al recibirla, ¡FIU! al
-  fallar, 🧑‍⚖️ ¡PIIIII! con silbato al cierre), hit-stop de 75 ms, flash de
-  pantalla (blanco al conectar, rojo al recibir) y la hinchada rebota en cada
-  golpe. Audio sintetizado nuevo sin assets: thud con pitch aleatorio, campana
-  y silbato de árbitro (trill WebAudio). El texto y los emojis son los assets:
-  la capa accesible es la misma que la capa de impacto. Pendiente: exportar las
-  onomatopeyas a los otros cuatro motores.
+Estado de partida (09/10): 6 motores, 9 juegos, circuito viral completo,
+pipeline full-auto con dos pasos todavía en sesión (draft y pasada 2).
 
 ---
 
-## Fase 1 — Motor kick (propuesta, no empezada)
+## Etapa 0 — Hecho antes del 09/10
 
-**Objetivo:** sexto motor para los chistes del homenaje a Messi que quedaron en
-el tintero: apuntar/patada con temporizador.
+- [x] Fighter 1v1 de caricatura + sonido visible + latiguillos (SE ARMÓ LA PIÑA).
+- [x] Whack con `noTouch` (PÉGUELE, SEÑORES).
+- [x] Circuito viral: tarjeta COMPARTIR, récord local, PRO, attract mode,
+      revancha en un tap.
+- [x] Biblia de diseño + muñecos de carga pública.
 
-- Mecánica: barra o flecha oscilante; un click fija ángulo (o potencia); la
-  pelota sale en un arco; el chiste configurable por JSON es a dónde va a parar.
-  Para PATEÓ CON LA DERECHA: el drone apunta a la zurda y el pie que patea es el
-  derecho (la pelota sale al revés).
-- JSON: objetivo, desvío del chiste, premios/aciertos, tries, difficulty.
-- Segundo chiste candidato (drones dibujando y Messi mirando): requiere adivinar
-  el dibujo del drone (ronda de "¿qué es?") o input de dibujo libre (toy, no
-  juego). Decidir antes de construir: la versión "adiviná" encaja en un search
-  variante y no necesita motor nuevo.
+---
 
-**Precondición:** cerrar el gate de POC 2 (dos jornadas + retrospectiva) o
-decidir explícitamente que POC 3 convive con ese cierre.
+## Etapa 1 — Hostearlo gratis y cerrar el loop público
+
+**Objetivo:** que un link de WhatsApp abra el juego del día en cualquier
+teléfono, con tarjeta rica al compartir, sin nada corriendo en tu máquina.
+
+1. **Hosting estático**: Cloudflare Pages (gratis) — `dist/` (Vite build) +
+   `content/` son 100% client-side; `npm run build` + deploy por push.
+2. **Tarjetas OG por juego**: script que genera meta tags por `?game=` (title =
+   título del juego + veredicto ganador, description = intro, image = avatar en
+   PNG). Sin backend: router estático o fallback único con JS.
+3. **Cron hospedado**: GitHub Actions (gratis en repo público) corriendo
+   `npm run radar` + generación (ver etapa 2) y pusheando el commit del día.
+   Interin: el cron de este entorno sigue y pushea.
+4. **Restaurar la barrera humana pre-publicación** (runbook): el draft espera tu
+   OK (2 minutos: leer draft, sí/no); publicado lo que sale mal se des-publica
+   con un commit (la web es estática y versionada).
+5. **Métricas mínimas gratis**: Cloudflare Web Analytics (visitas, referrers).
+   El "COMPARTIR" queda local (clipboard) hasta tener un contador.
+
+**Gate:** un contacto abre el link, elige juego, juega y lee el outro desde su
+teléfono; el share produce un link con tarjeta al re-compartirlo.
+
+---
+
+## Etapa 2 — El loop de generación, iterado (el foco)
+
+**Objetivo:** que generar un juego sea un proceso repetible N veces por día, con
+calidad medible, sin sesión. Hoy: radar (script, automático) → draft (LLM en
+sesión) → pasada 2 del GameSpec (LLM en sesión) → validate/index/commit
+(scripts). El centro a iterar son los dos pasos de sesión.
+
+1. **Generación en N intentos con autopuntaje**: en vez de un draft único, N
+   candidatos (N=3) que se autoevalúan contra el checklist de la casa (¿chiste
+   jugable en 4 líneas? ¿punchline en los objetos? ¿acidez correcta según el
+   medidor? ¿fuente textual para la quote?) y se elige el mejor; si ninguno pasa,
+   día sin juego (regla vigente).
+2. **Elegibilidad de la noticia como proceso**: scores de los 6 criterios
+   registrados y comparables día a día + reglas de variedad (no repetir motor ni
+   categoría dos días seguidos) + segunda fuente para hechos duros + registro de
+   descartes con razón (ya existe; hacerlo obligatorio y comparable).
+3. **Pasada 2 automatizable**: plantillas de GameSpec por motor (el shape ya
+   vive en schemas; el LLM completa el JSON) + avatares por plantillas
+   paramétricas (muñeco base + atributos del cargo/evento: banda, camiseta,
+   patillas — no arte nuevo por evento).
+4. **Human-in-the-loop barato**: el draft del día llega como notificación con
+   evento + pitch + link de preview; tu respuesta (sí/no/cambiar pitch) dispara
+   la publicación. Objetivo: tu tiempo por día ≈ 2 minutos.
+
+**Gate:** 3 jornadas consecutivas generadas sin sesión, publicadas con tu OK de
+2 minutos, `validate` en 0, y un registro comparable de scores de elegibilidad.
+
+---
+
+## Etapa 3 — El juego mejor (juice y variantes)
+
+1. **Cinemática de KO**: cámara lenta, zoom, lluvia de papelitos 🧻, cartelazo.
+   El momentazo grabable.
+2. **Onomatopeyas + hit-stop en los otros motores** (ya probado en fighter/whack).
+3. **Motor `kick`**: apuntar y errar (drone de Messi pateando con la derecha).
+4. **Motor `decide`** (idea del humano): juegos de decisión/elección — el jugador
+   gobierna y cada opción tiene consecuencia satírica; outcome con veredicto
+   ("tu gestión: vendiste el país en 3 días"). JSON-driven, sin física: barato y
+   muy citable.
+5. **Recalibres**: fighter d5 más amable; search estrenando evento real.
+
+---
+
+## Etapa 4 — El usuario dentro (ideas del humano, en orden de costo)
+
+1. **Protagonista con nombre**: input opcional al entrar ("¿cómo te llamás?") y
+   el juego/juego compartido te nombra ("Juan, Rematador Mayor del País").
+   Barato y multiplica el share personal.
+2. **Reacciones medibles** (entender la respuesta del usuario): luego del outro,
+   reacciones (😂🤡😡🤷) + opcional una pregunta. Requiere contador mínimo
+   (Workers KV gratis) — decisión de backend chico.
+3. **Desafío entre amigos**: link de revancha con tu score ("me ganás?"). Sin
+   backend: el desafío viaja dentro del texto compartido.
+4. **La noticia con voces**: comentarios de las notas/Redes como material del
+   outro ("lo que dijo la gente"). Costo medio: scraping y derechos; decidir
+   outlet por outlet.
+5. **Personalización por perfil (oficialista/opositor)** — recomendación
+   documentada: NO voltear el chiste según el perfil (duplicaría producción,
+   convierte la sátira en confirmación de bando y rompe la regla "la sátira va a
+   la situación, igual para todos"). Alternativa más ácida: mismo juego para
+   todos + en el outro "LAS DOS LECTURAS" (qué celebra un lado, qué lamenta el
+   otro) + las reacciones del punto 2 como medición real de respuesta.
+
+---
+
+## Ideas sin fecha
+
+- Fighter real (animaciones, combos) — POC original.
+- Archivo histórico jugable por fecha ("¿qué pasaba el día X?").
+- Multi-idioma para diáspora.
+- Ligas semanales con los récords.
+
+---
+
+## Orden y cierre de iteraciones
+
+Etapa 1 → Etapa 2 → Etapa 3 → Etapa 4, con los gates de arriba. Cada etapa cierra
+con commit + tag y una línea en el registro de decisiones de
+`docs/lineamientos-del-juego.md`. Un paso por sesión/ventana, igual que siempre.
