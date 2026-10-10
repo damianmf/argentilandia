@@ -88,6 +88,12 @@ el shape de su branch en `src/types.ts` (acá el ejemplo con catcher):
   Lo grita el lado que conecta la piña: `punchWords` es el jugador, `rivalWords` el
   rival. Si no hay identidad regional, omití los campos: el motor cae a las
   onomatopeyas genéricas (¡PUM!, ¡ZAS!).
+- **Whack (`targets`/`noTouch`)**: los blancos del martillo son el mensaje — cada
+  uno lleva su `label` visible mientras brota, así que etiqueta = titular. El dato
+  incómodo puede ser target (pegarle es el chiste: el martillo "borra" el problema).
+  `noTouch` es lo que NO se remata: aparece con la advertencia a la vista y pega
+  fuerte si lo golpean (ej. silla de ruedas −2000). Grupos vulnerables jamás son
+  targets: van en `noTouch` o no entron.
 - Pesos sugeridos: `catch` 2–3, `avoid` 2, `special` 1. Puntos positivos 50–150,
   negativos −30 a −200 (el special pega más fuerte).
 - `duration` 30–90 s. `difficulty` arranca en `5` (default de POC 2) y se calibra

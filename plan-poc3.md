@@ -2,7 +2,10 @@
 
 POC 3 era "motores caros" según PROJECT.md (fighter primero). Se abre el 09/10
 por pedido de iteración del humano sobre el evento Talleres–Tucumán. Mismo
-formato que POC 2: fases con gate, checkpoint por fase.
+formato que POC 2: fases con gate, checkpoint por fase. Los lineamientos de
+diseño (tono, acidez, dispositivos, elección de motor) viven en
+`docs/lineamientos-del-juego.md`: este plan define en qué orden se construye;
+esa biblia define qué se construye.
 
 ---
 

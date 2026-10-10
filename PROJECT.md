@@ -1,6 +1,6 @@
 # Juego de la Actualidad Argentina — Plan inicial de POC
 
-Spec fuente: `init.spec.rtf`. Este documento es el plan vivo; lo que no está acá, no existe todavía.
+Spec fuente: `init.spec.rtf`. Este documento es el plan vivo; lo que no está acá, no existe todavía. Los lineamientos de diseño del juego viven en `docs/lineamientos-del-juego.md`.
 
 ## Decisiones tomadas (2026-09-26)
 
@@ -80,9 +80,15 @@ Un catcher jugable en el browser, generado a partir de un evento real:
 
 Criterio de jugabilidad: el evento pasa al pipeline solo si `gameability >= 7` y existe al menos una fuente que valide los hechos (sección 3 del spec: la sátira exagera, los hechos se trazan).
 
-### GameSpec v0 — solo catcher
+### GameSpec — unión por `game` (6 motores)
 
-El esquema es una unión discriminada por `game`. En Slice 0 se define únicamente el branch `catcher`; los otros 4 se agregan cuando toque.
+El esquema es una unión discriminada por `game`; la fuente de verdad del shape es
+`src/types.ts` y la barrera es `src/schemas.ts` (Zod). Motores activos: `catcher`,
+`dodge`, `search`, `runner`, `fighter` (1v1 con `rival`, latiguillos, veredictos) y
+`whack` (martillá lo que brota, con `noTouch`). Compartidos: `theme` opcional,
+`sound` opcional, `outro` v2 (quote + momentos trazables). Los lineamientos de
+diseño (tono, acidez, dispositivos, elección de motor) viven en
+`docs/lineamientos-del-juego.md`.
 
 ```json
 {
