@@ -21,6 +21,11 @@ export interface FighterParams {
   rivalCooldown: number;
 }
 
+export interface WhackParams {
+  upMs: number;
+  spawnInterval: number;
+}
+
 interface Anchor {
   difficulty: number;
 }
@@ -47,6 +52,12 @@ const FIGHTER_ANCHORS: (Anchor & { params: FighterParams })[] = [
   { difficulty: 1, params: { rivalSpeed: 130, aggression: 0.7, rivalCooldown: 1200 } },
   { difficulty: 5, params: { rivalSpeed: 210, aggression: 1.0, rivalCooldown: 950 } },
   { difficulty: 10, params: { rivalSpeed: 320, aggression: 1.8, rivalCooldown: 650 } },
+];
+
+const WHACK_ANCHORS: (Anchor & { params: WhackParams })[] = [
+  { difficulty: 1, params: { upMs: 1400, spawnInterval: 950 } },
+  { difficulty: 5, params: { upMs: 1000, spawnInterval: 650 } },
+  { difficulty: 10, params: { upMs: 650, spawnInterval: 400 } },
 ];
 
 export function difficultyParams(difficulty: number): DifficultyParams {
@@ -114,6 +125,22 @@ export function fighterParams(difficulty: number): FighterParams {
     }
   }
   return FIGHTER_ANCHORS[FIGHTER_ANCHORS.length - 1].params;
+}
+
+export function whackParams(difficulty: number): WhackParams {
+  const d = clamp(difficulty);
+  for (let i = 0; i < WHACK_ANCHORS.length - 1; i++) {
+    const a = WHACK_ANCHORS[i];
+    const b = WHACK_ANCHORS[i + 1];
+    if (d <= b.difficulty) {
+      const t = (d - a.difficulty) / (b.difficulty - a.difficulty);
+      return {
+        upMs: lerp(a.params.upMs, b.params.upMs, t),
+        spawnInterval: lerp(a.params.spawnInterval, b.params.spawnInterval, t),
+      };
+    }
+  }
+  return WHACK_ANCHORS[WHACK_ANCHORS.length - 1].params;
 }
 
 function clamp(difficulty: number): number {

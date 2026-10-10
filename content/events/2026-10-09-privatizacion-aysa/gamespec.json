@@ -1,23 +1,22 @@
 {
-  "game": "catcher",
-  "title": "SE REMATA EL PAÍS",
-  "emoji": "🔨💧",
+  "game": "whack",
+  "title": "PÉGUELE, SEÑORES",
+  "emoji": "🔨🎯",
   "duration": 45,
-  "intro": "Adjudicaron AySA por 30 años y el remate no para: sos el Presidente con el martillo y el país entero cae del cielo. Agarrá cada empresa antes de que se enfríe la oferta y esquivá lo que frena el martillo. ¡Se vende, señores!",
+  "intro": "El remate a mano armada y sin pausa: brota AySA, el cartel del 33% sin cloacas, trenes, aerolíneas — peguele con el martillo antes de que bajen. Un aviso: en este remate hay una cosa que no se remata. Fijese si la encuentra.",
   "player": { "emoji": "🔨", "label": "Milei, el rematador", "image": "avatar.svg" },
-  "catch": [
-    { "emoji": "💧", "label": "AySA, 30 años", "points": 100, "weight": 3 },
-    { "emoji": "🚆", "label": "Trenes", "points": 150, "weight": 2 },
-    { "emoji": "⚡", "label": "Energía", "points": 150, "weight": 2 },
-    { "emoji": "✈️", "label": "Aerolíneas", "points": 200, "weight": 1 }
+  "grid": { "width": 5, "height": 3 },
+  "targets": [
+    { "emoji": "💧", "label": "AySA, 30 años", "points": 100 },
+    { "emoji": "🚱", "label": "33% sin cloacas", "points": 150 },
+    { "emoji": "🚆", "label": "Trenes", "points": 150 },
+    { "emoji": "✈️", "label": "Aerolíneas", "points": 200 }
   ],
-  "avoid": [
-    { "emoji": "🚩", "label": "Banderazo", "points": -50, "weight": 2 },
-    { "emoji": "📋", "label": "Amparo judicial", "points": -75, "weight": 2 }
+  "noTouch": [
+    { "emoji": "♿", "label": "Silla de ruedas", "points": -2000 }
   ],
-  "special": [
-    { "emoji": "🚱", "label": "33% sin cloacas", "points": -200, "weight": 1, "effect": "none" }
-  ],
+  "whackWords": ["¡VENDIDO!", "¡REMATADO!", "¡ADJUDICADO!", "¡LIQUIDACIÓN!"],
+  "verdicts": ["Se le escapó el martillo", "Aprendiz de martillero", "Martillero público", "Rematador Mayor del País"],
   "difficulty": 5,
   "theme": {
     "background": "#2f2416",
@@ -65,7 +64,7 @@
       "AySA brinda servicio a 14 millones de habitantes del AMBA, donde un tercio de la zona aún no tiene acceso a agua y cloacas.",
       "Entre 2006 y 2023 AySA recibió más de USD 13.400 millones en transferencias del Tesoro."
     ],
-    "fiction": "El muñeco del juego no es una persona: es la caricatura del cargo de presidente, con patillas y banda, como en las editoriales políticas de los diarios de hace un siglo. Que TODO el país esté en remate es el chiste: lo confirmado es la concesión de AySA; trenes, energía y aerolíneas que caen del cielo no están en venta ninguna. Y el remate real fue con sobres y una comisión evaluadora, no a los gritos con martillo.",
+    "fiction": "El muñeco del juego no es una persona: es la caricatura del cargo de presidente, con patillas y banda, como en las editoriales políticas de hace un siglo. En el juego, pegarle al cartel hace desaparecer el problema: esa es la mentira del martillo, y el chiste. Que TODO el país esté en remate es hipérbole: lo confirmado es la concesión de AySA. Y la silla de ruedas que asoma es lo único que este juego no remata: si le pegó igual, fue por su cuenta, y el juego se lo cobró. El remate real fue con sobres y comisión evaluadora, no a los martillazos.",
     "sources": [
       {
         "title": "Cuándo ingresarán los dólares de la privatización de AySA y qué efecto tendrán en el programa financiero",

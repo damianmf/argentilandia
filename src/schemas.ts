@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Event, GameSpec, GameSpecDodge, GameSpecFighter, GameSpecRunner, GameSpecSearch, Outro, ThemeSpec } from './types';
+import type { Event, GameSpec, GameSpecDodge, GameSpecFighter, GameSpecRunner, GameSpecSearch, GameSpecWhack, Outro, ThemeSpec } from './types';
 
 export const sourceRefSchema = z.object({
   title: z.string().min(1),
@@ -204,12 +204,34 @@ export const gameSpecFighterSchema: z.ZodType<GameSpecFighter> = z.object({
   outro: outroSchema,
 });
 
+export const gameSpecWhackSchema: z.ZodType<GameSpecWhack> = z.object({
+  game: z.literal('whack'),
+  title: z.string().min(1),
+  emoji: z.string().min(1),
+  duration: z.number().int().min(1),
+  intro: z.string().min(1),
+  player: playerSchema,
+  grid: z.object({
+    width: z.number().int().min(4).max(8),
+    height: z.number().int().min(2).max(5),
+  }),
+  targets: z.array(searchItemSchema).min(1),
+  noTouch: z.array(searchItemSchema).optional(),
+  whackWords: z.array(z.string().min(1)).optional(),
+  verdicts: z.array(z.string().min(1)).optional(),
+  difficulty: z.number().int().min(1).max(10),
+  theme: themeSchema.optional(),
+  sound: z.boolean().optional(),
+  outro: outroSchema,
+});
+
 const gameSchemas: Record<string, z.ZodType<GameSpec>> = {
   catcher: gameSpecCatcherSchema,
   dodge: gameSpecDodgeSchema,
   search: gameSpecSearchSchema,
   runner: gameSpecRunnerSchema,
   fighter: gameSpecFighterSchema,
+  whack: gameSpecWhackSchema,
 };
 
 export type ParseResult<T> = { ok: true; data: T } | { ok: false; error: string };

@@ -1,4 +1,4 @@
-export type GameType = 'catcher' | 'dodge' | 'search' | 'runner' | 'fighter';
+export type GameType = 'catcher' | 'dodge' | 'search' | 'runner' | 'fighter' | 'whack';
 
 export interface SourceRef {
   title: string;
@@ -172,4 +172,22 @@ export interface GameSpecFighter {
   outro: Outro;
 }
 
-export type GameSpec = GameSpecCatcher | GameSpecDodge | GameSpecSearch | GameSpecRunner | GameSpecFighter;
+export interface GameSpecWhack {
+  game: Extract<GameType, 'whack'>;
+  title: string;
+  emoji: string;
+  duration: number;
+  intro: string;
+  player: PlayerSpec;
+  grid: GridSpec;
+  targets: SearchItem[];
+  noTouch?: SearchItem[];
+  whackWords?: string[];
+  verdicts?: string[];
+  difficulty: number;
+  theme?: ThemeSpec;
+  sound?: boolean;
+  outro: Outro;
+}
+
+export type GameSpec = GameSpecCatcher | GameSpecDodge | GameSpecSearch | GameSpecRunner | GameSpecFighter | GameSpecWhack;
