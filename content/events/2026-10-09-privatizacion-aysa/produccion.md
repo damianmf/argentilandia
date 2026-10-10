@@ -9,6 +9,7 @@ humano el 09/10 (ver linea-editorial.md, sección "Personajes de carga pública"
 | Fuente | Nota de Infobae leída completa (radar de hoy 09/10, 90 noticias) |
 | Pedido | Humano: "un juego donde esté Milei y hagamos referencia a la venta del país; que quede claro que sea el presidente, con un muñeco, no una foto" |
 | Pasada 2 | catcher "SE REMATA EL PAÍS", difficulty 5, sonido on |
+| Iteración ácida (09/10) | El evento pasa de catcher a **whack**, sexto motor: "PÉGUELE, SEÑORES". Brotan AySA, el cartel del 33% sin cloacas, trenes y aerolíneas con su etiqueta a la vista, y se rematan a martillazos. **La silla de ruedas aparece pero es `noTouch`: −2000 y "¡NO SE REMATA!"** — el límite del remate se muestra y se cobra; ridiculizar la discapacidad no (línea editorial: sátira a la política del martillo, nunca al grupo vulnerable). Verificado en browser: tres martillazos a la silla = −5900 y el cartel rojo en pantalla |
 
 ## Notas
 
