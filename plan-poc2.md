@@ -320,9 +320,12 @@ arreglar el humano después?".
 
 **Gate de cierre de POC 2:**
 
-- [ ] Dos jornadas completas producidas con el pipeline nuevo.
-- [ ] Una persona externa juega la web diaria local sin explicación: elige un juego, juega, lee el outro.
-- [ ] `npm run validate` + `npm run index` en 0. Commit `poc2-checkpoint-5` + tag `poc-2`.
+- [x] Dos jornadas completas producidas con el pipeline nuevo (08/10 tren full-auto; 09/10 dupla piñas/Messi + AySA con radar del día, asistida en sesión).
+- [x] Una persona externa juega la web diaria local sin explicación: elige un juego, juega, lee el outro (09/10, reportada por el humano: OK; observación estructurada en el próximo round).
+- [x] `npm run validate` + `npm run index` en 0. Commit `poc2-checkpoint-5` + tag `poc-2`.
+
+**Cierre:** retrospectiva en `docs/retrospectiva-poc2.md` (incluye la decisión
+sobre deploy: diferido hasta que el humano defina los próximos pasos).
 
 ---
 
