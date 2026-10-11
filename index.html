@@ -42,10 +42,55 @@
         font-size: 15px;
         line-height: 1.5;
       }
+      /* Portrait en teléfono: los juegos son landscape. Desde la web no se puede
+         forzar la rotación — se pide girar y en Android el JUGAR lockea landscape. */
+      #rotate {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        background: #05050a;
+        color: #ffffff;
+        font-family: system-ui, -apple-system, sans-serif;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+      }
+      #rotate .phone {
+        font-size: 72px;
+        line-height: 1;
+        margin-bottom: 16px;
+        animation: girar 1.6s ease-in-out infinite alternate;
+      }
+      #rotate h1 {
+        margin: 0 0 10px;
+        letter-spacing: 3px;
+        font-size: 26px;
+      }
+      #rotate p {
+        margin: 0;
+        color: #9aa0b5;
+        line-height: 1.5;
+      }
+      @keyframes girar {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(90deg); }
+      }
+      @media (orientation: portrait) and (pointer: coarse) and (max-width: 700px) {
+        #rotate { display: flex; }
+      }
     </style>
   </head>
   <body>
     <div id="game"></div>
+    <div id="rotate">
+      <div>
+        <div class="phone">📱</div>
+        <h1>GIRÁ EL TELÉFONO</h1>
+        <p>Este juego se juega de costado. Si no gira, fijate el candado de rotación.</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

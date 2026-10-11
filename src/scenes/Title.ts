@@ -96,6 +96,17 @@ export class Title extends Phaser.Scene {
 
     const start = (difficulty?: number): void => {
       initAudio(this.spec.sound === true);
+      // En teléfono (gesture de tap): fullscreen + lock landscape donde exista
+      // (Android); iOS y desktop no lo soportan y siguen por el camino normal.
+      if (window.matchMedia('(pointer: coarse)').matches) {
+        const lock = (
+          screen.orientation as ScreenOrientation & { lock?: (o: string) => Promise<void> }
+        ).lock;
+        document.documentElement.requestFullscreen
+          ?.()
+          .then(() => lock?.('landscape'))
+          .catch(() => {});
+      }
       this.scene.start(SCENE_BY_GAME[this.spec.game], difficulty ? { difficulty } : undefined);
     };
 
