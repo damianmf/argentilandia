@@ -61,6 +61,25 @@ La línea `RESUMEN: {...}` del final es el contrato de reporte del cron.
   exit 2) y la jornada continúa cuando alguien complete la generación a mano.
 - `N_CANDIDATOS`: candidatos por jornada (default 3).
 
+## Modo sin key (local): la sesión hace de LLM
+
+Sin `LLM_API_KEY`, `npm run jornada` falla en el draft — y ahí el agente de la
+sesión (o el cron del entorno) toma los dos pasos creativos ejecutándolos a mano
+con **los mismos contratos** que usa la API:
+
+1. `npm run radar -- <fecha>` (script).
+2. **Draft**: seguir `content/prompts/radar-diario.md` (llamada A y B) y escribir
+   `content/radar/<fecha>/seleccion.json` + `draft.md` con el mismo shape.
+3. **Generación**: seguir `content/prompts/game-generation.md` (contrato de
+   candidato + juez): 3 variantes del pitch elegido, veredictos en
+   `content/events/<id>/scores.json`, `gamespec.json` validado con
+   `npm run validate`, avatar con `scripts/generar-avatar.mjs` (config JSON →
+   `avatar.svg`), y `produccion.md`.
+4. `npm run index` + commit `jornada-<fecha>` (+ push para publicar).
+
+Es el modo con el que se produjo la jornada 2026-10-11 (ver su `produccion.md`).
+El día que haya key en `.env`, `npm run jornada` solo hace todo sin sesión.
+
 ## Des-publicar
 
 La web es estática y versionada: quitar el evento del día, `npm run index`,

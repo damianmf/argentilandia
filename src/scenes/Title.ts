@@ -37,7 +37,9 @@ export class Title extends Phaser.Scene {
         wordWrap: { width: 880 },
       })
       .setOrigin(0.5);
-    title.setScale(2.6);
+    // Los títulos los genera el pipeline: que entre siempre, sea lo largo que sea.
+    const titleStartScale = Math.min(2.6, (this.scale.width - 40) / title.width);
+    title.setScale(titleStartScale);
     title.setAlpha(0);
     this.tweens.add({
       targets: title,
