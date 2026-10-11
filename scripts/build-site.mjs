@@ -146,8 +146,37 @@ const webDist = join(dist, 'web');
 mkdirSync(webDist, { recursive: true });
 copyFileSync(join(root, 'web', 'index.html'), join(webDist, 'index.html'));
 
-// --- Root `/` = chooser; el juego vive en /index.html (enlazado desde las cards) ---
-writeFileSync(join(dist, '_redirects'), '/  /web/index.html  200\n');
+// --- Root `/` = chooser; el juego vive en /index.html (enlazado desde las cards).
+// OJO: el target NO puede terminar en /index.html — el normalizador de Cloudflare
+// lo colapsa y el validador lo rechaza como bucle infinito (code 100324).
+writeFileSync(join(dist, '_redirects'), '/  /web/  200\n');
+
+// --- 404 amable (not_found_handling: "404-page" en wrangler.jsonc) ---
+writeFileSync(
+  join(dist, '404.html'),
+  `<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Juego de la Actualidad</title>
+    <style>
+      body { background: #05050a; color: #ffffff; font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+      div { text-align: center; }
+      h1 { letter-spacing: 3px; }
+      a { color: #ffd166; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>404: ACÁ NO HAY NADA</h1>
+      <p>Este juego no existe (o todavía no).</p>
+      <p><a href="/">← Elegir otro juego</a></p>
+    </div>
+  </body>
+</html>
+`,
+);
 
 // --- OG por defecto + beacon en la app y el chooser ---
 const beaconToken = process.env.CLOUDFLARE_WEB_ANALYTICS_TOKEN;
@@ -171,7 +200,10 @@ writeFileSync(
   appHtml.replace('</head>', `${rootOg}</head>`).replace('</body>', `${beacon}</body>`),
 );
 const webHtml = readFileSync(join(webDist, 'index.html'), 'utf8');
-writeFileSync(join(webDist, 'index.html'), webHtml.replace('</body>', `${beacon}</body>`));
+writeFileSync(
+  join(webDist, 'index.html'),
+  webHtml.replace('</head>', `${rootOg}</head>`).replace('</body>', `${beacon}</body>`),
+);
 
 console.log(
   `Sitio ensamblado en dist/: ${games.length} landings OG, ${copied} archivos de contenido` +

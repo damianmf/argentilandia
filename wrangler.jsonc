@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "juego-de-la-actualidad",
+  "compatibility_date": "2026-10-06",
+  // Sitio 100% estático: sin script de Worker, solo assets.
+  // html_handling default sirve /web/ → /web/index.html y /juego/<id>/ → su index.html.
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

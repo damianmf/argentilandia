@@ -8,7 +8,7 @@ PNG 1200×630 + `_redirects`). Sin backend: lo "dinámico" son commits.
 
 | Ruta | Qué es |
 |---|---|
-| `/` | El chooser (rewritten a `/web/index.html` por `_redirects`) |
+| `/` | El chooser (rewritten a `/web/` por `_redirects`) |
 | `/index.html?game=<id>` | El juego (Phaser), carga `content/events/<id>/` |
 | `/juego/<id>/` | Landing del juego con meta tags OG; redirige al juego. **Esta es la URL que se comparte** |
 | `/og/<id>.png` | Tarjeta 1200×630 (avatar rasterizado + banda del tema) |
@@ -19,27 +19,38 @@ no valida, no hay sitio.
 
 ## Variables de entorno (opcionales)
 
-- `SITE_URL` (o `CF_PAGES_URL`, que Cloudflare Pages setea solo): URL absoluta
-  del sitio. Sin ella los `og:image`/`og:url` salen relativos y WhatsApp no
-  muestra tarjeta.
+- `SITE_URL`: URL absoluta del sitio (los `og:image`/`og:url` la necesitan para
+  que WhatsApp muestre tarjeta). En Workers con assets no hay variable auto
+  que la dé: cargarla a mano en los build settings con la URL workers.dev.
 - `CLOUDFLARE_WEB_ANALYTICS_TOKEN`: beacon de Cloudflare Web Analytics inyectado
   en la app y el chooser. Crear el sitio en
   https://dash.cloudflare.com → Web Analytics y pegar el token.
 
-## Alta en Cloudflare Pages (gratis)
+## Alta en Cloudflare (hecha el 10/10: Workers con assets estáticos)
+
+El proyecto es un **Worker de solo assets** (el flujo nuevo de Cloudflare,
+sucesor de Pages): el dashboard corre `npm run build` y deploya con
+`npx wrangler deploy`, guiado por el `wrangler.jsonc` del repo (assets en
+`dist/`, `not_found_handling: "404-page"`). Nada de configurar a mano: la
+config vive commiteada y cada push a `main` deploya.
 
 1. Repo: https://github.com/damianmf/juego-de-la-actualidad (público, creado
    el 10/10 desde el CLI; remote `origin` configurado).
-2. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git →
-   elegir el repo.
-   - Build command: `npm run build`
-   - Build output directory: `dist`
-   - Variables: `NODE_VERSION=24` (y las de arriba, si ya hay token).
-3. Cada push a `main` deploya. El primer deploy da la URL
-   `https://<proyecto>.pages.dev`.
-4. Verificar la tarjeta: https://developers.facebook.com/tools/debug/ con la
+2. Proyecto Cloudflare `juego-de-la-actualidad` conectado al repo (build
+   command `npm run build`, deploy command `npx wrangler deploy`).
+3. Deploy URL: `https://juego-de-la-actualidad.<subdominio>.workers.dev`.
+4. `SITE_URL`: en Workers **no** existe `CF_PAGES_URL` — cargar la URL final
+   del paso 3 como variable de entorno `SITE_URL` en los build settings y
+   re-deployar, para que los `og:image`/`og:url` salgan absolutos.
+5. Verificar la tarjeta: https://developers.facebook.com/tools/debug/ con la
    URL `/juego/<id>/` (WhatsApp usa el crawler de Facebook). Si cacheó una
    versión sin imagen, "Scrape again" después del deploy.
+
+Lecciones del primer deploy (18:57 del 10/10): el validador de la API rechaza
+reglas de `_redirects` cuyo target termina en `/index.html` ("infinite loop",
+code 100324) — por eso el rewrite de `/` apunta a `/web/`. Y el auto-setup de
+wrangler para Vite asume SPA (`not_found_handling: "single-page-application"`):
+no dejar que la regenere, el `wrangler.jsonc` del repo manda.
 
 ## Chequeo del gate (Etapa 1)
 
