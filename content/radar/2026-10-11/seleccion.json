@@ -1,0 +1,97 @@
+{
+  "fecha": "2026-10-11",
+  "modo": "full-auto",
+  "estado": "APROBADO_AUTOMATICO",
+  "preseleccion": [
+    {
+      "titular": "Informalidad laboral: estiman que alcanza al 45% de trabajadores independientes y en zonas llega al 80%",
+      "url": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml",
+      "outlet": "Perfil",
+      "scores": { "actualidad": 8, "jugabilidad": 8, "humor": 7, "reconocibilidad": 8, "shareability": 8, "explicabilidad": 9 },
+      "motivo": "Dato duro, incómodo y verificable: la búsqueda de lo casi inexistente literaliza el chiste (objeto-dato puro)."
+    },
+    {
+      "titular": "Boom espacial: Blue Origin disparó la riqueza de Jeff Bezos hasta los u$s368.500 millones",
+      "url": "https://www.ambito.com/finanzas/boom-espacial-blue-origin-disparo-la-riqueza-jeff-bezos-los-us368500-millones-n6332555",
+      "outlet": "Ámbito",
+      "scores": { "actualidad": 8, "jugabilidad": 7, "humor": 8, "reconocibilidad": 8, "shareability": 8, "explicabilidad": 8 },
+      "motivo": "Riqueza absurda y verificable; chiste verde-amarillo, pero el punchline cae más en el contador que en los objetos."
+    },
+    {
+      "titular": "Lionel Messi volvió a Inter Miami, convirtió por duplicado y va por los 1.000 goles",
+      "url": "https://www.ambito.com/deportes/lionel-messi-volvio-inter-miami-convirtio-duplicado-y-va-los-1000-goles-dias-su-despedida-la-seleccion-argentina-n6332478",
+      "outlet": "Ámbito",
+      "scores": { "actualidad": 9, "jugabilidad": 7, "humor": 6, "reconocibilidad": 10, "shareability": 9, "explicabilidad": 9 },
+      "motivo": "Celebratorio y muy compartible, pero el humor es más chico; además el 08/10 ya hubo homenaje-messi."
+    }
+  ],
+  "ganador": {
+    "indice": 1,
+    "titular": "Informalidad laboral: estiman que alcanza al 45% de trabajadores independientes y en zonas llega al 80%",
+    "url": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml",
+    "outlet": "Perfil"
+  },
+  "event": {
+    "id": "2026-10-11-trabajo-en-blanco-45",
+    "date": "2026-10-11",
+    "event": "La informalidad laboral llegó al 45% de los trabajadores independientes y supera el 80% en cinco ciudades del norte",
+    "category": "economy",
+    "actors": ["Trabajadores independientes", "Universidad Nacional de Rosario", "INDEC"],
+    "conflict": "Casi la mitad del trabajo independiente es en negro",
+    "facts": [
+      "La informalidad entre trabajadores independientes llegó al 45% en el segundo trimestre de 2026, contra 41,4% a fines de 2023, según un estudio de la UNR sobre datos de la EPH del INDEC.",
+      "El servicio doméstico es el sector más informalizado (77,4% sin registrar), seguido por construcción (76,2%) y gastronomía y alojamiento (63,9%).",
+      "En Formosa el 87,9% de los cuentapropistas trabaja en negro; Gran Tucumán, Santiago del Estero, Gran Resistencia y Gran San Juan superan el 83%.",
+      "En CABA la informalidad total es 26%, menos de la mitad que en el conurbano bonaerense (47,5%).",
+      "El 37,9% de los asalariados no aporta a la jubilación, contra 33,6% a fines de 2016."
+    ],
+    "sources": [
+      {
+        "title": "Informalidad laboral: estiman que alcanza al 45% de trabajadores independientes y en zonas llega al 80%",
+        "url": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml",
+        "outlet": "Perfil",
+        "type": "media"
+      }
+    ],
+    "virality": 7,
+    "gameability": 8,
+    "humorPotential": 7,
+    "shareability": 8
+  },
+  "acidez": "🟡 amarillo suave — el blanco es un dato estructural verificable (45% de informalidad), no hay muñeco de poder ni grupo vulnerable como target: el chiste es la escasez de lo blanco.",
+  "pitches": [
+    {
+      "motor": "search",
+      "nombre": "ENCONTRÁ EL TRABAJO EN BLANCO",
+      "chiste": "La grilla es el mercado laboral argentino: casi todas las celdas están en negro (🖤 en negro, 💸 bajo la mesa, 🤝 changa de palabra) y hay que encontrar los recibos en blanco antes de quedarte sin toques. La mecánica es el dato: buscar lo casi inexistente.",
+      "scoreChiste": 9
+    },
+    {
+      "motor": "whack",
+      "nombre": "APRETÁ EL MONOTRIBUTO",
+      "chiste": "Brotan facturas truchas y monotributos imaginarios: martillalos antes de que te clasifiquen. Ojo: whack fue el motor del juego anterior, no puede ganar hoy.",
+      "scoreChiste": 8
+    },
+    {
+      "motor": "catcher",
+      "nombre": "AGARRÁ EL RECIBO",
+      "chiste": "Caen papeles del cielo laboral: agarrá los recibos en blanco 🧾 y esquivá las changas 🖤 y los sobres 💸. El punchline: casi nunca cae un recibo.",
+      "scoreChiste": 7
+    }
+  ],
+  "pitchElegido": 0,
+  "descartes": [
+    { "titular": "Preocupación por la salud del papa León XIV: será operado de un nódulo en el pulmón", "url": "https://www.ambito.com/mundo/preocupacion-la-salud-del-papa-leon-xiv-sera-operado-un-nodulo-el-pulmon-la-previa-al-viaje-la-argentina-n6332463", "razon": "Enfermedad: humor que NO (🔴 rojo). Se descarta antes de pensar mecánicas." },
+    { "titular": "Murió un argentino en Punta Cana tras chocar contra un camión", "url": "https://www.lanacion.com.ar/sociedad/murio-un-argentino-en-punta-cana-tras-chocar-contra-un-camion-mientras-circulaba-en-moto-nid11102026/", "razon": "Víctimas reales (🔴 rojo): no es jugable, sin excepción." },
+    { "titular": "Hallaron en Las Toninas el cuerpo de uno de los dos kayakistas desaparecidos", "url": "https://www.infobae.com/sociedad/2026/10/11/hallaron-en-las-toninas-el-cuerpo-de-uno-de-los-dos-kayakistas-desaparecidos-hace-20-dias/", "razon": "Víctimas reales (🔴 rojo)." },
+    { "titular": "Un pitbull mató a un nene de 4 años en Moreno y detuvieron a su madrina", "url": "https://www.perfil.com/noticias/policia/un-pitbull-mato-a-un-nene-de-4-anos-en-moreno-y-detuvieron-a-su-madrina.phtml", "razon": "Víctima infantil (🔴 rojo), sin excepción." },
+    { "titular": "Karina Milei acelera acuerdos con los aliados de la Casa Rosada", "url": "https://www.clarin.com/politica/decision-calculada-karina-milei-acelera-acuerdos-aliados-casa-rosada-levanta-perfil_0_yZ0AZ1ZSxV.html", "razon": "Categoría política prohibida hoy por variedad (el juego del 09/10) y jugabilidad 3: no hay mecánica visible." },
+    { "titular": "Donald Trump sin límites: ahora quiere rebautizar un océano con su nombre", "url": "https://www.ambito.com/mundo/donald-trump-limites-ahora-quiere-rebautizar-un-oceano-y-propuso-ponerle-su-nombre-n6332560", "razon": "Humor 9, pero categoría política prohibida por variedad. Queda anotado para un día sin política fresca." },
+    { "titular": "Legisladores peronistas pidieron suspender la privatización de AySA", "url": "https://www.lanacion.com.ar/politica/legisladores-peronistas-pidieron-suspender-la-privatizacion-de-aysa-nid11102026/", "razon": "Política (variedad) y es el tema del juego del 09/10: repetiría." },
+    { "titular": "El glaciar Perito Moreno retrocedió 910 metros en solo 100 días", "url": "https://www.perfil.com/noticias/ciencia/el-glaciar-perito-moreno-retrocedio-910-metros-en-solo-100-dias-y-preocupa-a-la-ciencia-mundial.phtml", "razon": "Dato grave, sin chiste jugable (jugabilidad 4): triste no es jugable." },
+    { "titular": "Franco Colapinto: \"Fue el peor triplete de mi carrera\"", "url": "https://www.ambito.com/deportes/franco-colapinto-golpeado-la-mala-racha-la-formula-1-fue-el-peor-triplete-mi-carrera-n6332517", "razon": "Jugabilidad 6 y repetiría protagonista (BAKÚ SIN FRENO, 26/09)." }
+  ],
+  "advertencias": [
+    "modo local sin key: los pasos LLM los ejecutó la sesión ZCode con los mismos contratos (transporte degradado del pipeline headless)"
+  ]
+}

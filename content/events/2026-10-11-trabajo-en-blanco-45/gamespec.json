@@ -1,0 +1,76 @@
+{
+  "game": "search",
+  "title": "ENCONTRÁ EL TRABAJO EN BLANCO",
+  "emoji": "🔍🧾",
+  "duration": 60,
+  "intro": "El 45% del trabajo independiente es en negro (y en el norte pasan el 83%). Tu misión imposible: encontrá los empleos registrados escondidos en la grilla antes de quedarte sin toques.",
+  "player": { "emoji": "🕵️", "label": "Inspector de recibos", "image": "avatar.svg" },
+  "grid": { "width": 9, "height": 6 },
+  "find": [
+    { "emoji": "🧾", "label": "Recibo de sueldo", "points": 500 },
+    { "emoji": "🏛️", "label": "Aportes a jubilación", "points": 300 },
+    { "emoji": "🖋️", "label": "Alta en tiempo y forma", "points": 300 }
+  ],
+  "traps": [
+    { "emoji": "🖤", "label": "En negro", "points": -100 },
+    { "emoji": "💸", "label": "Bajo la mesa", "points": -120 },
+    { "emoji": "🤝", "label": "Changa de palabra", "points": -150 }
+  ],
+  "maxTouches": 5,
+  "difficulty": 5,
+  "theme": {
+    "background": "#241b2f",
+    "decor": [
+      { "emoji": "🧾", "x": 8, "y": 16, "size": 40, "alpha": 0.25 },
+      { "emoji": "🖤", "x": 91, "y": 80, "size": 46, "alpha": 0.3 },
+      { "emoji": "🏢", "x": 90, "y": 14, "size": 38, "alpha": 0.25 }
+    ]
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "Un estudio de la Universidad Nacional de Rosario sobre datos de la Encuesta Permanente de Hogares midió que la informalidad entre trabajadores independientes llegó al 45% en el segundo trimestre de 2026, dos puntos y medio más que a fines de 2023. El servicio doméstico (77,4%) y la construcción (76,2%) son los sectores más en negro, y en cinco ciudades del norte más del 83% de los cuentapropistas no está registrado. La UNR habla de un \"deterioro sostenido de las condiciones de empleo\".",
+    "quote": {
+      "text": "mejores 18 meses de la historia Argentina",
+      "who": "Luis Caputo, ministro de Economía, en abril de 2026 — la frase que la nota contrapone con el dato",
+      "source": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml"
+    },
+    "moments": [
+      {
+        "emoji": "📉",
+        "text": "Fines de 2023: la informalidad entre independientes estaba en 41,4%",
+        "source": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml"
+      },
+      {
+        "emoji": "📊",
+        "text": "Segundo trimestre de 2026: llega al 45% (UNR sobre datos de la EPH del INDEC)",
+        "source": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml"
+      },
+      {
+        "emoji": "🏠",
+        "text": "El servicio doméstico encabeza el ranking: 77,4% sin registrar; construcción 76,2%",
+        "source": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml"
+      },
+      {
+        "emoji": "🗺️",
+        "text": "El norte marca el techo: Formosa 87,9% de cuentapropistas en negro; cinco ciudades superan el 83%",
+        "source": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml"
+      }
+    ],
+    "facts": [
+      "El 45% de los trabajadores independientes trabaja en informalidad, contra 41,4% a fines de 2023, según la UNR con datos de la EPH del INDEC.",
+      "El servicio doméstico es el sector más informalizado (77,4% sin registrar), seguido por construcción (76,2%) y gastronomía y alojamiento (63,9%).",
+      "En Formosa el 87,9% de los cuentapropistas trabaja en negro; Gran Tucumán, Santiago del Estero, Gran Resistencia y Gran San Juan superan el 83%.",
+      "En CABA la informalidad total es 26%, menos de la mitad que en el conurbano bonaerense (47,5%).",
+      "El 37,9% de los asalariados no aporta a la jubilación, contra 33,6% a fines de 2016."
+    ],
+    "fiction": "No hay ningún inspector recorriendo una grilla gigante: el juego es el dato hecho mecánica — buscar trabajo registrado en un tablero donde casi todo está en negro. El chiste no se ríe de nadie que trabaje en negro (el muñeco tampoco es una persona real, es el caricatura del inspector); se ríe de lo difícil que es encontrar lo blanco. Y Caputo no habló de grillas: su frase es de abril y la nota la contrapone con el dato.",
+    "sources": [
+      {
+        "title": "Informalidad laboral: estiman que alcanza al 45% de trabajadores independientes y en zonas llega al 80%",
+        "url": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml",
+        "outlet": "Perfil",
+        "type": "media"
+      }
+    ]
+  }
+}

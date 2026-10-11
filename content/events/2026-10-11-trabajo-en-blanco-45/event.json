@@ -1,0 +1,27 @@
+{
+  "id": "2026-10-11-trabajo-en-blanco-45",
+  "date": "2026-10-11",
+  "event": "La informalidad laboral llegó al 45% de los trabajadores independientes y supera el 80% en cinco ciudades del norte",
+  "category": "economy",
+  "actors": ["Trabajadores independientes", "Universidad Nacional de Rosario", "INDEC"],
+  "conflict": "Casi la mitad del trabajo independiente es en negro",
+  "facts": [
+    "La informalidad entre trabajadores independientes llegó al 45% en el segundo trimestre de 2026, contra 41,4% a fines de 2023, según un estudio de la UNR sobre datos de la EPH del INDEC.",
+    "El servicio doméstico es el sector más informalizado (77,4% sin registrar), seguido por construcción (76,2%) y gastronomía y alojamiento (63,9%).",
+    "En Formosa el 87,9% de los cuentapropistas trabaja en negro; Gran Tucumán, Santiago del Estero, Gran Resistencia y Gran San Juan superan el 83%.",
+    "En CABA la informalidad total es 26%, menos de la mitad que en el conurbano bonaerense (47,5%).",
+    "El 37,9% de los asalariados no aporta a la jubilación, contra 33,6% a fines de 2016."
+  ],
+  "sources": [
+    {
+      "title": "Informalidad laboral: estiman que alcanza al 45% de trabajadores independientes y en zonas llega al 80%",
+      "url": "https://www.perfil.com/noticias/sociedad/la-informalidad-laboral-alcanza-al-45-de-los-trabajadores-argentinos-y-supera-el-80-en-varias-ciudades-del-norte.phtml",
+      "outlet": "Perfil",
+      "type": "media"
+    }
+  ],
+  "virality": 7,
+  "gameability": 8,
+  "humorPotential": 7,
+  "shareability": 8
+}

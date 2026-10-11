@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-10-11",
+  "pitch": {
+    "motor": "search",
+    "nombre": "ENCONTRÁ EL TRABAJO EN BLANCO",
+    "chiste": "La grilla es el mercado laboral argentino: casi todas las celdas están en negro (🖤 en negro, 💸 bajo la mesa, 🤝 changa de palabra) y hay que encontrar los recibos en blanco antes de quedarte sin toques. La mecánica es el dato: buscar lo casi inexistente.",
+    "scoreChiste": 9
+  },
+  "umbrales": { "criterio": 6, "promedio": 7 },
+  "elegido": {
+    "n": 1,
+    "game": "search",
+    "title": "ENCONTRÁ EL TRABAJO EN BLANCO",
+    "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 8, "fuentes": 9 },
+    "promedio": 8.75,
+    "pasa": true,
+    "nota": "La mecánica ES el dato: buscar lo casi inexistente en un tablero mayormente negro. Objeto-dato en cada etiqueta.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "search",
+      "title": "ENCONTRÁ EL TRABAJO EN BLANCO",
+      "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 8, "fuentes": 9 },
+      "promedio": 8.75,
+      "pasa": true,
+      "nota": "La mecánica ES el dato: buscar lo casi inexistente en un tablero mayormente negro. Objeto-dato en cada etiqueta.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "search",
+      "title": "MONOTRIBUTO O NADA",
+      "criterios": { "chisteJugable": 7, "punchline": 8, "acidez": 8, "fuentes": 8 },
+      "promedio": 7.75,
+      "pasa": true,
+      "nota": "Bien, pero el 45% queda en la intro: el punchline vive menos adentro de la mecánica que en la variante 1.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "search",
+      "title": "LA AGUJA EN EL PAJARAL",
+      "criterios": { "chisteJugable": 6, "punchline": 7, "acidez": 8, "fuentes": 8 },
+      "promedio": 7.25,
+      "pasa": true,
+      "nota": "El extremo (tablero 120 celdas, 1 blanco, 2 toques) tiene el chiste pero frustra: casi injugable en 60 segundos.",
+      "factsDudosos": []
+    }
+  ]
+}
