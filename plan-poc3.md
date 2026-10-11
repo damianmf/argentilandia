@@ -61,29 +61,40 @@ teléfono; el share produce un link con tarjeta al re-compartirlo.
 ## Etapa 2 — El loop de generación, iterado (el foco)
 
 **Objetivo:** que generar un juego sea un proceso repetible N veces por día, con
-calidad medible, sin sesión. Hoy: radar (script, automático) → draft (LLM en
+calidad medible, sin sesión. ~~Hoy: radar (script, automático) → draft (LLM en
 sesión) → pasada 2 del GameSpec (LLM en sesión) → validate/index/commit
-(scripts). El centro a iterar son los dos pasos de sesión.
+(scripts).~~ **Cerrado el 11/10**: los dos pasos de sesión son scripts
+(`npm run jornada`, LLM vía API Z.ai/GLM); queda el gate de 3 jornadas y el
+cron hospedado (Etapa 1.3).
 
-1. **Generación en N intentos con autopuntaje**: en vez de un draft único, N
-   candidatos (N=3) que se autoevalúan contra el checklist de la casa (¿chiste
-   jugable en 4 líneas? ¿punchline en los objetos? ¿acidez correcta según el
-   medidor? ¿fuente textual para la quote?) y se elige el mejor; si ninguno pasa,
-   día sin juego (regla vigente).
-2. **Elegibilidad de la noticia como proceso**: scores de los 6 criterios
-   registrados y comparables día a día + reglas de variedad (no repetir motor ni
-   categoría dos días seguidos) + segunda fuente para hechos duros + registro de
-   descartes con razón (ya existe; hacerlo obligatorio y comparable).
-3. **Pasada 2 automatizable**: plantillas de GameSpec por motor (el shape ya
-   vive en schemas; el LLM completa el JSON) + avatares por plantillas
-   paramétricas (muñeco base + atributos del cargo/evento: banda, camiseta,
-   patillas — no arte nuevo por evento).
-4. **Human-in-the-loop barato**: el draft del día llega como notificación con
-   evento + pitch + link de preview; tu respuesta (sí/no/cambiar pitch) dispara
-   la publicación. Objetivo: tu tiempo por día ≈ 2 minutos.
+1. [x] **Generación en N intentos con autopuntaje** (11/10):
+   `scripts/generar-juego.mjs` genera N=3 candidatos del pitch elegido (el
+   mejor por `scoreChiste`, respetando variedad de motor), cada uno validado
+   con el schema Zod y juzgado contra el checklist de la casa (ningún criterio
+   < 6 y promedio >= 7). Gana el mejor; si ninguno pasa, día sin juego.
+   Veredictos en `content/events/<id>/scores.json`.
+2. [x] **Elegibilidad de la noticia como proceso** (11/10):
+   `scripts/generar-draft.mjs` produce `seleccion.json` comparable (preselección
+   con los 6 criterios, descartes obligatorios con razón, declaración de
+   acidez) + reglas de variedad (no repetir motor ni categoría del último juego,
+   aplicadas por el script) + segunda fuente cuando el mismo hecho aparece en
+   más de un feed.
+3. [x] **Pasada 2 automatizable** (11/10): contrato de GameSpec por motor (los
+   prompts de `content/prompts/` son la fuente única que los scripts leen) con
+   salida JSON validada por Zod; avatares paramétricos (`generar-avatar.mjs`):
+   muñeco base + atributos (banda, camiseta, patillas, gorro, emoción,
+   accesorio) — no arte nuevo por evento.
+4. [x] **Human-in-the-loop barato** (11/10, decisión del humano: **full-auto**):
+   reemplaza el OK de 2 minutos por publicación automática con las barreras de
+   arriba; la auditoría es posterior (seleccion.json + scores.json +
+   produccion.md) y des-publicar es un commit. `APROBACION=on` reactiva el
+   corte humano cuando se quiera, sin tocar código.
 
 **Gate:** 3 jornadas consecutivas generadas sin sesión, publicadas con tu OK de
 2 minutos, `validate` en 0, y un registro comparable de scores de elegibilidad.
+*(Actualizado 11/10: sin OK previo, por la decisión de full-auto. El gate queda:
+3 jornadas consecutivas generadas y publicadas por el cron headless, validate en
+0, y seleccion.json/scores.json acumulándose.)*
 
 ---
 

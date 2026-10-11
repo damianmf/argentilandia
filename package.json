@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "validate": "node scripts/validate.mjs",
     "radar": "node scripts/radar.mjs",
-    "index": "node scripts/build-index.mjs"
+    "index": "node scripts/build-index.mjs",
+    "jornada": "node scripts/jornada.mjs"
   },
   "dependencies": {
     "phaser": "^3.90.0",
