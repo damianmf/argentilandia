@@ -8,11 +8,11 @@ PNG 1200×630 + `_redirects`). Sin backend: lo "dinámico" son commits.
 
 | Ruta | Qué es |
 |---|---|
-| `/` | El chooser (rewritten a `/web/` por `_redirects`) |
-| `/index.html?game=<id>` | El juego (Phaser), carga `content/events/<id>/` |
+| `/` | La app (Phaser). Sin `?game=` redirige al chooser (`/web/`); los deep links siempre traen `?game=` |
+| `/index.html?game=<id>` | Mismo asset: los Workers normalizan `/index.html` a `/` (307) antes de servir |
 | `/juego/<id>/` | Landing del juego con meta tags OG; redirige al juego. **Esta es la URL que se comparte** |
 | `/og/<id>.png` | Tarjeta 1200×630 (avatar rasterizado + banda del tema) |
-| `/web/` | Chooser sin rewrite (fallback) |
+| `/web/` | El chooser (índice de juegos) |
 
 El build encadena `tsc → vite build → validate → index → site`: si un gamespec
 no valida, no hay sitio.
@@ -46,11 +46,14 @@ config vive commiteada y cada push a `main` deploya.
    URL `/juego/<id>/` (WhatsApp usa el crawler de Facebook). Si cacheó una
    versión sin imagen, "Scrape again" después del deploy.
 
-Lecciones del primer deploy (18:57 del 10/10): el validador de la API rechaza
-reglas de `_redirects` cuyo target termina en `/index.html` ("infinite loop",
-code 100324) — por eso el rewrite de `/` apunta a `/web/`. Y el auto-setup de
-wrangler para Vite asume SPA (`not_found_handling: "single-page-application"`):
-no dejar que la regenere, el `wrangler.jsonc` del repo manda.
+Lecciones del primer deploy (10/10): el validador de la API rechaza reglas de
+`_redirects` cuyo target termina en `/index.html` ("infinite loop", code
+100324), y además los Workers normalizan `/index.html` a `/` (307) — cualquier
+rewrite de `/` termina tragándose los deep links. Por eso no hay `_redirects`:
+el chooser se elige desde la app cuando no viene `?game=`. Y el auto-setup de
+wrangler para Vite asume SPA (`not_found_handling:
+"single-page-application"`): no dejar que la regenere, el `wrangler.jsonc` del
+repo manda.
 
 ## Chequeo del gate (Etapa 1)
 

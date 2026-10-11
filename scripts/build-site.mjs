@@ -146,10 +146,9 @@ const webDist = join(dist, 'web');
 mkdirSync(webDist, { recursive: true });
 copyFileSync(join(root, 'web', 'index.html'), join(webDist, 'index.html'));
 
-// --- Root `/` = chooser; el juego vive en /index.html (enlazado desde las cards).
-// OJO: el target NO puede terminar en /index.html — el normalizador de Cloudflare
-// lo colapsa y el validador lo rechaza como bucle infinito (code 100324).
-writeFileSync(join(dist, '_redirects'), '/  /web/  200\n');
+// --- Sin `_redirects`: los Workers normalizan /index.html → / (307), así que una
+// regla `/ → /web/` convertía TODOS los deep links en el chooser. El chooser se
+// elige desde la app: sin ?game=, main.ts redirige a /web/.
 
 // --- 404 amable (not_found_handling: "404-page" en wrangler.jsonc) ---
 writeFileSync(
