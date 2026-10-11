@@ -77,7 +77,8 @@
         from { transform: rotate(0deg); }
         to { transform: rotate(90deg); }
       }
-      @media (orientation: portrait) and (pointer: coarse) and (max-width: 700px) {
+      @media (orientation: portrait) and (max-width: 480px),
+        (orientation: portrait) and (pointer: coarse) and (max-width: 700px) {
         #rotate { display: flex; }
       }
     </style>
