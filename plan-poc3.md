@@ -26,10 +26,17 @@ pipeline full-auto con dos pasos todavía en sesión (draft y pasada 2).
 **Objetivo:** que un link de WhatsApp abra el juego del día en cualquier
 teléfono, con tarjeta rica al compartir, sin nada corriendo en tu máquina.
 
-1. [ ] **Hosting estático**: Cloudflare Pages (gratis) — `dist/` (Vite build) +
-   `content/` son 100% client-side; `npm run build` + deploy por push.
-   El build ya ensambla el dist/ autocontenido (app + content jugable + chooser
-   + `_redirects`); falta el alta en Cloudflare Pages (pasos en `docs/deploy.md`).
+1. [x] **Hosting estático**: VIVO desde el 11/10 en
+   https://juego-de-la-actualidad.dami-fontenla.workers.dev — Cloudflare
+   **Workers con assets estáticos** (no Pages): repo GitHub público
+   (damianmf/juego-de-la-actualidad), build `npm run build`, deploy
+   `npx wrangler deploy` guiado por `wrangler.jsonc` (assets-only, 404-page).
+   Sin `_redirects`: los Workers normalizan `/index.html` a `/`, así que el
+   chooser se elige desde la app sin `?game=` (lecciones en `docs/deploy.md`).
+   Juego verificado corriendo en producción (título + gameplay).
+   **Cierre del gate pendiente**: variable `SITE_URL` en build settings +
+   re-deploy (OG absoluto), debugger de Facebook sobre una landing
+   `/juego/<id>/`, y el test de teléfono con un contacto.
 2. [x] **Tarjetas OG por juego**: `scripts/build-site.mjs` genera landings
    `/juego/<id>/` con meta tags OG (title = título, description = intro) y
    tarjetas 1200×630 en PNG (avatar rasterizado con sharp + banda del tema; los
