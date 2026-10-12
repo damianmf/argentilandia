@@ -162,6 +162,14 @@ Estado (12/10): la primera vuelta de 1, 2 y el nombre del 1 están hechas.
    **Visible en el welcome** (12/10): los veredictos corren como ticker en la
    pantalla de título ("🏁 N partidas · 💬 apodo: comentario…"), prueba social
    al entrar; sin backend o sin comentarios, no aparece.
+   **Tribuna (12/10, segunda vuelta, pedido del humano: "más primaria")**: el
+   ticker deja el borde inferior y pasa a correr debajo del título (17px,
+   protagónica), y además corre durante el juego en los 6 motores como
+   "cánticos de estadio" (tira fina a y=60, detrás de los objetos, HUD libre).
+   Módulo compartido `src/engine/tribuna.ts`. Para probarlo quedó el loop
+   social completo en local: `npx wrangler dev` (D1 local) + proxy `/api` de
+   vite. Como-parte-del-juego (atrapar un 💬 que lea un veredicto) queda
+   anotado como idea futura: cambia balance y es trabajo por motor.
    **Pendiente el único paso de infra**: `wrangler login` + `npm run
    backend:setup` + push (crea la base D1 y cuelga el handler `/api`).
 3. [x] **Desafío entre amigos** (12/10): el COMPARTIR lleva `⚔️ ¿ME GANÁS?` +

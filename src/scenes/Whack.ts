@@ -4,6 +4,7 @@ import { whackParams } from '../engine/difficulty';
 import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
+import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const AREA_TOP = 84;
@@ -86,6 +87,8 @@ export class Whack extends Phaser.Scene {
       }
       this.whackAt(pointer);
     });
+
+    void tribuna(this, { y: 60, fontSize: 14, color: '#b8bdd4', fondoAlpha: 0.4 });
   }
 
   private buildHoles(): void {

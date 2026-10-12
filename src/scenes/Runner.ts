@@ -5,6 +5,7 @@ import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
 import { HitStop, hitPop, popText, tickTime } from '../engine/juice';
+import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const FLOOR_Y = 552;
@@ -122,6 +123,8 @@ export class Runner extends Phaser.Scene {
     this.input.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
       if (!pointer.rightButtonDown()) this.jump();
     });
+
+    void tribuna(this, { y: 60, fontSize: 14, color: '#b8bdd4', fondoAlpha: 0.4 });
   }
 
   update(_time: number, delta: number): void {

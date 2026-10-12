@@ -136,3 +136,18 @@ commit. Sin backend que apagar.
   script; el draft la recibe como restricción).
 - Ante duda editorial, no se genera: es más barato un día vacío que un juego
   malo (el juez del checklist la aplica con su umbral).
+
+## Probar el loop social en local (tribuna, ranking, veredictos)
+
+1. `npx wrangler d1 execute juego-actualidad --local --file=worker/schema.sql`
+   (una vez por máquina; la base local vive en `.wrangler/state`).
+2. `npx wrangler dev --port 8787` en otra terminal (misma Worker que
+   producción, con D1 local).
+3. `npm run dev` solo: el `vite.config.ts` ya proxifica `/api` a 8787.
+4. Sembrar partidas de prueba: `curl -X POST
+   http://127.0.0.1:8787/api/juegos/<id>/partidas -H 'content-type:
+   application/json' -d '{"apodo":"...","score":123,"comentario":"..."}'`
+   (rate limit 6/hora por IP también aplica en local).
+
+Sin wrangler corriendo, la tribuna y el ranking fallan en silencio: las
+pantallas quedan como siempre (comportamiento esperado, no es un error).

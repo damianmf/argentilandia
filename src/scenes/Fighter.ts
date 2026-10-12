@@ -11,6 +11,7 @@ import {
   type PlayerSprite,
 } from '../engine/avatar';
 import { sfx } from '../engine/audio';
+import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const FLOOR_Y = 470;
@@ -133,6 +134,8 @@ export class Fighter extends Phaser.Scene {
     });
     this.input.on('pointerdown', () => this.punch());
     this.input.keyboard!.on('keydown-SPACE', () => this.punch());
+
+    void tribuna(this, { y: 60, fontSize: 14, color: '#b8bdd4', fondoAlpha: 0.4 });
   }
 
   update(_time: number, delta: number): void {

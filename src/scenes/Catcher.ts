@@ -5,6 +5,7 @@ import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
 import { HitStop, hitPop, popPoints, popText, tickTime } from '../engine/juice';
+import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const PLAYER_SPEED = 520;
@@ -73,6 +74,8 @@ export class Catcher extends Phaser.Scene {
     this.input.on('pointermove', (pointer: Phaser.Input.Pointer) => {
       this.targetX = pointer.x;
     });
+
+    void tribuna(this, { y: 60, fontSize: 14, color: '#b8bdd4', fondoAlpha: 0.4 });
   }
 
   update(_time: number, delta: number): void {

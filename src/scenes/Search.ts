@@ -3,6 +3,7 @@ import type { GameSpecSearch, SearchItem } from '../types';
 import { searchParams } from '../engine/difficulty';
 import { applyTheme, hudColors } from '../engine/theme';
 import { sfx } from '../engine/audio';
+import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const CELL_CLOSED = 0x2e2e4a;
@@ -86,6 +87,7 @@ export class Search extends Phaser.Scene {
 
     this.buildGrid();
     this.refreshHud();
+    void tribuna(this, { y: 60, fontSize: 14, color: '#b8bdd4', fondoAlpha: 0.4 });
   }
 
   update(_time: number, delta: number): void {

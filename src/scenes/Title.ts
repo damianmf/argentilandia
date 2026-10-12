@@ -4,13 +4,9 @@ import { applyTheme } from '../engine/theme';
 import { createAvatarSprite, createPlayer, preloadAvatarImage, preloadPlayer, RIVAL_KEY } from '../engine/avatar';
 import { initAudio } from '../engine/audio';
 import { SCENE_BY_GAME, urlGameId } from '../engine/routes';
+import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
-
-interface ResumenTitulo {
-  comentarios: { apodo: string; comentario: string }[];
-  totalJugadas: number;
-}
 
 export class Title extends Phaser.Scene {
   private spec: GameSpec;
@@ -177,45 +173,9 @@ export class Title extends Phaser.Scene {
       play.on('pointerup', () => start());
     }
 
-    this.cargarVeredictos(this.scale.width);
-  }
-
-  // Prueba social al entrar: los veredictos de los jugadores corren como ticker
-  // en el borde inferior del título. Sin backend o sin comentarios, no aparece.
-  private cargarVeredictos(width: number): void {
-    const gameId = urlGameId();
-    if (!gameId) return;
-    void (async () => {
-      try {
-        const r = await fetch(`/api/juegos/${encodeURIComponent(gameId)}/resumen`);
-        if (!r.ok) return;
-        const data = (await r.json()) as ResumenTitulo;
-        if (!this.scene.isActive('Title') || data.comentarios.length === 0) return;
-
-        const partes = [`🏁 ${data.totalJugadas} ${data.totalJugadas === 1 ? 'partida' : 'partidas'} jugadas`];
-        for (const c of data.comentarios.slice(0, 10)) {
-          partes.push(`💬 ${c.apodo}: "${c.comentario}"`);
-        }
-        const texto = partes.join('   ·   ');
-
-        const strip = this.add.rectangle(width / 2, 589, width, 26, 0x05050a, 0.62);
-        const estilo = { fontFamily: FONT, fontSize: '15px', color: '#c6cad8' };
-        const mitad = this.add.text(0, 0, texto, estilo).setOrigin(0, 0.5);
-        const tira = this.add.container(0, 589, [mitad, this.add.text(mitad.width, 0, texto, estilo).setOrigin(0, 0.5)]);
-        strip.setDepth(0);
-        tira.setDepth(1);
-        // La tira tiene el texto dos veces: al correr un ancho exacto, el loop es seamless.
-        this.tweens.add({
-          targets: tira,
-          x: -mitad.width,
-          duration: Math.max(14000, mitad.width * 16),
-          repeat: -1,
-          ease: 'Linear',
-        });
-      } catch {
-        // sin backend acá: la pantalla de título queda como siempre
-      }
-    })();
+    // Prueba social protagónica: la tribuna corre debajo del título, primera
+    // cosa que se lee después del nombre. Sin backend o sin comentarios, no aparece.
+    void tribuna(this, { y: 146, fontSize: 17, color: '#f0f0ff', fondoAlpha: 0.78 });
   }
 
   private attractFight(cx: number, spec: GameSpecFighter): void {
