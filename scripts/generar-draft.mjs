@@ -48,7 +48,7 @@ function eventosRecientes() {
       try {
         const event = JSON.parse(readFileSync(join(eventsDir, name, 'event.json'), 'utf8'));
         const spec = JSON.parse(readFileSync(join(eventsDir, name, 'gamespec.json'), 'utf8'));
-        return { fecha: event.date, categoria: event.category, motor: spec.game };
+        return { id: name, fecha: event.date, categoria: event.category, motor: spec.game, titulo: spec.title, evento: event.event };
       } catch {
         return null;
       }
@@ -60,6 +60,74 @@ const recientes = eventosRecientes();
 const ultima = recientes.at(-1) ?? null;
 const categoriaProhibida = ultima?.categoria ?? null;
 const motorProhibido = ultima?.motor ?? null;
+
+// Memoria del draft (días anteriores): qué se jugó, qué quedó en la mesa y qué
+// se descartó. Un descarte de ayer puede ganar hoy; una historia que sigue es
+// candidata a segunda jornada (con giro nuevo, no el mismo chiste).
+function seleccionAnteriores() {
+  const radarDir = join(root, 'content', 'radar');
+  if (!existsSync(radarDir)) return [];
+  return readdirSync(radarDir)
+    .filter((name) => /^\d{4}-\d{2}-\d{2}$/.test(name) && name < fecha)
+    .sort()
+    .slice(-2)
+    .map((dia) => {
+      try {
+        return { dia, seleccion: JSON.parse(readFileSync(join(radarDir, dia, 'seleccion.json'), 'utf8')) };
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
+}
+
+const anteriores = seleccionAnteriores();
+const urlsAnteriores = new Set(
+  anteriores.flatMap(({ seleccion: s }) =>
+    [...(s.preseleccion ?? []), ...(s.descartes ?? [])].map((p) => p?.url).filter(Boolean),
+  ),
+);
+
+// Veredictos de los jugadores del último juego (backend de comentarios). Si no
+// hay backend, no hay comentarios o falla la red, el draft sigue sin ellos.
+async function veredictosJugadores(ultimoId) {
+  if (!ultimoId) return null;
+  const base = (process.env.SITE_URL || 'https://juego-de-la-actualidad.dami-fontenla.workers.dev').replace(/\/+$/, '');
+  try {
+    const respuesta = await fetch(`${base}/api/juegos/${encodeURIComponent(ultimoId)}/resumen`, {
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!respuesta.ok) return null;
+    const data = await respuesta.json();
+    return Array.isArray(data.comentarios) && data.comentarios.length > 0 ? data.comentarios.slice(0, 20) : null;
+  } catch {
+    return null;
+  }
+}
+
+const memoriaTexto = anteriores.length
+  ? `Memoria de jornadas anteriores (para no repetir chistes y para segundas partes):
+${anteriores
+  .map(({ dia, seleccion: s }) => {
+    const jugado = s.event ? `${s.event.event}${s.event.category ? ` [categoría ${s.event.category}]` : ''}` : 'día sin juego';
+    const preseleccion =
+      (s.preseleccion ?? []).map((p) => `${p.titular} (${CRITERIOS.map((c) => `${c} ${p.scores?.[c] ?? '?'}`).join(', ')})`).join('; ') || '—';
+    const descartes = (s.descartes ?? []).map((d) => `${d.titular} — ${d.razon}`).join('; ') || '—';
+    return `- ${dia}: JUGADO: ${jugado}\n  PRESELECCIONADOS: ${preseleccion}\n  DESCARTES: ${descartes}`;
+  })
+  .join('\n')}
+
+Reglas de memoria:
+- Un descarte o preseleccionado de un día anterior que REAPARECE hoy puede ganar hoy: si la noticia creció, puede pasar el umbral que ayer no pasó. Si pasa, decilo en el motivo ("reincidente: ...").
+- Si el ganador de hoy es la misma historia de un juego ya publicado, el juego nuevo tiene que ser un GIRO (qué cambió HOY), no el mismo chiste otra vez.`
+  : 'Sin jornadas anteriores en la memoria: sin reglas de memoria.';
+
+const veredictos = await veredictosJugadores(recientes.at(-1)?.id ?? null);
+const veredictosTexto = veredictos
+  ? `Veredictos de los jugadores del último juego (backend de comentarios):
+${veredictos.map((c) => `- ${c.apodo}: "${c.comentario}"`).join('\n')}
+Tomalo como señal editorial: si la gente pidió más acidez, otra mecánica u otra historia, ponderalo al puntuar.`
+  : '';
 
 const lineaEditorial = loadPrompt('linea-editorial.md');
 const criterios = extractSection(loadPrompt('event-analysis.md'), 'Instrucciones');
@@ -105,7 +173,15 @@ Variedad (regla dura): hoy NO puede ganar una noticia de categoría "${categoria
 
 const A = await chatJSON({
   system: `${lineaEditorial}\n\n${criterios}\n\n${contratoA}`,
-  user: `Fecha de hoy: ${fecha}.\n\n${variedad}\n\nCandidatos crudos del radar:\n\n${candidatos}`,
+  user: `Fecha de hoy: ${fecha}.
+
+${variedad}
+
+${memoriaTexto}
+${veredictosTexto ? `\n${veredictosTexto}\n` : ''}
+Candidatos crudos del radar:
+
+${candidatos}`,
   validar: validarA,
   maxTokens: 3000,
 });
@@ -121,6 +197,7 @@ if (A.ganador === null) {
     pitches: [],
     pitchElegido: null,
     descartes: A.descartes,
+    memoria: { consultadas: anteriores.map((a) => a.dia), veredictosInyectados: veredictos ? veredictos.length : 0 },
     advertencias: [],
   };
   writeFileSync(join(radarDir, 'seleccion.json'), `${JSON.stringify(seleccion, null, 2)}\n`);
@@ -169,16 +246,35 @@ function validarB(json) {
   if (typeof json.acidez !== 'string' || json.acidez.length === 0) {
     return 'acidez: falta la declaración según el medidor (verde/amarillo/rojo) con su justificación';
   }
+  if (json.segundaJornada != null) {
+    const sj = json.segundaJornada;
+    if (
+      typeof sj !== 'object' ||
+      typeof sj.de !== 'string' ||
+      !/^\d{4}-\d{2}-\d{2}$/.test(sj.de) ||
+      typeof sj.giro !== 'string' ||
+      sj.giro.length === 0
+    ) {
+      return 'segundaJornada: si va, tiene que ser { de: "YYYY-MM-DD", giro: "qué cambió HOY respecto del juego ya publicado" }';
+    }
+  }
   return null;
 }
 
 console.log('Draft B: Event + pitches...');
+const juegoAnterior = recientes.at(-1) ?? null;
+const contextoJuegoAnterior = juegoAnterior
+  ? `Juego ya publicado (${juegoAnterior.fecha}): "${juegoAnterior.titulo}" (${juegoAnterior.motor}) — evento: ${juegoAnterior.evento}.
+Si tu Event es la misma historia, declara "segundaJornada" y el juego tiene que girar sobre qué cambió HOY, no repetir ese chiste.
+
+`
+  : '';
 const B = await chatJSON({
   system: `${lineaEditorial}\n\n${contratoB}`,
   user: `Fecha de hoy: ${fecha}.
 Variedad de motor (regla dura): el juego de ayer fue "${motorProhibido ?? '—'}": ese motor puede aparecer como pitch pero NO puede ser el mejor puntuado si hay alternativa.
 
-${contextoNota}
+${contextoJuegoAnterior}${veredictosTexto ? `${veredictosTexto}\n\n` : ''}${contextoNota}
 
 Datos del ganador: ${JSON.stringify(ganador, null, 2)}`,
   validar: validarB,
@@ -210,6 +306,7 @@ if (B.event === null) {
     pitches: [],
     pitchElegido: null,
     descartes: A.descartes,
+    memoria: { consultadas: anteriores.map((a) => a.dia), reincidente: false, segundaJornada: null, veredictosInyectados: veredictos ? veredictos.length : 0 },
     advertencias: ['la única noticia que pasaba el umbral era de una categoría prohibida por variedad'],
   };
   writeFileSync(join(radarDir, 'seleccion.json'), `${JSON.stringify(seleccion, null, 2)}\n`);
@@ -219,6 +316,12 @@ if (B.event === null) {
 }
 
 const estado = modo === 'con-aprobacion' ? 'ESPERANDO_APROBACION' : 'APROBADO_AUTOMATICO';
+const memoria = {
+  consultadas: anteriores.map((a) => a.dia),
+  reincidente: urlsAnteriores.has(ganador.url),
+  segundaJornada: B.segundaJornada ?? null,
+  veredictosInyectados: veredictos ? veredictos.length : 0,
+};
 const seleccion = {
   fecha,
   modo,
@@ -230,6 +333,7 @@ const seleccion = {
   pitches: B.pitches,
   pitchElegido,
   descartes: A.descartes,
+  memoria,
   advertencias,
 };
 writeFileSync(join(radarDir, 'seleccion.json'), `${JSON.stringify(seleccion, null, 2)}\n`);
@@ -273,11 +377,21 @@ function renderDraft(seleccion) {
   const advertencias = seleccion.advertencias.length
     ? `\n> Advertencias: ${seleccion.advertencias.join('; ')}\n`
     : '';
+  const m = seleccion.memoria ?? {};
+  const memoriaLinea = [
+    `jornadas consultadas: ${m.consultadas?.join(', ') || '—'}`,
+    `reincidente: ${m.reincidente ? 'SÍ' : 'no'}`,
+    m.segundaJornada ? `SEGUNDA JORNADA de ${m.segundaJornada.de} — giro: ${m.segundaJornada.giro}` : null,
+    `veredictos de jugadores inyectados: ${m.veredictosInyectados ?? 0}`,
+  ]
+    .filter(Boolean)
+    .join(' · ');
   return `# Draft radar — ${seleccion.fecha}
 ESTADO: ${seleccion.estado}
 
 Declaración de acidez (medidor de la biblia): ${seleccion.acidez}
 ${advertencias}
+> Memoria del draft: ${memoriaLinea}
 ## Preselección (scores comparables)
 
 ${preseleccion}

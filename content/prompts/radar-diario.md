@@ -17,12 +17,24 @@ categoría con el último juego.
 
 ## Llamada A — preselección
 
-Entrada: candidatos crudos del radar (`candidatos.md`) + el contexto de variedad.
-Elegí hasta 5 titulares con potencial (actualidad + chiste visible + reconocible
-para un argentino) y puntuálos con los 6 criterios del spec, cada uno 1–10.
-Umbral: `jugabilidad >= 7` con apoyo de `explicabilidad >= 7`, fuente real en la
-lista, y línea editorial. Registrá SIEMPRE los descartes con razón (comparable
-día a día): mínimo 1 salvo que el radar venga vacío.
+Entrada: candidatos crudos del radar (`candidatos.md`), el contexto de variedad,
+la **memoria de jornadas anteriores** (qué juego se publicó cada día, qué quedó
+preseleccionado y qué se descartó, con scores) y, si hay, los **veredictos de
+los jugadores** del último juego (comentarios del backend). Elegí hasta 5
+titulares con potencial (actualidad + chiste visible + reconocible para un
+argentino) y puntuálos con los 6 criterios del spec, cada uno 1–10. Umbral:
+`jugabilidad >= 7` con apoyo de `explicabilidad >= 7`, fuente real en la lista,
+y línea editorial. Registrá SIEMPRE los descartes con razón (comparable día a
+día): mínimo 1 salvo que el radar venga vacío.
+
+Reglas de memoria:
+- Un descarte o preseleccionado de un día anterior que REAPARECE hoy puede
+  ganar hoy: si la noticia creció, puede pasar el umbral que ayer no pasó. Si
+  pasa, decilo en el motivo ("reincidente: ...").
+- Si el ganador de hoy es la misma historia de un juego ya publicado, el juego
+  nuevo tiene que girar sobre qué cambió HOY, no repetir el chiste.
+- Los veredictos de los jugadores son señal editorial, no orden: si la gente
+  pidió más acidez, otra mecánica u otra historia, ponderalo al puntuar.
 
 Salida: SOLO este JSON:
 
@@ -73,9 +85,15 @@ de variedad que te marcamos):
       "chiste": "el chiste jugable en 4 líneas máximo: quién es el jugador, qué agarra/esquiva/golpea y dónde está el punchline",
       "scoreChiste": 8
     }
-  ]
+  ],
+  "segundaJornada": { "de": "2026-10-11", "giro": "qué cambió HOY respecto del juego ya publicado" }
 }
 ```
+
+- `segundaJornada`: SOLO si el Event de hoy es la misma historia de un juego ya
+  publicado (te lo recordamos en la entrada con el juego de ayer). Si no,
+  omití el campo. El `giro` es obligatorio: el juego nuevo tiene que ser otra
+  cosa, no el mismo chiste.
 
 - Exactamente 3 pitches, cada uno con un **motor distinto ya implementado**; el
   motor que mejor leva el chiste, sin favoritos: si el chiste es "golpear lo que
