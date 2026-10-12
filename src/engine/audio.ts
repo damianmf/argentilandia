@@ -15,6 +15,9 @@ export const sfx = {
   dodge(): void {
     blip(620, 0.06, 'triangle', 0.07);
   },
+  jump(): void {
+    blip(420, 0.08, 'triangle', 0.07);
+  },
   crash(): void {
     blip(140, 0.18, 'sawtooth', 0.16);
   },

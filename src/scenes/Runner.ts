@@ -4,6 +4,7 @@ import { runnerParams } from '../engine/difficulty';
 import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
+import { HitStop, hitPop, popText, tickTime } from '../engine/juice';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const FLOOR_Y = 552;
@@ -34,7 +35,9 @@ export class Runner extends Phaser.Scene {
   private params: ReturnType<typeof runnerParams>;
   private player!: PlayerSprite;
   private baseHeight = 0;
+  private baseScaleX = 1;
   private baseScaleY = 1;
+  private squashTween: Phaser.Tweens.Tween | undefined;
   private standY = 0;
   private velocityY = 0;
   private grounded = true;
@@ -50,6 +53,9 @@ export class Runner extends Phaser.Scene {
   private distance = 0;
   private elapsed = 0;
   private finished = false;
+  private hitStop = new HitStop();
+  private lastSecond = -1;
+  private timeColor = '';
 
   constructor(spec: GameSpecRunner) {
     super('Runner');
@@ -64,6 +70,7 @@ export class Runner extends Phaser.Scene {
   create(): void {
     applyTheme(this, this.spec);
     const colors = hudColors(this.spec);
+    this.timeColor = colors.time;
     this.cursors = this.input.keyboard!.createCursorKeys();
     this.jumpKey = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     this.input.keyboard!.addCapture('SPACE,UP,DOWN');
@@ -84,6 +91,7 @@ export class Runner extends Phaser.Scene {
 
     this.player = createPlayer(this, this.spec, PLAYER_X, 0);
     this.baseHeight = this.player.height;
+    this.baseScaleX = this.player.scaleX;
     this.baseScaleY = this.player.scaleY;
     this.standY = FLOOR_Y - this.baseHeight / 2;
     this.player.y = this.standY;
@@ -118,6 +126,7 @@ export class Runner extends Phaser.Scene {
 
   update(_time: number, delta: number): void {
     if (this.finished) return;
+    if (this.hitStop.drain(delta)) return;
     const dt = delta / 1000;
 
     if (Phaser.Input.Keyboard.JustDown(this.jumpKey) || Phaser.Input.Keyboard.JustDown(this.cursors.up)) {
@@ -131,6 +140,7 @@ export class Runner extends Phaser.Scene {
         this.player.y = this.standY;
         this.grounded = true;
         this.velocityY = 0;
+        if (!this.duckHeld()) this.squash(1.12, 0.85);
       }
     }
     this.applyDuck(this.grounded && this.duckHeld());
@@ -146,6 +156,10 @@ export class Runner extends Phaser.Scene {
     this.elapsed += delta;
     const remaining = Math.max(0, Math.ceil((this.spec.duration * 1000 - this.elapsed) / 1000));
     this.timeText.setText(`${remaining}s`);
+    if (remaining !== this.lastSecond) {
+      this.lastSecond = remaining;
+      tickTime(this, this.timeText, remaining, this.timeColor);
+    }
     if (this.elapsed >= this.spec.duration * 1000) {
       this.finish();
       return;
@@ -189,13 +203,32 @@ export class Runner extends Phaser.Scene {
     this.grounded = false;
     this.velocityY = JUMP_VELOCITY;
     this.applyDuck(false);
+    sfx.jump();
+    this.squash(0.88, 1.18);
   }
 
   private applyDuck(duck: boolean): void {
     if (duck === this.ducking) return;
     this.ducking = duck;
+    this.squashTween?.remove();
+    this.squashTween = undefined;
+    this.player.scaleX = this.baseScaleX;
     this.player.scaleY = this.baseScaleY * (duck ? DUCK_SCALE : 1);
     this.player.y = duck ? FLOOR_Y - (this.baseHeight * DUCK_SCALE) / 2 : this.standY;
+  }
+
+  /** Squash & stretch: se estira al saltar y se aplasta al aterrizar, y vuelve solo. */
+  private squash(scaleX: number, scaleY: number): void {
+    this.squashTween?.remove();
+    this.player.scaleX = this.baseScaleX * scaleX;
+    this.player.scaleY = this.baseScaleY * scaleY;
+    this.squashTween = this.tweens.add({
+      targets: this.player,
+      scaleX: this.baseScaleX,
+      scaleY: this.baseScaleY,
+      duration: 150,
+      ease: 'Quad.Out',
+    });
   }
 
   private spawn(): void {
@@ -223,7 +256,10 @@ export class Runner extends Phaser.Scene {
     spawn.done = true;
     this.bonus += spawn.item.points;
     sfx.catch();
+    hitPop(this, this.player);
+    this.hitStop.stop(45);
     this.float(spawn.obj.x, spawn.obj.y, label(spawn.item), '#7bed9f');
+    popText(this, this.scoreText);
     this.tweens.add({
       targets: spawn.obj,
       scale: spawn.obj.scale * 1.6,
@@ -237,8 +273,10 @@ export class Runner extends Phaser.Scene {
     spawn.done = true;
     this.bonus += spawn.item.points;
     sfx.crash();
-    this.cameras.main.shake(120, 0.006);
+    this.cameras.main.shake(140, 0.011);
+    this.hitStop.stop(85);
     this.float(spawn.obj.x, spawn.obj.y, label(spawn.item), '#ff6b6b');
+    popText(this, this.scoreText);
     this.tweens.add({
       targets: this.player,
       alpha: 0.2,
