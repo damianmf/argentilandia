@@ -55,11 +55,11 @@ sucesor de Pages): el dashboard corre `npm run build` y deploya con
 `dist/`, `not_found_handling: "404-page"`). Nada de configurar a mano: la
 config vive commiteada y cada push a `main` deploya.
 
-1. Repo: https://github.com/damianmf/juego-de-la-actualidad (público, creado
-   el 10/10 desde el CLI; remote `origin` configurado).
-2. Proyecto Cloudflare `juego-de-la-actualidad` conectado al repo (build
+1. Repo: https://github.com/damianmf/argentilandia (público; se llamaba
+   `juego-de-la-actualidad` hasta el 12/10 — GitHub redirige los links viejos).
+2. Proyecto Cloudflare conectado al repo (build
    command `npm run build`, deploy command `npx wrangler deploy`).
-3. Deploy URL: `https://juego-de-la-actualidad.<subdominio>.workers.dev`.
+3. Deploy URL: `https://argentilandia.<subdominio>.workers.dev`.
 4. `SITE_URL`: en Workers **no** existe `CF_PAGES_URL` — cargar la URL final
    del paso 3 como variable de entorno `SITE_URL` en los build settings y
    re-deployar, para que los `og:image`/`og:url` salgan absolutos.
@@ -90,3 +90,28 @@ Mientras el draft y la generación sean pasos de sesión, la jornada corre con e
 cron del entorno (runbook). Cuando la Etapa 2 los automatice: habilitar el
 `schedule` de `.github/workflows/radar-diario.yml` y desactivar el cron del
 entorno — nunca los dos a la vez (doble radar).
+
+## Migración de nombre (12/10): `argentilandia`
+
+Cloudflare **no permite renombrar un Worker**: la URL nueva se logra
+deployando con otro `name` en `wrangler.jsonc` y borrando el viejo. Los
+bindings (D1 + assets) viajan con la config commiteada, así que la base de
+veredictos no se toca. Lo que quedó hecho desde la CLI:
+
+- `wrangler.jsonc` `name` → `argentilandia`; deploy local con
+  `SITE_URL=https://argentilandia.dami-fontenla.workers.dev npm run build &&
+  npx wrangler deploy`. Verificado: juego, `/api` (misma D1) y OG absoluto.
+- El worker viejo (`juego-de-la-actualidad`) siguió en pie durante la
+  transición.
+
+Pendientes del humano (dashboards):
+
+1. GitHub: repo → Settings → General → Repository name → `argentilandia`
+   (GitHub redirige los links viejos). Avisar para actualizar el remote local.
+2. Cloudflare: Workers & Pages → `argentilandia` → Settings → Build →
+   conectar el repo (el build quedó apuntando al worker viejo).
+3. En los build settings del worker nuevo: `SITE_URL =
+   https://argentilandia.dami-fontenla.workers.dev` y re-deployar.
+4. Borrar el worker viejo (`juego-de-la-actualidad` → Settings → Delete)
+   cuando el nuevo esté deployando solo en cada push. Los links viejos
+   compartidos dejan de funcionar recién ahí.
