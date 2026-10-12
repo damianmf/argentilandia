@@ -60,6 +60,39 @@ La línea `RESUMEN: {...}` del final es el contrato de reporte del cron.
 - `APROBACION=on`: el pipeline corta tras el draft (`ESPERANDO_APROBACION`,
   exit 2) y la jornada continúa cuando alguien complete la generación a mano.
 - `N_CANDIDATOS`: candidatos por jornada (default 3).
+- `SITE_URL`: URL pública del sitio (default: la workers.dev). La usa el draft
+  para bajar los veredictos del último juego; si no responde, sigue sin ellos.
+
+## Backend de veredictos (comentarios + ranking)
+
+Configuración única: `npx wrangler login` → `npm run backend:setup` → commit +
+push. El script crea la base D1 `juego-actualidad`, cuelga el worker
+(`main` + bindings `ASSETS`/`DB` en wrangler.jsonc) y aplica `worker/schema.sql`.
+Hasta ese paso el sitio sigue deployando como assets-only y el `/api` no existe
+(el Outro lo maneja: "RANKING NO DISPONIBLE ACÁ").
+
+Endpoints: `POST /api/juegos/<id>/partidas` (apodo + score + comentario
+opcional; rate limit 6 por IP y juego por hora) y
+`GET /api/juegos/<id>/resumen` (ranking top-10 + últimos veredictos + totales).
+Los ids válidos salen de `worker/juegos.json`, que regenera cada build.
+
+Auditoría de veredictos (sumarla a la de todos los días):
+
+```sh
+npx wrangler d1 execute juego-actualidad --remote \
+  --command "SELECT id, game_id, apodo, score, comentario FROM partidas WHERE visible = 1 ORDER BY id DESC LIMIT 30"
+# ocultar lo que no salga:
+npx wrangler d1 execute juego-actualidad --remote \
+  --command "UPDATE partidas SET visible = 0 WHERE id = <id>"
+```
+
+Los veredictos visibles del último juego entran solos al draft del día
+siguiente (señal editorial, no orden: lo define radar-diario.md).
+
+Probar el backend sin deployar: `wrangler dev` con una config temporal que
+tenga `main`, `assets.binding` y una D1 local (cualquier `database_id` sirve en
+`--local`) + `--no-live-reload` (el live-reload de dev navega la página sola y
+parece un bug del juego).
 
 ## Modo sin key (local): la sesión hace de LLM
 

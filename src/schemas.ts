@@ -108,6 +108,12 @@ export const playerSchema = z.object({
   image: z.string().min(1).optional(),
 });
 
+export const rankingSchema = z.object({
+  titulo: z.string().min(1),
+  titulos: z.array(z.string().min(1)).min(2).max(8).optional(),
+  unidad: z.string().min(1).optional(),
+});
+
 export const gameSpecCatcherSchema: z.ZodType<GameSpec> = z.object({
   game: z.literal('catcher'),
   title: z.string().min(1),
@@ -121,6 +127,7 @@ export const gameSpecCatcherSchema: z.ZodType<GameSpec> = z.object({
   difficulty: z.number().int().min(1).max(10),
   theme: themeSchema.optional(),
   sound: z.boolean().optional(),
+  ranking: rankingSchema.optional(),
   outro: outroSchema,
 });
 
@@ -135,6 +142,7 @@ export const gameSpecDodgeSchema: z.ZodType<GameSpecDodge> = z.object({
   difficulty: z.number().int().min(1).max(10),
   theme: themeSchema.optional(),
   sound: z.boolean().optional(),
+  ranking: rankingSchema.optional(),
   outro: outroSchema,
 });
 
@@ -161,6 +169,7 @@ export const gameSpecSearchSchema: z.ZodType<GameSpecSearch> = z.object({
   difficulty: z.number().int().min(1).max(10),
   theme: themeSchema.optional(),
   sound: z.boolean().optional(),
+  ranking: rankingSchema.optional(),
   outro: outroSchema,
 });
 
@@ -180,6 +189,7 @@ export const gameSpecRunnerSchema: z.ZodType<GameSpecRunner> = z.object({
   difficulty: z.number().int().min(1).max(10),
   theme: themeSchema.optional(),
   sound: z.boolean().optional(),
+  ranking: rankingSchema.optional(),
   outro: outroSchema,
 });
 
@@ -201,6 +211,7 @@ export const gameSpecFighterSchema: z.ZodType<GameSpecFighter> = z.object({
   difficulty: z.number().int().min(1).max(10),
   theme: themeSchema.optional(),
   sound: z.boolean().optional(),
+  ranking: rankingSchema.optional(),
   outro: outroSchema,
 });
 
@@ -222,6 +233,7 @@ export const gameSpecWhackSchema: z.ZodType<GameSpecWhack> = z.object({
   difficulty: z.number().int().min(1).max(10),
   theme: themeSchema.optional(),
   sound: z.boolean().optional(),
+  ranking: rankingSchema.optional(),
   outro: outroSchema,
 });
 

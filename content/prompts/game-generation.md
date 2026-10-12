@@ -40,6 +40,12 @@ cero producción de assets (emojis + formas + etiquetas), español rioplatense.
 - Pesos sugeridos: `catch` 2–3, `avoid` 2, `special` 1. Puntos positivos 50–150,
   negativos −30 a −200 (el special pega más fuerte).
 - `duration` 30–90 s. `difficulty` = 5 siempre (el script lo fuerza).
+- **`ranking` (el escalafón del día)**: cada juego define su propio marco de
+  ranking, como extensión del chiste. `titulo` es el encabezado del escalafón
+  ("¿QUIÉN DEMOLIÓ MÁS EL PAÍS?"), `titulos` son 4–6 títulos satíricos ordenados
+  del mejor al peor puesto ("DEMOLedor Mayor del País" → "Turista despistado")
+  y `unidad` nombra los puntos con humor ("puntos de demolición"). El puesto del
+  jugador se muestra y se comparte con ese marco, nunca como "score" seco.
 - La sátira va a la situación: sin insultos a personas reales.
 
 ## Contrato de candidato
@@ -62,6 +68,11 @@ Salida: SOLO este JSON, con el GameSpec exactamente en el shape de su branch en
     "player": { "emoji": "<1 emoji>", "label": "<quién es, con humor>", "image": "avatar.svg" },
     "…": "<campos propios del motor: catch/avoid/special, targets/noTouch, grid, obstacles, rival, etc.>",
     "difficulty": 5,
+    "ranking": {
+      "titulo": "<encabezado satírico del escalafón del día>",
+      "titulos": ["<mejor puesto>", "<…>", "<peor puesto>"],
+      "unidad": "<nombre satírico de los puntos>"
+    },
     "outro": {
       "whatHappened": "<lo que pasó de verdad, 3 líneas>",
       "quote": { "text": "…", "who": "…", "source": "<url EXACTA de outro.sources>" },

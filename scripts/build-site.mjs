@@ -146,6 +146,10 @@ const webDist = join(dist, 'web');
 mkdirSync(webDist, { recursive: true });
 copyFileSync(join(root, 'web', 'index.html'), join(webDist, 'index.html'));
 
+// --- Game ids válidos para el worker (/api rechaza cualquier otro id) ---
+mkdirSync(join(root, 'worker'), { recursive: true });
+writeFileSync(join(root, 'worker', 'juegos.json'), `${JSON.stringify(games.map((g) => g.id), null, 2)}\n`);
+
 // --- Sin `_redirects`: los Workers normalizan /index.html → / (307), así que una
 // regla `/ → /web/` convertía TODOS los deep links en el chooser. El chooser se
 // elige desde la app: sin ?game=, main.ts redirige a /web/.

@@ -10,6 +10,7 @@ const HEADING_COLOR = '#ffffff';
 const CONTENT_X = 60;
 const CONTENT_WIDTH = 840;
 const DRAG_THRESHOLD = 8;
+const ACCENT = '#ffd166';
 
 interface FightStats {
   landed: number;
@@ -17,6 +18,13 @@ interface FightStats {
   strip: string;
   verdict: string;
   difficulty: number;
+}
+
+interface Resumen {
+  ranking: { apodo: string; score: number }[];
+  comentarios: { apodo: string; comentario: string; fecha: string }[];
+  totalJugadas: number;
+  totalJugadores: number;
 }
 
 export class Outro extends Phaser.Scene {
@@ -33,6 +41,8 @@ export class Outro extends Phaser.Scene {
   private dragStartY = 0;
   private dragStartScroll = 0;
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+  private overlay: HTMLDivElement | null = null;
+  private puestoTexto = '';
 
   constructor(spec: GameSpec) {
     super('Outro');
@@ -46,6 +56,7 @@ export class Outro extends Phaser.Scene {
     this.scrollY = 0;
     this.dragging = false;
     this.dragMoved = false;
+    this.puestoTexto = '';
   }
 
   create(): void {
@@ -114,6 +125,24 @@ export class Outro extends Phaser.Scene {
       this.content.add(text);
       y += text.height + gap;
     };
+
+    const rankingEntry = this.add
+      .text(0, 0, '🏆 RANKING DEL DÍA — ANOTÁ TU PUNTAJE Y DEJÁ TU VEREDICTO', {
+        fontFamily: FONT,
+        fontSize: '22px',
+        fontStyle: 'bold',
+        color: ACCENT,
+        wordWrap: { width: CONTENT_WIDTH },
+      })
+      .setInteractive({ useHandCursor: true });
+    rankingEntry.on('pointerover', () => rankingEntry.setColor('#ffe29a'));
+    rankingEntry.on('pointerout', () => rankingEntry.setColor(ACCENT));
+    rankingEntry.on('pointerup', () => {
+      if (!this.dragMoved) this.abrirRanking();
+    });
+    push(rankingEntry, 26);
+
+    this.events.once('shutdown', () => this.cerrarRanking());
 
     const heading = (text: string, color = HEADING_COLOR): Phaser.GameObjects.Text =>
       this.add
@@ -230,6 +259,9 @@ export class Outro extends Phaser.Scene {
       if (this.stats) {
         lines.push(`"${this.stats.verdict}"${this.stats.difficulty >= 8 ? ' · PRO' : ''}`);
       }
+      if (this.puestoTexto) {
+        lines.push(`🏆 ${this.puestoTexto}`);
+      }
       if (this.stats?.strip) {
         lines.push(this.stats.strip);
       }
@@ -301,5 +333,227 @@ export class Outro extends Phaser.Scene {
       window.open(source.url, '_blank', 'noopener');
     });
     return text;
+  }
+
+  // --- Ranking del día: overlay DOM sobre el canvas (apodo + veredicto + puesto) ---
+
+  private abrirRanking(): void {
+    if (this.overlay) return;
+    if (!urlGameId()) return;
+    if (this.input.keyboard) this.input.keyboard.enabled = false;
+
+    const panel = document.createElement('div');
+    panel.style.cssText = [
+      'background:#101018',
+      'border:1px solid #262636',
+      'border-top:4px solid #ffd166',
+      'border-radius:14px',
+      'padding:22px 24px',
+      'width:min(540px, 92vw)',
+      'max-height:88vh',
+      'overflow-y:auto',
+      'color:#ffffff',
+      'font-family:system-ui,-apple-system,sans-serif',
+    ].join(';');
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = `🏆 ${this.spec.ranking?.titulo ?? 'RANKING DEL DÍA'}`;
+    titulo.style.cssText = 'margin:0 0 4px;font-size:19px;letter-spacing:2px';
+    panel.appendChild(titulo);
+
+    const puntaje = document.createElement('p');
+    puntaje.textContent = `Tu puntaje: ${this.score}${this.spec.ranking?.unidad ? ` ${this.spec.ranking.unidad}` : ' pts'}`;
+    puntaje.style.cssText = 'margin:0 0 14px;color:#9aa0b5;font-size:14px';
+    panel.appendChild(puntaje);
+
+    const campo = (placeholder: string, max: number, multilinea: boolean): HTMLInputElement | HTMLTextAreaElement => {
+      let c: HTMLInputElement | HTMLTextAreaElement;
+      if (multilinea) {
+        c = document.createElement('textarea');
+        c.style.height = '64px';
+        c.style.resize = 'none';
+      } else {
+        c = document.createElement('input');
+        c.type = 'text';
+      }
+      c.placeholder = placeholder;
+      c.maxLength = max;
+      c.style.cssText = [
+        'width:100%',
+        'box-sizing:border-box',
+        'background:#05050a',
+        'border:1px solid #262636',
+        'border-radius:8px',
+        'color:#ffffff',
+        'padding:10px 12px',
+        'font-size:14px',
+        'font-family:inherit',
+        'margin-bottom:10px',
+      ].join(';');
+      panel.appendChild(c);
+      return c;
+    };
+
+    const apodo = campo('TU APODO', 24, false) as HTMLInputElement;
+    try {
+      apodo.value = localStorage.getItem('apodo') ?? '';
+    } catch {
+      // sin localStorage, el apodo se escribe de nuevo
+    }
+    const comentario = campo('TU VEREDICTO (opcional): ¿qué te pareció el día?', 200, true);
+
+    const nota = document.createElement('p');
+    nota.textContent = 'Queda público tu apodo, tu puntaje y tu veredicto. Nada más.';
+    nota.style.cssText = 'margin:0 0 14px;color:#6b7085;font-size:12px';
+    panel.appendChild(nota);
+
+    const fila = document.createElement('div');
+    fila.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap';
+    const boton = (texto: string, fondo: string, accion: () => void): HTMLButtonElement => {
+      const b = document.createElement('button');
+      b.textContent = texto;
+      b.style.cssText = `background:${fondo};border:none;border-radius:8px;color:#ffffff;font-weight:700;font-size:14px;letter-spacing:1px;padding:10px 18px;cursor:pointer;font-family:inherit`;
+      b.onclick = accion;
+      fila.appendChild(b);
+      return b;
+    };
+    const mandar = boton('MANDAR AL RANKING', '#218c5b', () => enviar());
+    boton('DESPUÉS', '#262636', () => this.cerrarRanking());
+    panel.appendChild(fila);
+
+    const mensaje = document.createElement('p');
+    mensaje.style.cssText = 'margin:12px 0 0;color:#ff6b6b;font-size:13px;min-height:16px';
+    panel.appendChild(mensaje);
+
+    const enviar = async (): Promise<void> => {
+      mensaje.style.color = '#9aa0b5';
+      mensaje.textContent = 'MANDANDO…';
+      mandar.disabled = true;
+      mandar.style.opacity = '0.6';
+      const gameId = urlGameId() ?? '';
+      try {
+        const r = await fetch(`/api/juegos/${encodeURIComponent(gameId)}/partidas`, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ apodo: apodo.value, score: this.score, comentario: comentario.value }),
+        });
+        const data = (await r.json().catch(() => null)) as { ok?: boolean; puesto?: number; totalJugadores?: number; error?: string } | null;
+        if (!r.ok || !data?.ok) {
+          mensaje.style.color = '#ff6b6b';
+          mensaje.textContent = data?.error ?? 'NO SE PUDO ANOTAR: probá de nuevo';
+          mandar.disabled = false;
+          mandar.style.opacity = '1';
+          return;
+        }
+        try {
+          localStorage.setItem('apodo', apodo.value.trim());
+        } catch {
+          // sin localStorage no hay apodo recordado, el resto sigue
+        }
+        await this.mostrarPuesto(panel, data.puesto ?? 1, data.totalJugadores ?? 1);
+      } catch {
+        mensaje.style.color = '#ff6b6b';
+        mensaje.textContent = 'RANKING NO DISPONIBLE ACÁ (sin backend). El juego sigue igual.';
+        mandar.disabled = false;
+        mandar.style.opacity = '1';
+      }
+    };
+
+    this.overlay = document.createElement('div');
+    this.overlay.style.cssText = [
+      'position:fixed',
+      'inset:0',
+      'background:rgba(5,5,10,0.88)',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'z-index:1000',
+    ].join(';');
+    this.overlay.appendChild(panel);
+    document.body.appendChild(this.overlay);
+  }
+
+  private async mostrarPuesto(panel: HTMLDivElement, puesto: number, totalJugadores: number): Promise<void> {
+    const tituloSatirico = (): string => {
+      const titulos = this.spec.ranking?.titulos ?? [];
+      if (titulos.length === 0) return '';
+      const indice = totalJugadores <= 1 ? 0 : Math.min(titulos.length - 1, Math.floor(((puesto - 1) / totalJugadores) * titulos.length));
+      return ` — ${titulos[indice]}`;
+    };
+    this.puestoTexto = `N°${puesto} de ${totalJugadores}${tituloSatirico()}`;
+
+    const gameId = urlGameId() ?? '';
+    panel.innerHTML = '';
+
+    const puestoLinea = document.createElement('h3');
+    puestoLinea.textContent = `N° ${puesto} DE ${totalJugadores}`;
+    puestoLinea.style.cssText = 'margin:0 0 2px;font-size:30px;color:#ffd166;letter-spacing:2px';
+    panel.appendChild(puestoLinea);
+
+    const sub = document.createElement('p');
+    sub.textContent = `${this.spec.ranking?.titulo ?? 'RANKING DEL DÍA'}${tituloSatirico()}`;
+    sub.style.cssText = 'margin:0 0 16px;font-size:14px;color:#c6cad8';
+    panel.appendChild(sub);
+
+    const mensaje = document.createElement('p');
+    mensaje.style.cssText = 'margin:0 0 12px;color:#9aa0b5;font-size:13px';
+    panel.appendChild(mensaje);
+
+    try {
+      const r = await fetch(`/api/juegos/${encodeURIComponent(gameId)}/resumen`);
+      if (!r.ok) throw new Error('resumen no disponible');
+      const data = (await r.json()) as Resumen;
+      mensaje.textContent = `${data.totalJugadas} ${data.totalJugadas === 1 ? 'partida jugada' : 'partidas jugadas'}`;
+
+      if (data.ranking.length > 0) {
+        const titulo = document.createElement('p');
+        titulo.textContent = 'EL ESCALAFÓN';
+        titulo.style.cssText = 'margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:2px;color:#ffd166';
+        panel.appendChild(titulo);
+        data.ranking.forEach((fila, i) => {
+          const linea = document.createElement('p');
+          linea.textContent = `${i + 1}. ${fila.apodo} — ${fila.score}`;
+          linea.style.cssText = 'margin:0 0 4px;font-size:14px;color:#cfcfe8';
+          panel.appendChild(linea);
+        });
+      }
+
+      const tituloVeredictos = document.createElement('p');
+      tituloVeredictos.textContent = 'LOS VEREDICTOS';
+      tituloVeredictos.style.cssText = 'margin:14px 0 6px;font-size:13px;font-weight:700;letter-spacing:2px;color:#ffd166';
+      panel.appendChild(tituloVeredictos);
+
+      if (data.comentarios.length === 0) {
+        const vacio = document.createElement('p');
+        vacio.textContent = 'Todavía no hay veredictos. El tuyo es el primero.';
+        vacio.style.cssText = 'margin:0;font-size:14px;color:#6b7085';
+        panel.appendChild(vacio);
+      } else {
+        for (const c of data.comentarios.slice(0, 8)) {
+          const linea = document.createElement('p');
+          linea.textContent = `${c.apodo}: "${c.comentario}"`;
+          linea.style.cssText = 'margin:0 0 6px;font-size:14px;color:#cfcfe8;font-style:italic';
+          panel.appendChild(linea);
+        }
+      }
+    } catch {
+      mensaje.textContent = 'No pude traer el escalafón completo (¿sin backend acá?).';
+    }
+
+    const fila = document.createElement('div');
+    fila.style.cssText = 'display:flex;gap:10px;margin-top:16px';
+    const seguir = document.createElement('button');
+    seguir.textContent = 'SEGUIR';
+    seguir.style.cssText =
+      'background:#ffd166;border:none;border-radius:8px;color:#05050a;font-weight:700;font-size:14px;letter-spacing:1px;padding:10px 22px;cursor:pointer;font-family:inherit';
+    seguir.onclick = () => this.cerrarRanking();
+    fila.appendChild(seguir);
+    panel.appendChild(fila);
+  }
+
+  private cerrarRanking(): void {
+    this.overlay?.remove();
+    this.overlay = null;
+    if (this.input.keyboard) this.input.keyboard.enabled = true;
   }
 }

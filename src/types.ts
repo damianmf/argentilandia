@@ -74,6 +74,15 @@ export interface Outro {
   sources: SourceRef[];
 }
 
+/** Escalafón satírico del día: el marco con el que se muestra y se comparte el puesto. */
+export interface RankingSpec {
+  titulo: string;
+  /** Títulos del escalafón, del mejor al peor puesto */
+  titulos?: string[];
+  /** Nombre satírico de los puntos */
+  unidad?: string;
+}
+
 export interface GameSpecCatcher {
   game: Extract<GameType, 'catcher'>;
   title: string;
@@ -87,6 +96,7 @@ export interface GameSpecCatcher {
   difficulty: number;
   theme?: ThemeSpec;
   sound?: boolean;
+  ranking?: RankingSpec;
   outro: Outro;
 }
 
@@ -101,6 +111,7 @@ export interface GameSpecDodge {
   difficulty: number;
   theme?: ThemeSpec;
   sound?: boolean;
+  ranking?: RankingSpec;
   outro: Outro;
 }
 
@@ -129,6 +140,7 @@ export interface GameSpecSearch {
   difficulty: number;
   theme?: ThemeSpec;
   sound?: boolean;
+  ranking?: RankingSpec;
   outro: Outro;
 }
 
@@ -148,6 +160,7 @@ export interface GameSpecRunner {
   difficulty: number;
   theme?: ThemeSpec;
   sound?: boolean;
+  ranking?: RankingSpec;
   outro: Outro;
 }
 
@@ -169,6 +182,7 @@ export interface GameSpecFighter {
   difficulty: number;
   theme?: ThemeSpec;
   sound?: boolean;
+  ranking?: RankingSpec;
   outro: Outro;
 }
 
@@ -187,6 +201,7 @@ export interface GameSpecWhack {
   difficulty: number;
   theme?: ThemeSpec;
   sound?: boolean;
+  ranking?: RankingSpec;
   outro: Outro;
 }
 

@@ -22,9 +22,30 @@ no valida, no hay sitio.
 - `SITE_URL`: URL absoluta del sitio (los `og:image`/`og:url` la necesitan para
   que WhatsApp muestre tarjeta). En Workers con assets no hay variable auto
   que la dé: cargarla a mano en los build settings con la URL workers.dev.
+  También la lee el draft para bajar los veredictos del último juego.
 - `CLOUDFLARE_WEB_ANALYTICS_TOKEN`: beacon de Cloudflare Web Analytics inyectado
   en la app y el chooser. Crear el sitio en
   https://dash.cloudflare.com → Web Analytics y pegar el token.
+- `IP_SALT` (binding del worker, solo con backend): sal del hash de IP para el
+  rate limit de `/api`. Default `jornada` si no se define.
+
+## Backend de veredictos (opcional, requiere un paso único)
+
+Por defecto el sitio deploya **assets-only** (sin script de Worker). Para
+activar comentarios + ranking: `npx wrangler login` → `npm run backend:setup` →
+commit + push. El script (`scripts/configurar-backend.mjs`) crea la base D1
+`juego-actualidad`, agrega a `wrangler.jsonc` el `main` (`worker/index.mjs`) y
+los bindings (`ASSETS`, `DB`), y aplica `worker/schema.sql`. Desde ahí el mismo
+Worker sirve los assets (todo lo que no es `/api/*` pasa por
+`env.ASSETS.fetch`) y atiende:
+
+| Ruta | Qué hace |
+|---|---|
+| `POST /api/juegos/<id>/partidas` | apodo + score + comentario opcional → puesto en el ranking. Valida el id contra `worker/juegos.json` (regenerado por el build), caps de longitud, rate limit 6/hora por IP hasheada |
+| `GET /api/juegos/<id>/resumen` | ranking top-10 por mejor puntaje por apodo, últimos 20 veredictos, totales |
+
+La moderación es posterior (`visible = 0` vía `wrangler d1 execute`, ver
+runbook). Sin backend configurado, el Outro degrada: "RANKING NO DISPONIBLE".
 
 ## Alta en Cloudflare (hecha el 10/10: Workers con assets estáticos)
 
