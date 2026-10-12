@@ -137,6 +137,9 @@ Estado (12/10): la primera vuelta de 1, 2 y el nombre del 1 están hechas.
    **Regla de contención**: solo el juego más nuevo publicado recibe partidas —
    los anteriores son archivo congelado (lectura), así la moderación es siempre
    "los veredictos de hoy" y el escalafón es un ritual diario (estilo Wordle).
+   **Visible en el welcome** (12/10): los veredictos corren como ticker en la
+   pantalla de título ("🏁 N partidas · 💬 apodo: comentario…"), prueba social
+   al entrar; sin backend o sin comentarios, no aparece.
    **Pendiente el único paso de infra**: `wrangler login` + `npm run
    backend:setup` + push (crea la base D1 y cuelga el handler `/api`).
 3. **Desafío entre amigos**: link de revancha con tu score ("me ganás?"). Sin
