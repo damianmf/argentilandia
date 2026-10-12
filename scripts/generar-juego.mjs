@@ -68,14 +68,15 @@ async function generarCandidato(n) {
   const json = await chatJSON({
     system: `${lineaEditorial}\n\n${reglas}\n\n${contrato}\n\n${vocabulario}`,
     user: `Event (pasa el umbral, fuentes verificadas):\n${JSON.stringify(event, null, 2)}\n\nPitch elegido por el pipeline (respetalo, es el chiste ganador):\n${JSON.stringify(pitch, null, 2)}\n\n${variacion}
-Reglas duras: difficulty = 5; duration entre 30 y 90; player.image = "avatar.svg"; regla de fuentes del outro (quote y moments trazados a outro.sources, facts solo con fuente).`,
+Reglas duras: difficulty = 5; duration 20 para motores de reflejos (catcher, dodge, runner, whack, fighter) y 30–45 para search; player.image = "avatar.svg"; regla de fuentes del outro (quote y moments trazados a outro.sources, facts solo con fuente).`,
     validar: revisarCandidato,
     retries: 2,
     maxTokens: 4000,
   });
-  // Normalizaciones del pipeline (no se delegan en el modelo).
+  // Normalizaciones del pipeline (no se delegan en el modelo). Piso de 15:
+  // la política real (20 reflejos / 30–45 search) la lleva el contrato.
   json.gamespec.difficulty = 5;
-  json.gamespec.duration = Math.min(90, Math.max(30, Math.round(json.gamespec.duration)));
+  json.gamespec.duration = Math.min(90, Math.max(15, Math.round(json.gamespec.duration)));
   json.gamespec.player.image = 'avatar.svg';
   return json;
 }

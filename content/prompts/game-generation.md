@@ -39,7 +39,9 @@ cero producción de assets (emojis + formas + etiquetas), español rioplatense.
   vulnerables jamás son targets: van en `noTouch` o no entran.
 - Pesos sugeridos: `catch` 2–3, `avoid` 2, `special` 1. Puntos positivos 50–150,
   negativos −30 a −200 (el special pega más fuerte).
-- `duration` 30–90 s. `difficulty` = 5 siempre (el script lo fuerza).
+- `duration`: **20 s** para los motores de reflejos (catcher, dodge, runner,
+  whack, fighter — decido 12/10 jugando: corrida corta, "una más"). **30–45 s**
+  para search, que es de pensar. `difficulty` = 5 siempre (el script lo fuerza).
 - **`ranking` (el escalafón del día)**: cada juego define su propio marco de
   ranking, como extensión del chiste. `titulo` es el encabezado del escalafón
   ("¿QUIÉN DEMOLIÓ MÁS EL PAÍS?"), `titulos` son 4–6 títulos satíricos ordenados
@@ -63,7 +65,7 @@ Salida: SOLO este JSON, con el GameSpec exactamente en el shape de su branch en
     "game": "<motor del pitch>",
     "title": "<GRITOS EN MAYÚSCULAS, corto>",
     "emoji": "<2 emojis: tema+jugador>",
-    "duration": 45,
+    "duration": 20,
     "intro": "<1-2 líneas en rioplatense que planteen la premisa del chiste>",
     "player": { "emoji": "<1 emoji>", "label": "<quién es, con humor>", "image": "avatar.svg" },
     "…": "<campos propios del motor: catch/avoid/special, targets/noTouch, grid, obstacles, rival, etc.>",

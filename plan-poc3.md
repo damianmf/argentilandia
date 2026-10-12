@@ -122,7 +122,12 @@ Runner (pops de puntos, hit-stop tras cada impacto, shake + sonido
 diferenciado para el malagarre, reloj rojo pulsante en los últimos 10s;
 Runner agrega squash & stretch al saltar y aterrizar). Search ya traía
 feedback propio de antes (labels flotantes + shake); queda alinearlo a esta
-pasada en alguna vuelta. Siguen las cinemáticas y los motores nuevos.*
+pasada en alguna vuelta. **Recalibre de duración (12/10, jugado y aprobado por
+el humano)**: los motores de reflejos bajan a 20 s (catcher, dodge, runner,
+whack, fighter — este último a confirmar cuando corra el próximo) y search
+queda en 30–45; contrato actualizado en game-generation.md + piso del clamp en
+generar-juego.mjs; los juegos ya publicados quedan en su duración original
+(archivo congelado). Siguen las cinemáticas y los motores nuevos.*
 
 1. **Cinemática de KO**: cámara lenta, zoom, lluvia de papelitos 🧻, cartelazo.
    El momentazo grabable.
