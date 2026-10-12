@@ -76,7 +76,9 @@ opcional; rate limit 6 por IP y juego por hora) y
 `GET /api/juegos/<id>/resumen` (ranking top-10 + últimos veredictos + totales).
 Los ids válidos salen de `worker/juegos.json`, que regenera cada build.
 
-Auditoría de veredictos (sumarla a la de todos los días):
+Auditoría de veredictos (sumarla a la de todos los días; **solo hace falta
+mirar el juego de hoy**: es el único que recibe partidas, los anteriores quedan
+como archivo congelado de solo lectura):
 
 ```sh
 npx wrangler d1 execute juego-actualidad --remote \

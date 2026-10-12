@@ -41,8 +41,8 @@ Worker sirve los assets (todo lo que no es `/api/*` pasa por
 
 | Ruta | Qué hace |
 |---|---|
-| `POST /api/juegos/<id>/partidas` | apodo + score + comentario opcional → puesto en el ranking. Valida el id contra `worker/juegos.json` (regenerado por el build), caps de longitud, rate limit 6/hora por IP hasheada |
-| `GET /api/juegos/<id>/resumen` | ranking top-10 por mejor puntaje por apodo, últimos 20 veredictos, totales |
+| `POST /api/juegos/<id>/partidas` | apodo + score + comentario opcional → puesto en el ranking. **Solo el juego más nuevo publicado la acepta** (403 en los anteriores: escalafón congelado como archivo). Valida el id contra `worker/juegos.json` (regenerado por el build, con fechas), caps de longitud, rate limit 6/hora por IP hasheada |
+| `GET /api/juegos/<id>/resumen` | ranking top-10 por mejor puntaje por apodo, últimos 20 veredictos, totales y `abierto` (si este juego recibe partidas). Funciona para todos los juegos, también los cerrados |
 
 La moderación es posterior (`visible = 0` vía `wrangler d1 execute`, ver
 runbook). Sin backend configurado, el Outro degrada: "RANKING NO DISPONIBLE".

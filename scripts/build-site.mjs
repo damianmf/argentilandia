@@ -146,9 +146,14 @@ const webDist = join(dist, 'web');
 mkdirSync(webDist, { recursive: true });
 copyFileSync(join(root, 'web', 'index.html'), join(webDist, 'index.html'));
 
-// --- Game ids válidos para el worker (/api rechaza cualquier otro id) ---
+// --- Juegos válidos para el worker (/api rechaza cualquier otro id). Solo con
+// fecha, ordenados por fecha: el último es el único "abierto" (recibe partidas).
 mkdirSync(join(root, 'worker'), { recursive: true });
-writeFileSync(join(root, 'worker', 'juegos.json'), `${JSON.stringify(games.map((g) => g.id), null, 2)}\n`);
+const jugables = games
+  .filter((g) => /^\d{4}-\d{2}-\d{2}/.test(g.id))
+  .sort((a, b) => a.id.localeCompare(b.id))
+  .map((g) => ({ id: g.id, fecha: g.id.slice(0, 10) }));
+writeFileSync(join(root, 'worker', 'juegos.json'), `${JSON.stringify(jugables, null, 2)}\n`);
 
 // --- Sin `_redirects`: los Workers normalizan /index.html → / (307), así que una
 // regla `/ → /web/` convertía TODOS los deep links en el chooser. El chooser se

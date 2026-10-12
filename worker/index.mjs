@@ -45,7 +45,13 @@ async function sha256(texto) {
 }
 
 function juegoValido(id) {
-  return typeof id === 'string' && /^[a-z0-9-]{1,80}$/i.test(id) && JUEGOS.includes(id);
+  return typeof id === 'string' && /^[a-z0-9-]{1,80}$/i.test(id) && JUEGOS.some((j) => j.id === id);
+}
+
+// Solo el juego más nuevo publicado recibe partidas (JUEGOS viene ordenado por
+// fecha); los anteriores son archivo congelado: se pueden leer, no escribir.
+function juegoAbierto(id) {
+  return JUEGOS.length > 0 && JUEGOS[JUEGOS.length - 1].id === id;
 }
 
 // Clasificación: mejor puntaje por apodo, con total de jugadores y en qué
@@ -72,10 +78,14 @@ async function presentar(request, env, id) {
       comentarios: (comentarios.results ?? []).map((c) => ({ apodo: c.apodo, comentario: c.comentario, fecha: new Date(c.creado_at).toISOString() })),
       totalJugadas: totales?.jugadas ?? 0,
       totalJugadores: totales?.jugadores ?? 0,
+      abierto: juegoAbierto(id),
     });
   }
 
   if (request.method === 'POST' && url.pathname.endsWith('/partidas')) {
+    if (!juegoAbierto(id)) {
+      return error(403, 'este ranking ya cerró: solo el juego del día recibe partidas; el escalafón de este queda congelado');
+    }
     let cuerpo;
     try {
       cuerpo = await request.json();

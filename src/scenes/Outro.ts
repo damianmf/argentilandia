@@ -25,6 +25,7 @@ interface Resumen {
   comentarios: { apodo: string; comentario: string; fecha: string }[];
   totalJugadas: number;
   totalJugadores: number;
+  abierto: boolean;
 }
 
 export class Outro extends Phaser.Scene {
@@ -335,7 +336,9 @@ export class Outro extends Phaser.Scene {
     return text;
   }
 
-  // --- Ranking del día: overlay DOM sobre el canvas (apodo + veredicto + puesto) ---
+  // --- Ranking del día: overlay DOM sobre el canvas. El escalafón se puede
+  // leer siempre (archivo congelado); anotarse (apodo + veredicto) solo tiene
+  // sentido en el juego más nuevo, lo decide el backend con `abierto`. ---
 
   private abrirRanking(): void {
     if (this.overlay) return;
@@ -356,16 +359,78 @@ export class Outro extends Phaser.Scene {
       'font-family:system-ui,-apple-system,sans-serif',
     ].join(';');
 
+    const cargando = document.createElement('p');
+    cargando.textContent = 'CARGANDO ESCALAFÓN…';
+    cargando.style.cssText = 'margin:0;color:#9aa0b5;font-size:14px';
+    panel.appendChild(cargando);
+
+    this.overlay = document.createElement('div');
+    this.overlay.style.cssText = [
+      'position:fixed',
+      'inset:0',
+      'background:rgba(5,5,10,0.88)',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'z-index:1000',
+    ].join(';');
+    this.overlay.appendChild(panel);
+    document.body.appendChild(this.overlay);
+
+    const gameId = urlGameId() ?? '';
+    void (async () => {
+      try {
+        const r = await fetch(`/api/juegos/${encodeURIComponent(gameId)}/resumen`);
+        if (!r.ok) throw new Error('resumen no disponible');
+        const data = (await r.json()) as Resumen;
+        if (!this.overlay) return;
+        panel.innerHTML = '';
+        this.tituloPanel(panel, data.abierto);
+        if (data.abierto) {
+          this.agregarForm(panel);
+        } else {
+          this.avisoCerrado(panel);
+        }
+        this.renderResumen(panel, data);
+        if (!data.abierto) {
+          const fila = document.createElement('div');
+          fila.style.cssText = 'display:flex;gap:10px;margin-top:16px';
+          this.boton(fila, 'SEGUIR', '#ffd166', '#05050a', () => this.cerrarRanking());
+          panel.appendChild(fila);
+        }
+      } catch {
+        if (!this.overlay) return;
+        panel.innerHTML = '';
+        this.tituloPanel(panel, true);
+        this.agregarForm(panel); // optimista: sin datos de entrada, el POST valida de vuelta
+      }
+    })();
+  }
+
+  private boton(parent: HTMLElement, texto: string, fondo: string, colorTexto: string, accion: () => void): HTMLButtonElement {
+    const b = document.createElement('button');
+    b.textContent = texto;
+    b.style.cssText = `background:${fondo};border:none;border-radius:8px;color:${colorTexto};font-weight:700;font-size:14px;letter-spacing:1px;padding:10px 18px;cursor:pointer;font-family:inherit`;
+    b.onclick = accion;
+    parent.appendChild(b);
+    return b;
+  }
+
+  private tituloPanel(panel: HTMLDivElement, conPuntaje: boolean): void {
     const titulo = document.createElement('h3');
     titulo.textContent = `🏆 ${this.spec.ranking?.titulo ?? 'RANKING DEL DÍA'}`;
     titulo.style.cssText = 'margin:0 0 4px;font-size:19px;letter-spacing:2px';
     panel.appendChild(titulo);
 
-    const puntaje = document.createElement('p');
-    puntaje.textContent = `Tu puntaje: ${this.score}${this.spec.ranking?.unidad ? ` ${this.spec.ranking.unidad}` : ' pts'}`;
-    puntaje.style.cssText = 'margin:0 0 14px;color:#9aa0b5;font-size:14px';
-    panel.appendChild(puntaje);
+    if (conPuntaje) {
+      const puntaje = document.createElement('p');
+      puntaje.textContent = `Tu puntaje: ${this.score}${this.spec.ranking?.unidad ? ` ${this.spec.ranking.unidad}` : ' pts'}`;
+      puntaje.style.cssText = 'margin:0 0 14px;color:#9aa0b5;font-size:14px';
+      panel.appendChild(puntaje);
+    }
+  }
 
+  private agregarForm(panel: HTMLDivElement): void {
     const campo = (placeholder: string, max: number, multilinea: boolean): HTMLInputElement | HTMLTextAreaElement => {
       let c: HTMLInputElement | HTMLTextAreaElement;
       if (multilinea) {
@@ -408,21 +473,13 @@ export class Outro extends Phaser.Scene {
     panel.appendChild(nota);
 
     const fila = document.createElement('div');
-    fila.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap';
-    const boton = (texto: string, fondo: string, accion: () => void): HTMLButtonElement => {
-      const b = document.createElement('button');
-      b.textContent = texto;
-      b.style.cssText = `background:${fondo};border:none;border-radius:8px;color:#ffffff;font-weight:700;font-size:14px;letter-spacing:1px;padding:10px 18px;cursor:pointer;font-family:inherit`;
-      b.onclick = accion;
-      fila.appendChild(b);
-      return b;
-    };
-    const mandar = boton('MANDAR AL RANKING', '#218c5b', () => enviar());
-    boton('DESPUÉS', '#262636', () => this.cerrarRanking());
+    fila.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:4px';
+    const mandar = this.boton(fila, 'MANDAR AL RANKING', '#218c5b', '#ffffff', () => void enviar());
+    this.boton(fila, 'DESPUÉS', '#262636', '#ffffff', () => this.cerrarRanking());
     panel.appendChild(fila);
 
     const mensaje = document.createElement('p');
-    mensaje.style.cssText = 'margin:12px 0 0;color:#ff6b6b;font-size:13px;min-height:16px';
+    mensaje.style.cssText = 'margin:0 0 14px;color:#ff6b6b;font-size:13px;min-height:16px';
     panel.appendChild(mensaje);
 
     const enviar = async (): Promise<void> => {
@@ -450,7 +507,7 @@ export class Outro extends Phaser.Scene {
         } catch {
           // sin localStorage no hay apodo recordado, el resto sigue
         }
-        await this.mostrarPuesto(panel, data.puesto ?? 1, data.totalJugadores ?? 1);
+        await this.renderPuesto(panel, data.puesto ?? 1, data.totalJugadores ?? 1);
       } catch {
         mensaje.style.color = '#ff6b6b';
         mensaje.textContent = 'RANKING NO DISPONIBLE ACÁ (sin backend). El juego sigue igual.';
@@ -458,22 +515,62 @@ export class Outro extends Phaser.Scene {
         mandar.style.opacity = '1';
       }
     };
-
-    this.overlay = document.createElement('div');
-    this.overlay.style.cssText = [
-      'position:fixed',
-      'inset:0',
-      'background:rgba(5,5,10,0.88)',
-      'display:flex',
-      'align-items:center',
-      'justify-content:center',
-      'z-index:1000',
-    ].join(';');
-    this.overlay.appendChild(panel);
-    document.body.appendChild(this.overlay);
   }
 
-  private async mostrarPuesto(panel: HTMLDivElement, puesto: number, totalJugadores: number): Promise<void> {
+  private avisoCerrado(panel: HTMLDivElement): void {
+    const aviso = document.createElement('p');
+    aviso.textContent = 'EL RANKING DE ESTE JUEGO YA CERRÓ: el escalafón queda congelado como archivo.';
+    aviso.style.cssText = 'margin:0 0 12px;color:#ff6b6b;font-size:13px';
+    panel.appendChild(aviso);
+
+    const volver = document.createElement('a');
+    volver.href = '/';
+    volver.textContent = 'JUGÁ EL DE HOY';
+    volver.style.cssText =
+      'display:inline-block;background:#ffd166;border-radius:8px;color:#05050a;font-weight:700;font-size:14px;letter-spacing:1px;padding:10px 18px;margin-bottom:16px;text-decoration:none';
+    panel.appendChild(volver);
+  }
+
+  private renderResumen(panel: HTMLDivElement, data: Resumen): void {
+    const jugadas = document.createElement('p');
+    jugadas.textContent = `${data.totalJugadas} ${data.totalJugadas === 1 ? 'partida jugada' : 'partidas jugadas'}`;
+    jugadas.style.cssText = 'margin:0 0 12px;color:#9aa0b5;font-size:13px';
+    panel.appendChild(jugadas);
+
+    if (data.ranking.length > 0) {
+      const titulo = document.createElement('p');
+      titulo.textContent = 'EL ESCALAFÓN';
+      titulo.style.cssText = 'margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:2px;color:#ffd166';
+      panel.appendChild(titulo);
+      data.ranking.forEach((fila, i) => {
+        const linea = document.createElement('p');
+        linea.textContent = `${i + 1}. ${fila.apodo} — ${fila.score}`;
+        linea.style.cssText = 'margin:0 0 4px;font-size:14px;color:#cfcfe8';
+        panel.appendChild(linea);
+      });
+    }
+
+    const tituloVeredictos = document.createElement('p');
+    tituloVeredictos.textContent = 'LOS VEREDICTOS';
+    tituloVeredictos.style.cssText = 'margin:14px 0 6px;font-size:13px;font-weight:700;letter-spacing:2px;color:#ffd166';
+    panel.appendChild(tituloVeredictos);
+
+    if (data.comentarios.length === 0) {
+      const vacio = document.createElement('p');
+      vacio.textContent = 'Todavía no hay veredictos.';
+      vacio.style.cssText = 'margin:0;font-size:14px;color:#6b7085';
+      panel.appendChild(vacio);
+    } else {
+      for (const c of data.comentarios.slice(0, 8)) {
+        const linea = document.createElement('p');
+        linea.textContent = `${c.apodo}: "${c.comentario}"`;
+        linea.style.cssText = 'margin:0 0 6px;font-size:14px;color:#cfcfe8;font-style:italic';
+        panel.appendChild(linea);
+      }
+    }
+  }
+
+  private async renderPuesto(panel: HTMLDivElement, puesto: number, totalJugadores: number): Promise<void> {
     const tituloSatirico = (): string => {
       const titulos = this.spec.ranking?.titulos ?? [];
       if (titulos.length === 0) return '';
@@ -482,7 +579,6 @@ export class Outro extends Phaser.Scene {
     };
     this.puestoTexto = `N°${puesto} de ${totalJugadores}${tituloSatirico()}`;
 
-    const gameId = urlGameId() ?? '';
     panel.innerHTML = '';
 
     const puestoLinea = document.createElement('h3');
@@ -495,59 +591,21 @@ export class Outro extends Phaser.Scene {
     sub.style.cssText = 'margin:0 0 16px;font-size:14px;color:#c6cad8';
     panel.appendChild(sub);
 
-    const mensaje = document.createElement('p');
-    mensaje.style.cssText = 'margin:0 0 12px;color:#9aa0b5;font-size:13px';
-    panel.appendChild(mensaje);
-
+    const gameId = urlGameId() ?? '';
     try {
       const r = await fetch(`/api/juegos/${encodeURIComponent(gameId)}/resumen`);
       if (!r.ok) throw new Error('resumen no disponible');
-      const data = (await r.json()) as Resumen;
-      mensaje.textContent = `${data.totalJugadas} ${data.totalJugadas === 1 ? 'partida jugada' : 'partidas jugadas'}`;
-
-      if (data.ranking.length > 0) {
-        const titulo = document.createElement('p');
-        titulo.textContent = 'EL ESCALAFÓN';
-        titulo.style.cssText = 'margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:2px;color:#ffd166';
-        panel.appendChild(titulo);
-        data.ranking.forEach((fila, i) => {
-          const linea = document.createElement('p');
-          linea.textContent = `${i + 1}. ${fila.apodo} — ${fila.score}`;
-          linea.style.cssText = 'margin:0 0 4px;font-size:14px;color:#cfcfe8';
-          panel.appendChild(linea);
-        });
-      }
-
-      const tituloVeredictos = document.createElement('p');
-      tituloVeredictos.textContent = 'LOS VEREDICTOS';
-      tituloVeredictos.style.cssText = 'margin:14px 0 6px;font-size:13px;font-weight:700;letter-spacing:2px;color:#ffd166';
-      panel.appendChild(tituloVeredictos);
-
-      if (data.comentarios.length === 0) {
-        const vacio = document.createElement('p');
-        vacio.textContent = 'Todavía no hay veredictos. El tuyo es el primero.';
-        vacio.style.cssText = 'margin:0;font-size:14px;color:#6b7085';
-        panel.appendChild(vacio);
-      } else {
-        for (const c of data.comentarios.slice(0, 8)) {
-          const linea = document.createElement('p');
-          linea.textContent = `${c.apodo}: "${c.comentario}"`;
-          linea.style.cssText = 'margin:0 0 6px;font-size:14px;color:#cfcfe8;font-style:italic';
-          panel.appendChild(linea);
-        }
-      }
+      this.renderResumen(panel, (await r.json()) as Resumen);
     } catch {
-      mensaje.textContent = 'No pude traer el escalafón completo (¿sin backend acá?).';
+      const aviso = document.createElement('p');
+      aviso.textContent = 'Anotado. No pude traer el escalafón completo.';
+      aviso.style.cssText = 'margin:0 0 12px;color:#9aa0b5;font-size:13px';
+      panel.appendChild(aviso);
     }
 
     const fila = document.createElement('div');
     fila.style.cssText = 'display:flex;gap:10px;margin-top:16px';
-    const seguir = document.createElement('button');
-    seguir.textContent = 'SEGUIR';
-    seguir.style.cssText =
-      'background:#ffd166;border:none;border-radius:8px;color:#05050a;font-weight:700;font-size:14px;letter-spacing:1px;padding:10px 22px;cursor:pointer;font-family:inherit';
-    seguir.onclick = () => this.cerrarRanking();
-    fila.appendChild(seguir);
+    this.boton(fila, 'SEGUIR', '#ffd166', '#05050a', () => this.cerrarRanking());
     panel.appendChild(fila);
   }
 
