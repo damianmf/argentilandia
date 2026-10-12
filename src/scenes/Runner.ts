@@ -4,7 +4,7 @@ import { runnerParams } from '../engine/difficulty';
 import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
-import { HitStop, hitPop, popText, tickTime } from '../engine/juice';
+import { HitStop, Racha, hitPop, mostrarRacha, popText, tickTime } from '../engine/juice';
 import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
@@ -55,8 +55,10 @@ export class Runner extends Phaser.Scene {
   private elapsed = 0;
   private finished = false;
   private hitStop = new HitStop();
+  private racha = new Racha();
   private lastSecond = -1;
   private timeColor = '';
+  private rachaText!: Phaser.GameObjects.Text;
 
   constructor(spec: GameSpecRunner) {
     super('Runner');
@@ -102,6 +104,13 @@ export class Runner extends Phaser.Scene {
       fontSize: '28px',
       fontStyle: 'bold',
       color: colors.score,
+    });
+
+    this.rachaText = this.add.text(240, 22, '', {
+      fontFamily: FONT,
+      fontSize: '24px',
+      fontStyle: 'bold',
+      color: '#ffd166',
     });
 
     this.timeText = this.add
@@ -257,11 +266,14 @@ export class Runner extends Phaser.Scene {
 
   private collect(spawn: Spawned): void {
     spawn.done = true;
-    this.bonus += spawn.item.points;
+    const multiplicador = this.racha.bien();
+    const gano = spawn.item.points * multiplicador;
+    this.bonus += gano;
+    mostrarRacha(this.rachaText, multiplicador);
     sfx.catch();
     hitPop(this, this.player);
     this.hitStop.stop(45);
-    this.float(spawn.obj.x, spawn.obj.y, label(spawn.item), '#7bed9f');
+    this.float(spawn.obj.x, spawn.obj.y, `${spawn.item.label} +${gano}`, '#7bed9f');
     popText(this, this.scoreText);
     this.tweens.add({
       targets: spawn.obj,
@@ -274,6 +286,8 @@ export class Runner extends Phaser.Scene {
 
   private crash(spawn: Spawned): void {
     spawn.done = true;
+    this.racha.mal();
+    mostrarRacha(this.rachaText, 1);
     this.bonus += spawn.item.points;
     sfx.crash();
     this.cameras.main.shake(140, 0.011);

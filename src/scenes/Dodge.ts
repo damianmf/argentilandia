@@ -4,7 +4,7 @@ import { difficultyParams } from '../engine/difficulty';
 import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
-import { HitStop, popPoints, popText, tickTime } from '../engine/juice';
+import { HitStop, Racha, mostrarRacha, popPoints, popText, tickTime } from '../engine/juice';
 import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
@@ -23,8 +23,10 @@ export class Dodge extends Phaser.Scene {
   private score = 0;
   private elapsed = 0;
   private hitStop = new HitStop();
+  private racha = new Racha();
   private lastSecond = -1;
   private timeColor = '';
+  private rachaText!: Phaser.GameObjects.Text;
 
   constructor(spec: GameSpecDodge) {
     super('Dodge');
@@ -53,6 +55,13 @@ export class Dodge extends Phaser.Scene {
       fontSize: '28px',
       fontStyle: 'bold',
       color: colors.score,
+    });
+
+    this.rachaText = this.add.text(240, 22, '', {
+      fontFamily: FONT,
+      fontSize: '24px',
+      fontStyle: 'bold',
+      color: '#ffd166',
     });
 
     this.timeText = this.add
@@ -117,10 +126,12 @@ export class Dodge extends Phaser.Scene {
       if (drop.y > this.scale.height + 40) {
         drop.destroy();
         this.drops = this.drops.filter((d) => d !== drop);
-        this.score += DODGE_BONUS;
+        const ganancia = DODGE_BONUS * this.racha.bien();
+        this.score += ganancia;
         this.scoreText.setText(this.hudScore());
+        mostrarRacha(this.rachaText, this.racha.multiplicador);
         sfx.dodge();
-        popPoints(this, drop.x, this.scale.height - 70, DODGE_BONUS);
+        popPoints(this, drop.x, this.scale.height - 70, ganancia);
         popText(this, this.scoreText);
         continue;
       }
@@ -155,8 +166,10 @@ export class Dodge extends Phaser.Scene {
 
   private crash(drop: Phaser.GameObjects.Text): void {
     const points = drop.getData('points') as number;
+    this.racha.mal();
     this.score += points;
     this.scoreText.setText(this.hudScore());
+    mostrarRacha(this.rachaText, 1);
     this.drops = this.drops.filter((d) => d !== drop);
     sfx.crash();
     this.cameras.main.shake(140, 0.011);

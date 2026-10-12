@@ -4,7 +4,7 @@ import { difficultyParams } from '../engine/difficulty';
 import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
-import { HitStop, hitPop, popPoints, popText, tickTime } from '../engine/juice';
+import { HitStop, Racha, hitPop, mostrarRacha, popPoints, popText, tickTime } from '../engine/juice';
 import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
@@ -23,8 +23,10 @@ export class Catcher extends Phaser.Scene {
   private score = 0;
   private elapsed = 0;
   private hitStop = new HitStop();
+  private racha = new Racha();
   private lastSecond = -1;
   private timeColor = '';
+  private rachaText!: Phaser.GameObjects.Text;
 
   constructor(spec: GameSpecCatcher) {
     super('Catcher');
@@ -53,6 +55,13 @@ export class Catcher extends Phaser.Scene {
       fontSize: '28px',
       fontStyle: 'bold',
       color: colors.score,
+    });
+
+    this.rachaText = this.add.text(240, 22, '', {
+      fontFamily: FONT,
+      fontSize: '24px',
+      fontStyle: 'bold',
+      color: '#ffd166',
     });
 
     this.timeText = this.add
@@ -153,8 +162,17 @@ export class Catcher extends Phaser.Scene {
   private collect(drop: Phaser.GameObjects.Text): void {
     const points = drop.getData('points') as number;
     const good = points >= 0;
-    this.score += points;
+    let ganancia = points;
+    let multiplicador = 1;
+    if (good) {
+      multiplicador = this.racha.bien();
+      ganancia = points * multiplicador;
+    } else {
+      this.racha.mal();
+    }
+    this.score += ganancia;
     this.scoreText.setText(this.hudScore());
+    mostrarRacha(this.rachaText, multiplicador);
     this.drops = this.drops.filter((d) => d !== drop);
     if (good) {
       sfx.catch();
@@ -165,7 +183,7 @@ export class Catcher extends Phaser.Scene {
       this.cameras.main.shake(140, 0.009);
       this.hitStop.stop(85);
     }
-    popPoints(this, drop.x, drop.y, points);
+    popPoints(this, drop.x, drop.y, ganancia);
     popText(this, this.scoreText);
     this.tweens.add({
       targets: drop,

@@ -131,6 +131,11 @@ generar-juego.mjs; los juegos ya publicados quedan en su duración original
 el juego del 12/10 pasa a 20 s con commit; producción tenía 0 partidas, así
 que no hay puntajes de 45 s compitiendo. La regla "lo publicado queda
 congelado" aplica a partir de acá, no retroactivamente al primer día.)*
+**Racha (12/10, iteración del humano sobre "lógica sustancial")**: cada 3
+aciertos seguidos sube un multiplicador ×2..×5 (clase `Racha` en juice.ts,
+"×N" dorado junto al puntaje) que aplica solo a las ganancias; un malagarre
+la corta y los negativos siempre valen completo. Conectada en Catcher, Dodge
+(esquivazos) y Runner (premios); Whack/Fighter quedan para una próxima vuelta.
 Siguen las cinemáticas y los motores nuevos.*
 
 1. **Cinemática de KO**: cámara lenta, zoom, lluvia de papelitos 🧻, cartelazo.
