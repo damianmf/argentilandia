@@ -131,7 +131,8 @@ for (const { id, spec } of games) {
     <style>body { background: #05050a; color: #ffffff; font-family: system-ui, sans-serif; }</style>
   </head>
   <body>
-    <script>location.replace('../../index.html?game=' + encodeURIComponent('${id}'));</script>
+    <!-- La query viaja: /juego/<id>/?revancha=N → index.html?game=<id>&revancha=N (desafío, Etapa 4.3) -->
+    <script>location.replace('../../index.html?game=${id}' + location.search.replace(/^\\?/, '&'));</script>
     <p><a style="color: #ffd166" href="../../index.html?game=${id}">Entrar a jugar: ${title}</a></p>
   </body>
 </html>

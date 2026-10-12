@@ -100,7 +100,10 @@ parece un bug del juego).
 
 Sin `LLM_API_KEY`, `npm run jornada` falla en el draft — y ahí el agente de la
 sesión (o el cron del entorno) toma los dos pasos creativos ejecutándolos a mano
-con **los mismos contratos** que usa la API:
+con **los mismos contratos** que usa la API. **Desde el 12/10 este es el modo de
+operación vigente** (decisión del humano: "hasta tener algo interesante lo
+corremos a mano"), no una contingencia: el gate de Etapa 2 corre sobre este modo.
+La secuencia, paso a paso:
 
 1. `npm run radar -- <fecha>` (script).
 2. **Draft**: seguir `content/prompts/radar-diario.md` (llamada A y B) y escribir

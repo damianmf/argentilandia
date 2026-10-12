@@ -55,6 +55,9 @@ teléfono, con tarjeta rica al compartir, sin nada corriendo en tu máquina.
 
 **Gate:** un contacto abre el link, elige juego, juega y lee el outro desde su
 teléfono; el share produce un link con tarjeta al re-compartirlo.
+**(CERRADO 12/10**: SITE_URL confirmado en producción (OG absoluto verificado
+por curl), jugado desde teléfono por el humano. Etapa 1 cierra con tag
+`etapa-1`.)
 
 ---
 
@@ -102,6 +105,13 @@ cron hospedado (Etapa 1.3).
 *(Actualizado 11/10: sin OK previo, por la decisión de full-auto. El gate queda:
 3 jornadas consecutivas generadas y publicadas por el cron headless, validate en
 0, y seleccion.json/scores.json acumulándose.)*
+*(Actualizado 12/10, decisión del humano: **sin key por ahora** — "hasta tener
+algo interesante lo corremos a mano". El modo sin key pasa de contingencia a
+**modo de operación** (los contratos son los mismos; runbook). El gate queda:
+3 jornadas consecutivas con validate en 0 y seleccion.json/scores.json/memoria
+acumulándose — van 2. El paso headless con key + cron hospedado queda
+**diferido**, no cancelado: se activa cuando la jornada a mano se vuelva el
+cuello de botella.)*
 
 ---
 
@@ -142,8 +152,10 @@ Estado (12/10): la primera vuelta de 1, 2 y el nombre del 1 están hechas.
    al entrar; sin backend o sin comentarios, no aparece.
    **Pendiente el único paso de infra**: `wrangler login` + `npm run
    backend:setup` + push (crea la base D1 y cuelga el handler `/api`).
-3. **Desafío entre amigos**: link de revancha con tu score ("me ganás?"). Sin
-   backend: el desafío viaja dentro del texto compartido.
+3. [x] **Desafío entre amigos** (12/10): el COMPARTIR lleva `⚔️ ¿ME GANÁS?` +
+   link con `?revancha=<puntaje>`; la landing preserva la query y la pantalla de
+   título del que abre el link muestra "TE DESAFIARON: N PTS — ¿PODÉS SUPERARLO?".
+   Sin backend: el desafío viaja dentro del texto compartido.
 4. **La noticia con voces**: comentarios de las notas/Redes como material del
    outro ("lo que dijo la gente"). Costo medio: scraping y derechos; decidir
    outlet por outlet.
@@ -170,3 +182,10 @@ Estado (12/10): la primera vuelta de 1, 2 y el nombre del 1 están hechas.
 Etapa 1 → Etapa 2 → Etapa 3 → Etapa 4, con los gates de arriba. Cada etapa cierra
 con commit + tag y una línea en el registro de decisiones de
 `docs/lineamientos-del-juego.md`. Un paso por sesión/ventana, igual que siempre.
+
+*(Cierre 12/10: **Etapa 1 cerrada** (tag `etapa-1`); Etapa 2 en gate con 2 de 3
+jornadas, modo a mano; Etapa 4 cerrada en su primera vuelta (portada, apodo,
+veredictos + ranking con contención, desafío). Lo que sigue, según el humano:
+**jugar e iterar de verdad** — jornadas diarias + primeras personas jugando, y
+sobre esos datos recién elegir el sprint de Etapa 3 (recalibres con datos, no a
+ciegas). Bolas propias del humano: dominio (punto 3, a su ritmo) y key (diferida).)*

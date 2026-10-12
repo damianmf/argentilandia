@@ -78,10 +78,11 @@ repo manda.
 
 ## Chequeo del gate (Etapa 1)
 
-- [ ] Un contacto abre el link desde su teléfono, elige juego, juega y lee el
-      outro.
-- [ ] COMPARTIR copia el texto + link `/juego/<id>/`; al re-compartir ese link
-      en WhatsApp aparece la tarjeta con avatar.
+- [x] Un contacto abre el link desde su teléfono, elige juego, juega y lee el
+      outro. (12/10: jugado por el humano desde su teléfono.)
+- [x] COMPARTIR copia el texto + link `/juego/<id>/`; al re-compartir ese link
+      en WhatsApp aparece la tarjeta con avatar. (12/10: SITE_URL configurado,
+      OG absoluto verificado; desafío viaja como `?revancha=` en el link.)
 
 ## Corte del cron (Etapa 2)
 

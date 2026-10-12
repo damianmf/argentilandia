@@ -14,10 +14,12 @@ interface ResumenTitulo {
 
 export class Title extends Phaser.Scene {
   private spec: GameSpec;
+  private revancha: number;
 
-  constructor(spec: GameSpec) {
+  constructor(spec: GameSpec, revancha = 0) {
     super('Title');
     this.spec = spec;
+    this.revancha = revancha;
   }
 
   preload(): void {
@@ -97,6 +99,17 @@ export class Title extends Phaser.Scene {
           fontSize: '18px',
           fontStyle: 'bold',
           color: '#ffd166',
+        })
+        .setOrigin(0.5);
+    }
+
+    if (this.revancha > 0) {
+      this.add
+        .text(cx, record > 0 ? 504 : 480, `⚔️ TE DESAFIARON: ${this.revancha} PTS — ¿PODÉS SUPERARLO?`, {
+          fontFamily: FONT,
+          fontSize: '18px',
+          fontStyle: 'bold',
+          color: '#ff6b6b',
         })
         .setOrigin(0.5);
     }

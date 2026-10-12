@@ -273,7 +273,10 @@ export class Outro extends Phaser.Scene {
       const gameId = urlGameId();
       const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
       if (gameId && !isLocal) {
-        lines.push(`▶ Jugálo acá: ${window.location.origin}/juego/${encodeURIComponent(gameId)}/`);
+        // Desafío entre amigos (Etapa 4.3): el puntaje viaja en el link (?revancha=)
+        // y la landing lo preserva hasta la pantalla de título.
+        lines.push('⚔️ ¿ME GANÁS? Revancha acá:');
+        lines.push(`${window.location.origin}/juego/${encodeURIComponent(gameId)}/?revancha=${this.score}`);
       }
       try {
         navigator.clipboard

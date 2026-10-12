@@ -42,7 +42,8 @@ async function loadGamespec(id: string): Promise<GameSpec> {
 }
 
 async function main(): Promise<void> {
-  const id = new URLSearchParams(window.location.search).get('game');
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('game');
   if (!id) {
     // En el sitio público la app vive en `/` (los Workers normalizan /index.html
     // a `/`): sin juego pedido, al chooser.
@@ -53,6 +54,8 @@ async function main(): Promise<void> {
     showError(`Id de juego inválido: "${id}"`);
     return;
   }
+  // Desafío entre amigos (Etapa 4.3): el share viaja con ?revancha=<puntaje>.
+  const revancha = Math.max(0, Number(params.get('revancha')) || 0);
   let spec: GameSpec;
   try {
     spec = await loadGamespec(id);
@@ -88,7 +91,7 @@ async function main(): Promise<void> {
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
     },
-    scene: [new Title(spec), play, new Outro(spec)],
+    scene: [new Title(spec, revancha), play, new Outro(spec)],
   });
 }
 
