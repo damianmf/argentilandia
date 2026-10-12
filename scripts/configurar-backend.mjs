@@ -40,7 +40,7 @@ if (!config.includes('"d1_databases"')) {
   const nuevo = config
     .replace(
       /("not_found_handling":\s*"404-page")(\s*\n\s*\})/,
-      `$1,\n    "binding": "ASSETS"\n  },\n  "d1_databases": [\n    {\n      "binding": "DB",\n      "database_name": "${BASE}",\n      "database_id": "${id}"\n    }\n  ]$2`,
+      `$1,\n    "binding": "ASSETS"\n  },\n  "d1_databases": [\n    {\n      "binding": "DB",\n      "database_name": "${BASE}",\n      "database_id": "${id}"\n    }\n  ]`,
     )
     .replace(
       '"name": "juego-de-la-actualidad",',
