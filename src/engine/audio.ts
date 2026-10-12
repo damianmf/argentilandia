@@ -12,6 +12,9 @@ export const sfx = {
   catch(): void {
     blip(880, 0.07, 'square', 0.1);
   },
+  dodge(): void {
+    blip(620, 0.06, 'triangle', 0.07);
+  },
   crash(): void {
     blip(140, 0.18, 'sawtooth', 0.16);
   },

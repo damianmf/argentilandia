@@ -117,6 +117,11 @@ cuello de botella.)*
 
 ## Etapa 3 — El juego mejor (juice y variantes)
 
+*Estado (12/10): primera vuelta de juice compartido hecha — Catcher + Dodge
+(pops de puntos flotantes, hit-stop tras cada impacto, shake + crash sfx en el
+mal agarre, +25 visible al esquivar, reloj rojo pulsante en los últimos 10s).
+Search ya traía feedback propio; Runner queda para la próxima vuelta.*
+
 1. **Cinemática de KO**: cámara lenta, zoom, lluvia de papelitos 🧻, cartelazo.
    El momentazo grabable.
 2. **Onomatopeyas + hit-stop en los otros motores** (ya probado en fighter/whack).

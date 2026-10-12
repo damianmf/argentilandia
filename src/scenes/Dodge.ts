@@ -4,6 +4,7 @@ import { difficultyParams } from '../engine/difficulty';
 import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
+import { HitStop, popPoints, popText, tickTime } from '../engine/juice';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const PLAYER_SPEED = 560;
@@ -20,6 +21,9 @@ export class Dodge extends Phaser.Scene {
   private targetX = 0;
   private score = 0;
   private elapsed = 0;
+  private hitStop = new HitStop();
+  private lastSecond = -1;
+  private timeColor = '';
 
   constructor(spec: GameSpecDodge) {
     super('Dodge');
@@ -34,6 +38,7 @@ export class Dodge extends Phaser.Scene {
   create(): void {
     applyTheme(this, this.spec);
     const colors = hudColors(this.spec);
+    this.timeColor = colors.time;
     this.cursors = this.input.keyboard!.createCursorKeys();
     this.targetX = this.scale.width / 2;
     this.score = 0;
@@ -72,6 +77,7 @@ export class Dodge extends Phaser.Scene {
 
   update(_time: number, delta: number): void {
     const dt = delta / 1000;
+    if (this.hitStop.drain(delta)) return;
     const step = PLAYER_SPEED * dt;
     let moved = false;
     if (this.cursors.left.isDown) {
@@ -93,6 +99,10 @@ export class Dodge extends Phaser.Scene {
     this.elapsed += delta;
     const remaining = Math.max(0, Math.ceil((this.spec.duration * 1000 - this.elapsed) / 1000));
     this.timeText.setText(`${remaining}s`);
+    if (remaining !== this.lastSecond) {
+      this.lastSecond = remaining;
+      tickTime(this, this.timeText, remaining, this.timeColor);
+    }
     if (this.elapsed >= this.spec.duration * 1000) {
       sfx.end();
       this.scene.start('Outro', { score: this.score });
@@ -106,6 +116,9 @@ export class Dodge extends Phaser.Scene {
         this.drops = this.drops.filter((d) => d !== drop);
         this.score += DODGE_BONUS;
         this.scoreText.setText(this.hudScore());
+        sfx.dodge();
+        popPoints(this, drop.x, this.scale.height - 70, DODGE_BONUS);
+        popText(this, this.scoreText);
         continue;
       }
       const dx = Math.abs(drop.x - this.player.x);
@@ -143,6 +156,10 @@ export class Dodge extends Phaser.Scene {
     this.scoreText.setText(this.hudScore());
     this.drops = this.drops.filter((d) => d !== drop);
     sfx.crash();
+    this.cameras.main.shake(140, 0.011);
+    this.hitStop.stop(85);
+    popPoints(this, drop.x, drop.y, points);
+    popText(this, this.scoreText);
     this.tweens.add({
       targets: this.player,
       alpha: 0.2,
