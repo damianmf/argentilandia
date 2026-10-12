@@ -89,6 +89,13 @@ cron hospedado (Etapa 1.3).
    arriba; la auditoría es posterior (seleccion.json + scores.json +
    produccion.md) y des-publicar es un commit. `APROBACION=on` reactiva el
    corte humano cuando se quiera, sin tocar código.
+5. [x] **Draft con memoria** (12/10): la llamada A recibe los últimos 2 días de
+   `seleccion.json` (preselección + descartes con scores): un descarte que
+   reaparece hoy puede ganar (reincidente); si el ganador repite historia
+   jugada, `segundaJornada` con giro obligatorio. Queda en `seleccion.json`
+   (`memoria`) y en el encabezado de `draft.md`. Entra además la señal de los
+   jugadores: veredictos del último juego desde el backend (si existe), en A y
+   en B (ver Etapa 4).
 
 **Gate:** 3 jornadas consecutivas generadas sin sesión, publicadas con tu OK de
 2 minutos, `validate` en 0, y un registro comparable de scores de elegibilidad.
@@ -114,12 +121,21 @@ cron hospedado (Etapa 1.3).
 
 ## Etapa 4 — El usuario dentro (ideas del humano, en orden de costo)
 
-1. **Protagonista con nombre**: input opcional al entrar ("¿cómo te llamás?") y
-   el juego/juego compartido te nombra ("Juan, Rematador Mayor del País").
-   Barato y multiplica el share personal.
-2. **Reacciones medibles** (entender la respuesta del usuario): luego del outro,
-   reacciones (😂🤡😡🤷) + opcional una pregunta. Requiere contador mínimo
-   (Workers KV gratis) — decisión de backend chico.
+Estado (12/10): la primera vuelta de 1, 2 y el nombre del 1 están hechas.
+
+0. [x] **Portada del día** (12/10): el chooser ya no es un archivo — hero con
+   el juego de la fecha más nueva + carrusel chico de los últimos 7 días; los
+   demos quedan fuera de la portada (deep link). "Populares" = más partidas
+   registradas en 7 días, activar cuando el backend acumule datos.
+1. [x] **Protagonista con nombre → apodo del ranking** (12/10): input de apodo
+   al terminar (recordado en localStorage); el puesto se comparte con el marco
+   satírico del juego (`GameSpec.ranking`) y viaja en el texto de COMPARTIR.
+2. [x] **Reacciones medibles → veredictos** (12/10): luego del outro, apodo +
+   1 comentario opcional + puntaje en un solo POST (Worker + D1, gratis en el
+   plan free). Ranking top-10 y últimos veredictos visibles en el juego;
+   moderación posterior desde la auditoría (`visible = 0`).
+   **Pendiente el único paso de infra**: `wrangler login` + `npm run
+   backend:setup` + push (crea la base D1 y cuelga el handler `/api`).
 3. **Desafío entre amigos**: link de revancha con tu score ("me ganás?"). Sin
    backend: el desafío viaja dentro del texto compartido.
 4. **La noticia con voces**: comentarios de las notas/Redes como material del
