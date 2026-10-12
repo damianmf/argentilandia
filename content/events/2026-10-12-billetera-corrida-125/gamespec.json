@@ -2,7 +2,7 @@
   "game": "dodge",
   "title": "LA BILLETERA vs LA CORRIDA",
   "emoji": "👛💨",
-  "duration": 45,
+  "duration": 20,
   "intro": "El presidente dijo que tiene USD 125.000 millones en la billetera \"para enfrentar una corrida el año que viene\". Sos esa billetera: la corrida ya se enteró y viene por todo. Esquivá el pánico del mercado, que aguantar parece que no es lo tuyo.",
   "player": { "emoji": "👛", "label": "La billetera presidencial", "image": "avatar.svg" },
   "obstacles": [

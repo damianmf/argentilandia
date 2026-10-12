@@ -127,7 +127,11 @@ el humano)**: los motores de reflejos bajan a 20 s (catcher, dodge, runner,
 whack, fighter — este último a confirmar cuando corra el próximo) y search
 queda en 30–45; contrato actualizado en game-generation.md + piso del clamp en
 generar-juego.mjs; los juegos ya publicados quedan en su duración original
-(archivo congelado). Siguen las cinemáticas y los motores nuevos.*
+(archivo congelado). *(Revés del mismo día: el humano quiere 20 acá y ahora —
+el juego del 12/10 pasa a 20 s con commit; producción tenía 0 partidas, así
+que no hay puntajes de 45 s compitiendo. La regla "lo publicado queda
+congelado" aplica a partir de acá, no retroactivamente al primer día.)*
+Siguen las cinemáticas y los motores nuevos.*
 
 1. **Cinemática de KO**: cámara lenta, zoom, lluvia de papelitos 🧻, cartelazo.
    El momentazo grabable.
