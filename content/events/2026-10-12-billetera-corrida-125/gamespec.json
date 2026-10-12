@@ -3,15 +3,26 @@
   "title": "LA BILLETERA vs LA CORRIDA",
   "emoji": "👛💨",
   "duration": 20,
-  "intro": "El presidente dijo que tiene USD 125.000 millones en la billetera \"para enfrentar una corrida el año que viene\". Sos esa billetera: la corrida ya se enteró y viene por todo. Esquivá el pánico del mercado, que aguantar parece que no es lo tuyo.",
+  "intro": "El presidente presumió: \"Tengo USD 125.000 millones para enfrentar una corrida\". Sos esa billetera. Agarrá los swaps, el dólar futuro y la lengua afuera... y esquivale el cuerpo a los vencimientos. Spoiler del propio presidente: no son reservas netas.",
   "player": { "emoji": "👛", "label": "La billetera presidencial", "image": "avatar.svg" },
+  "prizes": [
+    { "emoji": "🇨🇳", "label": "Swap chino", "points": 150, "weight": 2 },
+    { "emoji": "🇺🇸", "label": "Swap de Estados Unidos", "points": 150, "weight": 2 },
+    { "emoji": "🤝", "label": "Dólar futuro \"posible\"", "points": 200, "weight": 1 },
+    { "emoji": "👅", "label": "Lengua afuera '26", "points": 100, "weight": 2 }
+  ],
   "obstacles": [
-    { "emoji": "🏃", "label": "Corredor de la corrida", "points": -100, "weight": 3 },
+    { "emoji": "🏃", "label": "Cola de la corrida", "points": -100, "weight": 3 },
     { "emoji": "📉", "label": "Riesgo país en suba", "points": -75, "weight": 2 },
-    { "emoji": "💸", "label": "Pesos calientes", "points": -50, "weight": 2 },
-    { "emoji": "📰", "label": "Titular de pánico", "points": -75, "weight": 2 }
+    { "emoji": "🧾", "label": "Vencimiento 2027", "points": -125, "weight": 2 },
+    { "emoji": "🚫", "label": "\"No son reservas netas\"", "points": -150, "weight": 1 }
   ],
   "difficulty": 5,
+  "ranking": {
+    "titulo": "¿QUIÉN AGUANTÓ LA CORRIDA?",
+    "titulos": ["Ministro de la Paz Cambiaria", "Casilda Still de turno", "Colchón antipánico", "Billetera agradecida", "Cola de la corrida"],
+    "unidad": "verdes aguantados"
+  },
   "theme": {
     "background": "#0c1e14",
     "hud": { "score": "#ffffff", "time": "#ffd166" },

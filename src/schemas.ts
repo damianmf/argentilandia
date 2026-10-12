@@ -139,6 +139,7 @@ export const gameSpecDodgeSchema: z.ZodType<GameSpecDodge> = z.object({
   intro: z.string().min(1),
   player: playerSchema,
   obstacles: z.array(catchObjectSchema).min(1),
+  prizes: z.array(catchObjectSchema).optional(),
   difficulty: z.number().int().min(1).max(10),
   theme: themeSchema.optional(),
   sound: z.boolean().optional(),

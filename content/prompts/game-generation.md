@@ -39,6 +39,10 @@ cero producción de assets (emojis + formas + etiquetas), español rioplatense.
   vulnerables jamás son targets: van en `noTouch` o no entran.
 - Pesos sugeridos: `catch` 2–3, `avoid` 2, `special` 1. Puntos positivos 50–150,
   negativos −30 a −200 (el special pega más fuerte).
+- **Dodge (`obstacles`/`prizes`)**: `prizes` obligatorios (2–4). Sin algo que
+  valga la pena agarrar, esquivar quieto desde la esquina gana y el juego no
+  tiene decisiones. Los premios son los datos incómodos de la nota (el chiste
+  de que eso "salva"); los obstáculos, el peligro real de la situación.
 - `duration`: **20 s** para los motores de reflejos (catcher, dodge, runner,
   whack, fighter — decido 12/10 jugando: corrida corta, "una más"). **30–45 s**
   para search, que es de pensar. `difficulty` = 5 siempre (el script lo fuerza).

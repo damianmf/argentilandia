@@ -10,9 +10,10 @@ se arregla para siempre. Fuentes de verdad complementarias: `src/types.ts` (shap
 
 ## 1. Qué es este juego
 
-Minijuegos satíricos de la actualidad argentina, diarios, de 45 segundos: la
-noticia del día se convierte en mecánica, se juega deformándola, y el outro la
-cuenta con fuentes. El jugador se va con el chiste **y** con el dato real.
+Minijuegos satíricos de la actualidad argentina, diarios, de 20 segundos
+(recalibre 12/10; search 30–45): la noticia del día se convierte en mecánica,
+se juega deformándola, y el outro la cuenta con fuentes. El jugador se va con
+el chiste **y** con el dato real.
 
 ## 2. El medidor de acidez
 
@@ -35,7 +36,8 @@ muestra y se cobra; el grupo vulnerable nunca es el chiste.
 1. **El chiste jugable obligatorio**: literalizar la metáfora del noticiero.
    Pitch sin chiste jugable claro se rehace, no se aprueba.
 2. **El objeto-dato**: los hechos incómodos de la nota son objetos del juego
-   ("Orden de compra '23" +200, "33% sin cloacas" −200). El loot cuenta la nota.
+   ("Orden de compra '23" +200, "33% sin cloacas" −200). El loot cuenta la nota,
+   como premio (el dato que "salva") y como obstáculo (el dato que cobra).
 3. **La frase del día**: cita textual trazable (Zod la barra si no). Viaja dentro
    de la tarjeta COMPARTIR.
 4. **El muñeco de atributos**: cargos públicos en ejercicio = símbolos del cargo
@@ -94,3 +96,7 @@ jugando sin explicación + retrospectiva) alimentan este documento con evidencia
 - 09/10 — Muñecos de carga pública autorizados por atributos (banda/patillas),
   nunca foto ni rostro; primer caso: Milei rematador.
 - 09/10 — Latiguillos regionales como contenido del GameSpec.
+- 12/10 — Duración: reflejos a 20 s, search 30–45 (probado por el humano).
+- 12/10 — **Más picante por defecto en política: amarillo alto** (calibración
+  en linea-editorial.md). El dodge exige `prizes`: todo motor de reflejos
+  tiene que tener algo que agarrar — esquivar quieto no es un juego.

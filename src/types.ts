@@ -108,6 +108,8 @@ export interface GameSpecDodge {
   intro: string;
   player: PlayerSpec;
   obstacles: CatchObject[];
+  /** Lo que sí conviene agarrar: sin premios el juego se vuelve esquivar quieto. */
+  prizes?: CatchObject[];
   difficulty: number;
   theme?: ThemeSpec;
   sound?: boolean;

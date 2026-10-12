@@ -4,12 +4,13 @@ import { difficultyParams } from '../engine/difficulty';
 import { applyTheme, hudColors } from '../engine/theme';
 import { createPlayer, preloadPlayer, type PlayerSprite } from '../engine/avatar';
 import { sfx } from '../engine/audio';
-import { HitStop, Racha, mostrarRacha, popPoints, popText, tickTime } from '../engine/juice';
+import { HitStop, Racha, hitPop, mostrarRacha, popPoints, popText, tickTime } from '../engine/juice';
 import { tribuna } from '../engine/tribuna';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const PLAYER_SPEED = 560;
 const DODGE_BONUS = 25;
+const PRIZE_RATIO = 0.35;
 
 export class Dodge extends Phaser.Scene {
   private spec: GameSpecDodge;
@@ -126,6 +127,7 @@ export class Dodge extends Phaser.Scene {
       if (drop.y > this.scale.height + 40) {
         drop.destroy();
         this.drops = this.drops.filter((d) => d !== drop);
+        if (drop.getData('kind') === 'prize') continue;
         const ganancia = DODGE_BONUS * this.racha.bien();
         this.score += ganancia;
         this.scoreText.setText(this.hudScore());
@@ -140,21 +142,29 @@ export class Dodge extends Phaser.Scene {
       const reachX = ((drop.displayWidth + this.player.displayWidth) / 2) * 0.55;
       const reachY = ((drop.displayHeight + this.player.displayHeight) / 2) * 0.55;
       if (dy < reachY && dx < reachX) {
-        this.crash(drop);
+        if (drop.getData('kind') === 'prize') this.collect(drop);
+        else this.crash(drop);
       }
     }
   }
 
   private spawnDrop(): void {
-    const item = this.pick();
+    const { item, kind } = this.pick();
     const x = Phaser.Math.Between(40, this.scale.width - 40);
     const drop = this.add.text(x, -30, item.emoji, { fontSize: '40px' }).setOrigin(0.5);
     drop.setData('points', item.points);
+    drop.setData('kind', kind);
     this.drops.push(drop);
   }
 
-  private pick(): CatchObject {
-    const pool = this.spec.obstacles;
+  private pick(): { item: CatchObject; kind: 'prize' | 'obstacle' } {
+    if (this.spec.prizes?.length && Math.random() < PRIZE_RATIO) {
+      return { item: this.pickWeighted(this.spec.prizes), kind: 'prize' };
+    }
+    return { item: this.pickWeighted(this.spec.obstacles), kind: 'obstacle' };
+  }
+
+  private pickWeighted(pool: CatchObject[]): CatchObject {
     const total = pool.reduce((sum, item) => sum + item.weight, 0);
     let roll = Math.random() * total;
     for (const item of pool) {
@@ -162,6 +172,28 @@ export class Dodge extends Phaser.Scene {
       if (roll <= 0) return item;
     }
     return pool[pool.length - 1];
+  }
+
+  private collect(drop: Phaser.GameObjects.Text): void {
+    const points = drop.getData('points') as number;
+    const multiplicador = this.racha.bien();
+    const ganancia = points * multiplicador;
+    this.score += ganancia;
+    this.scoreText.setText(this.hudScore());
+    mostrarRacha(this.rachaText, multiplicador);
+    this.drops = this.drops.filter((d) => d !== drop);
+    sfx.catch();
+    hitPop(this, this.player);
+    this.hitStop.stop(45);
+    popPoints(this, drop.x, drop.y, ganancia);
+    popText(this, this.scoreText);
+    this.tweens.add({
+      targets: drop,
+      scale: drop.scale * 1.6,
+      alpha: 0,
+      duration: 180,
+      onComplete: () => drop.destroy(),
+    });
   }
 
   private crash(drop: Phaser.GameObjects.Text): void {

@@ -18,6 +18,16 @@ a las **situaciones**, nunca a las personas.
   (que Franco choque contra paredes, que el árbitro junte trofeos), siempre que la
   broma sea sobre la situación y no sobre la persona.
 
+## Calibración de acidez (12/10)
+
+Pedido explícito del humano después de jugar LA BILLETERA vs LA CORRIDA:
+**más picante por defecto**. En eventos de política y economía el piso es
+**amarillo alto**: crítica dura con los datos incómodos de la propia nota
+convertidos en objetos del juego (el dato verificable es la munición del
+chiste), intro con garra, y un marco de ranking que se ría del poder. El rojo
+sigue prohibido (ver "Humor que NO"): el amarillo alto no insulta personas,
+apunta a la medida, el acto y la contradicción.
+
 ## Humor que NO
 
 - **Sangre, lesiones graves o tragedias con víctimas reales**: nada de muertes,
