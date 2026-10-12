@@ -1,0 +1,67 @@
+{
+  "game": "dodge",
+  "title": "LA BILLETERA vs LA CORRIDA",
+  "emoji": "👛💨",
+  "duration": 45,
+  "intro": "El presidente dijo que tiene USD 125.000 millones en la billetera \"para enfrentar una corrida el año que viene\". Sos esa billetera: la corrida ya se enteró y viene por todo. Esquivá el pánico del mercado, que aguantar parece que no es lo tuyo.",
+  "player": { "emoji": "👛", "label": "La billetera presidencial", "image": "avatar.svg" },
+  "obstacles": [
+    { "emoji": "🏃", "label": "Corredor de la corrida", "points": -100, "weight": 3 },
+    { "emoji": "📉", "label": "Riesgo país en suba", "points": -75, "weight": 2 },
+    { "emoji": "💸", "label": "Pesos calientes", "points": -50, "weight": 2 },
+    { "emoji": "📰", "label": "Titular de pánico", "points": -75, "weight": 2 }
+  ],
+  "difficulty": 5,
+  "theme": {
+    "background": "#0c1e14",
+    "hud": { "score": "#ffffff", "time": "#ffd166" },
+    "decor": [
+      { "emoji": "🏦", "x": 88, "y": 12, "size": 56, "alpha": 0.4 },
+      { "emoji": "🎙️", "x": 10, "y": 28, "size": 44, "alpha": 0.5 },
+      { "emoji": "🇦🇷", "x": 86, "y": 34, "size": 34, "alpha": 0.75 },
+      { "emoji": "🌪️", "x": 14, "y": 74, "size": 40, "alpha": 0.3 },
+      { "emoji": "💵", "x": 88, "y": 80, "size": 30, "alpha": 0.3 }
+    ]
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "En una entrevista con Eduardo Feinmann en Radio Mitre, el presidente Javier Milei afirmó tener \"USD 125.000 millones para enfrentar una corrida el año que viene\". Aclaró que no son reservas netas del BCRA: son la suma de compras de divisas, swaps con China y Estados Unidos, una posible operación de dólar futuro y financiamiento ya negociado para los vencimientos de 2027. \"No espero una corrida, pero me preparo\", remarcó.",
+    "quote": {
+      "text": "Tengo USD 125.000 millones para enfrentar una corrida el año que viene",
+      "who": "Javier Milei, en Radio Mitre, con Eduardo Feinmann",
+      "source": "https://www.infobae.com/economia/2026/10/12/milei-tenemos-usd-125000-millones-para-enfrentar-una-corrida-el-ano-que-viene/"
+    },
+    "moments": [
+      {
+        "emoji": "🎙️",
+        "text": "En Radio Mitre desgranó la suma: USD 20.000 millones en compras de divisas y swaps con China y Estados Unidos por 20.000 cada uno",
+        "source": "https://www.infobae.com/economia/2026/10/12/milei-tenemos-usd-125000-millones-para-enfrentar-una-corrida-el-ano-que-viene/"
+      },
+      {
+        "emoji": "🏦",
+        "text": "Aclaró que no son reservas netas del BCRA: entran una posible operación de dólar futuro por USD 15.000 millones y financiamiento negociado para 2027",
+        "source": "https://www.infobae.com/economia/2026/10/12/milei-tenemos-usd-125000-millones-para-enfrentar-una-corrida-el-ano-que-viene/"
+      },
+      {
+        "emoji": "💪",
+        "text": "\"Ya conseguimos USD 25.000 millones para el año que viene\", dijo; de 2026 admitió que llegaron \"con la lengua afuera\"",
+        "source": "https://www.infobae.com/economia/2026/10/12/milei-tenemos-usd-125000-millones-para-enfrentar-una-corrida-el-ano-que-viene/"
+      }
+    ],
+    "facts": [
+      "En una entrevista radial en Radio Mitre con Eduardo Feinmann, Javier Milei afirmó: \"Tengo USD 125.000 millones para enfrentar una corrida el año que viene\".",
+      "Los USD 125.000 millones que mencionó no son reservas netas del BCRA: son la suma de compras de divisas (USD 20.000 millones), swaps con China y Estados Unidos (USD 20.000 millones cada uno), una posible operación de dólar futuro por USD 15.000 millones y financiamiento ya negociado para los vencimientos de 2027.",
+      "Milei aseguró que ya consiguieron USD 25.000 millones para el año que viene y admitió que en 2026 \"llegaron con la lengua afuera\", con USD 2.500 millones del Banco Central norteamericano sobre la hora.",
+      "\"No espero una corrida, pero me preparo\", remarcó; y bajó los rumores de renuncia de Luis Caputo: \"Es una pelotudez del tamaño de una casa\"."
+    ],
+    "fiction": "La corrida no es una horda que viene corriendo sino un fenómeno de mercado, y una billetera no esquiva nada: los billetes no se mueven solos. El muñeco es la caricatura del cargo presidencial por atributos (banda y patillas), nunca un retrato: la broma es la situación, no la persona. Y los 125.000 millones existen en la entrevista, no en una billetera física.",
+    "sources": [
+      {
+        "title": "Milei: \"Tengo USD 125.000 millones en la billetera para enfrentar una corrida el año que viene\"",
+        "url": "https://www.infobae.com/economia/2026/10/12/milei-tenemos-usd-125000-millones-para-enfrentar-una-corrida-el-ano-que-viene/",
+        "outlet": "Infobae",
+        "type": "media"
+      }
+    ]
+  }
+}

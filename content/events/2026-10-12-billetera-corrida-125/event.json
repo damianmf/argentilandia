@@ -1,0 +1,26 @@
+{
+  "id": "2026-10-12-billetera-corrida-125",
+  "date": "2026-10-12",
+  "event": "Milei dijo que tiene USD 125.000 millones \"para enfrentar una corrida el año que viene\" y que \"los dólares les salen por las orejas\"",
+  "category": "politics",
+  "actors": ["Javier Milei", "Radio Mitre", "Mercado cambiario"],
+  "conflict": "Presumir de dólares para desactivar el temor a una corrida",
+  "facts": [
+    "En una entrevista radial en Radio Mitre con Eduardo Feinmann, Javier Milei afirmó: \"Tengo USD 125.000 millones para enfrentar una corrida el año que viene\".",
+    "Los USD 125.000 millones que mencionó no son reservas netas del BCRA: son la suma de compras de divisas (USD 20.000 millones), swaps con China y Estados Unidos (USD 20.000 millones cada uno), una posible operación de dólar futuro por USD 15.000 millones y financiamiento ya negociado para los vencimientos de 2027.",
+    "Milei aseguró que ya consiguieron USD 25.000 millones para el año que viene y admitió que en 2026 \"llegaron con la lengua afuera\", con USD 2.500 millones del Banco Central norteamericano sobre la hora.",
+    "\"No espero una corrida, pero me preparo\", remarcó; y bajó los rumores de renuncia de Luis Caputo: \"Es una pelotudez del tamaño de una casa\"."
+  ],
+  "sources": [
+    {
+      "title": "Milei: \"Tengo USD 125.000 millones en la billetera para enfrentar una corrida el año que viene\"",
+      "url": "https://www.infobae.com/economia/2026/10/12/milei-tenemos-usd-125000-millones-para-enfrentar-una-corrida-el-ano-que-viene/",
+      "outlet": "Infobae",
+      "type": "media"
+    }
+  ],
+  "virality": 9,
+  "gameability": 8,
+  "humorPotential": 8,
+  "shareability": 9
+}

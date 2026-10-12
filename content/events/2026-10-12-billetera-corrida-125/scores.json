@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-10-12",
+  "pitch": {
+    "motor": "dodge",
+    "nombre": "LA BILLETERA vs LA CORRIDA",
+    "chiste": "Sos la billetera presidencial con 125.000 millones adentro y la corrida viene a buscarlos: esquivá corredores nerviosos, bonos desbarrancando, pesos calientes y titulares de pánico. El chiste: la billetera esquiva al mercado entero de una.",
+    "scoreChiste": 9
+  },
+  "umbrales": { "criterio": 6, "promedio": 7 },
+  "elegido": {
+    "n": 1,
+    "game": "dodge",
+    "title": "LA BILLETERA vs LA CORRIDA",
+    "criterios": { "chisteJugable": 9, "punchline": 8, "acidez": 9, "fuentes": 9 },
+    "promedio": 8.75,
+    "pasa": true,
+    "nota": "El chiste se entiende en la portada y se juega solo: cada obstáculo es un actor del pánico del titular, y la quote es la frase del día servida.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "dodge",
+      "title": "LA BILLETERA vs LA CORRIDA",
+      "criterios": { "chisteJugable": 9, "punchline": 8, "acidez": 9, "fuentes": 9 },
+      "promedio": 8.75,
+      "pasa": true,
+      "nota": "El chiste se entiende en la portada y se juega solo: cada obstáculo es un actor del pánico del titular, y la quote es la frase del día servida.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "dodge",
+      "title": "¿DÓNDE ESTÁN LOS BILLETES?",
+      "criterios": { "chisteJugable": 7, "punchline": 9, "acidez": 9, "fuentes": 9 },
+      "promedio": 8.5,
+      "pasa": true,
+      "nota": "El punchline más fino (los swaps se devuelven, el futuro es 'posible', las reservas netas ausentes como obstáculos), pero el chiste requiere entender la diferencia entre la suma y las reservas: un punto más de fricción en la portada.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "dodge",
+      "title": "NOS SALEN POR LAS OREJAS",
+      "criterios": { "chisteJugable": 7, "punchline": 6, "acidez": 9, "fuentes": 8 },
+      "promedio": 7.5,
+      "pasa": true,
+      "nota": "El extremo ridículo (esquivar tus propios billetes que se salen por las orejas) tiene su gracia literal, pero vive de la frase y no de los objetos: punchline en el título más que en la mecánica.",
+      "factsDudosos": []
+    }
+  ]
+}
