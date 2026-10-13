@@ -112,6 +112,5 @@ Pendientes del humano (dashboards):
 3. [x] Build de `argentilandia` conectado al repo (humano, 13/10) y
    verificado con push de prueba: la marca "argentilandia CI-check" llegó
    sola al dominio nuevo.
-4. [ ] Borrar el worker viejo (último paso pendiente) (`juego-de-la-actualidad` → Settings → Delete)
-   cuando el nuevo esté deployando solo en cada push. Los links viejos
-   compartidos dejan de funcionar recién ahí.
+4. [x] Worker viejo borrado (humano, 13/10). El dominio viejo responde 404:
+   los links compartidos antes del 12/10 quedaron afuera. **Migración cerrada.**
