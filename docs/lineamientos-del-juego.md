@@ -97,6 +97,7 @@ jugando sin explicación + retrospectiva) alimentan este documento con evidencia
   nunca foto ni rostro; primer caso: Milei rematador.
 - 09/10 — Latiguillos regionales como contenido del GameSpec.
 - 12/10 — Duración: reflejos a 20 s, search 30–45 (probado por el humano).
-- 12/10 — **Más picante por defecto en política: amarillo alto** (calibración
-  en linea-editorial.md). El dodge exige `prizes`: todo motor de reflejos
-  tiene que tener algo que agarrar — esquivar quieto no es un juego.
+- 12/10 — **Máxima picantez como base del prompting, no importa el lado**
+  (calibración en linea-editorial.md; el único freno es el rojo, no el bando).
+  El dodge exige `prizes`: todo motor de reflejos tiene que tener algo que
+  agarrar — esquivar quieto no es un juego.

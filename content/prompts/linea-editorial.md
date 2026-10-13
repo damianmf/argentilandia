@@ -20,13 +20,15 @@ a las **situaciones**, nunca a las personas.
 
 ## Calibración de acidez (12/10)
 
-Pedido explícito del humano después de jugar LA BILLETERA vs LA CORRIDA:
-**más picante por defecto**. En eventos de política y economía el piso es
-**amarillo alto**: crítica dura con los datos incómodos de la propia nota
-convertidos en objetos del juego (el dato verificable es la munición del
-chiste), intro con garra, y un marco de ranking que se ría del poder. El rojo
-sigue prohibido (ver "Humor que NO"): el amarillo alto no insulta personas,
-apunta a la medida, el acto y la contradicción.
+Regla del humano: **no importa el lado — la base del prompting es la máxima
+picantez y crítica posible**. Todo evento de política y economía se piensa
+desde el amarillo más alto que aguante el dato: los hechos incómodos de la
+propia nota son la munición del chiste, la intro tiene garra, el marco de
+ranking se ríe del poder, y las contradicciones del funcionario de turno se
+cobran en puntos. El único freno no es el bando sino el rojo (ver "Humor que
+NO"): víctimas reales, grupos vulnerables, ensañarse con personas. Crítica
+con todos por igual: el blanco es la silla de gobierno y el acto de gobernar,
+caiga quien caiga.
 
 ## Humor que NO
 
