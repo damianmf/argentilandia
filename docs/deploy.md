@@ -109,9 +109,9 @@ Pendientes del humano (dashboards):
 1. [x] Repo renombrado a `argentilandia` (12/10, vía API con la credencial
    git local; remote actualizado; los links viejos redirigen 301).
 2. [x] `SITE_URL` cargado en los build settings (humano, 12/10).
-3. [ ] Cloudflare: Workers & Pages → `argentilandia` → Settings → Build →
-   conectar el repo (el build sigue apuntando al worker viejo, que sigue
-   recibiendo los pushes).
-4. [ ] Borrar el worker viejo (`juego-de-la-actualidad` → Settings → Delete)
+3. [x] Build de `argentilandia` conectado al repo (humano, 13/10) y
+   verificado con push de prueba: la marca "argentilandia CI-check" llegó
+   sola al dominio nuevo.
+4. [ ] Borrar el worker viejo (último paso pendiente) (`juego-de-la-actualidad` → Settings → Delete)
    cuando el nuevo esté deployando solo en cada push. Los links viejos
    compartidos dejan de funcionar recién ahí.
