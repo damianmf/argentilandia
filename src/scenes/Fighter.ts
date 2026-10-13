@@ -41,6 +41,7 @@ export class Fighter extends Phaser.Scene {
   private rivalOffset = 75;
   private rivalRetarget = 0;
   private hitStopUntil = 0;
+  private koEnCurso = false;
   private crowd: Phaser.GameObjects.Text[] = [];
   private punchWords: string[] = PUNCH_WORDS;
   private rivalWords: string[] = PUNCH_WORDS;
@@ -139,7 +140,7 @@ export class Fighter extends Phaser.Scene {
   }
 
   update(_time: number, delta: number): void {
-    if (this.finished) return;
+    if (this.finished || this.koEnCurso) return;
     if (this.time.now < this.hitStopUntil) return;
     const dt = delta / 1000;
     this.elapsed += delta;
@@ -181,7 +182,7 @@ export class Fighter extends Phaser.Scene {
   }
 
   private punch(): void {
-    if (this.finished || this.playerCooldown > 0) return;
+    if (this.finished || this.koEnCurso || this.playerCooldown > 0) return;
     this.playerCooldown = PLAYER_COOLDOWN;
     this.strike(this.player, this.rival, this.spec.punchPoints);
   }
@@ -211,8 +212,8 @@ export class Fighter extends Phaser.Scene {
         }
         this.scoreText.setText(`Puntos: ${this.score}`);
         this.refreshBars();
-        if (this.rivalHp <= 0) this.finish('¡TROMPADA FINAL!');
-        else if (this.playerHp <= 0) this.finish('TE ROMPIERON LA CAMISETA');
+        if (this.rivalHp <= 0) this.koCinematic(this.rival, true);
+        else if (this.playerHp <= 0) this.koCinematic(this.player, false);
       } else {
         if (this.log.length < 40) this.log.push('w');
         sfx.catch();
@@ -328,6 +329,105 @@ export class Fighter extends Phaser.Scene {
     const barWidth = this.scale.width / 2 - 120;
     this.playerBar.width = barWidth * Math.max(0, this.playerHp / this.spec.koHits);
     this.rivalBar.width = barWidth * Math.max(0, this.rivalHp / this.spec.koHits);
+  }
+
+  // El momentazo grabable: congelón, caída en cámara lenta con zoom, cartelazo
+  // de ¡K.O.! y lluvia de papelitos. Sirve cayendo el rival o cayendo el jugador.
+  private koCinematic(loser: PlayerSprite, ganoElJugador: boolean): void {
+    this.koEnCurso = true;
+    const headline = ganoElJugador ? '¡TROMPADA FINAL!' : 'TE ROMPIERON LA CAMISETA';
+
+    // Acto 1 — el golpe pesa el triple
+    this.flashEdge(0xffffff, 0.5);
+    this.cameras.main.shake(220, 0.012);
+    this.hitStopUntil = this.time.now + 200;
+    sfx.punch();
+
+    this.time.delayedCall(200, () => {
+      // Acto 2 — caída en cámara lenta, la cámara va a buscarlo
+      sfx.crash();
+      this.cameras.main.startFollow(loser, true, 0.08, 0.08);
+      this.cameras.main.zoomTo(1.8, 420, 'Sine.InOut');
+      const dir = Math.sign(loser.x - (ganoElJugador ? this.player.x : this.rival.x)) || 1;
+      this.tweens.add({
+        targets: loser,
+        angle: dir * 95,
+        y: FLOOR_Y - 26,
+        duration: 850,
+        ease: 'Quad.In',
+        onComplete: () => {
+          this.cameras.main.shake(90, 0.006);
+          sfx.crash();
+        },
+      });
+      this.lluviaPapelitos();
+
+      // Acto 3 — cartelazo
+      this.time.delayedCall(480, () => {
+        const ko = this.add
+          .text(loser.x, 140, '¡K.O.!', {
+            fontFamily: FONT,
+            fontSize: '120px',
+            fontStyle: 'bold',
+            color: '#ffd166',
+            stroke: '#101018',
+            strokeThickness: 16,
+            padding: { x: 14, y: 6 },
+          })
+          .setOrigin(0.5)
+          .setDepth(40)
+          .setScale(3)
+          .setAngle(-7);
+        this.tweens.add({ targets: ko, scale: 1, duration: 300, ease: 'Back.Out' });
+      });
+
+      // Acto 4 — la cámara vuelve y sale el Outro con las stats
+      this.time.delayedCall(1600, () => {
+        this.cameras.main.stopFollow();
+        this.cameras.main.zoomTo(1, 450, 'Sine.InOut');
+        this.cameras.main.pan(this.scale.width / 2, this.scale.height / 2, 450, 'Sine.InOut');
+      });
+      this.time.delayedCall(2400, () => this.finish(headline));
+    });
+  }
+
+  private lluviaPapelitos(): void {
+    const colores = [0xffffff, 0x74c0fc, 0xff8787, 0xffd43b];
+    for (let i = 0; i < 26; i++) {
+      const papelito = this.add
+        .rectangle(
+          Phaser.Math.Between(0, this.scale.width),
+          -20 - Phaser.Math.Between(0, 280),
+          Phaser.Math.Between(7, 12),
+          Phaser.Math.Between(10, 16),
+          Phaser.Utils.Array.GetRandom(colores),
+        )
+        .setAngle(Phaser.Math.Between(0, 360))
+        .setDepth(35);
+      this.tweens.add({
+        targets: papelito,
+        y: this.scale.height + 30,
+        angle: papelito.angle + Phaser.Math.Between(-260, 260),
+        duration: Phaser.Math.Between(1800, 3000),
+        delay: Phaser.Math.Between(0, 700),
+      });
+    }
+    for (let i = 0; i < 8; i++) {
+      const rollo = this.add
+        .text(Phaser.Math.Between(40, this.scale.width - 40), -40 - Phaser.Math.Between(0, 300), '🧻', {
+          fontSize: `${Phaser.Math.Between(24, 34)}px`,
+        })
+        .setOrigin(0.5)
+        .setDepth(35);
+      this.tweens.add({
+        targets: rollo,
+        y: this.scale.height + 40,
+        x: rollo.x + Phaser.Math.Between(-40, 40),
+        angle: Phaser.Math.Between(-320, 320),
+        duration: Phaser.Math.Between(2000, 3200),
+        delay: Phaser.Math.Between(0, 600),
+      });
+    }
   }
 
   private finish(headline: string): void {
