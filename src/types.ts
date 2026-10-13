@@ -81,6 +81,8 @@ export interface RankingSpec {
   titulos?: string[];
   /** Nombre satírico de los puntos */
   unidad?: string;
+  /** Veredictos de temporada tocables: semillas de comentario en el Outro */
+  chips?: string[];
 }
 
 export interface GameSpecCatcher {

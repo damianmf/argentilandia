@@ -86,6 +86,9 @@ async function presentar(request, env, id) {
     if (!juegoAbierto(id)) {
       return error(403, 'este ranking ya cerró: solo el juego del día recibe partidas; el escalafón de este queda congelado');
     }
+    // Blindaje 1: cuerpo acotado — el JSON que se espera mide menos de 1 KB.
+    const largo = Number(request.headers.get('content-length') ?? '0');
+    if (largo > 2048) return error(413, 'cuerpo demasiado grande');
     let cuerpo;
     try {
       cuerpo = await request.json();
@@ -94,6 +97,10 @@ async function presentar(request, env, id) {
     }
     const apodo = limpiar(cuerpo.apodo, APODO_MAX) || 'ANÓNIMO';
     const comentario = limpiar(cuerpo.comentario, COMENTARIO_MAX) || null;
+    // Blindaje 2: el veredicto no lleva links (canal de spam clásico).
+    if (comentario && /https?:\/\//i.test(comentario)) {
+      return error(400, 'el veredicto no lleva links: el chiste va en palabras');
+    }
     const score = cuerpo.score;
     if (!Number.isInteger(score) || score < -SCORE_MAX || score > SCORE_MAX) {
       return error(400, `score tiene que ser un entero entre ±${SCORE_MAX} (el fighter puede terminar en negativo)`);
@@ -102,6 +109,16 @@ async function presentar(request, env, id) {
     const ip = request.headers.get('cf-connecting-ip') ?? 'desconocida';
     const ipHash = await sha256(`${ip}:${env.IP_SALT ?? 'jornada'}`);
     const ahora = Date.now();
+
+    // Blindaje 3: tope global por juego y hora — apaga los bombardeos
+    // distribuidos que el rate limit por IP no ve.
+    const delDia = await env.DB
+      .prepare('SELECT COUNT(*) AS n FROM partidas WHERE game_id = ?1 AND creado_at > ?2')
+      .bind(id, ahora - HORA_MS)
+      .first();
+    if ((delDia?.n ?? 0) >= 120) {
+      return error(429, 'el ranking de hoy está a full: probá más tarde');
+    }
 
     const recientes = await env.DB
       .prepare('SELECT COUNT(*) AS n FROM partidas WHERE ip_hash = ?1 AND game_id = ?2 AND creado_at > ?3')

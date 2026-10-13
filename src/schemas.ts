@@ -112,6 +112,7 @@ export const rankingSchema = z.object({
   titulo: z.string().min(1),
   titulos: z.array(z.string().min(1)).min(2).max(8).optional(),
   unidad: z.string().min(1).optional(),
+  chips: z.array(z.string().min(1).max(60)).max(6).optional(),
 });
 
 export const gameSpecCatcherSchema: z.ZodType<GameSpec> = z.object({

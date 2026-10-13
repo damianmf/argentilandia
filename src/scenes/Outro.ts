@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import type { GameSpec, SourceRef } from '../types';
 import { SCENE_BY_GAME, urlGameId } from '../engine/routes';
+import { chipsDeVeredicto } from '../engine/veredictos';
 
 const FONT = 'system-ui, -apple-system, sans-serif';
 const LINK_COLOR = '#4a9bef';
@@ -434,6 +435,45 @@ export class Outro extends Phaser.Scene {
   }
 
   private agregarForm(panel: HTMLDivElement): void {
+    const chips = chipsDeVeredicto(this.spec);
+    let apodoRecordado = '';
+    try {
+      apodoRecordado = (localStorage.getItem('apodo') ?? '').trim();
+    } catch {
+      // sin localStorage, el apodo se escribe de nuevo
+    }
+
+    const mensaje = document.createElement('p');
+    mensaje.style.cssText = 'margin:0 0 14px;color:#ff6b6b;font-size:13px;min-height:16px';
+    panel.appendChild(mensaje);
+
+    // Puerta ancha: con apodo recordado, anotar es UN tap sin teclado.
+    if (apodoRecordado) {
+      const directo = this.boton(panel, '¡ANOTÁ TU PUNTAJE!', '#218c5b', '#ffffff', () =>
+        void this.enviar(panel, apodoRecordado, '', mensaje, directo),
+      );
+      directo.style.cssText += ';width:100%;font-size:17px;padding:14px 18px;margin-bottom:8px';
+      const conVeredicto = this.boton(panel, 'anotá con veredicto →', '#262636', '#9aa0b5', () => {
+        conVeredicto.remove();
+        directo.remove();
+        this.formCompleto(panel, chips, apodoRecordado, mensaje);
+      });
+      conVeredicto.style.cssText += ';font-size:12px;letter-spacing:0;margin-bottom:6px';
+      this.notaLoop(panel);
+      return;
+    }
+
+    this.formCompleto(panel, chips, '', mensaje);
+  }
+
+  private notaLoop(panel: HTMLDivElement): void {
+    const nota = document.createElement('p');
+    nota.textContent = 'Tu veredicto corre en la pantalla de título de mañana. Queda público tu apodo, tu puntaje y tu veredicto. Nada más.';
+    nota.style.cssText = 'margin:0;color:#6b7085;font-size:12px;line-height:1.5';
+    panel.appendChild(nota);
+  }
+
+  private formCompleto(panel: HTMLDivElement, chips: string[], apodoRecordado: string, mensaje: HTMLParagraphElement): void {
     const campo = (placeholder: string, max: number, multilinea: boolean): HTMLInputElement | HTMLTextAreaElement => {
       let c: HTMLInputElement | HTMLTextAreaElement;
       if (multilinea) {
@@ -463,61 +503,75 @@ export class Outro extends Phaser.Scene {
     };
 
     const apodo = campo('TU APODO', 24, false) as HTMLInputElement;
-    try {
-      apodo.value = localStorage.getItem('apodo') ?? '';
-    } catch {
-      // sin localStorage, el apodo se escribe de nuevo
-    }
+    apodo.value = apodoRecordado;
     const comentario = campo('TU VEREDICTO (opcional): ¿qué te pareció el día?', 200, true);
 
-    const nota = document.createElement('p');
-    nota.textContent = 'Queda público tu apodo, tu puntaje y tu veredicto. Nada más.';
-    nota.style.cssText = 'margin:0 0 14px;color:#6b7085;font-size:12px';
-    panel.appendChild(nota);
+    // Veredictos de temporada: un tap llena el comentario.
+    const filaChips = document.createElement('div');
+    filaChips.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;margin:-4px 0 12px';
+    for (const chip of chips) {
+      const b = document.createElement('button');
+      b.textContent = chip;
+      b.style.cssText = 'background:#262636;border:1px solid #3a3a5e;border-radius:999px;color:#cfcfe8;font-size:12px;padding:6px 12px;cursor:pointer;font-family:inherit';
+      b.onclick = () => {
+        comentario.value = comentario.value ? comentario.value : chip;
+        b.style.borderColor = '#7bed9f';
+        b.style.color = '#7bed9f';
+      };
+      filaChips.appendChild(b);
+    }
+    panel.appendChild(filaChips);
+
+    this.notaLoop(panel);
+    panel.appendChild(mensaje);
 
     const fila = document.createElement('div');
     fila.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:4px';
-    const mandar = this.boton(fila, 'MANDAR AL RANKING', '#218c5b', '#ffffff', () => void enviar());
+    const mandar = this.boton(fila, 'MANDAR AL RANKING', '#218c5b', '#ffffff', () =>
+      void this.enviar(panel, apodo.value, comentario.value, mensaje, mandar),
+    );
     this.boton(fila, 'DESPUÉS', '#262636', '#ffffff', () => this.cerrarRanking());
     panel.appendChild(fila);
+  }
 
-    const mensaje = document.createElement('p');
-    mensaje.style.cssText = 'margin:0 0 14px;color:#ff6b6b;font-size:13px;min-height:16px';
-    panel.appendChild(mensaje);
-
-    const enviar = async (): Promise<void> => {
-      mensaje.style.color = '#9aa0b5';
-      mensaje.textContent = 'MANDANDO…';
-      mandar.disabled = true;
-      mandar.style.opacity = '0.6';
-      const gameId = urlGameId() ?? '';
-      try {
-        const r = await fetch(`/api/juegos/${encodeURIComponent(gameId)}/partidas`, {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ apodo: apodo.value, score: this.score, comentario: comentario.value }),
-        });
-        const data = (await r.json().catch(() => null)) as { ok?: boolean; puesto?: number; totalJugadores?: number; error?: string } | null;
-        if (!r.ok || !data?.ok) {
-          mensaje.style.color = '#ff6b6b';
-          mensaje.textContent = data?.error ?? 'NO SE PUDO ANOTAR: probá de nuevo';
-          mandar.disabled = false;
-          mandar.style.opacity = '1';
-          return;
-        }
-        try {
-          localStorage.setItem('apodo', apodo.value.trim());
-        } catch {
-          // sin localStorage no hay apodo recordado, el resto sigue
-        }
-        await this.renderPuesto(panel, data.puesto ?? 1, data.totalJugadores ?? 1);
-      } catch {
+  private async enviar(
+    panel: HTMLDivElement,
+    apodo: string,
+    comentario: string,
+    mensaje: HTMLParagraphElement,
+    boton: HTMLButtonElement,
+  ): Promise<void> {
+    mensaje.style.color = '#9aa0b5';
+    mensaje.textContent = 'MANDANDO…';
+    boton.disabled = true;
+    boton.style.opacity = '0.6';
+    const gameId = urlGameId() ?? '';
+    try {
+      const r = await fetch(`/api/juegos/${encodeURIComponent(gameId)}/partidas`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ apodo, score: this.score, comentario }),
+      });
+      const data = (await r.json().catch(() => null)) as { ok?: boolean; puesto?: number; totalJugadores?: number; error?: string } | null;
+      if (!r.ok || !data?.ok) {
         mensaje.style.color = '#ff6b6b';
-        mensaje.textContent = 'RANKING NO DISPONIBLE ACÁ (sin backend). El juego sigue igual.';
-        mandar.disabled = false;
-        mandar.style.opacity = '1';
+        mensaje.textContent = data?.error ?? 'NO SE PUDO ANOTAR: probá de nuevo';
+        boton.disabled = false;
+        boton.style.opacity = '1';
+        return;
       }
-    };
+      try {
+        localStorage.setItem('apodo', apodo.trim());
+      } catch {
+        // sin localStorage no hay apodo recordado, el resto sigue
+      }
+      await this.renderPuesto(panel, data.puesto ?? 1, data.totalJugadores ?? 1);
+    } catch {
+      mensaje.style.color = '#ff6b6b';
+      mensaje.textContent = 'RANKING NO DISPONIBLE ACÁ (sin backend). El juego sigue igual.';
+      boton.disabled = false;
+      boton.style.opacity = '1';
+    }
   }
 
   private avisoCerrado(panel: HTMLDivElement): void {
