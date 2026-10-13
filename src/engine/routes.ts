@@ -5,6 +5,7 @@ export const SCENE_BY_GAME = {
   runner: 'Runner',
   fighter: 'Fighter',
   whack: 'Whack',
+  decide: 'Decide',
 } as const;
 
 export function urlGameId(): string {

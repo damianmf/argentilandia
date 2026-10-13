@@ -79,8 +79,12 @@ export class Title extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
+    const duracion =
+      this.spec.game === 'decide'
+        ? `${this.spec.encuentros.length} decisiones te esperan`
+        : `Duración: ${this.spec.duration} segundos`;
     this.add
-      .text(cx, 450, `Duración: ${this.spec.duration} segundos`, {
+      .text(cx, 450, duracion, {
         fontFamily: FONT,
         fontSize: '20px',
         color: '#8f8fb0',

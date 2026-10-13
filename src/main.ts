@@ -8,6 +8,7 @@ import { Search } from './scenes/Search';
 import { Runner } from './scenes/Runner';
 import { Fighter } from './scenes/Fighter';
 import { Whack } from './scenes/Whack';
+import { Decide } from './scenes/Decide';
 import { Outro } from './scenes/Outro';
 
 const WIDTH = 960;
@@ -74,7 +75,9 @@ async function main(): Promise<void> {
             ? new Fighter(spec)
             : spec.game === 'whack'
               ? new Whack(spec)
-              : new Catcher(spec);
+              : spec.game === 'decide'
+                ? new Decide(spec)
+                : new Catcher(spec);
   if (spec.player.image) {
     spec.player.image = `content/events/${id}/${spec.player.image}`;
   }

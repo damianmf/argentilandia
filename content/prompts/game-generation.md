@@ -43,6 +43,13 @@ cero producción de assets (emojis + formas + etiquetas), español rioplatense.
   valga la pena agarrar, esquivar quieto desde la esquina gana y el juego no
   tiene decisiones. Los premios son los datos incómodos de la nota (el chiste
   de que eso "salva"); los obstáculos, el peligro real de la situación.
+- **Decide (`encuentros`/`veredictos`)**: 3–4 encuentros de gobierno, cada uno
+  con 2–3 opciones que cobran puntos asimétricos (la salida tentadora puede
+  sumar en corto y costar en largo). La consecuencia se muestra DESPUÉS de
+  elegir: siempre con efecto concreto, nunca vacía. Los `veredictos` (3–5 por
+  umbral de puntaje) son el share del juego: títulos de gestión, ácidos, sin
+  insultos a personas reales. `duration` nominal 60 (el motor no la usa como
+  reloj); en la pantalla de título se muestran la cantidad de decisiones.
 - `duration`: **20 s** para los motores de reflejos (catcher, dodge, runner,
   whack, fighter — decido 12/10 jugando: corrida corta, "una más"). **30–45 s**
   para search, que es de pensar. `difficulty` = 5 siempre (el script lo fuerza).

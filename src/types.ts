@@ -1,4 +1,4 @@
-export type GameType = 'catcher' | 'dodge' | 'search' | 'runner' | 'fighter' | 'whack';
+export type GameType = 'catcher' | 'dodge' | 'search' | 'runner' | 'fighter' | 'whack' | 'decide';
 
 export interface SourceRef {
   title: string;
@@ -123,6 +123,44 @@ export interface SearchItem {
   points: number;
 }
 
+export interface DecideOpcion {
+  texto: string;
+  /** Lo que pasa después de elegir: siempre con efecto concreto, se muestra tarde. */
+  consecuencia: string;
+  puntos: number;
+}
+
+export interface DecideEncuentro {
+  emoji: string;
+  titulo: string;
+  situacion: string;
+  opciones: DecideOpcion[];
+}
+
+export interface DecideVeredicto {
+  /** Puntaje mínimo (inclusive) para este veredicto; gana el umbral más alto que cumpla. */
+  min: number;
+  titulo: string;
+  texto: string;
+}
+
+export interface GameSpecDecide {
+  game: Extract<GameType, 'decide'>;
+  title: string;
+  emoji: string;
+  /** Nominal: el decide no corre contra reloj, lo marca el contrato (60). */
+  duration: number;
+  intro: string;
+  player: PlayerSpec;
+  encuentros: DecideEncuentro[];
+  veredictos: DecideVeredicto[];
+  difficulty: number;
+  theme?: ThemeSpec;
+  sound?: boolean;
+  ranking?: RankingSpec;
+  outro: Outro;
+}
+
 export interface GridSpec {
   width: number;
   height: number;
@@ -207,4 +245,4 @@ export interface GameSpecWhack {
   outro: Outro;
 }
 
-export type GameSpec = GameSpecCatcher | GameSpecDodge | GameSpecSearch | GameSpecRunner | GameSpecFighter | GameSpecWhack;
+export type GameSpec = GameSpecCatcher | GameSpecDodge | GameSpecSearch | GameSpecRunner | GameSpecFighter | GameSpecWhack | GameSpecDecide;

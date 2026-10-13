@@ -1,0 +1,99 @@
+{
+  "game": "decide",
+  "title": "GOBERNÁ LA ARGENTINA (DEMO)",
+  "emoji": "🪑💸",
+  "duration": 60,
+  "intro": "Sentate en la silla de gobierno de un país ficticio: cuatro crisis, dos o tres salidas cada una, y al final el veredicto de tu gestión para colgar. Demo del motor decide: todo inventado, nada real, nadie de verdad.",
+  "player": { "emoji": "🪑", "label": "La silla de gobierno" },
+  "encuentros": [
+    {
+      "emoji": "🔥",
+      "titulo": "EL DÉFICIT HEREDADO",
+      "situacion": "Arrancás con el tesoro vacío y un ropero lleno de facturas. Tu ministro de economía suspira desde el piso compartido.",
+      "opciones": [
+        { "texto": "Ajuste de un tajo", "consecuencia": "Los mercados ficticios aplauden de pie. La calle, sentada.", "puntos": 100 },
+        { "texto": "Emitir como en los 90", "consecuencia": "El dólar ficticio se entera a las 11:14 y va de compras.", "puntos": -100 },
+        { "texto": "Comisión de expertos", "consecuencia": "Se reunieron 14 veces. Emitieron un boletín.", "puntos": -25 }
+      ]
+    },
+    {
+      "emoji": "⚡",
+      "titulo": "LA TARIFA",
+      "situacion": "La luz lleva dos años congelada y el estado ficticio la paga con crédito a tu nombre.",
+      "opciones": [
+        { "texto": "Tarifazo del 200%", "consecuencia": "La luz llega al instante, con nota de disculpa impresa.", "puntos": 100 },
+        { "texto": "Congelar un año más", "consecuencia": "El estado ficticio pidió un préstamo para pagar tu tostadora.", "puntos": -100 },
+        { "texto": "Segmentación sonriente", "consecuencia": "La mitad pagó más. La otra mitad también, pero sonriendo.", "puntos": 25 }
+      ]
+    },
+    {
+      "emoji": "📞",
+      "titulo": "EL FMI FICTICIO LLAMA",
+      "situacion": "Llamada desconocida, código de país +1. Quiere hablar de 'tu situación'.",
+      "opciones": [
+        { "texto": "Atender y pedir plata", "consecuencia": "Te la dieron. Con instrucciones de 900 páginas.", "puntos": 100 },
+        { "texto": "Mandarlo al buzón", "consecuencia": "Dejó un mensaje de 4 minutos sobre 'responsabilidad fiscal'.", "puntos": -75 },
+        { "texto": "Bloquearlo", "consecuencia": "Te bloqueó primero. Cosas del FMI ficticio.", "puntos": -25 }
+      ]
+    },
+    {
+      "emoji": "🗳️",
+      "titulo": "EL AÑO QUE VIENE",
+      "situacion": "Tus encuestadores ficticios dicen que va todo bien. Tus pies dicen otra cosa.",
+      "opciones": [
+        { "texto": "Anunciar la reelección", "consecuencia": "Los mercados ficticios vendieron plateas para el acto.", "puntos": 75 },
+        { "texto": "Decir 'yo nunca diría nunca'", "consecuencia": "Nadie te creyó, pero la frase quedó linda en los titulares.", "puntos": -25 },
+        { "texto": "Renunciar para dar charlas en Dubái", "consecuencia": "El contrato llegó firmado antes que la carta. Así funciona.", "puntos": 150 }
+      ]
+    }
+  ],
+  "veredictos": [
+    { "min": 250, "titulo": "FENÓMENO DE GOBIERNO", "texto": "Gobernaste tan bien que hasta los economistas ficticios se sacaron los anteojos de la sorpresa." },
+    { "min": 50, "titulo": "SOBREVIVIENTE DEL AÑO", "texto": "Terminaste con el país entero. Con grietas, pero entero." },
+    { "min": -100, "titulo": "PLAN EN 47 ETAPAS", "texto": "Tu gestión fue un plan de 47 etapas. Nadie vio la etapa 1." },
+    { "min": -400, "titulo": "RÉCORD NEGATIVO", "texto": "El país ficticio pidió asilo en otro país ficticio. Los dos se arrepintieron." }
+  ],
+  "difficulty": 5,
+  "ranking": {
+    "titulo": "¿QUIÉN GOBERNÓ MEJOR?",
+    "titulos": ["Estadista de la República Ficticia", "Gabinete de Acero", "Sobreviviente Político", "Comisión de Expertos", "Riesgo Soberano"],
+    "unidad": "puntos de gestión"
+  },
+  "theme": {
+    "background": "#141019",
+    "hud": { "score": "#ffffff", "time": "#ffd166" },
+    "decor": [
+      { "emoji": "🏛️", "x": 88, "y": 16, "size": 56, "alpha": 0.35 },
+      { "emoji": "🪑", "x": 10, "y": 24, "size": 42, "alpha": 0.4 },
+      { "emoji": "💵", "x": 88, "y": 82, "size": 30, "alpha": 0.3 }
+    ]
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "Nada de esto pasó y nada va a pasar: es una demo inventada para probar el motor decide del juego. La Argentina ficticia, su FMI y sus mercados no existen, y las cuatro crisis son de juguete.",
+    "quote": {
+      "text": "Gobernar es fácil; la difícil es la segunda parte",
+      "who": "El autor de la demo, desde la silla",
+      "source": "https://example.com/motor-decide"
+    },
+    "moments": [
+      {
+        "emoji": "🪑",
+        "text": "La silla de gobierno sigue vacía después de tu gestión ficticia",
+        "source": "https://example.com/motor-decide"
+      },
+      {
+        "emoji": "📞",
+        "text": "El FMI ficticio confirmó que tu buzón de voz está completo",
+        "source": "https://example.com/motor-decide"
+      }
+    ],
+    "facts": [
+      "Este juego es una demo: todos los hechos, citas y momentos son inventados para probar el motor decide."
+    ],
+    "fiction": "Todo es ficción: el país, las crisis, el FMI ficticio y las opciones no corresponden a ninguna persona real. La demo existe solo para probar el motor y su veredicto compartible.",
+    "sources": [
+      { "title": "[Demo] Motor decide del Juego de la Actualidad", "url": "https://example.com/motor-decide" }
+    ]
+  }
+}

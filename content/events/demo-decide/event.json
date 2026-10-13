@@ -1,0 +1,18 @@
+{
+  "id": "demo-decide",
+  "date": "2026-09-26",
+  "event": "Demo del motor de decisiones: gobernar una Argentina ficticia en cuatro crisis",
+  "category": "politics",
+  "actors": ["La silla de gobierno", "El FMI ficticio", "Los mercados de mentira"],
+  "conflict": "Gestionar (o no) una crisis inventada",
+  "facts": [
+    "Este evento es una ficción de prueba del motor decide: el país, el FMI ficticio y las crisis no existen, y ninguna opción corresponde a una persona real."
+  ],
+  "sources": [
+    { "title": "[Demo] Motor decide del Juego de la Actualidad", "url": "https://example.com/motor-decide", "outlet": "demo", "type": "official" }
+  ],
+  "virality": 5,
+  "gameability": 9,
+  "humorPotential": 8,
+  "shareability": 7
+}

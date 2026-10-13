@@ -60,6 +60,7 @@ muestra y se cobra; el grupo vulnerable nunca es el chiste.
 | `runner` | una fuga/una carrera sin control | EL FRENITO INFINITO |
 | `fighter` | dos lados que se chocan; diferenciación por camiseta | SE ARMÓ LA PIÑA |
 | `whack` | golpear lo que brota, con mensaje insistente y un noTouch | PÉGUELE, SEÑORES |
+| `decide` | una gestión de gobierno: cada opción cobra y el veredicto resume | GOBERNÁ LA ARGENTINA (demo-decide) |
 | `kick` (pendiente) | apuntar y errar: el tiro que sale mal | (propuesto: drone de Messi) |
 
 Elección: la mecánica es la literalización del titular. Si dos motores la cuentan,

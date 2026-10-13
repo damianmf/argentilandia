@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Event, GameSpec, GameSpecDodge, GameSpecFighter, GameSpecRunner, GameSpecSearch, GameSpecWhack, Outro, ThemeSpec } from './types';
+import type { Event, GameSpec, GameSpecDecide, GameSpecDodge, GameSpecFighter, GameSpecRunner, GameSpecSearch, GameSpecWhack, Outro, ThemeSpec } from './types';
 
 export const sourceRefSchema = z.object({
   title: z.string().min(1),
@@ -147,8 +147,48 @@ export const gameSpecDodgeSchema: z.ZodType<GameSpecDodge> = z.object({
   outro: outroSchema,
 });
 
-export const searchItemSchema = z.object({
+const decideOpcionSchema = z.object({
+  texto: z.string().min(1),
+  consecuencia: z.string().min(1),
+  puntos: z.number().int(),
+});
+
+export const gameSpecDecideSchema: z.ZodType<GameSpecDecide> = z.object({
+  game: z.literal('decide'),
+  title: z.string().min(1),
   emoji: z.string().min(1),
+  duration: z.number().int().min(1),
+  intro: z.string().min(1),
+  player: playerSchema,
+  encuentros: z
+    .array(
+      z.object({
+        emoji: z.string().min(1),
+        titulo: z.string().min(1),
+        situacion: z.string().min(1),
+        opciones: z.array(decideOpcionSchema).min(2).max(3),
+      }),
+    )
+    .min(2)
+    .max(6),
+  veredictos: z
+    .array(
+      z.object({
+        min: z.number().int(),
+        titulo: z.string().min(1),
+        texto: z.string().min(1),
+      }),
+    )
+    .min(2)
+    .max(6),
+  difficulty: z.number().int().min(1).max(10),
+  theme: themeSchema.optional(),
+  sound: z.boolean().optional(),
+  ranking: rankingSchema.optional(),
+  outro: outroSchema,
+});
+
+export const searchItemSchema = z.object({  emoji: z.string().min(1),
   label: z.string().min(1),
   points: z.number(),
 });
@@ -245,6 +285,7 @@ const gameSchemas: Record<string, z.ZodType<GameSpec>> = {
   runner: gameSpecRunnerSchema,
   fighter: gameSpecFighterSchema,
   whack: gameSpecWhackSchema,
+  decide: gameSpecDecideSchema,
 };
 
 export type ParseResult<T> = { ok: true; data: T } | { ok: false; error: string };
