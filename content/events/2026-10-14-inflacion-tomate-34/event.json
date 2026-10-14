@@ -1,0 +1,32 @@
+{
+  "id": "2026-10-14-inflacion-tomate-34",
+  "date": "2026-10-14",
+  "event": "La inflación de septiembre fue 1,9% y el tomate redondo encabezó las subas con un 34,1% ($4.038,58 el kilo), mientras el Gobierno celebró el número como \"el camino\"",
+  "category": "economy",
+  "actors": ["INDEC", "Gobierno nacional", "Consumidores"],
+  "conflict": "Verduras y tarifas aceleran los precios mientras el Gobierno celebra",
+  "facts": [
+    "La inflación de septiembre fue de 1,9% mensual y de 23,6% acumulado en el año; los precios estacionales lideraron el mes con una suba de 2,9%, impulsada por las verduras.",
+    "El tomate redondo fue el producto básico que más subió: el kilo pasó de $3.011,77 a $4.038,58 (+34,1%), seguido por la cebolla (+24,6%) y la batata (+12,5%).",
+    "Vivienda y servicios públicos lideró las divisiones con un 3,1%, seguida por Educación (3%), Comunicación (2,5%) y Salud (2,4%); los regulados subieron 2,3% empujados por tarifas, educación y prepagas.",
+    "El Gobierno celebró el número de la inflación de septiembre y lo definió como \"el camino\", según el seguimiento en vivo de La Nación."
+  ],
+  "sources": [
+    {
+      "title": "Inflación de septiembre: cuáles fueron los productos básicos que más subieron en el mes",
+      "url": "https://www.ambito.com/economia/inflacion-septiembre-cuales-fueron-los-productos-basicos-que-mas-subieron-el-mes-n6333316",
+      "outlet": "Ámbito",
+      "type": "media"
+    },
+    {
+      "title": "Javier Milei y sus medidas, EN VIVO: el Gobierno celebró el número de la inflación y dijo: \"Es el camino\"",
+      "url": "https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-el-gobierno-celebro-el-numero-de-la-inflacion-y-dijo-es-el-camino-nid14102026/",
+      "outlet": "La Nación",
+      "type": "media"
+    }
+  ],
+  "virality": 8,
+  "gameability": 8,
+  "humorPotential": 8,
+  "shareability": 8
+}

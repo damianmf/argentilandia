@@ -1,0 +1,95 @@
+{
+  "game": "whack",
+  "title": "APLASTÁ LOS PRECIOS",
+  "emoji": "🔨🍅",
+  "duration": 20,
+  "intro": "Septiembre, 1,9%: el tomate saltó a $4.038 el kilo y el Gobierno lo celebró porque \"es el camino\". Agarrá el martillo del consumidor: cada etiqueta que brote en la góndola, aplastada. Cuidado con la única oferta real, que no se toca.",
+  "player": { "emoji": "🔨", "label": "El martillo del consumidor", "image": "avatar.svg" },
+  "grid": { "width": 5, "height": 3 },
+  "targets": [
+    { "emoji": "🍅", "label": "Tomate +34,1%", "points": 100 },
+    { "emoji": "🧅", "label": "Cebolla +24,6%", "points": 150 },
+    { "emoji": "🍠", "label": "Batata +12,5%", "points": 150 },
+    { "emoji": "🚰", "label": "Tarifas +2,3%", "points": 200 }
+  ],
+  "noTouch": [
+    { "emoji": "🏷️", "label": "La oferta real", "points": -2000 }
+  ],
+  "whackWords": ["¡RE-ETIQUETADO!", "¡CONGELADO!", "¡ÚLTIMA UNIDAD!", "¡PRECIOS DE ANTES!"],
+  "verdicts": ["Víctima del tomate", "Changuito dudoso", "Defensor del bolsillo", "Aplastador Mayor del País"],
+  "difficulty": 5,
+  "theme": {
+    "background": "#171226",
+    "hud": { "score": "#ffffff", "time": "#ffd166" },
+    "decor": [
+      { "emoji": "🏪", "x": 88, "y": 12, "size": 52, "alpha": 0.4 },
+      { "emoji": "🛒", "x": 10, "y": 28, "size": 46, "alpha": 0.45 },
+      { "emoji": "💳", "x": 86, "y": 34, "size": 34, "alpha": 0.5 },
+      { "emoji": "🥬", "x": 12, "y": 76, "size": 34, "alpha": 0.3 },
+      { "emoji": "🧾", "x": 88, "y": 78, "size": 30, "alpha": 0.3 }
+    ]
+  },
+  "sound": true,
+  "ranking": {
+    "titulo": "¿QUIÉN APLASTÓ MÁS PRECIOS?",
+    "titulos": [
+      "Aplastador Mayor del País",
+      "Defensor del Bolsillo",
+      "Changuito dudoso",
+      "Víctima del Tomate"
+    ],
+    "unidad": "precios aplastados",
+    "chips": ["El tomate subió 34,1% ¿cuánto pagaste vos?", "Es el camino, decían"]
+  },
+  "outro": {
+    "whatHappened": "La inflación de septiembre fue de 1,9% (23,6% acumulado en el año) y el tomate redondo fue el producto básico que más subió: el kilo saltó de $3.011,77 a $4.038,58, un 34,1%. Las verduras empujaron a los estacionales (+2,9%) y las tarifas a los regulados (+2,3%), mientras el Gobierno celebró el número y lo definió como \"el camino\".",
+    "quote": {
+      "text": "Es el camino",
+      "who": "El Gobierno, al celebrar el dato de inflación de septiembre",
+      "source": "https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-el-gobierno-celebro-el-numero-de-la-inflacion-y-dijo-es-el-camino-nid14102026/"
+    },
+    "moments": [
+      {
+        "emoji": "🍅",
+        "text": "El tomate redondo lideró las subas del mes: de $3.011,77 a $4.038,58 el kilo (+34,1%)",
+        "source": "https://www.ambito.com/economia/inflacion-septiembre-cuales-fueron-los-productos-basicos-que-mas-subieron-el-mes-n6333316"
+      },
+      {
+        "emoji": "🧅",
+        "text": "La cebolla (+24,6%) y la batata (+12,5%) completaron el podio de los productos básicos",
+        "source": "https://www.ambito.com/economia/inflacion-septiembre-cuales-fueron-los-productos-basicos-que-mas-subieron-el-mes-n6333316"
+      },
+      {
+        "emoji": "📊",
+        "text": "Vivienda y servicios encabezó las divisiones (+3,1%), seguida por Educación (3%) y Salud (2,4%)",
+        "source": "https://www.ambito.com/economia/inflacion-septiembre-cuales-fueron-los-productos-basicos-que-mas-subieron-el-mes-n6333316"
+      },
+      {
+        "emoji": "🎉",
+        "text": "El Gobierno celebró el número de la inflación y lo definió como \"el camino\"",
+        "source": "https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-el-gobierno-celebro-el-numero-de-la-inflacion-y-dijo-es-el-camino-nid14102026/"
+      }
+    ],
+    "facts": [
+      "La inflación de septiembre fue de 1,9% mensual y de 23,6% acumulado en el año; los precios estacionales lideraron el mes con una suba de 2,9%, impulsada por las verduras.",
+      "El tomate redondo fue el producto básico que más subió: el kilo pasó de $3.011,77 a $4.038,58 (+34,1%), seguido por la cebolla (+24,6%) y la batata (+12,5%).",
+      "Vivienda y servicios públicos lideró las divisiones con un 3,1%, seguida por Educación (3%), Comunicación (2,5%) y Salud (2,4%); los regulados subieron 2,3% empujados por tarifas, educación y prepagas.",
+      "El Gobierno celebró el número de la inflación de septiembre y lo definió como \"el camino\", según el seguimiento en vivo de La Nación."
+    ],
+    "fiction": "Nadie aplasta precios a martillazos en un súper (por más que tienten): acá las etiquetas brotan como topos y la \"oferta real\" que hay que cuidar es un invento del juego. Los porcentajes y los precios del tomate, la cebolla y la batata, en cambio, son los del dato de septiembre.",
+    "sources": [
+      {
+        "title": "Inflación de septiembre: cuáles fueron los productos básicos que más subieron en el mes",
+        "url": "https://www.ambito.com/economia/inflacion-septiembre-cuales-fueron-los-productos-basicos-que-mas-subieron-el-mes-n6333316",
+        "outlet": "Ámbito",
+        "type": "media"
+      },
+      {
+        "title": "Javier Milei y sus medidas, EN VIVO: el Gobierno celebró el número de la inflación y dijo: \"Es el camino\"",
+        "url": "https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-el-gobierno-celebro-el-numero-de-la-inflacion-y-dijo-es-el-camino-nid14102026/",
+        "outlet": "La Nación",
+        "type": "media"
+      }
+    ]
+  }
+}

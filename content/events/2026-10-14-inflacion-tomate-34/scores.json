@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-10-14",
+  "pitch": {
+    "motor": "whack",
+    "nombre": "APLASTÁ LOS PRECIOS",
+    "chiste": "Del piso del súper brotan las etiquetas con las subas de septiembre y las aplastás a martillazos antes de que lleguen al changuito: el tomate (+34,1%) es el topo más valioso del mes. noTouch: la única oferta real. El chiste: los precios siempre vuelven a brotar.",
+    "scoreChiste": 9
+  },
+  "umbrales": { "criterio": 6, "promedio": 7 },
+  "elegido": {
+    "n": 1,
+    "game": "whack",
+    "title": "APLASTÁ LOS PRECIOS",
+    "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 9, "fuentes": 9 },
+    "promedio": 9,
+    "pasa": true,
+    "nota": "Cada topo es el dato exacto del IPC (tomate +34,1%, tarifas +2,3%) y el martillo del consumidor contra 'Es el camino' es picantez máxima con trazabilidad total: el chiste se juega y se comparte con el número en la etiqueta.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "whack",
+      "title": "APLASTÁ LOS PRECIOS",
+      "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 9, "fuentes": 9 },
+      "promedio": 9,
+      "pasa": true,
+      "nota": "Cada topo es el dato exacto del IPC (tomate +34,1%, tarifas +2,3%) y el martillo del consumidor contra 'Es el camino' es picantez máxima con trazabilidad total: el chiste se juega y se comparte con el número en la etiqueta.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "whack",
+      "title": "LA CANASTA FEROZ",
+      "criterios": { "chisteJugable": 7, "punchline": 9, "acidez": 9, "fuentes": 8 },
+      "promedio": 8.25,
+      "pasa": true,
+      "nota": "El dato más incómodo (la canasta para no ser pobre, $1.632.505) como marco del tablero: punchline fino pero el chiste vive menos en la mecánica que en la variante 1.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "whack",
+      "title": "RE-ETIQUETADO TOTAL",
+      "criterios": { "chisteJugable": 7, "punchline": 6, "acidez": 8, "fuentes": 8 },
+      "promedio": 7.25,
+      "pasa": true,
+      "nota": "El extremo: la góndola entera brotando etiquetas en un súper infinito. Tiene su gracia absurda pero los objetos se vuelven genéricos: pierde el número que hace reír (y enojar).",
+      "factsDudosos": []
+    }
+  ]
+}
