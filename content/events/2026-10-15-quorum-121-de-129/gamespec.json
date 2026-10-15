@@ -25,7 +25,8 @@
     "unidad": "bancas juntadas",
     "chips": [
       "121 de 129, otra vez",
-      "Me apagaron por control remoto a los 12 segundos"
+      "Me apagaron por control remoto a los 12 segundos",
+      "¿Volvemos a alquilar a 3 años?"
     ]
   },
   "theme": {
@@ -41,7 +42,7 @@
   },
   "sound": true,
   "outro": {
-    "whatHappened": "La oposición convocó una sesión especial de Diputados para derogar el DNU 70/23 de Milei (y sumaba la prórroga de la emergencia en discapacidad y el endeudamiento) y no llegó al quórum: 121 bancos ocupados contra 129 necesarios. El oficialismo, con gobernadores aliados, cosechó las ausencias clave y la sesión se cayó sin debate. Yasky apuntó al 'toma y daca' con diputados 'manejados a control remoto'; Menem celebró que 'se quedaron en el intento'.",
+    "whatHappened": "La oposición convocó una sesión especial de Diputados para derogar el DNU 70/23 —el mega decreto de Milei que había desregulado desde los alquileres hasta la ley de tierras— y no llegó al quórum: 121 bancos ocupados contra 129 necesarios. Como el Senado ya lo había rechazado en 2024, el no de Diputados lo habría tirado definitivo; el oficialismo cosechó las ausencias clave de los gobernadores y ganó aire para lo suyo. Yasky apuntó al 'toma y daca' con diputados 'manejados a control remoto'; Menem celebró que 'se quedaron en el intento'.",
     "quote": {
       "text": "Es lamentable que haya diputados de las provincias que no voten contra el DNU 70/23 por la lógica del toma y daca",
       "who": "Hugo Yasky (CTA), en Modo Fontevecchia, minutos antes de la sesión",
@@ -49,38 +50,47 @@
     },
     "moments": [
       {
+        "emoji": "⚖️",
+        "text": "El telón: fallos encontrados de la Corte Suprema sobre la ley de tierras que el art. 154 del DNU había desregulado",
+        "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
+      },
+      {
         "emoji": "📜",
-        "text": "La oposición junta firmas: la sesión iba a derogar el DNU 70/23, prorrogar la emergencia en discapacidad y tratar endeudamiento y mora",
+        "text": "La oposición junta firmas: derogar el DNU 70/23, prorrogar la emergencia en discapacidad y tratar endeudamiento y mora",
         "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
       },
       {
         "emoji": "🪑",
-        "text": "El tablero marca 121 diputados sentados: faltan 8 para abrir el debate",
-        "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
-      },
-      {
-        "emoji": "📵",
-        "text": "Las ausencias llegan de diputados que responden a gobernadores aliados; María Inés Zigarán había firmado la convocatoria y no apareció",
+        "text": "El tablero marca 121 de 129: las ausencias clave llegan de diputados de gobernadores aliados; Zigarán había firmado la convocatoria y no apareció",
         "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
       },
       {
         "emoji": "🗣️",
-        "text": "Martín Menem lo celebra: \"Una vez más, quisieron ponerle un freno a la Argentina y se quedaron en el intento\"",
+        "text": "Menem lo celebra ('se quedaron en el intento') y el oficialismo agenda el 21/10: su proyecto de Inviolabilidad con tope a la extranjerización",
         "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
       }
     ],
     "facts": [
       "La sesión convocada por la oposición para derogar el DNU 70/23 se cayó por falta de quórum: 121 diputados sentados contra 129 necesarios para abrir el debate.",
+      "El DNU 70/23 es el mega decreto desregulador con el que Milei derogó, entre otras, las leyes de Alquileres, Góndolas, Abastecimiento y Compre Nacional, y eliminó (art. 154) los límites de la ley de tierras 26.737 a la propiedad de extranjeros; si caía, volvían a regir los contratos de alquiler a 3 años con ajuste semestral, la autorización estatal para los aumentos de prepagas, el espacio de góndola para PyMEs y los topes a la venta de tierras a extranjeros.",
+      "El telón de fondo: fallos encontrados de la Corte Suprema sobre tierras —uno dejó la venta a extranjeros liberalizada de hecho y otro restituyó temporalmente la ley de 2011—, el detonante de la convocatoria opositora.",
+      "El Senado ya había rechazado el DNU 70/23 en marzo de 2024: con el rechazo de Diputados, la derogación habría sido definitiva.",
       "El orden del día sumaba, además del rechazo al mega decreto, la prórroga de la emergencia en discapacidad y proyectos de endeudamiento y mora.",
       "El oficialismo, con apoyo de gobernadores aliados, consiguió las ausencias de diputados de Santa Fe, Córdoba, Salta, Misiones, Chubut, Tucumán y Jujuy; María Inés Zigarán (Jujuy) había firmado la convocatoria y finalmente se ausentó.",
       "Hugo Yasky (CTA) habló de diputados 'manejados a control remoto' y anticipó una marcha multitudinaria; Martín Menem celebró: 'Una vez más, quisieron ponerle un freno a la Argentina y se quedaron en el intento'.",
-      "El DNU 70/23 es el mega decreto desregulador con el que Milei derogó, entre otras, las leyes de Abastecimiento, Góndolas, Compre Nacional y de Alquileres."
+      "Sin la sesión, el Gobierno ganó aire para sus prioridades: la suspensión de las PASO y el Presupuesto 2027."
     ],
     "fiction": "Los diputados no caen del techo ni se apagan con un control remoto de verdad: es la literalización del 'control remoto' que dijo Yasky. El encargado de quórum es un personaje genérico de ficción, no retrata a ninguna persona real; las bancas no vuelan (eso es lo único realista). El 121 no es exageración: pasó tal cual.",
     "sources": [
       {
         "title": "La oposición no llegó al quórum para derogar el DNU 70: los gobernadores aliados aportaron un puñado de ausencias clave",
         "url": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/",
+        "outlet": "Infobae",
+        "type": "media"
+      },
+      {
+        "title": "Qué leyes volverían a regir si Diputados deroga el DNU 70 de Javier Milei",
+        "url": "https://www.infobae.com/politica/2026/10/02/que-leyes-volverian-a-regir-si-diputados-deroga-el-dnu-70-de-javier-milei",
         "outlet": "Infobae",
         "type": "media"
       },

@@ -31,3 +31,21 @@
   Sin SVG a mano.
 - **Selección editorial del día:** `content/radar/2026-10-15/seleccion.json`
   (3 preseleccionados con 6 criterios, 16 descartes con razón, acidez 🟡 alta).
+- **Iteración del humano (15/10 tarde):** el outro se enriqueció con el "qué se
+  juega": qué derogó el DNU y qué volvería si caía (alquileres a 3 años,
+  prepagas, góndolas PyME, compre nacional, ley de tierras), el telón de los
+  fallos encontrados de la Corte, el rechazo previo del Senado (marzo 2024: por
+  eso bastaba Diputados) y el aire que ganó el Gobierno (PASO + Presupuesto
+  2027). Fuente nueva: explainer de Infobae del 2/10 ("Qué leyes volverían a
+  regir si Diputados deroga el DNU 70"). Los objetos-juguete del juego no
+  cambian: las etiquetas satirizan el mecanismo, sin nombres de personas.
+- **Fix permanente en prompts:** `radar-diario.md` ahora exige en la llamada B
+  el fact "qué se juega" (qué está en disputa y a quién cambia la mano, con
+  fuente) cuando la historia es una pulseada normativa. Lo que se arregla en el
+  prompt se arregla para siempre.
+- **Segunda jornada candidateada:** el 21/10 el oficialismo trata la
+  Inviolabilidad de la Propiedad Privada con los arts. 38/39 (le copa la
+  bandera de tierras a la oposición). Si la historia sigue, pide motor `decide`
+  (sin usar en producción): "EL TOMA Y DACA" — sos el gobernador que cobra por
+  las ausencias. Giro ya declarado: hoy jugó el que junta y pierde; mañana, el
+  que cobra.

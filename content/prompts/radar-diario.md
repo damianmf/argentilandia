@@ -95,6 +95,14 @@ de variedad que te marcamos):
   omití el campo. El `giro` es obligatorio: el juego nuevo tiene que ser otra
   cosa, no el mismo chiste.
 
+- **Qué se juega (regla 15/10)**: si la historia es una pulseada por una norma,
+  decreto o fallo (derogaciones, habilitaciones, litigios), el `Event` tiene que
+  incluir como fact qué está en disputa y a quién cambia la mano: qué norma se
+  modifica o deroga y qué volvería a regir (o qué se pierde) si el pulso cae de
+  un lado o del otro, con fuente que lo respalde. El chiste del juego puede
+  quedarse en el mecanismo, pero el outro tiene que poder explicar la parte:
+  sin ese fact, el jugador se ríe sin enterarse de qué iba todo.
+
 - Exactamente 3 pitches, cada uno con un **motor distinto ya implementado**; el
   motor que mejor leva el chiste, sin favoritos: si el chiste es "golpear lo que
   brota", es whack; si es "agarrar/esquivar", catcher; si es "elegir", pensemos

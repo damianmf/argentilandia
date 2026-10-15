@@ -12,14 +12,24 @@
   "conflict": "La oposición no juntó los bancos para derogar el DNU",
   "facts": [
     "La sesión convocada por la oposición para derogar el DNU 70/23 se cayó por falta de quórum: había 121 diputados sentados y se necesitan 129 para abrir el debate.",
+    "El DNU 70/23 es el mega decreto desregulador con el que Milei derogó, entre otras, las leyes de Alquileres, Góndolas, Abastecimiento y Compre Nacional, y eliminó (art. 154) los límites de la ley de tierras 26.737 a la propiedad de extranjeros; si caía, volvían a regir los contratos de alquiler a 3 años con ajuste semestral, la autorización estatal para los aumentos de prepagas, el espacio de góndola para PyMEs y los topes a la venta de tierras a extranjeros.",
+    "El telón de fondo: fallos encontrados de la Corte Suprema sobre tierras —uno dejó la venta a extranjeros liberalizada de hecho y otro restituyó temporalmente la ley de 2011—, el detonante de la convocatoria opositora.",
+    "El Senado ya había rechazado el DNU 70/23 en marzo de 2024: con el rechazo de Diputados, la derogación habría sido definitiva.",
     "El orden del día sumaba, además del rechazo al mega decreto, la prórroga de la emergencia en discapacidad y proyectos de endeudamiento y mora.",
     "El oficialismo, con apoyo de gobernadores aliados, consiguió las ausencias de diputados de Santa Fe, Córdoba, Salta, Misiones, Chubut, Tucumán y Jujuy; María Inés Zigarán (Jujuy) había firmado la convocatoria y finalmente se ausentó.",
-    "Hugo Yasky (CTA) apuntó a 'la lógica del toma y daca' y a diputados 'manejados a control remoto'; Martín Menem celebró: 'Una vez más, quisieron ponerle un freno a la Argentina y se quedaron en el intento'."
+    "Hugo Yasky (CTA) apuntó a 'la lógica del toma y daca' y a diputados 'manejados a control remoto'; Martín Menem celebró: 'Una vez más, quisieron ponerle un freno a la Argentina y se quedaron en el intento'.",
+    "Sin la sesión, el Gobierno ganó aire para sus prioridades: la suspensión de las PASO y el Presupuesto 2027."
   ],
   "sources": [
     {
       "title": "La oposición no llegó al quórum para derogar el DNU 70: los gobernadores aliados aportaron un puñado de ausencias clave",
       "url": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/",
+      "outlet": "Infobae",
+      "type": "media"
+    },
+    {
+      "title": "Qué leyes volverían a regir si Diputados deroga el DNU 70 de Javier Milei",
+      "url": "https://www.infobae.com/politica/2026/10/02/que-leyes-volverian-a-regir-si-diputados-deroga-el-dnu-70-de-javier-milei",
       "outlet": "Infobae",
       "type": "media"
     },
