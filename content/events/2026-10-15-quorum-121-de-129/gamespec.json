@@ -1,0 +1,101 @@
+{
+  "game": "catcher",
+  "title": "JUNTÁ EL QUÓRUM",
+  "emoji": "🪑📵",
+  "duration": 20,
+  "intro": "Faltan 8 bancos y no llegan: sos el encargado de quórum de la oposición. Atrapá con la planilla a los diputados que prometieron ir antes de que el control remoto los apague; una sola ausencia clave te vacía la sala.",
+  "player": { "emoji": "📋", "label": "El encargado de quórum", "image": "avatar.svg" },
+  "catch": [
+    { "emoji": "🧑‍💼", "label": "Diputado que llega", "points": 100, "weight": 3 },
+    { "emoji": "✋", "label": "Firma la convocatoria", "points": 150, "weight": 2 },
+    { "emoji": "🤙", "label": "\"Dale, ahora voy\"", "points": 75, "weight": 2 }
+  ],
+  "avoid": [
+    { "emoji": "📵", "label": "Control remoto", "points": -100, "weight": 2 },
+    { "emoji": "🤝", "label": "Toma y daca", "points": -75, "weight": 2 },
+    { "emoji": "📜", "label": "Firmó y no vino", "points": -150, "weight": 2 }
+  ],
+  "special": [
+    { "emoji": "🔑", "label": "Ausencia clave", "points": -200, "weight": 1, "effect": "none" }
+  ],
+  "difficulty": 5,
+  "ranking": {
+    "titulo": "¿QUIÉN JUNTÓ EL QUÓRUM?",
+    "titulos": ["Disciplina de bloque legendaria", "Contador de cabezas de lujo", "Recuento en vivo: 121", "Número muy finito", "Ausencia clave del año"],
+    "unidad": "bancas juntadas",
+    "chips": [
+      "121 de 129, otra vez",
+      "Me apagaron por control remoto a los 12 segundos"
+    ]
+  },
+  "theme": {
+    "background": "#16281c",
+    "hud": { "score": "#ffffff", "time": "#ffd166" },
+    "decor": [
+      { "emoji": "🏛️", "x": 88, "y": 12, "size": 56, "alpha": 0.4 },
+      { "emoji": "🎙️", "x": 10, "y": 26, "size": 44, "alpha": 0.45 },
+      { "emoji": "🇦🇷", "x": 86, "y": 34, "size": 34, "alpha": 0.75 },
+      { "emoji": "🪑", "x": 12, "y": 76, "size": 36, "alpha": 0.3 },
+      { "emoji": "📜", "x": 88, "y": 78, "size": 30, "alpha": 0.3 }
+    ]
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "La oposición convocó una sesión especial de Diputados para derogar el DNU 70/23 de Milei (y sumaba la prórroga de la emergencia en discapacidad y el endeudamiento) y no llegó al quórum: 121 bancos ocupados contra 129 necesarios. El oficialismo, con gobernadores aliados, cosechó las ausencias clave y la sesión se cayó sin debate. Yasky apuntó al 'toma y daca' con diputados 'manejados a control remoto'; Menem celebró que 'se quedaron en el intento'.",
+    "quote": {
+      "text": "Es lamentable que haya diputados de las provincias que no voten contra el DNU 70/23 por la lógica del toma y daca",
+      "who": "Hugo Yasky (CTA), en Modo Fontevecchia, minutos antes de la sesión",
+      "source": "https://www.perfil.com/noticias/modo-fontevecchia/hugo-yasky-es-lamentable-que-haya-diputados-de-las-provincias-que-no-voten-contra-el-dnu-7023-por-la-logica-del-toma-y-dac-modof.phtml"
+    },
+    "moments": [
+      {
+        "emoji": "📜",
+        "text": "La oposición junta firmas: la sesión iba a derogar el DNU 70/23, prorrogar la emergencia en discapacidad y tratar endeudamiento y mora",
+        "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
+      },
+      {
+        "emoji": "🪑",
+        "text": "El tablero marca 121 diputados sentados: faltan 8 para abrir el debate",
+        "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
+      },
+      {
+        "emoji": "📵",
+        "text": "Las ausencias llegan de diputados que responden a gobernadores aliados; María Inés Zigarán había firmado la convocatoria y no apareció",
+        "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
+      },
+      {
+        "emoji": "🗣️",
+        "text": "Martín Menem lo celebra: \"Una vez más, quisieron ponerle un freno a la Argentina y se quedaron en el intento\"",
+        "source": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/"
+      }
+    ],
+    "facts": [
+      "La sesión convocada por la oposición para derogar el DNU 70/23 se cayó por falta de quórum: 121 diputados sentados contra 129 necesarios para abrir el debate.",
+      "El orden del día sumaba, además del rechazo al mega decreto, la prórroga de la emergencia en discapacidad y proyectos de endeudamiento y mora.",
+      "El oficialismo, con apoyo de gobernadores aliados, consiguió las ausencias de diputados de Santa Fe, Córdoba, Salta, Misiones, Chubut, Tucumán y Jujuy; María Inés Zigarán (Jujuy) había firmado la convocatoria y finalmente se ausentó.",
+      "Hugo Yasky (CTA) habló de diputados 'manejados a control remoto' y anticipó una marcha multitudinaria; Martín Menem celebró: 'Una vez más, quisieron ponerle un freno a la Argentina y se quedaron en el intento'.",
+      "El DNU 70/23 es el mega decreto desregulador con el que Milei derogó, entre otras, las leyes de Abastecimiento, Góndolas, Compre Nacional y de Alquileres."
+    ],
+    "fiction": "Los diputados no caen del techo ni se apagan con un control remoto de verdad: es la literalización del 'control remoto' que dijo Yasky. El encargado de quórum es un personaje genérico de ficción, no retrata a ninguna persona real; las bancas no vuelan (eso es lo único realista). El 121 no es exageración: pasó tal cual.",
+    "sources": [
+      {
+        "title": "La oposición no llegó al quórum para derogar el DNU 70: los gobernadores aliados aportaron un puñado de ausencias clave",
+        "url": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/",
+        "outlet": "Infobae",
+        "type": "media"
+      },
+      {
+        "title": "Por falta de quórum, fracasó la sesión convocada por la oposición para voltear el DNU 70/23 de Milei",
+        "url": "https://www.lanacion.com.ar/politica/por-falta-de-quorum-fracaso-la-sesion-convocada-por-la-oposicion-para-voltear-el-dnu-7023-nid15102026/",
+        "outlet": "La Nación",
+        "type": "media"
+      },
+      {
+        "title": "Hugo Yasky: \"Es lamentable que haya diputados de las provincias que no voten contra el DNU 70/23 por la lógica del toma y daca\"",
+        "url": "https://www.perfil.com/noticias/modo-fontevecchia/hugo-yasky-es-lamentable-que-haya-diputados-de-las-provincias-que-no-voten-contra-el-dnu-7023-por-la-logica-del-toma-y-dac-modof.phtml",
+        "outlet": "Perfil",
+        "type": "media"
+      }
+    ]
+  }
+}

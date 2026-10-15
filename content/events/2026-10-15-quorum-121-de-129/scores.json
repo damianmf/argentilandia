@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-10-15",
+  "pitch": {
+    "motor": "catcher",
+    "nombre": "JUNTÁ EL QUÓRUM",
+    "chiste": "Sos el encargado de quórum de la oposición: del techo del recinto caen los diputados que prometieron ir y los agarrás con la planilla en mano. Esquivá el control remoto que los apaga, el 'toma y daca' y la banca que 'firmó y no vino'; la 'ausencia clave' te vacía la sala de un golpe. El chiste: faltan 8 y siempre falta uno más.",
+    "scoreChiste": 9
+  },
+  "umbrales": { "criterio": 6, "promedio": 7 },
+  "elegido": {
+    "n": 1,
+    "game": "catcher",
+    "title": "JUNTÁ EL QUÓRUM",
+    "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 9, "fuentes": 9 },
+    "promedio": 9,
+    "pasa": true,
+    "nota": "Cada objeto es una cita textual hecha jugable (control remoto de Yasky, toma y daca, firmó y no vino de Zigarán, ausencia clave de Infobae) y el 121 de 129 es la historia misma: juntar lo que se apaga. Picantez máxima con triple trazabilidad, y el número que enoja es el que suma.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "catcher",
+      "title": "JUNTÁ EL QUÓRUM",
+      "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 9, "fuentes": 9 },
+      "promedio": 9,
+      "pasa": true,
+      "nota": "Cada objeto es una cita textual hecha jugable (control remoto de Yasky, toma y daca, firmó y no vino de Zigarán, ausencia clave de Infobae) y el 121 de 129 es la historia misma: juntar lo que se apaga. Picantez máxima con triple trazabilidad, y el número que enoja es el que suma.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "dodge",
+      "title": "ESQUIVÁ EL CONTROL REMOTO",
+      "criterios": { "chisteJugable": 7, "punchline": 7, "acidez": 8, "fuentes": 8 },
+      "promedio": 7.5,
+      "pasa": true,
+      "nota": "El camino al recinto como gauntlet de maniobras ajenas (controles remotos, teléfonos del toma y daca): gracioso, pero el jugador esquiva la maniobra sin tocar el dato (121/129) que hace reír y enojar; pierde el número.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "search",
+      "title": "ENCONTRÁ LOS 129",
+      "criterios": { "chisteJugable": 7, "punchline": 6, "acidez": 8, "fuentes": 8 },
+      "promedio": 7.25,
+      "pasa": true,
+      "nota": "Buscar presentes entre excusas en las 257 bancas tiene gracia ('más excusa que diputado') pero el hallazgo repetido se vuelve mecánico y el punchline queda en el set, no en la acción.",
+      "factsDudosos": []
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "fecha": "2026-10-15",
+  "modo": "full-auto",
+  "estado": "APROBADO_AUTOMATICO",
+  "preseleccion": [
+    {
+      "titular": "Por falta de quórum, fracasó la sesión convocada por la oposición para voltear el DNU 70/23 de Milei",
+      "url": "https://www.lanacion.com.ar/politica/por-falta-de-quorum-fracaso-la-sesion-convocada-por-la-oposicion-para-voltear-el-dnu-7023-nid15102026/",
+      "outlet": "La Nación",
+      "scores": { "actualidad": 10, "jugabilidad": 8, "humor": 8, "reconocibilidad": 9, "shareability": 8, "explicabilidad": 9 },
+      "motivo": "La jugada política del día, con números servidos (121 bancos de 129) y el mecanismo confeso por todos: 'ausencias clave' de gobernadores (Infobae), 'control remoto' y 'toma y daca' (Yasky, textual en Perfil). El chiste jugable se literaliza solo: juntar lo que se apaga. Tres outlets hoy: hecho duro con doble fuente."
+    },
+    {
+      "titular": "Marcha Federal Universitaria, EN VIVO: cortes, horarios y últimas noticias del reclamo",
+      "url": "https://www.lanacion.com.ar/sociedad/marcha-federal-universitaria-en-vivo-cortes-horarios-y-ultimas-noticias-del-reclamo-nid15102026/",
+      "outlet": "La Nación",
+      "scores": { "actualidad": 9, "jugabilidad": 6, "humor": 5, "reconocibilidad": 8, "shareability": 7, "explicabilidad": 8 },
+      "motivo": "reincidente: ayer quedó afuera solo por variedad (politics prohibida) y hoy creció: marcha nacional + la sesión del DNU el mismo día. Pero la marcha no arma mecánica sin rozar el rojo (estudiantes y docentes reales no son target): jugabilidad 6, se descarta por umbral. Queda como contexto serio del outro del ganador."
+    },
+    {
+      "titular": "Javier Milei y sus medidas, EN VIVO: el Presidente dijo en EE.UU. que 'la verdadera riqueza la generan los empresarios'",
+      "url": "https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-el-presidente-pidio-que-trump-salga-fortalecido-en-las-elecciones-nid15102026/",
+      "outlet": "La Nación",
+      "scores": { "actualidad": 8, "jugabilidad": 7, "humor": 7, "reconocibilidad": 10, "shareability": 7, "explicabilidad": 8 },
+      "motivo": "La frase alternativa del día, ante la Cámara de Comercio de EE.UU. y con empresarios 'satisfechos pero con dudas' (Clarín). Pierde por repetición: sería el segundo juego en una semana sobre una frase de Milei presumiendo números (el 12/10 fue la billetera de los 125.000 millones). Queda anotada para otro contexto."
+    }
+  ],
+  "ganador": {
+    "indice": 1,
+    "titular": "Por falta de quórum, fracasó la sesión convocada por la oposición para voltear el DNU 70/23 de Milei",
+    "url": "https://www.lanacion.com.ar/politica/por-falta-de-quorum-fracaso-la-sesion-convocada-por-la-oposicion-para-voltear-el-dnu-7023-nid15102026/",
+    "outlet": "La Nación"
+  },
+  "event": {
+    "id": "2026-10-15-quorum-121-de-129",
+    "date": "2026-10-15",
+    "event": "La sesión para derogar el DNU 70/23 se cayó por falta de quórum: 121 diputados sentados de 129 necesarios, con ausencias clave aportadas por gobernadores aliados al Gobierno",
+    "category": "politics",
+    "actors": ["Cámara de Diputados", "Oposición", "Gobierno nacional", "Gobernadores aliados"],
+    "conflict": "La oposición no juntó los bancos para derogar el DNU",
+    "facts": [
+      "La sesión convocada por la oposición para derogar el DNU 70/23 se cayó por falta de quórum: había 121 diputados sentados y se necesitan 129 para abrir el debate.",
+      "El orden del día sumaba, además del rechazo al mega decreto, la prórroga de la emergencia en discapacidad y proyectos de endeudamiento y mora.",
+      "El oficialismo, con apoyo de gobernadores aliados, consiguió las ausencias de diputados de Santa Fe, Córdoba, Salta, Misiones, Chubut, Tucumán y Jujuy; María Inés Zigarán (Jujuy) había firmado la convocatoria y finalmente se ausentó.",
+      "Hugo Yasky (CTA) apuntó a 'la lógica del toma y daca' y a diputados 'manejados a control remoto'; Martín Menem celebró: 'Una vez más, quisieron ponerle un freno a la Argentina y se quedaron en el intento'."
+    ],
+    "sources": [
+      {
+        "title": "La oposición no llegó al quórum para derogar el DNU 70: los gobernadores aliados aportaron un puñado de ausencias clave",
+        "url": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/",
+        "outlet": "Infobae",
+        "type": "media"
+      },
+      {
+        "title": "Por falta de quórum, fracasó la sesión convocada por la oposición para voltear el DNU 70/23 de Milei",
+        "url": "https://www.lanacion.com.ar/politica/por-falta-de-quorum-fracaso-la-sesion-convocada-por-la-oposicion-para-voltear-el-dnu-7023-nid15102026/",
+        "outlet": "La Nación",
+        "type": "media"
+      },
+      {
+        "title": "Hugo Yasky: \"Es lamentable que haya diputados de las provincias que no voten contra el DNU 70/23 por la lógica del toma y daca\"",
+        "url": "https://www.perfil.com/noticias/modo-fontevecchia/hugo-yasky-es-lamentable-que-haya-diputados-de-las-provincias-que-no-voten-contra-el-dnu-7023-por-la-logica-del-toma-y-dac-modof.phtml",
+        "outlet": "Perfil",
+        "type": "media"
+      }
+    ],
+    "virality": 9,
+    "gameability": 8,
+    "humorPotential": 8,
+    "shareability": 8
+  },
+  "acidez": "🟡 amarillo alto (picantez máxima 12/10) — el blanco es el parlamento como feria de volúmenes: los 8 bancos que faltaron, el 'toma y daca' confeso y el 'control remoto' de los gobernadores, con citas textuales de los dos lados (Yasky y Menem) y el número exacto como munición. La emergencia en discapacidad y la marcha universitaria van solo como contexto serio del outro: jamás target. Nadie de carne y hueso en la mira: la silla y la maniobra.",
+  "pitches": [
+    {
+      "motor": "catcher",
+      "nombre": "JUNTÁ EL QUÓRUM",
+      "chiste": "Sos el encargado de quórum de la oposición: del techo del recinto caen los diputados que prometieron ir y los agarrás con la planilla en mano. Esquivá el control remoto que los apaga, el 'toma y daca' y la banca que 'firmó y no vino'; la 'ausencia clave' te vacía la sala de un golpe. El chiste: faltan 8 y siempre falta uno más.",
+      "scoreChiste": 9
+    },
+    {
+      "motor": "dodge",
+      "nombre": "ESQUIVÁ EL CONTROL REMOTO",
+      "chiste": "Sos el diputado que quiere llegar al recinto: esquivale el cuerpo a los controles remotos de los gobernadores y a los teléfonos del 'toma y daca' mientras agarrás la convocatoria, el micro del interior y la voluntad propia. El chiste: llegar a la banca es la hazaña, no votar.",
+      "scoreChiste": 7
+    },
+    {
+      "motor": "search",
+      "nombre": "ENCONTRÁ LOS 129",
+      "chiste": "Grilla del recinto con las 257 bancas: buscá los 129 presentes reales entre las excusas; abrir una banca 'firmó y no vino' te cuesta toques y tiempo. El chiste: hay más excusa que diputado.",
+      "scoreChiste": 8
+    }
+  ],
+  "pitchElegido": 0,
+  "descartes": [
+    { "titular": "Internaron a Leonardo Cositorto por una necrosis genital", "url": "https://www.ambito.com/informacion-general/internaron-leonardo-cositorto-una-necrosis-genital-como-sera-la-operacion-y-que-riesgos-presenta-la-enfermedad-n6334188", "razon": "Enfermedad real (🔴 rojo): dato médico e internación, jamás juego, da igual quién sea." },
+    { "titular": "El papa León XIV evoluciona tras la cirugía y el Vaticano espera que siga internado una semana", "url": "https://www.ambito.com/mundo/el-papa-leon-xiv-evoluciona-la-cirugia-y-el-vaticano-espera-que-siga-internado-una-semana-n6333974", "razon": "Enfermedad/internación (🔴 rojo): regla de siempre; el sastre argentino (La Nación) tropieza con el mismo freno." },
+    { "titular": "Escándalo en un cine de Entre Ríos: pelea a los golpes, gas pimienta y dos mujeres detenidas", "url": "https://www.infobae.com/sociedad/policiales/2026/10/15/escandalo-en-un-cine-de-entre-rios-una-pelea-a-los-golpes-en-medio-de-la-pelicula-gas-pimienta-y-dos-mujeres-detenidas/", "razon": "Agresión física entre personas reales con detenidas (🔴 rojo-adyacente): el ensañamiento está a un paso; se evita." },
+    { "titular": "'Vos entregaste a tu hija': Barrelier apuntó contra la madre de Agostina desde la cárcel", "url": "https://www.perfil.com/noticias/cordoba/vos-entregaste-a-tu-hija-barrelier-apunto-contra-la-madre-de-agostina-desde-la-carcel.phtml", "razon": "Víctimas reales y familia en el medio (🔴 rojo)." },
+    { "titular": "'Me quiero hacer invisible': el crudo relato de Cris Morena sobre el miedo que pasaban sus nietos", "url": "https://www.perfil.com/noticias/judiciales/me-quiero-hacer-invisible-el-crudo-relato-de-cris-morena-sobre-el-miedo-que-pasaban-sus-nietos-con-dario-giordano.phtml", "razon": "Vida privada, familia y judicial (🔴 rojo): nunca es juego." },
+    { "titular": "Las confesiones de Brian Fernández sobre su consumo", "url": "https://www.lanacion.com.ar/deportes/futbol/las-confesiones-de-brian-fernandez-a-que-edad-comenzo-a-consumir-drogas-el-impacto-de-llegar-a-la-nid15102026/", "razon": "Salud y consumo de una persona real (🔴 rojo)." },
+    { "titular": "Alexander Vallejos, 26 años, argentino detenido por el ICE en Florida", "url": "https://www.lanacion.com.ar/estados-unidos/florida/alexander-vallejos-26-anos-argentino-en-florida-detenido-por-el-ice-necesito-averiguar-como-voy-a-nid15102026/", "razon": "Persona real privada de libertad contando su drama (🔴 rojo): no compite ni bromea." },
+    { "titular": "'La madre de todas las bombas': Trump amenaza a Irán con un ataque masivo", "url": "https://www.perfil.com/noticias/internacional/la-madre-de-todas-las-bombas-trump-amenaza-a-iran-con-destruir-su-infraestructura-energetica-y-nuclear-en-un-ataque-masivo.phtml", "razon": "Guerra con amenaza de ataque masivo (🔴 rojo): víctimas potenciales reales." },
+    { "titular": "Súper Niño 2026: subió a un 75% la probabilidad de magnitud histórica / trasladan miles de animales por la crecida", "url": "https://www.lanacion.com.ar/economia/campo/super-nino-2026-subio-a-un-75-la-probabilidad-de-que-el-fenomeno-tenga-una-magnitud-historica-nid14102026/", "razon": "Reincidente en descarte: evacuados, campos bajo agua y ganado en riesgo (🔴 rojo-adyacente); el dato climático no compensa a la gente afectada." },
+    { "titular": "Dólar hoy y dólar blue, EN VIVO", "url": "https://www.lanacion.com.ar/economia/dolar/dolar-hoy-y-dolar-blue-en-vivo-a-cuanto-cotiza-el-oficial-y-cual-es-el-precio-del-paralelo-este-nid15102026/", "razon": "Dato macro diario sin chiste jugable (fallo de siempre, jugabilidad 5); además economía está prohibida por variedad." },
+    { "titular": "Quiniela Vespertina de Santa Fe y Córdoba", "url": "https://www.clarin.com/loterias-y-quinielas/quiniela-santa-fe-resultado-sorteo-vespertina-hoy-jueves-15-octubre_0_CBlVNRhWOa.html", "razon": "Descarte mecánico: sorteo de lotería, no noticia." },
+    { "titular": "Gianni Infantino pidió unidad y la crisis en la FIFA sigue abierta", "url": "https://www.clarin.com/deportes/gianni-infantino-pidio-unidad-disculpo-proyecto-fallido-crisis-fifa-sigue-abierta-perdio-confianza_0_c6OTnqMWCV.html", "razon": "Internacional lejana para el público argentino (actualidad 5) y jugabilidad 5: política de bureaus deportivos sin mecánica visible." },
+    { "titular": "Chau Movistar: qué trámite hacer para pasar a Tuenti", "url": "https://www.ambito.com/negocios/chau-movistar-que-tramite-tienen-que-hacer-los-clientes-pasar-tuenti-n6334164", "razon": "Jugabilidad 5: el trámite de migración de clientes no arma mecánica ni chiste." },
+    { "titular": "Un compañero de Colapinto en Alpine podría perder su licencia de conducir", "url": "https://www.ambito.com/deportes/un-companero-franco-colapinto-alpine-podria-perder-su-licencia-conducir-n6334034", "razon": "Jugabilidad 4: chiste de trámite administrativo de un tercero, sin conflicto jugable." },
+    { "titular": "Ilia Topuria calienta su regreso tras perder el invicto", "url": "https://www.infobae.com/espana/deportes/2026/10/15/ilia-topuria-calienta-su-regreso-tras-perder-el-invicto-y-ya-esta-mas-cerca-de-su-primer-combate-sere-yo-quien-lo-haga-bajar-de-division/", "razon": "Agenda española, no argentina; y peleas reales de persona real son terreno que la casa evita (el fighter es de caricatura, no de MMA real)." },
+    { "titular": "La extravagante teoría de Santiago Caputo para recuperar Malvinas", "url": "https://www.perfil.com/noticias/masperfil/la-extravagante-teoria-de-santiago-caputo-por-la-que-deben-recuperarse-las-islas-malvinas.phtml", "razon": "Soberanía y veteranos al borde del chiste: riesgo editorial alto (misma decisión de los radares anteriores)." }
+  ],
+  "advertencias": [
+    "modo local sin key: los pasos LLM los ejecutó la sesión ZCode con los mismos contratos (transporte degradado del pipeline headless)",
+    "backend de veredictos no respondió (error Cloudflare 1042): el draft corrió sin la señal editorial de los jugadores"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "2026-10-15-quorum-121-de-129",
+  "date": "2026-10-15",
+  "event": "La sesión para derogar el DNU 70/23 se cayó por falta de quórum: 121 diputados sentados de 129 necesarios, con ausencias clave aportadas por gobernadores aliados al Gobierno",
+  "category": "politics",
+  "actors": [
+    "Cámara de Diputados",
+    "Oposición",
+    "Gobierno nacional",
+    "Gobernadores aliados"
+  ],
+  "conflict": "La oposición no juntó los bancos para derogar el DNU",
+  "facts": [
+    "La sesión convocada por la oposición para derogar el DNU 70/23 se cayó por falta de quórum: había 121 diputados sentados y se necesitan 129 para abrir el debate.",
+    "El orden del día sumaba, además del rechazo al mega decreto, la prórroga de la emergencia en discapacidad y proyectos de endeudamiento y mora.",
+    "El oficialismo, con apoyo de gobernadores aliados, consiguió las ausencias de diputados de Santa Fe, Córdoba, Salta, Misiones, Chubut, Tucumán y Jujuy; María Inés Zigarán (Jujuy) había firmado la convocatoria y finalmente se ausentó.",
+    "Hugo Yasky (CTA) apuntó a 'la lógica del toma y daca' y a diputados 'manejados a control remoto'; Martín Menem celebró: 'Una vez más, quisieron ponerle un freno a la Argentina y se quedaron en el intento'."
+  ],
+  "sources": [
+    {
+      "title": "La oposición no llegó al quórum para derogar el DNU 70: los gobernadores aliados aportaron un puñado de ausencias clave",
+      "url": "https://www.infobae.com/politica/2026/10/15/la-oposicion-lo-llego-al-quorum-para-derogar-el-dnu-70-los-gobernadores-aliados-aportaron-un-punado-de-ausencias-clave/",
+      "outlet": "Infobae",
+      "type": "media"
+    },
+    {
+      "title": "Por falta de quórum, fracasó la sesión convocada por la oposición para voltear el DNU 70/23 de Milei",
+      "url": "https://www.lanacion.com.ar/politica/por-falta-de-quorum-fracaso-la-sesion-convocada-por-la-oposicion-para-voltear-el-dnu-7023-nid15102026/",
+      "outlet": "La Nación",
+      "type": "media"
+    },
+    {
+      "title": "Hugo Yasky: \"Es lamentable que haya diputados de las provincias que no voten contra el DNU 70/23 por la lógica del toma y daca\"",
+      "url": "https://www.perfil.com/noticias/modo-fontevecchia/hugo-yasky-es-lamentable-que-haya-diputados-de-las-provincias-que-no-voten-contra-el-dnu-7023-por-la-logica-del-toma-y-dac-modof.phtml",
+      "outlet": "Perfil",
+      "type": "media"
+    }
+  ],
+  "virality": 9,
+  "gameability": 8,
+  "humorPotential": 8,
+  "shareability": 8
+}
