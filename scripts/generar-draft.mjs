@@ -92,7 +92,7 @@ const urlsAnteriores = new Set(
 // hay backend, no hay comentarios o falla la red, el draft sigue sin ellos.
 async function veredictosJugadores(ultimoId) {
   if (!ultimoId) return null;
-  const base = (process.env.SITE_URL || 'https://juego-de-la-actualidad.dami-fontenla.workers.dev').replace(/\/+$/, '');
+  const base = (process.env.SITE_URL || 'https://argentilandia.dami-fontenla.workers.dev').replace(/\/+$/, '');
   try {
     const respuesta = await fetch(`${base}/api/juegos/${encodeURIComponent(ultimoId)}/resumen`, {
       signal: AbortSignal.timeout(8000),

@@ -1,12 +1,18 @@
-# Radar hospedado — Etapa 1 del plan POC 3.
+# Jornada diaria hospedada — el corte de la Etapa 2 (decisión 2026-10-15).
 #
-# Hoy corre SOLO a mano (workflow_dispatch): mientras el draft y la generación
-# sigan siendo pasos de sesión (Etapa 2), el radar diario lo hace el cron del
-# entorno. Para el corte: habilitar el `schedule` de abajo, crear el secret
-# no hace falta (radar es solo HTTP + commit).
+# Dos crons conviven y se protegen entre sí con la idempotencia de
+# scripts/jornada.mjs (si ya existe evento de la fecha, es un no-op):
 #
-# La generación completa en CI (draft + pasada 2 del GameSpec con LLM) se suma
-# en la Etapa 2 del plan; hasta entonces este workflow NO corre en horario.
+#  - 9:00 Argentina: la automatización de ZCode, en la máquina local
+#    (modo sin key: la sesión hace de LLM con los mismos contratos). Si la
+#    máquina estaba apagada a esa hora, esa corrida se pierde.
+#  - 10:30 Argentina (este workflow): corrida hospedada, no depende de nadie.
+#    Con el secret LLM_API_KEY corre `npm run jornada` completo (headless con
+#    key). Sin secret degrada a `npm run radar` (solo candidatos crudos).
+#    Sale una hora después de la de ZCode a propósito: si la de las 9:00 ya
+#    publicó, acá encuentra la jornada producida y no hace nada.
+#
+# El push a main deploya (Cloudflare Workers Builds). Des-publicar = un commit.
 
 name: radar-diario
 
@@ -16,8 +22,8 @@ on:
       fecha:
         description: 'Fecha YYYY-MM-DD (vacío = hoy, UTC)'
         required: false
-  # schedule:
-  #   - cron: '0 12 * * *'  # 9:00 Argentina; habilitar en el corte de la Etapa 2
+  schedule:
+    - cron: '30 13 * * *' # 10:30 Argentina (UTC-3), 1 h después del cron de ZCode
 
 permissions:
   contents: write
@@ -29,6 +35,7 @@ concurrency:
 jobs:
   radar:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -36,14 +43,31 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run radar -- ${{ github.event.inputs.fecha }}
-      - name: Commit de candidatos
+      # jornada.mjs commitea por adentro: la identidad tiene que estar antes.
+      - name: Identidad de git
         run: |
           git config user.name "radar-bot"
           git config user.email "actions@users.noreply.github.com"
+      - name: Jornada (o radar si no hay key)
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          SITE_URL: https://argentilandia.dami-fontenla.workers.dev
+          FECHA_INPUT: ${{ github.event.inputs.fecha }}
+        run: |
+          FECHA="${FECHA_INPUT:-$(date -u +%F)}"
+          if [ -n "$LLM_API_KEY" ]; then
+            npm run jornada -- "$FECHA"
+          else
+            echo "Sin el secret LLM_API_KEY: modo degradado, solo radar."
+            npm run radar -- "$FECHA"
+          fi
+      # Solo aporta algo en el modo degradado (la jornada ya commitea lo suyo);
+      # si la jornada corrió, no encuentra nada para commitear.
+      - name: Commit de candidatos
+        run: |
           git add content/radar/
           if git diff --cached --quiet; then
-            echo "Sin candidatos nuevos"
+            echo "Nada para commitear"
           else
             git commit -m "radar-${GITHUB_EVENT_INPUTS_FECHA:-$(date -u +%F)}"
             git push

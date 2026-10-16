@@ -9,10 +9,24 @@ variedad, N candidatos autopuntuados contra el checklist, Zod, validate en 0).
 La persona audita después; des-publicar es un commit. Con `APROBACION=on`
 (.env) el pipeline vuelve a cortar en el draft esperando el OK humano.
 
-## Qué corre solo (9:00, todos los días)
+## Qué corre solo (todos los días, dos crons con red de seguridad)
 
-La automatización **"Jornada automática — todos los días a las 9:00"** corre
-`npm run jornada`, que hace, en orden y cortando ante cualquier bloqueo:
+Dos automatizaciones corren la jornada; la idempotencia del paso 1 hace que si
+las dos llegan a producir el mismo día, la segunda encuentra la jornada hecha y
+es un no-op:
+
+- **9:00 Argentina — automatización de ZCode** ("Jornada automática — todos
+  los días a las 9:00", en la máquina local): corre `npm run jornada`; sin
+  `.env` con key, cae al modo sin key de más abajo (la sesión hace de LLM con
+  los mismos contratos). Depende de que la máquina esté prendida y despierta a
+  esa hora: si no lo estaba, esa corrida se pierde.
+- **10:30 Argentina — GitHub Actions** (`radar-diario.yml`, hospedada, no
+  depende de ninguna máquina): con el secret `LLM_API_KEY` corre
+  `npm run jornada` completo; sin secret degrada a `npm run radar` (commitea
+  solo los candidatos crudos del día). Sale una hora después de la de ZCode a
+  propósito: si la de las 9:00 publicó, acá no hace nada.
+
+En ambos casos `npm run jornada` hace, en orden y cortando ante cualquier bloqueo:
 
 1. **Chequeo**: si ya existe evento con la fecha de hoy en `content/events/`,
    la jornada se considera producida y termina (idempotente).
@@ -57,6 +71,10 @@ La línea `RESUMEN: {...}` del final es el contrato de reporte del cron.
 
 - `.env` (gitignoreado, copiar de `.env.example`): `LLM_API_KEY` (Z.ai),
   `LLM_BASE_URL`, `LLM_MODEL`. Sin key, los pasos LLM fallan con error claro.
+- `LLM_API_KEY` como secret de GitHub (Settings → Secrets and variables →
+  Actions): es lo que habilita la corrida hospedada completa de las 10:30.
+  Sin secret, ese cron degrada a radar. En CI la config va toda por env
+  (`llm.mjs` lee env antes que `.env`); `SITE_URL` la fija el workflow.
 - `APROBACION=on`: el pipeline corta tras el draft (`ESPERANDO_APROBACION`,
   exit 2) y la jornada continúa cuando alguien complete la generación a mano.
 - `N_CANDIDATOS`: candidatos por jornada (default 3).
