@@ -1,0 +1,133 @@
+{
+  "game": "decide",
+  "title": "TRIBUNAL EXPRÉS",
+  "emoji": "⚖️🏟️",
+  "duration": 60,
+  "intro": "Sos el Tribunal de Disciplina de la AFA. El expediente de la Supercopa maduró en tu cajón y el Pincha está definiendo la semifinal con Flamengo: decidí cuándo y cuánto, que acá la justicia no es ciega, es oportuna.",
+  "player": { "emoji": "⚖️", "label": "El Tribunal de Disciplina", "image": "avatar.svg" },
+  "encuentros": [
+    {
+      "emoji": "📥",
+      "titulo": "El expediente maduro",
+      "situacion": "Aterriza en tu mesa el expediente de los incidentes de la Supercopa. Esperó lo suyo en el cajón, y el Pincha está definiendo la semifinal de la Libertadores. ¿Cuándo resolvés?",
+      "opciones": [
+        { "texto": "HOY, en plena semifinal (el chisme no espera)", "consecuencia": "El fallo sale entre la ida y el Maracaná: impacto máximo, timing de guion. En la vida real, eso fue exactamente lo que pasó.", "puntos": 150 },
+        { "texto": "La semana que viene, para que no digan", "consecuencia": "Llega tarde a los dos partidos y temprano al olvido.", "puntos": 60 },
+        { "texto": "Otro añito de cajón", "consecuencia": "El polvo del expediente ya tiene asiento propio en la mesa del tribunal.", "puntos": 20 }
+      ]
+    },
+    {
+      "emoji": "📝",
+      "titulo": "El descargo",
+      "situacion": "En el descargo, el presidente admite lo que le dijo al árbitro: \"Toda tuya, ladrón\". ¿Qué hacés con semejante franqueza?",
+      "opciones": [
+        { "texto": "Tomar nota textual y sumarla al fallo", "consecuencia": "El informe arbitral queda más largo que la final. La frase, igual, ya se escucha en todas las tribunas.", "puntos": 120 },
+        { "texto": "Consultar si el árbitro era \"toda tuya\" o del VAR", "consecuencia": "El tribunal consulta; el VAR sigue revisando la jugada desde su creación.", "puntos": 70 },
+        { "texto": "Tachar la frase del expediente", "consecuencia": "La frase sale igual en todos los diarios, pero con comillas de más.", "puntos": 30 }
+      ]
+    },
+    {
+      "emoji": "🎟️",
+      "titulo": "La multa",
+      "situacion": "Hay que multar al club. El Código no dice en qué moneda, así que usás la clásica:",
+      "opciones": [
+        { "texto": "500 entradas, como manda la tradición", "consecuencia": "Con el precio de las entradas, la multa se revaloriza sola: la única inversión que nunca pierde.", "puntos": 150 },
+        { "texto": "Pesos, por serios", "consecuencia": "El número ya quedó chico mientras lo escribías.", "puntos": 50 },
+        { "texto": "Cobrarla en puntos de la tabla", "consecuencia": "La AFA explica que eso no se puede; nadie explica por qué la de entradas sí.", "puntos": 10 }
+      ]
+    },
+    {
+      "emoji": "🏟️",
+      "titulo": "El alcance del castigo",
+      "situacion": "Tres dirigentes, tres meses cada uno. ¿Qué pierden de verdad?",
+      "opciones": [
+        { "texto": "Nada deportivo: van a la cancha de hinchas", "consecuencia": "El fallo impresiona y no molesta: pueden alentar en el Maracaná como cualquier abonado.", "puntos": 130 },
+        { "texto": "Ni estadio ni delegación ni nada", "consecuencia": "Te pasaste del Código: la apelación te corrige en 48 horas.", "puntos": 40 },
+        { "texto": "Suspenderlos también de la cancha de tenis del club", "consecuencia": "Medida ejemplar: ningún dirigente volverá a sacarle el saque a nadie.", "puntos": 25 }
+      ]
+    }
+  ],
+  "veredictos": [
+    { "min": 450, "titulo": "TRIBUNAL EXPRÉS DE LA LIBERTADORES", "texto": "Resolviste todo entre la ida y el Maracaná: el expediente más veloz del oeste de La Plata. La semifinal te lo agradece." },
+    { "min": 330, "titulo": "JUSTICIA DE PRIMERA", "texto": "Rápida cuando quiere, eterna cuando puede. Tu timing es de telenovela y tu multa se revaloriza sola." },
+    { "min": 200, "titulo": "CAJÓN CON VENCIMIENTO", "texto": "El expediente llegó tarde, pero llegó. Ni exprés ni lento: administrativo con sorpresa final." },
+    { "min": 0, "titulo": "EL POLVO ES TU COAUTOR", "texto": "Te quedaste en el cajón contemplando tu propia burocracia. El chiste lo escribió otro — o nadie." }
+  ],
+  "difficulty": 5,
+  "ranking": {
+    "titulo": "¿QUIÉN FALLÓ MÁS RÁPIDO QUE EL TRIBUNAL?",
+    "titulos": ["Fallo exprés entre ida y vuelta", "Reloj de la justicia de AFA", "Trámite con fecha de partido", "Media sanción", "El cajón"],
+    "unidad": "fallos en plena semifinal",
+    "chips": [
+      "Toda tuya, ladrón",
+      "500 entradas y revalorizando",
+      "Tres meses... sin perderse el partido",
+      "Van a la cancha de hinchas",
+      "El pasillo de espaldas ya cumplió"
+    ]
+  },
+  "theme": {
+    "background": "#3a1014",
+    "hud": { "score": "#ffffff", "time": "#ffd166" },
+    "decor": [
+      { "emoji": "⚖️", "x": 12, "y": 16, "size": 52, "alpha": 0.4 },
+      { "emoji": "🏟️", "x": 88, "y": 14, "size": 56, "alpha": 0.4 },
+      { "emoji": "🎟️", "x": 88, "y": 80, "size": 34, "alpha": 0.35 },
+      { "emoji": "📥", "x": 10, "y": 78, "size": 36, "alpha": 0.3 },
+      { "emoji": "🟥", "x": 50, "y": 8, "size": 30, "alpha": 0.25 }
+    ]
+  },
+  "sound": true,
+  "outro": {
+    "whatHappened": "El Tribunal de Disciplina de la AFA suspendió tres meses a Juan Sebastián Verón, Pascual Caiella y Marcos Angeleri —presidente, vice y director deportivo de Estudiantes— y multó al club con el equivalente a 500 entradas, por los incidentes tras la final de la Supercopa ante Rosario Central: según el informe arbitral, Verón ingresó sin autorización al campo y cruzó al árbitro Darío Herrera. El detalle: el fallo se conoció en plena semifinal de la Libertadores contra Flamengo, aunque no afecta lo deportivo — los dirigentes solo quedan impedidos de representar formalmente al club ante la AFA.",
+    "quote": {
+      "text": "Toda tuya, ladrón",
+      "who": "Juan Sebastián Verón, en su descargo ante el Tribunal de Disciplina, admitiendo lo que le dijo al árbitro Darío Herrera",
+      "source": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437"
+    },
+    "moments": [
+      {
+        "emoji": "🏆",
+        "text": "La final de la Supercopa Internacional termina con incidentes: Rosario Central ganó 3-1 en Santiago del Estero",
+        "source": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437"
+      },
+      {
+        "emoji": "📝",
+        "text": "El informe arbitral registra el ingreso sin autorización de Verón al campo y el cruce con Darío Herrera ('Toda tuya, ladrón', admitió después en el descargo)",
+        "source": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437"
+      },
+      {
+        "emoji": "⚖️",
+        "text": "El Tribunal, que preside Fernando Mitjans, resuelve: tres meses a los tres dirigentes y multa de 500 entradas; el fallo se conoce en plena semifinal con Flamengo",
+        "source": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437"
+      },
+      {
+        "emoji": "🏟️",
+        "text": "El Pincha empata la ida y define el pase a la final en el Maracaná: la sanción no toca lo deportivo",
+        "source": "https://www.ambito.com/deportes/estudiantes-la-plata-contra-flamengo-posibles-formaciones-horario-y-donde-ver-vivo-n6334367"
+      }
+    ],
+    "facts": [
+      "El Tribunal de Disciplina de la AFA suspendió tres meses a Verón, Caiella y Angeleri y multó a Estudiantes con el equivalente a 500 entradas, por los incidentes tras la final de la Supercopa Internacional.",
+      "Según el informe arbitral, Verón ingresó sin autorización al campo de juego y confrontó verbalmente con el árbitro Darío Herrera; en su descargo, admitió haberle dicho 'Toda tuya, ladrón'.",
+      "El fallo se conoció en plena semifinal de la Libertadores ante Flamengo, pero no afecta lo deportivo: los dirigentes solo quedan impedidos de representar formalmente al club ante la AFA.",
+      "La sanción se encuadra en los artículos 12, 13 y 23 del Código Disciplinario y se suma al antecedente del 'pasillo de espaldas' a Rosario Central, que le había costado a Verón seis meses de suspensión, dados por cumplidos faltando diez días.",
+      "Estudiantes empató la ida de la semifinal con Flamengo y definirá el pase a la final en el Maracaná."
+    ],
+    "fiction": "El Tribunal de Disciplina no resolvió sus expedientes eligiendo opciones de un minijuego: es la re-simulación en clave de gestión. El 'Tribunal' del juego es la caricatura de la institución (muñeco genérico con silbato), no retrata a ninguno de sus miembros reales. Los números son los del fallo real (tres meses, tres dirigentes, 500 entradas); el resto es literalización satírica del timing.",
+    "sources": [
+      {
+        "title": "AFA sancionó a Verón con tres meses de suspensión y multó a Estudiantes en plena semifinal de la Libertadores",
+        "url": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437",
+        "outlet": "Ámbito",
+        "type": "media"
+      },
+      {
+        "title": "Estudiantes empató con Flamengo y definirá el pase a la final de la Libertadores en el Maracaná",
+        "url": "https://www.ambito.com/deportes/estudiantes-la-plata-contra-flamengo-posibles-formaciones-horario-y-donde-ver-vivo-n6334367",
+        "outlet": "Ámbito",
+        "type": "media"
+      }
+    ]
+  }
+}

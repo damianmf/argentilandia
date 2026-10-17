@@ -1,0 +1,131 @@
+{
+  "fecha": "2026-10-16",
+  "modo": "full-auto",
+  "estado": "APROBADO_AUTOMATICO",
+  "preseleccion": [
+    {
+      "titular": "AFA sancionó a Verón con tres meses de suspensión y multó a Estudiantes en plena semifinal de la Libertadores",
+      "url": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437",
+      "outlet": "Ámbito",
+      "scores": { "actualidad": 9, "jugabilidad": 8, "humor": 8, "reconocibilidad": 10, "shareability": 9, "explicabilidad": 9 },
+      "motivo": "El fallo del día con tres datos absurdos y verificables (tres meses a tres dirigentes, multa de 500 entradas, fallo anunciado en plena semifinal con Flamengo) y la frase del año admitida en el descargo: 'Toda tuya, ladrón'. El chiste se literaliza solo: sos el tribunal que decide el cuándo y el cuánto, y el timing institucional es el punchline."
+    },
+    {
+      "titular": "El Gobierno mostró superávit en septiembre y dijo que \"cumplió\" con la ley de financiamiento universitario",
+      "url": "https://www.lanacion.com.ar/economia/el-gobierno-mostro-superavit-en-septiembre-y-dijo-que-cumplio-con-los-acuerdos-alcanzados-con-las-nid16102026/",
+      "outlet": "La Nación",
+      "scores": { "actualidad": 9, "jugabilidad": 6, "humor": 7, "reconocibilidad": 8, "shareability": 7, "explicabilidad": 8 },
+      "motivo": "El pulso del día en economía: superávit + 'cumplió' con el financiamiento universitario el mismo día de la respuesta a la marcha, con el FMI prometiendo 'aceleración muy positiva' y el riesgo país en 629 como contrapunto. Jugabilidad 6: números y declaraciones, sin mecánica propia. Queda anotado para un decide de gestión."
+    },
+    {
+      "titular": "Stefan Milićević era el 1.338° del ranking ATP, amañó seis partidos y recibió una sanción histórica: 24 años",
+      "url": "https://www.ambito.com/deportes/stefan-milievi-era-el-1338-del-ranking-atp-amano-seis-partidos-y-recibio-una-sancion-historica-24-anos-suspension-n6334443",
+      "outlet": "Ámbito",
+      "scores": { "actualidad": 8, "jugabilidad": 7, "humor": 8, "reconocibilidad": 4, "shareability": 8, "explicabilidad": 8 },
+      "motivo": "El dato viral del día (24 años por amañar seis partidos siendo el 1.338° del ranking) tiene mecánica propia (perder a propósito sin que te descubran), pero el protagonista es un tenista serbio desconocido: reconocibilidad 4 lo tumba frente a Verón. Queda como candidato si algún día hay un deporte minoritario con cara argentina."
+    },
+    {
+      "titular": "\"Salvia Messi\", la flor celeste y blanca que encontraron en Perú y sus propiedades",
+      "url": "https://www.ambito.com/mundo/salvia-messi-la-flor-celeste-y-blanca-que-encontraron-peru-y-sus-propiedades-n6334501",
+      "outlet": "Ámbito",
+      "scores": { "actualidad": 6, "jugabilidad": 6, "humor": 8, "reconocibilidad": 7, "shareability": 7, "explicabilidad": 7 },
+      "motivo": "Pura ternura absurda (una flor celeste y blanca bautizada Messi), pero es costumbrismo sin pulso del día (actualidad 6) y sin blanco satírico: la acidez se queda sin objetivo. Jugabilidad 6: buscar la flor entre plantas sirve para un search tibio, no para la portada."
+    }
+  ],
+  "ganador": {
+    "indice": 1,
+    "titular": "AFA sancionó a Verón con tres meses de suspensión y multó a Estudiantes en plena semifinal de la Libertadores",
+    "url": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437",
+    "outlet": "Ámbito"
+  },
+  "event": {
+    "id": "2026-10-16-veron-tres-meses-afa",
+    "date": "2026-10-16",
+    "event": "El Tribunal de Disciplina de la AFA suspendió tres meses a Verón, Caiella y Angeleri y multó a Estudiantes con 500 entradas por los incidentes en la Supercopa; el fallo se conoció en plena semifinal de la Libertadores",
+    "category": "sports",
+    "actors": ["Tribunal de Disciplina de la AFA", "Estudiantes de La Plata", "Juan Sebastián Verón", "Cuerpo arbitral"],
+    "conflict": "La AFA resolvió en plena semifinal una sanción por incidentes de otra competencia, y la medida no toca lo deportivo",
+    "facts": [
+      "El Tribunal de Disciplina de la AFA suspendió tres meses a Juan Sebastián Verón, Pascual Caiella y Marcos Angeleri —presidente, vicepresidente segundo y director deportivo de Estudiantes— y multó al club con el equivalente a 500 entradas, por los incidentes tras la final de la Supercopa Internacional.",
+      "Según el informe arbitral, Verón ingresó sin autorización al campo de juego y confrontó verbalmente con el árbitro Darío Herrera tras la final que Rosario Central ganó 3-1 en Santiago del Estero.",
+      "En su descargo, Verón admitió haberle dicho 'Toda tuya, ladrón' al juez del partido.",
+      "El fallo se conoció mientras Estudiantes disputaba la semifinal de la Libertadores ante Flamengo, aunque no afecta lo deportivo: los dirigentes solo quedan impedidos de representar formalmente al club ante la AFA.",
+      "La sanción se encuadra en los artículos 12, 13 y 23 del Código Disciplinario y se suma al antecedente del 'pasillo de espaldas' a Rosario Central, que le había costado a Verón seis meses, dados por cumplidos faltando diez días.",
+      "Estudiantes empató la ida de la semifinal con Flamengo y definirá el pase a la final en el Maracaná."
+    ],
+    "sources": [
+      {
+        "title": "AFA sancionó a Verón con tres meses de suspensión y multó a Estudiantes en plena semifinal de la Libertadores",
+        "url": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437",
+        "outlet": "Ámbito",
+        "type": "media"
+      },
+      {
+        "title": "Estudiantes empató con Flamengo y definirá el pase a la final de la Libertadores en el Maracaná",
+        "url": "https://www.ambito.com/deportes/estudiantes-la-plata-contra-flamengo-posibles-formaciones-horario-y-donde-ver-vivo-n6334367",
+        "outlet": "Ámbito",
+        "type": "media"
+      }
+    ],
+    "virality": 8,
+    "gameability": 8,
+    "humorPotential": 8,
+    "shareability": 8
+  },
+  "acidez": "🟡 amarillo alto (picantez máxima 12/10) — el blanco es la justicia deportiva de dos velocidades: el tribunal que madura un expediente a fuego lento y lo resuelve con guion de telenovela, entre la ida y el Maracaná, con una multa cotizada en entradas como en 1950. Todo son datos del fallo real (tres meses, tres dirigentes, 500 entradas, 'Toda tuya, ladrón' admitido en el descargo). La caricatura es de la institución, no de sus miembros; y la frase del descargo es cita textual con dueño real, no burla nuestra.",
+  "pitches": [
+    {
+      "motor": "decide",
+      "nombre": "TRIBUNAL EXPRÉS",
+      "chiste": "Sos el Tribunal de Disciplina de la AFA. Te llega el expediente de la Supercopa y el Pincha está definiendo la semifinal: decidí CUÁNDO resolvés (y el cuándo es el chiste), qué hacés con la franqueza del descargo, en qué moneda se multa (¿entradas?) y qué pierden de verdad los sancionados (nada deportivo: van de hinchas). El chiste: acá la justicia no es ciega, es oportuna.",
+      "scoreChiste": 9
+    },
+    {
+      "motor": "dodge",
+      "nombre": "ESQUIVÁ EL EXPEDIENTE",
+      "chiste": "Sos un dirigente del Pincha en la semana del Maracaná: esquivá los expedientes que caen del cielo de la AFA (el fallo exprés, la multa de 500 entradas, el informe arbitral) mientras agarrás los premios: la final, el plantel concentrado, la tranquilidad de que el fallo no toca lo deportivo. El chiste: el castigo real no te saca ni de la tribuna.",
+      "scoreChiste": 7
+    },
+    {
+      "motor": "whack",
+      "nombre": "MARTILLÁ LOS EXPEDIENTES",
+      "chiste": "El cajón del Tribunal de Disciplina brota expedientes como un arbusto: martillá los que maduraron a presión (el fallo exprés, la multa en entradas) y dejá intactos al hincha y a la camiseta, que no son el problema. El chiste: resolver todo de golpe, tres meses tarde.",
+      "scoreChiste": 6
+    }
+  ],
+  "pitchElegido": 0,
+  "descartes": [
+    { "titular": "Marcha Universitaria: la UBA pidió identificar a los responsables / el Gobierno denunció \"atentado al orden constitucional\"", "url": "https://www.ambito.com/politica/marcha-federal-universitaria-la-uba-pidio-identificar-los-responsables-los-incidentes-y-cumplir-el-financiamiento-n6334621", "razon": "reincidente (tercer día): la historia crece (respuesta a los incidentes + superávit que 'cumple' la ley), pero sigue siendo política (variedad: ayer quórum) y sin mecánica que no roce el rojo: estudiantes y docentes reales jamás son target. Jugabilidad 6." },
+    { "titular": "Lula usó de ejemplo la motosierra de Milei en la recta final de la campaña contra Bolsonaro", "url": "https://www.lanacion.com.ar/el-mundo/lula-uso-de-ejemplo-la-motosierra-de-milei-en-la-recta-final-de-la-campana-contra-bolsonaro-nid16102026/", "razon": "política internacional: variedad (ayer politics). La campaña del miedo con video de Argentina es material grande pero sin pulso local hoy." },
+    { "titular": "Encontraron muerto al rugbier sudafricano Hyron Andrews en un hotel de Francia", "url": "https://www.lanacion.com.ar/deportes/rugby/encontraron-muerto-al-rugbier-sudafricano-hyron-andrews-en-un-hotel-de-francia-antes-de-un-partido-nid16102026/", "razon": "muerte real (🔴 rojo): jamás juego." },
+    { "titular": "Murió Fernando Confessore, el meteorólogo de TN", "url": "https://www.ambito.com/informacion-general/murio-el-meteorologo-tn-fernando-confessore-n6334431", "razon": "duelo real (🔴 rojo): quien-era y despedidas nunca son juego." },
+    { "titular": "Murió la fisicoculturista Marianne von Gierke semanas después del Olympia", "url": "https://www.perfil.com/noticias/protagonistas/a50-murio-la-fisicoculturista-marianne-von-gierke-semanas-despues-de-competir-en-el-olympia.phtml", "razon": "salud y muerte reales (🔴 rojo)." },
+    { "titular": "Juicio a \"Pity\" Álvarez, en vivo: declaró la madre de su hija", "url": "https://www.infobae.com/sociedad/policiales/2026/10/16/juicio-a-pity-alvarez-en-vivo-continua-el-debate-luego-de-que-el-tribunal-rechazara-todos-los-pedidos-de-la-defensa-para-frenarlo/", "razon": "juicio criminal con personas reales (🔴 rojo): el fighter es de caricatura, no de tribunales penales." },
+    { "titular": "Cruz del Eje: buscan a Pablo Gómez, sospechoso por el femicidio de Camila Iglesias", "url": "https://www.perfil.com/noticias/cordoba/cruz-del-eje-buscan-en-otra-provincia-a-pablo-gomez-sospechoso-por-el-femicidio-de-camila-iglesias.phtml", "razon": "víctima real y familia en el medio (🔴 rojo): descarte automático antes de pensar mecánicas." },
+    { "titular": "Caso Ludueña: prisión preventiva para el asesor radical acusado de abuso", "url": "https://www.perfil.com/noticias/cordoba/caso-luduena-prision-preventiva-para-el-asesor-radical-acusado-de-abuso.phtml", "razon": "delito sexual con personas reales (🔴 rojo)." },
+    { "titular": "Reabrió el zoológico donde un hombre murió tras saltar al recinto de un tigre", "url": "https://www.clarin.com/internacional/reabrio-zoologico-hombre-murio-saltar-recinto-tigre-autoridades-investigan-seguridad-lugar_0_fBKxxDX3rO.html", "razon": "muerte real (🔴 rojo): la reapertura no la convierte en juego." },
+    { "titular": "Diddy Combs es trasladado a prisión en Pensilvania", "url": "https://www.infobae.com/america/agencias/2026/10/16/diddy-combs-es-trasladado-a-prision-en-pensilvania-tras-una-lesion-y-supuestos-lujos/", "razon": "persona real privada de libertad (🔴 rojo-adyacente), además lejos del público." },
+    { "titular": "Un fiscal español pidió que se investigue a Julio Iglesias por abuso sexual", "url": "https://www.ambito.com/espectaculos/un-fiscal-espanol-pidio-que-se-investigue-julio-iglesias-abuso-sexual-y-explotacion-laboral-n6334177", "razon": "judicial y vida privada de persona real (🔴 rojo)." },
+    { "titular": "Salud del Papa León XIV: la visita a la Argentina depende de su recuperación", "url": "https://www.perfil.com/noticias/internacional/el-secretario-de-estado-del-vaticano-puso-dudas-a-la-gira-del-papa-dependera-de-su-salud.phtml", "razon": "reincidente en descarte: salud de persona real (🔴 rojo), regla de siempre." },
+    { "titular": "Súper Niño 2026: crecida del Paraná en Misiones y obras porteñas de prevención", "url": "https://www.perfil.com/noticias/nea/el-nino-misiones-reforzo-la-asistencia-ante-la-crecida-del-parana-iguazu-y-uruguay.phtml", "razon": "reincidente: evacuados y campos bajo agua (🔴 rojo-adjacente); las obras de prevención no lo salvan como juego." },
+    { "titular": "Mauricio prorroga el toque de queda por los disturbios", "url": "https://www.infobae.com/america/agencias/2026/10/16/mauricio-prorroga-todo-el-fin-de-semana-el-toque-de-queda-por-la-continuacion-de-los-disturbios/", "razon": "disturbios reales con toque de queda (🔴 rojo)." },
+    { "titular": "Detenidos dos ultras del Porto por agredir a un trabajador de La Cartuja", "url": "https://www.infobae.com/america/agencias/2026/10/16/detenidos-dos-ultras-del-porto-por-agredir-a-un-trabajador-de-la-cartuja-en-el-partido-frente-al-betis/", "razon": "violencia real contra un trabajador (🔴 rojo-adjacente): ni de lejos." },
+    { "titular": "Gabriel Katopodis se anotó en la carrera por la Gobernación bonaerense", "url": "https://www.ambito.com/gabriel-katopodis-se-anoto-la-carrera-la-gobernacion-y-pidio-que-las-candidaturas-no-se-definan-entre-cuatro-paredes-n6334465", "razon": "política (variedad) y campaña por candidatos sin hecho duro del día: jugabilidad 5." },
+    { "titular": "Santilli advirtió a los gobernadores por Kicillof y agitó \"la vuelta del kirchnerismo\"", "url": "https://www.perfil.com/noticias/politica/santilli-lanzo-una-advertencia-a-los-gobernadores-por-kicillof-y-agito-el-fantasma-de-la-vuelta-del-kirchnerismo.phtml", "razon": "política (variedad: ayer quórum); posicionamiento de campaña sin mecánica." },
+    { "titular": "Cristian Butie: si hay interna puede competir CFK con Zamora de vice", "url": "https://www.perfil.com/noticias/modo-fontevecchia/cristian-butiesi-hay-interna-partidaria-no-paso-puede-competir-cfk-con-gerardo-zamora-de-vice-y-transformarlo-en-el-candidato-peronista-mf.phtml", "razon": "política (variedad) + especulación de fórmulas: sin hecho duro verificable del día." },
+    { "titular": "Causa Cuadernos: olvidos, anomalías en los manuscritos y un exfuncionario que negó conocer pagos", "url": "https://www.ambito.com/politica/causa-cuadernos-olvidos-anomalias-los-manuscritos-y-un-exfuncionario-que-nego-conocer-pagos-la-n6334553", "razon": "política-judicial (variedad) y causa histórica sin gancho de hoy: jugabilidad 5." },
+    { "titular": "Hotesur y Los Sauces: Cristina Kirchner se opuso a unificar los juicios", "url": "https://www.ambito.com/politica/hotesur-y-los-sauces-cristina-kirchner-se-opuso-unificar-los-juicios-y-advirtio-una-grave-irregularidad-n6334334", "razon": "política-judicial (variedad); el blanco sería una persona en causa penal: la casa lo evita." },
+    { "titular": "El mercado ya le pone precio a las elecciones de 2027: los bonos pagan hasta el triple", "url": "https://www.perfil.com/noticias/economia/el-mercado-ya-le-pone-precio-a-las-elecciones-de-2027-los-bonos-pagan-hasta-mas-del-triple-tras-el-cambio-de-mandato.phtml", "razon": "dato rico pero jugabilidad 5: número de mercado sin mecánica. Queda como munición del outro de un futuro juego de economía." },
+    { "titular": "Dólar hoy y dólar blue, EN VIVO", "url": "https://www.lanacion.com.ar/economia/dolar/dolar-hoy-y-dolar-blue-en-vivo-a-cuanto-cotiza-el-oficial-y-cual-es-el-precio-del-paralelo-este-nid16102026/", "razon": "dato macro diario sin chiste jugable (fallo de siempre, jugabilidad 5)." },
+    { "titular": "Dieta estricta y salud mental: el perro Capitán Fathom, 321 días a bordo de un portaaviones", "url": "https://www.clarin.com/estados-unidos/dieta-estricta-descansos-programados-salud-mental-viaje-capitan-fathom-perro-321-dias-bordo-portaaviones-uss-abraham-lincoln_0_T745swOH2M.html", "razon": "jugabilidad 5 y lejos: ternura absurda sin blanco satírico ni urgencia argentina." },
+    { "titular": "Elon Musk presentó un auto que vuela: el Tesla Roadster", "url": "https://www.ambito.com/autos/elon-musk-presento-un-auto-que-vuela-el-tesla-roadster-n6334466", "razon": "marketing de lanzamiento sin pulso local (actualidad 6): el chiste quedaría en 'vuela, ja'." },
+    { "titular": "Quiniela Vespertina de Santa Fe, Córdoba, Provincia y Nacional", "url": "https://www.clarin.com/loterias-y-quinielas/quiniela-santa-fe-resultado-sorteo-vespertina-hoy-viernes-16-octubre_0_y8OkyVjy0S.html", "razon": "descarte mecánico: sorteo de lotería, no noticia." },
+    { "titular": "Celular lento: el paso a paso para acelerarlo", "url": "https://www.lanacion.com.ar/tecnologia/celular-lento-el-paso-a-paso-para-acelerarlo-sin-perder-nada-nid16102026/", "razon": "jugabilidad 3: nota de servicio sin conflicto." },
+    { "titular": "Citas del día (Aristóteles, Churchill, Rolón, Sharma, Brooks), invitados de Pasapalabra y agenda del finde", "url": "https://www.lanacion.com.ar/sociedad/cita-del-dia-winston-churchill-politico-el-exito-no-es-definitivo-el-fracaso-no-es-fatal-lo-que-nid15102026/", "razon": "descartes mecánicos: relleno lifestyle/agenda sin hecho noticioso del día." }
+  ],
+  "advertencias": [
+    "modo local sin key: los pasos LLM los ejecutó la sesión ZCode con los mismos contratos (transporte degradado del pipeline headless)",
+    "backend de veredictos respondió con 0 partidas en el juego de ayer (recién publicado): el draft corrió con la señal editorial vacía, como contempla el contrato",
+    "nota del ganador bajada completa de Ámbito: facts y citas salen del texto real (informe arbitral + descargo), no solo del titular"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-10-16",
+  "pitch": {
+    "motor": "decide",
+    "nombre": "TRIBUNAL EXPRÉS",
+    "chiste": "Sos el Tribunal de Disciplina de la AFA. Te llega el expediente de la Supercopa y el Pincha está definiendo la semifinal: decidí CUÁNDO resolvés (y el cuándo es el chiste), qué hacés con la franqueza del descargo, en qué moneda se multa (¿entradas?) y qué pierden de verdad los sancionados (nada deportivo: van de hinchas). El chiste: acá la justicia no es ciega, es oportuna.",
+    "scoreChiste": 9
+  },
+  "umbrales": { "criterio": 6, "promedio": 7 },
+  "elegido": {
+    "n": 1,
+    "game": "decide",
+    "title": "TRIBUNAL EXPRÉS",
+    "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 9, "fuentes": 9 },
+    "promedio": 9,
+    "pasa": true,
+    "nota": "El decide leva el chiste exacto del fallo: la decisión del CUÁNDO (expediente maduro resuelto entre la ida y el Maracaná), la multa en entradas como unidad nativa, y el alcance inofensivo del castigo (van de hinchas) como dato incómodo jugable. Quote textual del descargo trazado por Zod; el blanco es la institución, no las personas.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "decide",
+      "title": "TRIBUNAL EXPRÉS",
+      "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 9, "fuentes": 9 },
+      "promedio": 9,
+      "pasa": true,
+      "nota": "El decide leva el chiste exacto del fallo: la decisión del CUÁNDO (expediente maduro resuelto entre la ida y el Maracaná), la multa en entradas como unidad nativa, y el alcance inofensivo del castigo (van de hinchas) como dato incómodo jugable. Quote textual del descargo trazado por Zod; el blanco es la institución, no las personas.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "dodge",
+      "title": "ESQUIVÁ EL EXPEDIENTE",
+      "criterios": { "chisteJugable": 7, "punchline": 6, "acidez": 8, "fuentes": 8 },
+      "promedio": 7.25,
+      "pasa": true,
+      "nota": "Esquivar fallos en la semana del Maracaná tiene gracia, pero el jugador esquiva el papel sin tocar el dato que hace reír (el timing y la multa en entradas quedan en los objetos, no en la acción); el dato de que el castigo no molesta se pierde.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "whack",
+      "title": "MARTILLÁ LOS EXPEDIENTES",
+      "criterios": { "chisteJugable": 6, "punchline": 6, "acidez": 8, "fuentes": 8 },
+      "promedio": 7,
+      "pasa": true,
+      "nota": "El cajón que brota expedientes repite el chiste de aplastar papeles de la casa (12/10) y el martillazo resuelve a golpe lo que el fallo real resolvió a tiempo y de tarde: el punchline del timing queda afuera de la mecánica.",
+      "factsDudosos": []
+    }
+  ]
+}

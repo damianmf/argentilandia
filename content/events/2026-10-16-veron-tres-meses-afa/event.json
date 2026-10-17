@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-16-veron-tres-meses-afa",
+  "date": "2026-10-16",
+  "event": "El Tribunal de Disciplina de la AFA suspendió tres meses a Verón, Caiella y Angeleri y multó a Estudiantes con 500 entradas por los incidentes en la Supercopa; el fallo se conoció en plena semifinal de la Libertadores",
+  "category": "sports",
+  "actors": ["Tribunal de Disciplina de la AFA", "Estudiantes de La Plata", "Juan Sebastián Verón", "Cuerpo arbitral"],
+  "conflict": "La AFA resolvió en plena semifinal una sanción por incidentes de otra competencia, y la medida no toca lo deportivo",
+  "facts": [
+    "El Tribunal de Disciplina de la AFA suspendió tres meses a Juan Sebastián Verón, Pascual Caiella y Marcos Angeleri —presidente, vicepresidente segundo y director deportivo de Estudiantes— y multó al club con el equivalente a 500 entradas, por los incidentes tras la final de la Supercopa Internacional.",
+    "Según el informe arbitral, Verón ingresó sin autorización al campo de juego y confrontó verbalmente con el árbitro Darío Herrera tras la final que Rosario Central ganó 3-1 en Santiago del Estero.",
+    "En su descargo, Verón admitió haberle dicho 'Toda tuya, ladrón' al juez del partido.",
+    "El fallo se conoció mientras Estudiantes disputaba la semifinal de la Libertadores ante Flamengo, aunque no afecta lo deportivo: los dirigentes solo quedan impedidos de representar formalmente al club ante la AFA.",
+    "La sanción se encuadra en los artículos 12, 13 y 23 del Código Disciplinario y se suma al antecedente del 'pasillo de espaldas' a Rosario Central, que le había costado a Verón seis meses, dados por cumplidos faltando diez días.",
+    "Estudiantes empató la ida de la semifinal con Flamengo y definirá el pase a la final en el Maracaná."
+  ],
+  "sources": [
+    {
+      "title": "AFA sancionó a Verón con tres meses de suspensión y multó a Estudiantes en plena semifinal de la Libertadores",
+      "url": "https://www.ambito.com/deportes/afa-sanciono-veron-tres-meses-suspension-y-multo-estudiantes-plena-semifinal-la-libertadores-n6334437",
+      "outlet": "Ámbito",
+      "type": "media"
+    },
+    {
+      "title": "Estudiantes empató con Flamengo y definirá el pase a la final de la Libertadores en el Maracaná",
+      "url": "https://www.ambito.com/deportes/estudiantes-la-plata-contra-flamengo-posibles-formaciones-horario-y-donde-ver-vivo-n6334367",
+      "outlet": "Ámbito",
+      "type": "media"
+    }
+  ],
+  "virality": 8,
+  "gameability": 8,
+  "humorPotential": 8,
+  "shareability": 8
+}

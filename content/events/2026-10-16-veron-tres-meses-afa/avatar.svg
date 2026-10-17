@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <rect x="56" y="126" width="16" height="30" rx="7" fill="#1d2433"/>
+  <rect x="88" y="126" width="16" height="30" rx="7" fill="#1d2433"/>
+  <rect x="24" y="90" width="32" height="12" rx="6" fill="#232a3d" transform="rotate(20 24 90)"/>
+  <circle cx="27" cy="106" r="8" fill="#f2c89b"/>
+  <rect x="42" y="72" width="76" height="60" rx="14" fill="#232a3d"/><path d="M72 72 h16 v14 l-8 8 -8 -8 z" fill="#ffffff"/><rect x="76" y="82" width="8" height="20" rx="3" fill="#74acdf"/>
+  
+  <rect x="108" y="84" width="34" height="12" rx="6" fill="#1d2433"/>
+        <circle cx="146" cy="88" r="9" fill="#f2c89b"/>
+        <circle cx="141" cy="70" r="11" fill="#6b7280"/><circle cx="141" cy="70" r="5" fill="#1d2433"/>
+        <rect x="148" y="66" width="10" height="8" rx="3" fill="#6b7280"/>
+  <circle cx="80" cy="46" r="27" fill="#f2c89b"/>
+  <path d="M54 40 q6 -22 26 -22 q20 0 26 22 q-26 -12 -52 0" fill="#cfd4dc"/>
+  <path d="M58 56 q4 16 22 16 q18 0 22 -16 q-6 10 -22 10 q-16 0 -22 -10" fill="#9aa0a6"/>
+  <rect x="63" y="40" width="13" height="3.5" rx="2" fill="#22314a"/>
+        <rect x="84" y="40" width="13" height="3.5" rx="2" fill="#22314a"/>
+        <circle cx="70" cy="48" r="4.5" fill="#22314a"/><circle cx="90" cy="48" r="4.5" fill="#22314a"/>
+        <rect x="72" y="59" width="16" height="3.5" rx="1.75" fill="#22314a"/>
+  
+</svg>
