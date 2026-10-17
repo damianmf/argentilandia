@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-10-17",
+  "pitch": {
+    "motor": "search",
+    "nombre": "ENCONTRÁ LOS CHATS",
+    "chiste": "La grilla es el celular del funcionario: escanealo y encontrá los chats comprometedores ('5 palos arriba', 'Tienen que salir si o si') enterrados entre cadenas de buenos días y memes del grupo de la obra. Cada toque inocente resta intentos. El chiste: la prueba está en el teléfono, hay que hallarla antes de que se borre.",
+    "scoreChiste": 9
+  },
+  "umbrales": { "criterio": 6, "promedio": 7 },
+  "elegido": {
+    "n": 1,
+    "game": "search",
+    "title": "ENCONTRÁ LOS CHATS",
+    "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 9, "fuentes": 9 },
+    "promedio": 9,
+    "pasa": true,
+    "nota": "La mecánica es el expediente mismo: la causa nació de chats encontrados en un celular y el jugador hace de perito. La quote ES un objeto del juego y el ruido (cadenas, memes) hace de investigación forense.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "search",
+      "title": "ENCONTRÁ LOS CHATS",
+      "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 9, "fuentes": 9 },
+      "promedio": 9,
+      "pasa": true,
+      "nota": "La mecánica es el expediente mismo: la causa nació de chats encontrados en un celular y el jugador hace de perito. La quote ES un objeto del juego y el ruido (cadenas, memes) hace de investigación forense.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "search",
+      "title": "LA SILLA DE $18 MILLONES",
+      "criterios": { "chisteJugable": 8, "punchline": 9, "acidez": 9, "fuentes": 9 },
+      "promedio": 8.75,
+      "pasa": true,
+      "nota": "El dato más incómodo como tablero: el inventario de la agencia, con la silla postural a 19 veces su precio y el Artrobone con $512 millones de diferencia entre compras legítimas e infladas. Menos inmediato que la variante 1: exige leer números en la góndola.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "search",
+      "title": "EL CHAT INFINITO",
+      "criterios": { "chisteJugable": 6, "punchline": 7, "acidez": 9, "fuentes": 8 },
+      "promedio": 7.5,
+      "pasa": true,
+      "nota": "El extremo: tablero 12x8 de puro ruido con 3 chats enterrados y 2 toques. La frustración ES el chiste (buscar una prueba en la ruina digital) pero roza lo injugable en 35 segundos.",
+      "factsDudosos": []
+    }
+  ]
+}

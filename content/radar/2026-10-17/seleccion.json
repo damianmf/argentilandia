@@ -1,0 +1,100 @@
+{
+  "fecha": "2026-10-17",
+  "modo": "full-auto",
+  "estado": "APROBADO_AUTOMATICO",
+  "preseleccion": [
+    {
+      "titular": "\"En las amputaciones, en todas 5 palos arriba\": los chats de la corrupción en ANDIS",
+      "url": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720",
+      "outlet": "Ámbito",
+      "scores": { "actualidad": 9, "jugabilidad": 8, "humor": 8, "reconocibilidad": 8, "shareability": 9, "explicabilidad": 9 },
+      "motivo": "La frase del día ya existe y es de los chats mismos ('5 palos arriba'); el escándalo de coimas en la agencia de discapacidad es literalmente una causa de chats encontrados en un celular. Precedente editorial exacto: PÉGUELE (la silla de ruedas como noTouch)."
+    },
+    {
+      "titular": "El Gobierno adquirió 43 trenes nuevos para 5 líneas del AMBA y llegarán a finales de 2027",
+      "url": "https://www.ambito.com/informacion-general/el-gobierno-adquirio-43-trenes-nuevos-5-lineas-del-amba-y-llegaran-finales-2027-n6334675",
+      "outlet": "Ámbito",
+      "scores": { "actualidad": 7, "jugabilidad": 7, "humor": 7, "reconocibilidad": 8, "shareability": 7, "explicabilidad": 8 },
+      "motivo": "El espejo inverso de EL FRENITO INFINITO (los trenes nuevos que tardan un año en llegar), pero repite el tema de hace 9 días: queda anotado."
+    },
+    {
+      "titular": "\"Contame los votos\": la pelea por la reforma electoral que divide a la mesa política",
+      "url": "https://www.clarin.com/politica/contame-votos-pelea-reforma-electoral-divide-mesa-politica-milei_0_YEsCYmYSd0.html",
+      "outlet": "Clarín",
+      "scores": { "actualidad": 8, "jugabilidad": 7, "humor": 7, "reconocibilidad": 7, "shareability": 7, "explicabilidad": 8 },
+      "motivo": "Pulseada normativa sólida (la regla 15/10 pide su fact de disputa), pero pierde contra ANDIS por humor y shareability. Queda para un día sin escándalo fresco."
+    }
+  ],
+  "ganador": {
+    "indice": 1,
+    "titular": "\"En las amputaciones, en todas 5 palos arriba\": los chats de la corrupción en ANDIS",
+    "url": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720",
+    "outlet": "Ámbito"
+  },
+  "event": {
+    "id": "2026-10-17-andis-5-palos-arriba",
+    "date": "2026-10-17",
+    "event": "El juez Lijo amplió los procesamientos en la causa ANDIS y los chats del expediente fijaban coimas: \"En las amputaciones anda en todas 5 palos arriba\"",
+    "category": "politics",
+    "actors": ["ANDIS", "Juzgado de Ariel Lijo", "Proveedores del Estado"],
+    "conflict": "Coimas y sobreprecios en la compra de insumos de discapacidad",
+    "facts": [
+      "El juez Ariel Lijo amplió los procesamientos en la causa ANDIS con una resolución de 553 páginas por presuntas irregularidades en la compra de medicamentos e insumos de alto costo.",
+      "En los chats entre Miguel Ángel Calvete y el proveedor Christian Sagués apareció la instrucción de precio \"En las amputaciones anda en todas 5 palos arriba\"; Calvete también avisaba cuándo salían los pagos: \"Tienen que salir si o si\".",
+      "El esquema habría operado entre diciembre de 2023 y octubre de 2025 con licitaciones direccionadas, competencia simulada, sobreprecios y presuntos retornos: la base económica provisoria ronda los $7.833 millones.",
+      "Casos puntuales del fallo: una silla postural comprada a $18 millones contra un comparable de $945.000, y 32 prestaciones de Artrobone por $566,1 millones contra una referencia de $53,9 millones.",
+      "Diego Spagnuolo, ex titular de ANDIS, fue procesado como jefe de una asociación ilícita; los procesamientos son sin prisión preventiva y la causa está en instrucción."
+    ],
+    "sources": [
+      {
+        "title": "\"En las amputaciones, en todas 5 palos arriba\": los chats de la corrupción en ANDIS",
+        "url": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720",
+        "outlet": "Ámbito",
+        "type": "media"
+      }
+    ],
+    "virality": 9,
+    "gameability": 8,
+    "humorPotential": 8,
+    "shareability": 9
+  },
+  "acidez": "🟡 amarillo alto (picantez máxima 12/10) — el blanco es la corruptela en el cargo público y su prueba: los chats citados por el juez, con montos verificables del expediente. La discapacidad jamás es el chiste: la silla de ruedas y el trámite van a noTouch (precedente PÉGUELE). Personas procesadas, no condenadas: el outro lo dice y rige la presunción de inocencia.",
+  "pitches": [
+    {
+      "motor": "search",
+      "nombre": "ENCONTRÁ LOS CHATS",
+      "chiste": "La grilla es el celular del funcionario: escanealo y encontrá los chats comprometedores ('5 palos arriba', 'Tienen que salir si o si') enterrados entre cadenas de buenos días y memes del grupo de la obra. Cada toque inocente resta intentos. El chiste: la prueba está en el teléfono, hay que hallarla antes de que se borre.",
+      "scoreChiste": 9
+    },
+    {
+      "motor": "whack",
+      "nombre": "LOS 5 PALOS ARRIBA",
+      "chiste": "Del expediente brotan los chats de los sobreprecios y los aplastás con el sello del juzgado antes de que se escondan en el teléfono. noTouch: la silla de ruedas — la discapacidad nunca es el blanco. El chiste: cada chat aplastado vuelve, como las coimas.",
+      "scoreChiste": 8
+    },
+    {
+      "motor": "catcher",
+      "nombre": "EL PERITO RECOLECTOR",
+      "chiste": "Sos el perito informático: agarrá las capturas que caen del teléfono del funcionario y esquivá los borrados remotos y los abogados que te tapan la pantalla. El chiste: las pruebas vuelan, la justicia también.",
+      "scoreChiste": 7
+    }
+  ],
+  "pitchElegido": 0,
+  "descartes": [
+    { "titular": "Arde París: disturbios en las protestas contra Macron", "url": "https://www.clarin.com/mundo/arde-paris-graves-disturbios-inicio-protestas-francia-macron-esperan-100000-personas_0_a4Z4MRAF2u.html", "razon": "Disturbios con violencia real (🔴 rojo-adyacente): no es caricaturizable." },
+    { "titular": "Un hombre atropelló a su hijo de 5 años marcha atrás", "url": "https://www.lanacion.com.ar/sociedad/un-hombre-atropello-a-su-hijo-de-5-anos-cuando-daba-marcha-atras-con-su-camioneta-en-mendoza-nid17102026/", "razon": "Víctimas reales, niño (🔴 rojo): sin excepción." },
+    { "titular": "Dos menores detenidos por la muerte de una anciana en Burgos", "url": "https://www.infobae.com/espana/agencias/2026/10/17/dos-menores-detenidos-por-la-muerte-de-una-anciana-hallada-maniatada-en-su-casa-en-burgos/", "razon": "Víctimas y menores (🔴 rojo)." },
+    { "titular": "Detuvieron al padre de Agostina Páez", "url": "https://www.lanacion.com.ar/seguridad/detuvieron-al-padre-de-agostina-paez-la-argentina-que-estuvo-presa-en-brasil-por-gestos-racistas-nid17102026/", "razon": "Caso judicial con persona real y señalamiento público previo: se evita (ensañamiento posible)." },
+    { "titular": "Amalia Granata mostró un seno para explicar por qué faltó a una sesión", "url": "https://www.perfil.com/noticias/politica/amalia-granata-mostro-un-seno-para-explicar-por-que-falto-a-una-sesion-legislativa-no-estaba-de-joda.phtml", "razon": "El cuerpo y la vida privada de una persona concreta jamás son el chiste (línea editorial)." },
+    { "titular": "Devoto, casi vacía: el 93% de los presos ya está en Marcos Paz", "url": "https://www.perfil.com/noticias/politica/devoto-casi-vacia-el-93-de-los-presos-ya-esta-en-marcos-paz.phtml", "razon": "Personas privadas de libertad como materia (vulnerable): se evita." },
+    { "titular": "Apuntan contra el procurador penitenciario por el cierre de Devoto", "url": "https://www.ambito.com/politica/apuntan-contra-el-procurador-penitenciario-oponerse-al-cierre-la-carcel-devoto-n6334803", "razon": "Pulseada de cárcel con internos comopeones del tablero: vulnerable-adyacente." },
+    { "titular": "El Gobierno ajusta IOSFA: cierra 30 farmacias y reduce personal", "url": "https://www.ambito.com/politica/el-gobierno-vuelve-ajustar-iosfa-cierre-30-farmacias-y-brusca-reduccion-personal-n6334574", "razon": "Despidos con gente real afectada (vulnerable-adyacente): el chiste los golpearía a ellos." },
+    { "titular": "Davidovich venció a Zverev en Shanghái", "url": "https://www.lanacion.com.ar/deportes/tenis/davidovich-vencio-a-zverev-y-dio-la-gran-sorpresa-en-shanghai-nid17102026/", "razon": "Categoría deportiva prohibida por variedad (último juego: sports del 16/10)." },
+    { "titular": "BTS en Argentina: fechas y entradas para La Plata", "url": "https://www.clarin.com/espectaculos/bts-argentina-2026-fechas-entradas-saber-shows-plata_0_D2hlNrRNu1.html", "razon": "Nota de servicio sin chiste jugable ni quote (explicabilidad baja para la casa)." },
+    { "titular": "Las expensas ya rozan los $380.000 en CABA", "url": "https://www.ambito.com/real-estate/las-expensas-ya-rozan-los-380000-caba-que-aumentan-y-que-anticipan-los-administradores-n6334594", "razon": "Objeto-dato válido pero pierde contra ANDIS en actualidad y picantez; queda para otro día." },
+    { "titular": "Tesla presentó un auto que \"vuela\" y va de 0 a 100 en menos de un segundo", "url": "https://www.lanacion.com.ar/autos/tesla-presento-un-auto-que-vuela-y-acelera-a-100-kmh-en-menos-de-un-segundo-nid16102026/", "razon": "Curiosidad internacional sin ancla argentina: actualidad baja para el formato." }
+  ],
+  "advertencias": [
+    "modo local sin key: los pasos LLM los ejecutó la sesión ZCode con los mismos contratos (transporte degradado del pipeline headless)"
+  ]
+}

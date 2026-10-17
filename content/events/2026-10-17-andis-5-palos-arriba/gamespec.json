@@ -1,0 +1,92 @@
+{
+  "game": "search",
+  "title": "ENCONTRÁ LOS CHATS",
+  "emoji": "📱🔍",
+  "duration": 35,
+  "intro": "La causa ANDIS quedó escrita en los chats: \"En las amputaciones anda en todas 5 palos arriba\", decía uno. Sos el perito informático: escaneá el celular del funcionario y encontrá los chats comprometedores antes de que se borren. Los memes del grupo de la obra no valen nada, y cada toque inocente te resta intentos.",
+  "player": { "emoji": "🕵️", "label": "El perito informático", "image": "avatar.svg" },
+  "grid": { "width": 8, "height": 6 },
+  "find": [
+    { "emoji": "💬", "label": "'5 palos arriba'", "points": 100 },
+    { "emoji": "💰", "label": "'Si o si' (pagos)", "points": 150 },
+    { "emoji": "🧾", "label": "Cotización dirigida", "points": 150 },
+    { "emoji": "📱", "label": "'Carmelavivaldi'", "points": 200 }
+  ],
+  "traps": [
+    { "emoji": "👋", "label": "Cadena de buenos días", "points": -50 },
+    { "emoji": "😂", "label": "Meme de la obra", "points": -50 },
+    { "emoji": "🎂", "label": "Feliz cumple profesional", "points": -75 },
+    { "emoji": "⚽", "label": "Chat del fútbol", "points": -75 }
+  ],
+  "maxTouches": 3,
+  "difficulty": 5,
+  "theme": {
+    "background": "#101418",
+    "hud": { "score": "#ffffff", "time": "#ffd166" },
+    "decor": [
+      { "emoji": "📱", "x": 88, "y": 12, "size": 52, "alpha": 0.4 },
+      { "emoji": "⚖️", "x": 10, "y": 26, "size": 44, "alpha": 0.45 },
+      { "emoji": "💬", "x": 86, "y": 34, "size": 34, "alpha": 0.5 },
+      { "emoji": "🔒", "x": 12, "y": 76, "size": 34, "alpha": 0.3 },
+      { "emoji": "🗑️", "x": 88, "y": 78, "size": 30, "alpha": 0.3 }
+    ]
+  },
+  "sound": true,
+  "ranking": {
+    "titulo": "¿QUIÉN ENCONTRÓ MÁS CHATS?",
+    "titulos": [
+      "Perito Mayor del País",
+      "Ojo de águila forense",
+      "Becario del celular",
+      "Le borraron todo en la cara"
+    ],
+    "unidad": "chats comprometedores",
+    "chips": ["'5 palos arriba' ya es patrimonio nacional", "El celular siempre habla"]
+  },
+  "outro": {
+    "whatHappened": "El juez Ariel Lijo amplió los procesamientos en la causa ANDIS con una resolución de 553 páginas por presuntas irregularidades en la compra de medicamentos e insumos de alto costo: licitaciones direccionadas, competencia simulada y sobreprecios entre diciembre de 2023 y octubre de 2025. En los chats del expediente apareció la instrucción de precio \"En las amputaciones anda en todas 5 palos arriba\". Diego Spagnuolo, ex titular de la agencia, fue procesado como jefe de una asociación ilícita; nadie está preso preventivamente y la causa está en instrucción.",
+    "quote": {
+      "text": "En las amputaciones anda en todas 5 palos arriba",
+      "who": "Chat atribuido a Miguel Ángel Calvete al proveedor Christian Sagués, citado en el procesamiento del juez Lijo",
+      "source": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720"
+    },
+    "moments": [
+      {
+        "emoji": "📜",
+        "text": "Resolución de 553 páginas: Lijo amplía procesamientos por compras infladas de insumos de discapacidad",
+        "source": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720"
+      },
+      {
+        "emoji": "💬",
+        "text": "Los chats fijaban precios y pagos: \"En las amputaciones anda en todas 5 palos arriba\", \"Tienen que salir si o si\"",
+        "source": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720"
+      },
+      {
+        "emoji": "🦽",
+        "text": "Una silla postural comprada a $18 millones contra un comparable de $945.000; el Artrobone, $512 millones de diferencia",
+        "source": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720"
+      },
+      {
+        "emoji": "🏛️",
+        "text": "Spagnuolo, ex titular de ANDIS, procesado como jefe de una asociación ilícita; todos sin prisión preventiva",
+        "source": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720"
+      }
+    ],
+    "facts": [
+      "El juez Ariel Lijo amplió los procesamientos en la causa ANDIS con una resolución de 553 páginas por presuntas irregularidades en la compra de medicamentos e insumos de alto costo.",
+      "En los chats entre Miguel Ángel Calvete y el proveedor Christian Sagués apareció la instrucción de precio \"En las amputaciones anda en todas 5 palos arriba\"; Calvete también avisaba cuándo salían los pagos: \"Tienen que salir si o si\".",
+      "El esquema habría operado entre diciembre de 2023 y octubre de 2025 con licitaciones direccionadas, competencia simulada, sobreprecios y presuntos retornos: la base económica provisoria ronda los $7.833 millones.",
+      "Casos puntuales del fallo: una silla postural comprada a $18 millones contra un comparable de $945.000, y 32 prestaciones de Artrobone por $566,1 millones contra una referencia de $53,9 millones.",
+      "Diego Spagnuolo, ex titular de ANDIS, fue procesado como jefe de una asociación ilícita; los procesamientos son sin prisión preventiva y la causa está en instrucción."
+    ],
+    "fiction": "Este juego no hackea ningún teléfono real: la grilla es una ficción, los chats no se autodestruyen y los memes del grupo de la obra nunca hicieron daño a nadie. Los chats citados, los montos y los procesamientos son los del expediente; los imputados tienen presunción de inocencia y nadie está preso preventivamente. La silla de ruedas es la que nunca se toca: la discapacidad no es el chiste acá, la corruptela sí.",
+    "sources": [
+      {
+        "title": "\"En las amputaciones, en todas 5 palos arriba\": los chats de la corrupción en ANDIS",
+        "url": "https://www.ambito.com/politica/en-las-amputaciones-todas-5-palos-arriba-los-chats-la-corrupcion-andis-n6334720",
+        "outlet": "Ámbito",
+        "type": "media"
+      }
+    ]
+  }
+}
