@@ -35,7 +35,7 @@ export function llmConfig() {
   return { baseUrl: baseUrl.replace(/\/$/, ''), apiKey, model };
 }
 
-async function chat(messages, { temperature = 0.8, maxTokens = 4096, timeoutMs = 120_000 } = {}) {
+async function chat(messages, { temperature = 0.8, maxTokens = 8192, timeoutMs = 120_000 } = {}) {
   const { baseUrl, apiKey, model } = llmConfig();
   const response = await fetch(`${baseUrl}/chat/completions`, {
     method: 'POST',

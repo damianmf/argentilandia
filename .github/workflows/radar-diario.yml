@@ -51,6 +51,9 @@ jobs:
       - name: Jornada (o radar si no hay key)
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          # La key del secret es del Coding Plan de Z.ai: su cuota solo vale en
+          # el endpoint coding (decisión 16/10; pay-per-token queda de recambio).
+          LLM_BASE_URL: https://api.z.ai/api/coding/paas/v4
           SITE_URL: https://argentilandia.dami-fontenla.workers.dev
           FECHA_INPUT: ${{ github.event.inputs.fecha }}
         run: |

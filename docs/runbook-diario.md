@@ -73,8 +73,12 @@ La línea `RESUMEN: {...}` del final es el contrato de reporte del cron.
   `LLM_BASE_URL`, `LLM_MODEL`. Sin key, los pasos LLM fallan con error claro.
 - `LLM_API_KEY` como secret de GitHub (Settings → Secrets and variables →
   Actions): es lo que habilita la corrida hospedada completa de las 10:30.
-  Sin secret, ese cron degrada a radar. En CI la config va toda por env
-  (`llm.mjs` lee env antes que `.env`); `SITE_URL` la fija el workflow.
+  Sin secret, ese cron degrada a radar. Desde el 16/10 la key del secret es
+  del **Coding Plan** de Z.ai (cuota de la suscripción, no pay-per-token) y el
+  workflow fija `LLM_BASE_URL` al endpoint coding
+  (`api.z.ai/api/coding/paas/v4`): la facturación la define el tipo de key.
+  En CI la config va toda por env (`llm.mjs` lee env antes que `.env`);
+  `SITE_URL` la fija el workflow.
 - `APROBACION=on`: el pipeline corta tras el draft (`ESPERANDO_APROBACION`,
   exit 2) y la jornada continúa cuando alguien complete la generación a mano.
 - `N_CANDIDATOS`: candidatos por jornada (default 3).
