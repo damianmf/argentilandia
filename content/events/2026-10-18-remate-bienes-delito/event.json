@@ -1,0 +1,27 @@
+{
+  "id": "2026-10-18-remate-bienes-delito",
+  "date": "2026-10-18",
+  "event": "Santa Fe subastó 224 lotes de bienes del delito por más de $1.645 millones —91 motos, 80 autos, dos lanchas, 40 bicis y diez arcades retro— con récord de casi 9.000 inscriptos",
+  "category": "police",
+  "actors": ["Gobierno de Santa Fe", "Secretaría de Gestión de Registros", "Compradores"],
+  "conflict": "El Estado convierte el botín del crimen en plata pública",
+  "facts": [
+    "El Gobierno de Santa Fe subastó 224 lotes de bienes secuestrados al delito por más de $1.645 millones en la Estación Belgrano de la ciudad de Santa Fe: fue la sexta edición del remate y hubo casi 9.000 inscriptos, máximo histórico.",
+    "Entre los bienes: 91 motocicletas, 80 automóviles, dos lanchas, 40 bicicletas, inmuebles y diez máquinas arcade retro para restaurar — primera vez que se remataron objetos náuticos y recreativos.",
+    "Los lotes más caros: una casa en Rosario a $76 millones, una Toyota Hilux a $45 millones y un Audi A6 a $29 millones; los arcades, con base de $20.000, se vendieron entre $130.000 y $300.000.",
+    "Los bienes vienen de secuestros por narcotráfico, juego clandestino, corrupción y motochorros; lo recaudado indemniza a víctimas, financia más de 60 instituciones sociales y sostiene al organismo que custodia los elementos.",
+    "El gobernador Maximiliano Pullaro celebró: \"En la invencible provincia de Santa Fe, la impunidad se acabó\"."
+  ],
+  "sources": [
+    {
+      "title": "Santa Fe subastó bienes del delito por más de $1.645 millones: desde una casa hasta lanchas y arcades",
+      "url": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml",
+      "outlet": "Perfil",
+      "type": "media"
+    }
+  ],
+  "virality": 8,
+  "gameability": 9,
+  "humorPotential": 9,
+  "shareability": 8
+}

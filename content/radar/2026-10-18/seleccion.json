@@ -1,0 +1,100 @@
+{
+  "fecha": "2026-10-18",
+  "modo": "full-auto",
+  "estado": "APROBADO_AUTOMATICO",
+  "preseleccion": [
+    {
+      "titular": "Santa Fe subastó bienes del delito por más de $1.645 millones: desde una casa hasta lanchas y arcades",
+      "url": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml",
+      "outlet": "Perfil",
+      "scores": { "actualidad": 8, "jugabilidad": 9, "humor": 9, "reconocibilidad": 7, "shareability": 8, "explicabilidad": 9 },
+      "motivo": "El inventario absurdo del delito (¡10 arcades retro del narco!) con precios exactos verificables, y la subasta ES un martillo: chiste jugable servido. Primera categoría police del proyecto. Frase del día incluida ('la impunidad se acabó')."
+    },
+    {
+      "titular": "El consumo no repunta: cayeron las ventas por el Día de la Madre y dos de cada tres argentinos agotan sus ingresos antes del día 20",
+      "url": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml",
+      "outlet": "Perfil",
+      "scores": { "actualidad": 9, "jugabilidad": 7, "humor": 7, "reconocibilidad": 10, "shareability": 8, "explicabilidad": 8 },
+      "motivo": "El dato del día justo en su fecha (2 de cada 3 agotan ingresos antes del día 20), pero pierde contra la subasta: el dolor relatable vs. el absurdo puro que se juega mejor."
+    },
+    {
+      "titular": "Hotesur-Los Sauces: el golpe judicial que complica los planes electorales de los Kirchner",
+      "url": "https://www.clarin.com/politica/hotesur-los-sauces-golpe-judicial-complica-planes-electorales-kirchner_0_IyefLUUVpb.html",
+      "outlet": "Clarín",
+      "scores": { "actualidad": 8, "jugabilidad": 6, "humor": 6, "reconocibilidad": 9, "shareability": 7, "explicabilidad": 7 },
+      "motivo": "Actualidad grande pero jugabilidad 6 sin search (prohibida por variedad) y repite la temática judicial del juego de ayer (ANDIS). Descarte."
+    }
+  ],
+  "ganador": {
+    "indice": 1,
+    "titular": "Santa Fe subastó bienes del delito por más de $1.645 millones: desde una casa hasta lanchas y arcades",
+    "url": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml",
+    "outlet": "Perfil"
+  },
+  "event": {
+    "id": "2026-10-18-remate-bienes-delito",
+    "date": "2026-10-18",
+    "event": "Santa Fe subastó 224 lotes de bienes del delito por más de $1.645 millones —91 motos, 80 autos, dos lanchas, 40 bicis y diez arcades retro— con récord de casi 9.000 inscriptos",
+    "category": "police",
+    "actors": ["Gobierno de Santa Fe", "Secretaría de Gestión de Registros", "Compradores"],
+    "conflict": "El Estado convierte el botín del crimen en plata pública",
+    "facts": [
+      "El Gobierno de Santa Fe subastó 224 lotes de bienes secuestrados al delito por más de $1.645 millones en la Estación Belgrano de la ciudad de Santa Fe: fue la sexta edición del remate y hubo casi 9.000 inscriptos, máximo histórico.",
+      "Entre los bienes: 91 motocicletas, 80 automóviles, dos lanchas, 40 bicicletas, inmuebles y diez máquinas arcade retro para restaurar — primera vez que se remataron objetos náuticos y recreativos.",
+      "Los lotes más caros: una casa en Rosario a $76 millones, una Toyota Hilux a $45 millones y un Audi A6 a $29 millones; los arcades, con base de $20.000, se vendieron entre $130.000 y $300.000.",
+      "Los bienes vienen de secuestros por narcotráfico, juego clandestino, corrupción y motochorros; lo recaudado indemniza a víctimas, financia más de 60 instituciones sociales y sostiene al organismo que custodia los elementos.",
+      "El gobernador Maximiliano Pullaro celebró: \"En la invencible provincia de Santa Fe, la impunidad se acabó\"."
+    ],
+    "sources": [
+      {
+        "title": "Santa Fe subastó bienes del delito por más de $1.645 millones: desde una casa hasta lanchas y arcades",
+        "url": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml",
+        "outlet": "Perfil",
+        "type": "media"
+      }
+    ],
+    "virality": 8,
+    "gameability": 9,
+    "humorPotential": 9,
+    "shareability": 8
+  },
+  "acidez": "🟢 verde — la broma es el inventario absurdo del delito (los arcades del narco como topo estrella) y el remate del Estado como mecanismo; el blanco es el crimen y sus bienes secuestrados, nunca las víctimas (lo que financia el remate real va a noTouch). Verde con dientes: la frase del gobernador ('la impunidad se acabó') queda como veredicto compartible.",
+  "pitches": [
+    {
+      "motor": "whack",
+      "nombre": "REMATA LO DEL CHORRO",
+      "chiste": "De la Estación Belgrano brotan los bienes del delito y los rematás a martillazos: los arcades del narco valen el doble que la casa de Rosario en puntos, cada golpe suma millones al fondo de las víctimas y noTouch: lo que es de las víctimas no se remata. El chiste: el martillo del remate ES el juego.",
+      "scoreChiste": 9
+    },
+    {
+      "motor": "catcher",
+      "nombre": "EL MEJOR POSTOR",
+      "chiste": "Sos el comprador con la paleta numerada en la Estación Belgrano: agarrá los lotes que caen (arcades, bicis, la Hilux) y esquivá los embargos y las subas de último momento. El chiste: el lote bueno siempre cae lejos de tu mano.",
+      "scoreChiste": 7
+    },
+    {
+      "motor": "runner",
+      "nombre": "FUGA EN LA BERMUDA",
+      "chiste": "Sos el dueño original de la lancha Bermuda Sport 200: corré hacia el río antes de que caiga el martillo, saltando secuestros y esquivando rematadores. El chiste: todos los caminos llevan a la subasta.",
+      "scoreChiste": 6
+    }
+  ],
+  "pitchElegido": 0,
+  "descartes": [
+    { "titular": "Un sacerdote murió aplastado por una cruz durante una misa en Ecuador", "url": "https://www.lanacion.com.ar/el-mundo/un-sacerdote-murio-en-misa-en-ecuador-luego-de-que-se-le-cayera-una-cruz-de-madera-en-la-cabeza-nid18102026/", "razon": "Muerte real (🔴 rojo): jamás juego, ni con violencia de caricatura." },
+    { "titular": "Nuevos disturbios en Milán: saqueos y enfrentamientos con la Policía", "url": "https://www.lanacion.com.ar/el-mundo/nuevos-disturbios-en-italia-saqueos-destrozos-y-enfrentamientos-con-la-policia-en-el-centro-de-milan-nid18102026/", "razon": "Violencia real en curso (🔴 rojo-adyacente): comercios destruidos no son caricatura." },
+    { "titular": "Alerta roja en Chaco: el Paraná podría llegar a los 7,50 metros", "url": "https://www.ambito.com/informacion-general/alerta-roja-chaco-la-crecida-del-rio-parana-advierten-que-podria-llegar-los-750-metros-n6335041", "razon": "Evacuados potenciales (🔴 rojo-adyacente), como todos los ríos de esta semana." },
+    { "titular": "Desapareció una docente en Corrientes y la buscan hace 10 días", "url": "https://www.ambito.com/informacion-general/desaparecio-una-docente-una-escuela-rural-corrientes-y-la-buscan-hace-10-dias-n6335010", "razon": "Desaparición real en curso (🔴 rojo)." },
+    { "titular": "Valentín Yan y la violencia intrafamiliar", "url": "https://www.lanacion.com.ar/sociedad/valentin-yan-un-duro-relato-que-reinstala-el-foco-en-la-violencia-intrafamiliar-y-el-desafio-de-nid18102026/", "razon": "Víctimas reales y familia (🔴 rojo), tercer día seguido del caso en el radar." },
+    { "titular": "Clínicas privadas suspenden la atención a afiliados del PAMI", "url": "https://www.lanacion.com.ar/economia/clinicas-privadas-suspenden-la-atencion-a-afiliados-al-pami-que-le-reclaman-a-la-obra-social-y-al-nid18102026/", "razon": "Abuelos dependientes del servicio (vulnerable): el conflicto de facturas no es el chiste." },
+    { "titular": "Hotesur-Los Sauces: golpe judicial a los planes electorales K", "url": "https://www.clarin.com/politica/hotesur-los-sauces-golpe-judicial-complica-planes-electorales-kirchner_0_IyefLUUVpb.html", "razon": "Jugabilidad 6 sin search (variedad) y repite la temática judicial de ayer; en el catálogo pierde contra la subasta." },
+    { "titular": "Racing-Independiente: polémicas de Facundo Tello y insultos a Milito", "url": "https://www.lanacion.com.ar/deportes/futbol/las-polemicas-de-racing-independiente-las-decisiones-que-tomo-facundo-tello-nid18102026/", "razon": "Categoría sports prohibida por variedad (último juego del 16/10 era deportivo; el de ayer no, pero el clásico de hoy ya salió cubierto por el tribunal del 16)." },
+    { "titular": "Bolsonaro vs Lula: el debate previo al balotaje", "url": "https://www.clarin.com/mundo/bolsonaro-vs-lula-da-silva-vivo-hora-debate-brasil-verlo-semana-balotaje_0_tDL9kob7l0.html", "razon": "Política extranjera y el debate es esta noche: la noticia de mañana sería otra." },
+    { "titular": "La nueva adquisición de Messi: un catamarán de u$s9 millones", "url": "https://www.ambito.com/negocios/la-nueva-adquisicion-millonaria-messi-asi-es-el-lujoso-catamaran-que-encargo-us9-millones-n6334519", "razon": "Vida privada de una persona real sin chiste jugable: el lancha-juego ya está en la subasta de Santa Fe." },
+    { "titular": "Llaryora propuso celebrar los 100 años de Mirtha Legrand en el Kempes", "url": "https://www.lanacion.com.ar/politica/ante-la-mejoria-de-mirtha-legrand-martin-llaryora-propuso-celebrar-sus-100-anos-en-el-estadio-kempes-nid18102026/", "razon": "Verde y simpático pero jugabilidad 5: no hay mecánica en una propuesta de festejo." },
+    { "titular": "¿Cree que su sueldo le gana a la inflación? El no fue 81 a 13%", "url": "https://www.perfil.com/noticias/exitoina/su-sueldo-le-gana-a-la-inflacion-hasta-que-dia-del-mes-le-alcanza.phtml", "razon": "Mismo clúster económico que la alternativa del Día de la Madre: queda como segundo plato si esa se produce otro día." }
+  ],
+  "advertencias": [
+    "modo local sin key: los pasos LLM los ejecutó la sesión ZCode con los mismos contratos (transporte degradado del pipeline headless)"
+  ]
+}

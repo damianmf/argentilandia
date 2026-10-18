@@ -1,0 +1,90 @@
+{
+  "game": "whack",
+  "title": "REMATA LO DEL CHORRO",
+  "emoji": "🔨🕹️",
+  "duration": 20,
+  "intro": "Santa Fe remató el botín del crimen: 224 lotes, casi 9.000 inscriptos y diez arcades del narco que se vendieron hasta a $300.000. Agarrá el martillo de la Estación Belgrano: cada bien que brote, vendido. Lo que es de las víctimas no se remata, ojo.",
+  "player": { "emoji": "🔨", "label": "El martillo del remate", "image": "avatar.svg" },
+  "grid": { "width": 5, "height": 3 },
+  "targets": [
+    { "emoji": "🕹️", "label": "Arcade del narco", "points": 200 },
+    { "emoji": "🏠", "label": "Casa de Rosario", "points": 200 },
+    { "emoji": "🚤", "label": "Lancha Bermuda", "points": 150 },
+    { "emoji": "🏍️", "label": "Moto secuestrada", "points": 100 }
+  ],
+  "noTouch": [
+    { "emoji": "🤲", "label": "Lo de las víctimas", "points": -2000 }
+  ],
+  "whackWords": ["¡VENDIDO!", "¡REMATE FINAL!", "¡ADJUDICADO!", "¡MARTILLO AL AIRE!"],
+  "verdicts": ["Se quedó sin lancha", "Comprador de arcades", "Oficial de la Estación", "Gobernador del Martillo"],
+  "difficulty": 5,
+  "theme": {
+    "background": "#221510",
+    "hud": { "score": "#ffffff", "time": "#ffd166" },
+    "decor": [
+      { "emoji": "🚂", "x": 88, "y": 12, "size": 52, "alpha": 0.4 },
+      { "emoji": "🏛️", "x": 10, "y": 28, "size": 44, "alpha": 0.45 },
+      { "emoji": "🕹️", "x": 86, "y": 34, "size": 34, "alpha": 0.5 },
+      { "emoji": "🏍️", "x": 12, "y": 76, "size": 34, "alpha": 0.3 },
+      { "emoji": "💰", "x": 88, "y": 78, "size": 30, "alpha": 0.3 }
+    ]
+  },
+  "sound": true,
+  "ranking": {
+    "titulo": "¿QUIÉN RECAUDÓ MÁS EN EL REMATE?",
+    "titulos": [
+      "Gobernador del Martillo",
+      "Oficial de la Estación Belgrano",
+      "Comprador de arcades",
+      "Se quedó sin lancha"
+    ],
+    "unidad": "millones recaudados",
+    "chips": ["Los arcades del narco ya tienen dueño", "\"La impunidad se acabó\", dijo el gobernador"]
+  },
+  "outro": {
+    "whatHappened": "El Gobierno de Santa Fe remató 224 lotes de bienes secuestrados al delito por más de $1.645 millones en la Estación Belgrano: sexta edición del remate y récord de inscriptos, casi 9.000. Se fueron 91 motos, 80 autos, dos lanchas, 40 bicicletas, inmuebles y diez arcades retro — el lote más caro, una casa en Rosario a $76 millones. Lo recaudado indemniza a víctimas y financia más de 60 instituciones sociales.",
+    "quote": {
+      "text": "En la invencible provincia de Santa Fe, la impunidad se acabó",
+      "who": "Maximiliano Pullaro, gobernador de Santa Fe, en el remate",
+      "source": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml"
+    },
+    "moments": [
+      {
+        "emoji": "🏠",
+        "text": "El lote más caro: una casa en Rosario se vendió a $76 millones; después, la Hilux ($45M) y el Audi A6 ($29M)",
+        "source": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml"
+      },
+      {
+        "emoji": "🕹️",
+        "text": "Los diez arcades retro del narco, con base de $20.000, se vendieron entre $130.000 y $300.000",
+        "source": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml"
+      },
+      {
+        "emoji": "🎟️",
+        "text": "Casi 9.000 inscriptos, máximo histórico de la sexta edición del remate santafesino",
+        "source": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml"
+      },
+      {
+        "emoji": "🤲",
+        "text": "Lo recaudado indemniza a víctimas y financia más de 60 instituciones sociales",
+        "source": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml"
+      }
+    ],
+    "facts": [
+      "El Gobierno de Santa Fe subastó 224 lotes de bienes secuestrados al delito por más de $1.645 millones en la Estación Belgrano de la ciudad de Santa Fe: fue la sexta edición del remate y hubo casi 9.000 inscriptos, máximo histórico.",
+      "Entre los bienes: 91 motocicletas, 80 automóviles, dos lanchas, 40 bicicletas, inmuebles y diez máquinas arcade retro para restaurar — primera vez que se remataron objetos náuticos y recreativos.",
+      "Los lotes más caros: una casa en Rosario a $76 millones, una Toyota Hilux a $45 millones y un Audi A6 a $29 millones; los arcades, con base de $20.000, se vendieron entre $130.000 y $300.000.",
+      "Los bienes vienen de secuestros por narcotráfico, juego clandestino, corrupción y motochorros; lo recaudado indemniza a víctimas, financia más de 60 instituciones sociales y sostiene al organismo que custodia los elementos.",
+      "El gobernador Maximiliano Pullaro celebró: \"En la invencible provincia de Santa Fe, la impunidad se acabó\"."
+    ],
+    "fiction": "El martillo no recauda de verdad y nadie se queda con la casa de Rosario jugando: acá los bienes brotan del piso como topos. Los arcades del narco, los precios y la frase del gobernador son reales; la 'invencible provincia' es su frase, no un dato del juego. Lo de las víctimas ni se remata: es justamente lo que financia el remate real.",
+    "sources": [
+      {
+        "title": "Santa Fe subastó bienes del delito por más de $1.645 millones: desde una casa hasta lanchas y arcades",
+        "url": "https://www.perfil.com/noticias/sociedad/santa-fe-subasto-bienes-del-delito-por-mas-de-1645-millones-desde-una-casa-hasta-lanchas-y-arcades-a50-bgd.phtml",
+        "outlet": "Perfil",
+        "type": "media"
+      }
+    ]
+  }
+}

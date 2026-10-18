@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-10-18",
+  "pitch": {
+    "motor": "whack",
+    "nombre": "REMATA LO DEL CHORRO",
+    "chiste": "De la Estación Belgrano brotan los bienes del delito y los rematás a martillazos: los arcades del narco valen el doble que la casa de Rosario en puntos, cada golpe suma millones al fondo de las víctimas y noTouch: lo que es de las víctimas no se remata. El chiste: el martillo del remate ES el juego.",
+    "scoreChiste": 9
+  },
+  "umbrales": { "criterio": 6, "promedio": 7 },
+  "elegido": {
+    "n": 1,
+    "game": "whack",
+    "title": "REMATA LO DEL CHORRO",
+    "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 8, "fuentes": 9 },
+    "promedio": 8.75,
+    "pasa": true,
+    "nota": "La subasta es literalmente un whack con martillo de remate: cada target es un bien real con su valor de la nota (arcade, lancha, la casa de Rosario) y el noTouch tiene base fáctica (lo recaudado va a las víctimas).",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "whack",
+      "title": "REMATA LO DEL CHORRO",
+      "criterios": { "chisteJugable": 9, "punchline": 9, "acidez": 8, "fuentes": 9 },
+      "promedio": 8.75,
+      "pasa": true,
+      "nota": "La subasta es literalmente un whack con martillo de remate: cada target es un bien real con su valor de la nota (arcade, lancha, la casa de Rosario) y el noTouch tiene base fáctica (lo recaudado va a las víctimas).",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "whack",
+      "title": "EL LOTE MÁS CARO",
+      "criterios": { "chisteJugable": 7, "punchline": 9, "acidez": 8, "fuentes": 9 },
+      "promedio": 8.25,
+      "pasa": true,
+      "nota": "El dato más incómodo: los lotes top por precio exacto (casa $76M, Hilux $45M, Audi $29M). Punchline fino pero el chiste exige leer números; la variante 1 los juega mejor.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "whack",
+      "title": "224 LOTES EN 20 SEGUNDOS",
+      "criterios": { "chisteJugable": 7, "punchline": 6, "acidez": 8, "fuentes": 8 },
+      "promedio": 7.25,
+      "pasa": true,
+      "nota": "El extremo: el remate entero brotando a la vez. Tiene el vértigo del martillo pero los objetos se vuelven ruido: pierde el precio que hace reír.",
+      "factsDudosos": []
+    }
+  ]
+}
