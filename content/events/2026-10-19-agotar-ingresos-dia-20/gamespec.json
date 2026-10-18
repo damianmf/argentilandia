@@ -1,0 +1,137 @@
+{
+  "game": "runner",
+  "title": "LLEGAR AL 20",
+  "emoji": "👛📅",
+  "duration": 20,
+  "intro": "Sos un billete arrugado corriendo por el mes argentino. La pista se termina antes que la plata: el día 20 te espera con la boleta bajo el brazo.",
+  "player": {
+    "emoji": "👛",
+    "label": "El bolsillo del pueblo",
+    "image": "avatar.svg"
+  },
+  "prizes": [
+    {
+      "emoji": "💵",
+      "label": "Sueldo del 1",
+      "points": 100,
+      "weight": 3,
+      "note": "Recién cobrado, lleno de esperanzas y todavía inflado"
+    },
+    {
+      "emoji": "🎈",
+      "label": "Billete globito",
+      "points": 80,
+      "weight": 3,
+      "note": "Se desinfla a medida que corré: el poder de compra en tiempo real"
+    },
+    {
+      "emoji": "🛍️",
+      "label": "Bolsa del Día de la Madre",
+      "points": 90,
+      "weight": 2,
+      "note": "Quinto año seguido que cae: si la agarrás, sos una excepción estadística"
+    },
+    {
+      "emoji": "📚",
+      "label": "Librería (+3,4%)",
+      "points": 120,
+      "weight": 1,
+      "note": "El ÚNICO rubro que crece. La economía real argentina son lápices"
+    }
+  ],
+  "obstacles": [
+    {
+      "emoji": "🥤",
+      "label": "3 cuotas sin interés",
+      "kind": "duck",
+      "points": -80,
+      "weight": 3,
+      "note": "Vasito mordelón: te ofrece financiación y te saca muela"
+    },
+    {
+      "emoji": "💳",
+      "label": "Resumen de tarjeta",
+      "kind": "jump",
+      "points": -100,
+      "weight": 2,
+      "note": "El 56,2% se endeudó: la mayoría para comer, vos por querer pasar el muro con estilo"
+    },
+    {
+      "emoji": "🧾",
+      "label": "Tarifa de servicio",
+      "kind": "duck",
+      "points": -70,
+      "weight": 2,
+      "note": "El 21,3% de la deuda es de esto: llega silbando y se va con parte del billete"
+    },
+    {
+      "emoji": "📅",
+      "label": "El día 20 en persona",
+      "kind": "jump",
+      "points": -150,
+      "weight": 1,
+      "note": "El calendario villano con cara de cuota vencida: solo se lo pasa en fiaca"
+    }
+  ],
+  "meta": {
+    "punchline": "La meta es un muro con 'DÍA 20' pintado. Nadie lo salta: se pasa en fiaca, de costado, arrastrando el bolsillo.",
+    "acelerador": "Cuanto más cerca del día 20, más obstáculos de crédito aparecen: la brecha se cubre con financiación, no con consumo real."
+  },
+  "difficulty": 5,
+  "ranking": {
+    "titulo": "¿HASTA QUÉ DÍA DEL MES LLEGASTE?",
+    "titulos": [
+      "Ahorrista del 9,8% (mito urbano)",
+      "Sobreviviente del día 25",
+      "Llegó justo al 20 en fiaca",
+      "Quedó en la primera quincena",
+      "Financiado en 3 cuotas sin interés",
+      "Billetera vacía desde el día 8"
+    ],
+    "unidad": "días de mes aguantados"
+  },
+  "outro": {
+    "whatHappened": "Dos de cada tres argentinos (65,3%) agotan sus ingresos a más tardar el día 20 de cada mes, y el 38,9% no llega a terminar la primera quincena. Mientras tanto, las ventas pymes por el Día de la Madre cayeron 1,4% interanual: quinta caída consecutiva de la fecha. La brecha se cubre con crédito y promociones, no con consumo real, y por eso el comercio no repunta ni con las mamás de por medio.",
+    "quote": {
+      "text": "El 65,3% de los encuestados agota sus ingresos a más tardar el día 20 de cada mes",
+      "who": "Monitor de Opinión Pública de Zentrix Consultora, sobre 1.438 personas encuestadas",
+      "source": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml"
+    },
+    "moments": [
+      {
+        "emoji": "💳",
+        "text": "El 56,2% se endeudó en los últimos seis meses; el 55,1% de esa deuda fue para alimentación y salud",
+        "source": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml"
+      },
+      {
+        "emoji": "🎁",
+        "text": "Las ventas por el Día de la Madre cayeron 1,4% a precios constantes, con ticket promedio de $63.197 (CAME)",
+        "source": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml"
+      },
+      {
+        "emoji": "📉",
+        "text": "Electrodomésticos (-3,6%), perfumería (-3,2%) y celulares (-3,2%) lideraron las caídas; solo librería creció (+3,4%)",
+        "source": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml"
+      },
+      {
+        "emoji": "📅",
+        "text": "Entre menores de 40 años, el 72% se queda sin plata antes del día 20; en sectores de menores ingresos, el 83,3%",
+        "source": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml"
+      }
+    ],
+    "facts": [
+      "El 65,3% de los argentinos agota sus ingresos a más tardar el día 20 de cada mes (MOP/Zentrix, 1.438 casos, septiembre).",
+      "Las ventas minoristas pymes por el Día de la Madre cayeron 1,4% interanual a precios constantes: quinta caída consecutiva (CAME).",
+      "El 56,2% se endeudó en los últimos seis meses y el 81,8% considera que su salario pierde frente a la inflación."
+    ],
+    "fiction": "El juego inventa que el día 20 es un calendario con patas que te corre por la pista, que los billetes se desinflan como globitos y que el 'Modo Fiaca' existe. Lo que no es invento: los porcentajes de la encuesta y la caída de ventas son textualmente los del relevamiento. El muro del día 20 es metafórico; la billetera vacía, lamentablemente, no.",
+    "sources": [
+      {
+        "title": "El consumo no repunta: cayeron las ventas por el Día de la Madre y dos de cada tres argentinos agotan sus ingresos antes del día 20",
+        "url": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml",
+        "outlet": "Perfil",
+        "type": "media"
+      }
+    ]
+  }
+}

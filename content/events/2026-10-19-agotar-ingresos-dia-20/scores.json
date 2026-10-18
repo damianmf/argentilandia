@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-10-19",
+  "pitch": {
+    "motor": "runner",
+    "nombre": "LLEGAR AL 20",
+    "chiste": "Corrés como una billetera por el calendario del mes: la pista va del 1 al 30 y se pone cada vez más corta justo antes del día 20, donde te espera el calendario villano con cara de cuota. Agarrás billetes que se desinflan como globitos y esquivás vasitos de '3 cuotas sin interés' que te muerden. El punchline: la meta es un muro con 'DÍA 20' y la única forma de pasarlo es en fiaca.",
+    "scoreChiste": 9
+  },
+  "umbrales": {
+    "criterio": 6,
+    "promedio": 7
+  },
+  "elegido": {
+    "n": 3,
+    "game": "runner",
+    "title": "LLEGAR AL 20",
+    "criterios": {
+      "chisteJugable": 9,
+      "punchline": 9,
+      "acidez": 8,
+      "fuentes": 9
+    },
+    "promedio": 8.75,
+    "pasa": true,
+    "nota": "La pista que se acorta hacia el día 20 literaliza el dato durísimo (65,3%) en mecánica pura: la deuda muerde, la meta se pasa en fiaca y la ficción declara sus inventos con trazabilidad completa.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "runner",
+      "title": "LLEGAR AL 20",
+      "criterios": {
+        "chisteJugable": 8,
+        "punchline": 6,
+        "acidez": 8,
+        "fuentes": 5
+      },
+      "promedio": 6.75,
+      "pasa": false,
+      "nota": "El chiste del calendario que acorta es jugable y la billetera-perseguida funciona, pero el candidato perdió los billetes coleccionables del pitch (todo son obstáculos negativos, no hay decisión) y la 'quote' es un dato de encuesta parafraseado, no una cita textual que alguien haya dicho: falla la regla de LA FRASE DEL DÍA y la trazabilidad del quote tal como la pide la biblia.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "runner",
+      "title": "LLEGAR AL 20",
+      "criterios": {
+        "chisteJugable": 8,
+        "punchline": 8,
+        "acidez": 8,
+        "fuentes": 7
+      },
+      "promedio": 7.75,
+      "pasa": true,
+      "nota": "El chiste de la billetera corriendo hacia el día 20 es directo y jugable, y el dato incómodo (55% de deuda para comida) es obstáculo con etiqueta; pero al runner le faltan premios (2–4 obligatorios): solo obstáculos negativos elimina las decisiones, y no hay quote del día.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "runner",
+      "title": "LLEGAR AL 20",
+      "criterios": {
+        "chisteJugable": 9,
+        "punchline": 9,
+        "acidez": 8,
+        "fuentes": 9
+      },
+      "promedio": 8.75,
+      "pasa": true,
+      "nota": "La pista que se acorta hacia el día 20 literaliza el dato durísimo (65,3%) en mecánica pura: la deuda muerde, la meta se pasa en fiaca y la ficción declara sus inventos con trazabilidad completa.",
+      "factsDudosos": []
+    }
+  ]
+}

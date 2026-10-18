@@ -1,0 +1,44 @@
+{
+  "id": "2026-10-19-agotar-ingresos-dia-20",
+  "date": "2026-10-19",
+  "event": "Dos de cada tres argentinos agotan la plata antes del día 20 y las ventas por el Día de la Madre cayeron por quinto año seguido",
+  "category": "economia",
+  "actors": [
+    "CAME (Confederación Argentina de la Mediana Empresa)",
+    "Zentrix Consultora (Monitor de Opinión Pública)",
+    "Consumidores y comercios minoristas pymes"
+  ],
+  "conflict": "El bolsillo contra el calendario: los ingresos no alcanzan para el mes completo (el 65,3% se queda sin plata a más tardar el día 20) y hasta una fecha de consumo tan fuerte como el Día de la Madre cae 1,4% por quinto año consecutivo, porque la brecha se cubre con crédito y promociones, no con consumo real.",
+  "facts": [
+    "Las ventas minoristas pymes por el Día de la Madre cayeron 1,4% interanual a precios constantes: quinta caída consecutiva de esta fecha. Ticket promedio: $63.197 (CAME).",
+    "Los rubros que más cayeron: electrodomésticos y audio/video -3,6%, cosméticos y perfumería -3,2%, periféricos y celulares -3,2%, calzado y marroquinería -2,2%. Solo crecieron librería (+3,4%) e indumentaria (+0,1%).",
+    "El 65,3% de los encuestados agota sus ingresos a más tardar el día 20 de cada mes; el 38,9% no llega a terminar la primera quincena; solo el 9,8% cubre gastos y además ahorra. Entre menores de 40 años sube al 72% y en sectores de menores ingresos al 83,3% (MOP/Zentrix, 1.438 personas, 22-30 de septiembre).",
+    "El 56,2% se endeudó en los seis meses previos: el 55,1% de esa deuda fue para alimentación y salud, el 21,3% para tarifas y servicios; solo el 11,8% para bienes durables. El 81,8% considera que su salario pierde frente a la inflación.",
+    "En juego: si el bolsillo no llega al día 20, la brecha se cubre con crédito caro y financiación, no con más consumo — por eso el comercio no repunta ni con el Día de la Madre de por medio.",
+    "El chiste vence HOY: el juego se publica el 19/10, a un paso del día 20, el punto de quiebre del mes argentino."
+  ],
+  "sources": [
+    {
+      "title": "El consumo no repunta: cayeron las ventas por el Día de la Madre y dos de cada tres argentinos agotan sus ingresos antes del día 20",
+      "medio": "Perfil",
+      "url": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml"
+    }
+  ],
+  "virality": 9,
+  "gameability": 9,
+  "humorPotential": 8,
+  "shareability": 9,
+  "chisteCentral": "En Argentina el mes tiene 20 días y diez de sobrevivencia: el chiste vence HOY, 19/10, a un paso del día D.",
+  "personajes": [
+    {
+      "rol": "jugador",
+      "descripcion": "El bolsillo: una billetera de caricatura que se va vaciando y arrugando a lo largo del mes",
+      "emoji": "👛"
+    },
+    {
+      "rol": "villano",
+      "descripcion": "El día 20 en persona: un calendario antropomórfico con cara de cuota vencida que persigue al bolsillo",
+      "emoji": "📅"
+    }
+  ]
+}

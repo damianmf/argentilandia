@@ -1,0 +1,226 @@
+{
+  "fecha": "2026-10-19",
+  "modo": "full-auto",
+  "estado": "APROBADO_AUTOMATICO",
+  "preseleccion": [
+    {
+      "titular": "El consumo no repunta: cayeron las ventas por el Día de la Madre y dos de cada tres argentinos agotan sus ingresos antes del día 20",
+      "url": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml",
+      "outlet": "Perfil",
+      "scores": {
+        "actualidad": 9,
+        "jugabilidad": 9,
+        "humor": 8,
+        "reconocibilidad": 10,
+        "shareability": 9,
+        "explicabilidad": 8
+      },
+      "motivo": "Reincidente que creció: CAME confirma caída del 1,4% y cinco años de bajas, y el chiste vence HOY (19/10): sobrevivir con la plata hasta el día 20 es mecánica de sobrevivencia pura."
+    },
+    {
+      "titular": "Advierten que los servicios impiden que baje la inflación, aun con una economía debilitada y el dólar planchado",
+      "url": "https://www.lanacion.com.ar/economia/advierten-que-los-servicios-impiden-que-baje-la-inflacion-aun-con-una-economia-debilitada-y-el-dolar-nid18102026/",
+      "outlet": "La Nación",
+      "scores": {
+        "actualidad": 8,
+        "jugabilidad": 8,
+        "humor": 8,
+        "reconocibilidad": 8,
+        "shareability": 8,
+        "explicabilidad": 8
+      },
+      "motivo": "La factura que persigue y no se puede esquivar aunque la inflación frene: clúster económico distinto al ganador, mecánica de esquivar clara."
+    },
+    {
+      "titular": "Milei viaja a España para apoyar a la ultraderecha, pero analistas advierten que podría jugarle en contra",
+      "url": "https://www.lanacion.com.ar/politica/milei-viaja-a-espana-para-apoyar-a-la-ultraderecha-pero-analistas-advierten-que-podria-jugarle-en-nid18102026/",
+      "outlet": "La Nación",
+      "scores": {
+        "actualidad": 8,
+        "jugabilidad": 7,
+        "humor": 7,
+        "reconocibilidad": 8,
+        "shareability": 7,
+        "explicabilidad": 8
+      },
+      "motivo": "Cargo público en acto político: caricatura de atributos válida, el 'apoyo que juega en contra' da mecánica de auto-gol, pero pierde contra el fin de mes en picantez."
+    },
+    {
+      "titular": "El Reino Unido analiza bloquear el ingreso argentino a la OCDE y el Tipat, y Chile avanza con la ruta naviera a Malvinas",
+      "url": "https://www.lanacion.com.ar/politica/el-reino-unido-analiza-bloquear-el-ingreso-argentino-a-la-ocde-y-el-tipat-y-chile-avanza-con-la-ruta-nid18102026/",
+      "outlet": "La Nación",
+      "scores": {
+        "actualidad": 7,
+        "jugabilidad": 7,
+        "humor": 7,
+        "reconocibilidad": 7,
+        "shareability": 7,
+        "explicabilidad": 8
+      },
+      "motivo": "Puerta que se cierra en la cara y bote chileno rodeando la cuestión Malvinas: mecánica de portero jugable, pero tema algo frío para el share del día."
+    }
+  ],
+  "ganador": {
+    "indice": 1,
+    "titular": "El consumo no repunta: cayeron las ventas por el Día de la Madre y dos de cada tres argentinos agotan sus ingresos antes del día 20",
+    "url": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml",
+    "outlet": "Perfil",
+    "scores": {
+      "actualidad": 9,
+      "jugabilidad": 9,
+      "humor": 8,
+      "reconocibilidad": 10,
+      "shareability": 9,
+      "explicabilidad": 8
+    },
+    "motivo": "Reincidente que creció: CAME confirma caída del 1,4% y cinco años de bajas, y el chiste vence HOY (19/10): sobrevivir con la plata hasta el día 20 es mecánica de sobrevivencia pura."
+  },
+  "event": {
+    "id": "2026-10-19-agotar-ingresos-dia-20",
+    "date": "2026-10-19",
+    "event": "Dos de cada tres argentinos agotan la plata antes del día 20 y las ventas por el Día de la Madre cayeron por quinto año seguido",
+    "category": "economia",
+    "actors": [
+      "CAME (Confederación Argentina de la Mediana Empresa)",
+      "Zentrix Consultora (Monitor de Opinión Pública)",
+      "Consumidores y comercios minoristas pymes"
+    ],
+    "conflict": "El bolsillo contra el calendario: los ingresos no alcanzan para el mes completo (el 65,3% se queda sin plata a más tardar el día 20) y hasta una fecha de consumo tan fuerte como el Día de la Madre cae 1,4% por quinto año consecutivo, porque la brecha se cubre con crédito y promociones, no con consumo real.",
+    "facts": [
+      "Las ventas minoristas pymes por el Día de la Madre cayeron 1,4% interanual a precios constantes: quinta caída consecutiva de esta fecha. Ticket promedio: $63.197 (CAME).",
+      "Los rubros que más cayeron: electrodomésticos y audio/video -3,6%, cosméticos y perfumería -3,2%, periféricos y celulares -3,2%, calzado y marroquinería -2,2%. Solo crecieron librería (+3,4%) e indumentaria (+0,1%).",
+      "El 65,3% de los encuestados agota sus ingresos a más tardar el día 20 de cada mes; el 38,9% no llega a terminar la primera quincena; solo el 9,8% cubre gastos y además ahorra. Entre menores de 40 años sube al 72% y en sectores de menores ingresos al 83,3% (MOP/Zentrix, 1.438 personas, 22-30 de septiembre).",
+      "El 56,2% se endeudó en los seis meses previos: el 55,1% de esa deuda fue para alimentación y salud, el 21,3% para tarifas y servicios; solo el 11,8% para bienes durables. El 81,8% considera que su salario pierde frente a la inflación.",
+      "En juego: si el bolsillo no llega al día 20, la brecha se cubre con crédito caro y financiación, no con más consumo — por eso el comercio no repunta ni con el Día de la Madre de por medio.",
+      "El chiste vence HOY: el juego se publica el 19/10, a un paso del día 20, el punto de quiebre del mes argentino."
+    ],
+    "sources": [
+      {
+        "title": "El consumo no repunta: cayeron las ventas por el Día de la Madre y dos de cada tres argentinos agotan sus ingresos antes del día 20",
+        "medio": "Perfil",
+        "url": "https://www.perfil.com/noticias/economia/el-consumo-no-repunta-cayeron-las-ventas-por-el-dia-de-la-madre-y-dos-de-cada-tres-argentinos-agotan-sus-ingresos-antes-del-dia-20.phtml"
+      }
+    ],
+    "virality": 9,
+    "gameability": 9,
+    "humorPotential": 8,
+    "shareability": 9,
+    "chisteCentral": "En Argentina el mes tiene 20 días y diez de sobrevivencia: el chiste vence HOY, 19/10, a un paso del día D.",
+    "personajes": [
+      {
+        "rol": "jugador",
+        "descripcion": "El bolsillo: una billetera de caricatura que se va vaciando y arrugando a lo largo del mes",
+        "emoji": "👛"
+      },
+      {
+        "rol": "villano",
+        "descripcion": "El día 20 en persona: un calendario antropomórfico con cara de cuota vencida que persigue al bolsillo",
+        "emoji": "📅"
+      }
+    ]
+  },
+  "acidez": "🟡 amarillo suave — sátira sobre la economía del bolsillo (dato objetivo, sin víctimas concretas): el blanco es el poder adquisitivo y el comercio, no una persona.",
+  "pitches": [
+    {
+      "motor": "runner",
+      "nombre": "LLEGAR AL 20",
+      "chiste": "Corrés como una billetera por el calendario del mes: la pista va del 1 al 30 y se pone cada vez más corta justo antes del día 20, donde te espera el calendario villano con cara de cuota. Agarrás billetes que se desinflan como globitos y esquivás vasitos de '3 cuotas sin interés' que te muerden. El punchline: la meta es un muro con 'DÍA 20' y la única forma de pasarlo es en fiaca.",
+      "scoreChiste": 9
+    },
+    {
+      "motor": "catcher",
+      "nombre": "EL TICKET PROMEDIO",
+      "chiste": "Sos un comercio pyme el Día de la Madre: atrapás clientes con billeteras agujereadas mientras llueven regalos con etiqueta de -1,4% que se te caen de las manos. Los ítems que más valen (electrodomésticos, perfumería) pesan el triple y se te escapan; lo único que agarrás fácil es un librito al +3,4%. Punchline: al final CAME te da un trofeo de plástico por 'quinta caída consecutiva'.",
+      "scoreChiste": 8
+    },
+    {
+      "motor": "dodge",
+      "nombre": "ESQUIVÁ CUOTAS",
+      "chiste": "Estás parado en el día 19 con la plata justa y llueven desde arriba cuotas, promos bancarias y sobres de 'financiación' que tenés que esquivar porque cada uno te saca billete. Si te agarran tres, aparecés endeudado al 56,2% y todo se mueve más rápido. Punchline: el único objeto que conviene agarrar es un libro, que da vida extra — dato real de librería +3,4%.",
+      "scoreChiste": 7
+    }
+  ],
+  "pitchElegido": 0,
+  "descartes": [
+    {
+      "titular": "Hotesur-Los Sauces: el golpe judicial que complica los planes electorales de los Kirchner",
+      "url": "https://www.clarin.com/politica/hotesur-los-sauces-golpe-judicial-complica-planes-electorales-kirchner_0_IyefLUUVpb.html",
+      "razon": "Tercer día del clúster judicial (Lijo 17/10), ayer quedó floja en jugabilidad (6) y repetiría el chiste de expediente sin giro nuevo HOY."
+    },
+    {
+      "titular": "Las polémicas de Racing-Independiente: las decisiones que tomó Facundo Tello",
+      "url": "https://www.lanacion.com.ar/deportes/futbol/las-polemicas-de-racing-independiente-las-decisiones-que-tomo-facundo-tello-nid18102026/",
+      "razon": "El clásico ya salió cubierto por el juego de fútbol del 16/10 (variedad) y el chiste del árbitro repite mecánica."
+    },
+    {
+      "titular": "Los hinchas de Racing insultaron otra vez a Milito",
+      "url": "https://www.lanacion.com.ar/deportes/futbol/los-hinchas-de-racing-insultaron-otra-vez-a-milito-mientras-el-presidente-busca-dt-para-2027-nid18102026/",
+      "razon": "Insultos a persona concreta como materia: la línea editorial prohíbe el ensañamiento (humor 3)."
+    },
+    {
+      "titular": "Mauricio Macri mostró fotos de los 15 de Antonia",
+      "url": "https://www.lanacion.com.ar/politica/mauricio-macri-mostro-fotos-de-los-15-de-antonia-el-vestido-bordado-el-baile-y-los-detalles-de-la-nid18102026/",
+      "razon": "Fiesta privada de una menor de edad: jamás materia de juego (jugabilidad 3)."
+    },
+    {
+      "titular": "Ante la mejoría de Mirtha Legrand, Llaryora propuso celebrar sus 100 años en el Kempes",
+      "url": "https://www.lanacion.com.ar/politica/ante-la-mejoria-de-mirtha-legrand-martin-llaryora-propuso-celebrar-sus-100-anos-en-el-estadio-kempes-nid18102026/",
+      "razon": "Segundo día de la misma propuesta (jugabilidad 5) y gira sobre la salud de una persona real: puede leerse como ensañamiento."
+    },
+    {
+      "titular": "Un sacerdote murió aplastado por una cruz durante una misa en Ecuador",
+      "url": "https://www.ambito.com/mundo/conmocion-ecuador-horror-un-sacerdote-que-murio-aplastado-una-cruz-gigante-una-misa-n6335035",
+      "razon": "Muerte real (🔴 rojo): no es jugable ni con violencia de caricatura."
+    },
+    {
+      "titular": "Nuevos disturbios en Milán: saqueos y enfrentamientos en el centro",
+      "url": "https://www.lanacion.com.ar/el-mundo/nuevos-disturbios-en-italia-saqueos-destrozos-y-enfrentamientos-con-la-policia-en-el-centro-de-milan-nid18102026/",
+      "razon": "Violencia real en curso con comercios destruidos (🔴 rojo-adyacente): no es caricaturizable."
+    },
+    {
+      "titular": "Desapareció una docente en Corrientes y la buscan hace 10 días",
+      "url": "https://www.ambito.com/informacion-general/desaparecio-una-docente-una-escuela-rural-corrientes-y-la-buscan-hace-10-dias-n6335010",
+      "razon": "Desaparición real en curso (🔴 rojo): sin excepción, segundo día en el radar."
+    },
+    {
+      "titular": "Alerta roja en Chaco por la crecida del Paraná: podría llegar a los 7,50 metros",
+      "url": "https://www.ambito.com/informacion-general/alerta-roja-chaco-la-crecida-del-rio-parana-advierten-que-podria-llegar-los-750-metros-n6335041",
+      "razon": "Evacuados potenciales (🔴 rojo-adyacente): tercer día que se descarta por el mismo motivo."
+    },
+    {
+      "titular": "Un comisario a juicio por agredir a médicos en Chaco",
+      "url": "https://www.lanacion.com.ar/seguridad/un-comisario-a-juicio-acusado-de-agredir-a-un-grupo-de-medicos-que-realizaba-atencion-solidaria-en-nid18102026/",
+      "razon": "Categoría police prohibida por variedad (último juego 18/10) y víctimas reales agredidas (humor 2)."
+    },
+    {
+      "titular": "La semana negra del juez Salmain: irá a juicio penal y en el jury pidieron su destitución",
+      "url": "https://www.perfil.com/noticias/policia/la-semana-negra-del-juez-salmain-ira-a-juicio-en-la-causa-penal-y-en-el-jury-pidieron-su-destitucion.phtml",
+      "razon": "Categoría police prohibida por variedad; además temática judicial ya muy usada esta semana."
+    },
+    {
+      "titular": "El Dibu Martínez llevó tranquilidad tras su operación y anticipó su regreso",
+      "url": "https://www.ambito.com/deportes/el-dibu-martinez-llevo-tranquilidad-luego-su-operacion-y-anticipo-su-regreso-n6335034",
+      "razon": "Salud real de una persona concreta (🔴 rojo-adyacente) y sports sin chiste nuevo (jugabilidad 4)."
+    },
+    {
+      "titular": "La nueva adquisición de Messi: un catamarán de u$s9 millones",
+      "url": "https://www.ambito.com/negocios/la-nueva-adquisicion-millonaria-messi-asi-es-el-lujoso-catamaran-que-encargo-us9-millones-n6334519",
+      "razon": "Vida privada sin giro nuevo: el chiste 'lancha' ya lo usó la subasta de Santa Fe de ayer (jugabilidad 5)."
+    },
+    {
+      "titular": "¿Cree que su sueldo le gana a la inflación? El 'no' fue 81 a 13%",
+      "url": "https://www.perfil.com/noticias/exitoina/su-sueldo-le-gana-a-la-inflacion-hasta-que-dia-del-mes-le-alcanza.phtml",
+      "razon": "Mismo clúster del ganador (plata que no alcanza): queda como segundo plato para otro día."
+    }
+  ],
+  "memoria": {
+    "consultadas": [
+      "2026-10-17",
+      "2026-10-18"
+    ],
+    "reincidente": true,
+    "segundaJornada": null,
+    "veredictosInyectados": 0
+  },
+  "advertencias": []
+}
