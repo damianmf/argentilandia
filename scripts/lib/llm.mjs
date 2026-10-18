@@ -40,7 +40,17 @@ async function chat(messages, { temperature = 0.8, maxTokens = 8192, timeoutMs =
   const response = await fetch(`${baseUrl}/chat/completions`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model, messages, temperature, max_tokens: maxTokens }),
+    // GLM-4.6 es de razonamiento: sin `thinking: disabled` quema el presupuesto
+    // de tokens pensando y devuelve content vacío (fallo del 18/10). El pipeline
+    // es JSON determinista con validación y reintentos — que no piense. Si algún
+    // día se cambia a un proveedor que rechace el campo, sacar esta línea.
+    body: JSON.stringify({
+      model,
+      messages,
+      temperature,
+      max_tokens: maxTokens,
+      thinking: { type: 'disabled' },
+    }),
     signal: AbortSignal.timeout(timeoutMs),
   });
   if (!response.ok) {
@@ -52,9 +62,13 @@ async function chat(messages, { temperature = 0.8, maxTokens = 8192, timeoutMs =
     throw new Error(`LLM HTTP ${response.status}: ${body.slice(0, 300)}${hint}`);
   }
   const json = await response.json();
-  const content = json.choices?.[0]?.message?.content;
+  const choice = json.choices?.[0];
+  const content = choice?.message?.content;
   if (typeof content !== 'string' || content.length === 0) {
-    throw new Error('respuesta del LLM vacía o con formato inesperado');
+    const keys = choice?.message ? Object.keys(choice.message).join(',') : 'sin message';
+    throw new Error(
+      `respuesta del LLM vacía o con formato inesperado (finish_reason: ${choice?.finish_reason ?? 's/d'}, message: ${keys})`,
+    );
   }
   return content;
 }
@@ -93,7 +107,9 @@ export async function chatJSON({
   validar,
   retries = 2,
   temperature = 0.8,
-  maxTokens = 4096,
+  // 8192, mismo piso que chat(): con 4096 el draft salía con content vacío
+  // (el fix de maxTokens del 12/10 no llegaba acá).
+  maxTokens = 8192,
 } = {}) {
   const messages = [];
   if (system) messages.push({ role: 'system', content: system });
