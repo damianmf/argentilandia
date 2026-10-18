@@ -24,15 +24,15 @@ function loadDotEnv() {
 
 export function llmConfig() {
   loadDotEnv();
-  const baseUrl = process.env.LLM_BASE_URL ?? 'https://api.z.ai/api/paas/v4';
-  const apiKey = process.env.LLM_API_KEY;
-  const model = process.env.LLM_MODEL ?? 'glm-4.6';
+  const baseUrl = (process.env.LLM_BASE_URL || 'https://api.z.ai/api/paas/v4').trim();
+  const apiKey = (process.env.LLM_API_KEY ?? '').trim();
+  const model = (process.env.LLM_MODEL || 'glm-4.6').trim();
   if (!apiKey) {
     throw new Error(
       'Falta LLM_API_KEY (env o .env en la raíz). Copiá .env.example y pegá tu key de Z.ai.',
     );
   }
-  return { baseUrl: baseUrl.replace(/\/$/, ''), apiKey, model };
+  return { baseUrl, apiKey, model };
 }
 
 async function chat(messages, { temperature = 0.8, maxTokens = 8192, timeoutMs = 120_000 } = {}) {
@@ -45,7 +45,11 @@ async function chat(messages, { temperature = 0.8, maxTokens = 8192, timeoutMs =
   });
   if (!response.ok) {
     const body = await response.text().catch(() => '');
-    throw new Error(`LLM HTTP ${response.status}: ${body.slice(0, 300)}`);
+    const hint =
+      response.status === 401
+        ? ' — revisá que la key sea válida para este endpoint (las keys de plan también vencen) y que el secret o el .env no tengan comillas ni saltos de línea.'
+        : '';
+    throw new Error(`LLM HTTP ${response.status}: ${body.slice(0, 300)}${hint}`);
   }
   const json = await response.json();
   const content = json.choices?.[0]?.message?.content;
