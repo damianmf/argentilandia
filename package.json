@@ -12,7 +12,8 @@
     "radar": "node scripts/radar.mjs",
     "index": "node scripts/build-index.mjs",
     "backend:setup": "node scripts/configurar-backend.mjs",
-    "jornada": "node scripts/jornada.mjs"
+    "jornada": "node scripts/jornada.mjs",
+    "pack": "node scripts/pack-difusion.mjs"
   },
   "dependencies": {
     "phaser": "^3.90.0",

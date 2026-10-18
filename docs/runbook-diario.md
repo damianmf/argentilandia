@@ -55,6 +55,11 @@ La línea `RESUMEN: {...}` del final es el contrato de reporte del cron.
 ## Qué hace el humano (auditar, ~2 minutos por día)
 
 - Leer el reporte de las 9:00 y, si querés, jugar la web del día.
+- **Difundir (~5 minutos)**: la jornada deja `content/events/<id>/difusion.md`
+  (pack de difusión: mensaje de WhatsApp, post de X y un comentario por cada
+  outlet fuente de la nota). Se copia y pega a mano; las reglas de oro
+  anti-spam (un comentario por outlet, quién queda quemado 7 días, tope de 10
+  minutos) van dentro del pack. Nada se postea automático.
 - **Auditar**: `content/radar/<fecha>/seleccion.json` (por qué esa noticia y no
   otra, scores de los 6 criterios, acidez declarada) y
   `content/events/<id>/scores.json` (los N candidatos y sus veredictos).
@@ -82,8 +87,13 @@ La línea `RESUMEN: {...}` del final es el contrato de reporte del cron.
 - `APROBACION=on`: el pipeline corta tras el draft (`ESPERANDO_APROBACION`,
   exit 2) y la jornada continúa cuando alguien complete la generación a mano.
 - `N_CANDIDATOS`: candidatos por jornada (default 3).
-- `SITE_URL`: URL pública del sitio (default: la workers.dev). La usa el draft
-  para bajar los veredictos del último juego; si no responde, sigue sin ellos.
+- `SITE_URL`: URL pública del sitio (default: la workers.dev; desde el 18/10
+  `argentilandia.actualidad.workers.dev` — cambio de subdominio en deploy.md).
+  La usa el draft para bajar los veredictos del último juego; si no responde,
+  sigue sin ellos.
+- `CLOUDFLARE_WEB_ANALYTICS_TOKEN` (en los build settings del dashboard): el
+  beacon de Web Analytics ya está cableado en el build; con la variable
+  presente se inyecta solo. Pasos para obtener el token: deploy.md.
 
 ## Backend de veredictos (comentarios + ranking)
 

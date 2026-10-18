@@ -107,6 +107,12 @@ if (run('npm', ['run', 'index']) !== 0) {
   terminar({ estado: 'FALLO_INDEX' }, 1);
 }
 
+// 6.5 Pack de difusión (no bloqueante: si falla, la jornada igual se publica)
+console.log('— pack de difusión —');
+if (run('node', ['scripts/pack-difusion.mjs', fecha]) !== 0) {
+  console.warn('⚠ pack de difusión falló; la publicación sigue igual');
+}
+
 const resumen = {
   estado: 'PUBLICADA',
   evento: idEvento,

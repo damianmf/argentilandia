@@ -27,7 +27,9 @@ pipeline full-auto con dos pasos todavía en sesión (draft y pasada 2).
 teléfono, con tarjeta rica al compartir, sin nada corriendo en tu máquina.
 
 1. [x] **Hosting estático**: VIVO desde el 11/10 en
-   https://juego-de-la-actualidad.dami-fontenla.workers.dev — Cloudflare
+   https://argentilandia.actualidad.workers.dev (subdominio `actualidad` desde
+   el 18/10: fuera el nombre personal de la URL; el cambio es de dashboard,
+   pasos en docs/deploy.md) — Cloudflare
    **Workers con assets estáticos** (no Pages): repo GitHub público
    (damianmf/juego-de-la-actualidad), build `npm run build`, deploy
    `npx wrangler deploy` guiado por `wrangler.jsonc` (assets-only, 404-page).

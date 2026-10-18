@@ -99,8 +99,8 @@ bindings (D1 + assets) viajan con la config commiteada, así que la base de
 veredictos no se toca. Lo que quedó hecho desde la CLI:
 
 - `wrangler.jsonc` `name` → `argentilandia`; deploy local con
-  `SITE_URL=https://argentilandia.dami-fontenla.workers.dev npm run build &&
-  npx wrangler deploy`. Verificado: juego, `/api` (misma D1) y OG absoluto.
+  `SITE_URL=<la workers.dev de entonces> npm run build && npx wrangler deploy`.
+  Verificado: juego, `/api` (misma D1) y OG absoluto.
 - El worker viejo (`juego-de-la-actualidad`) siguió en pie durante la
   transición.
 
@@ -114,3 +114,34 @@ Pendientes del humano (dashboards):
    sola al dominio nuevo.
 4. [x] Worker viejo borrado (humano, 13/10). El dominio viejo responde 404:
    los links compartidos antes del 12/10 quedaron afuera. **Migración cerrada.**
+
+## Cambio de subdominio (18/10): fuera el nombre personal de la URL
+
+La URL llevaba el nombre real del humano (`argentilandia.dami-fontenla
+.workers.dev`) y el sitio está por salir a círculos reales: el nombre en la URL
+de cada share no era aceptable. La nueva dirección es
+**https://argentilandia.actualidad.workers.dev**.
+
+Lo que dijo la API: el subdominio workers.dev se registra una vez por cuenta y
+`PUT /accounts/<id>/workers/subdomain` lo rechaza con `10036 "Account already
+has an associated subdomain"` — no se puede renombrar por API. El camino
+soportado es el dashboard (Workers & Pages → **Change** junto a *Your
+subdomain*). Si el dashboard también rechaza el cambio, queda soporte de
+Cloudflare o una cuenta nueva (hoy es barata: D1 vacía, todo lo demás vive en
+el repo y los secrets de GitHub).
+
+Pendientes del humano por el cambio (30 segundos + 2 minutos):
+
+1. [ ] Dashboard → Workers & Pages → Change subdominio → `actualidad` (con esa
+   elección la URL final queda idéntica aunque después se migre de cuenta).
+2. [ ] Build settings de `argentilandia`: actualizar la variable `SITE_URL` al
+   dominio nuevo (la vieja sigue ahí del 12/10) y re-deployar — sin esto los
+   OG salen con la URL muerta.
+3. [ ] Web Analytics (Etapa 1.5, pendiente desde siempre): dashboard → Web
+   Analytics → Add a site → host `argentilandia.actualidad.workers.dev` →
+   copiar el token a la variable de build `CLOUDFLARE_WEB_ANALYTICS_TOKEN` y
+   re-deployar. El beacon ya está cableado en `build-site.mjs`: con la variable
+   presente, se inyecta solo.
+
+Los links compartidos con el dominio viejo (los había: cero) mueren con el
+cambio — con 0 partidas registradas, el costo real es nulo.
