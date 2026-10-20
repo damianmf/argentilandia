@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-10-20",
+  "pitch": {
+    "motor": "catcher",
+    "nombre": "MOLINETE ABIERTO",
+    "chiste": "Sos el andén de la B con todos los molinetes rotos: le cae de todo de arriba — pasajeros que viajan gratis, molinetes sueltos, boletas de sanción de Emova y, de a ratos, un submarino azul que baja a ver qué pasó. Agarrás pasajeros y sumás viajantes; si agarrás la boleta de sanción, perdés la 'paz social' y se corta la línea. Punchline: el único subte lleno de gente es el que no anda.",
+    "scoreChiste": 9
+  },
+  "umbrales": {
+    "criterio": 6,
+    "promedio": 7
+  },
+  "elegido": {
+    "n": 2,
+    "game": "catcher",
+    "title": "MOLINETE ABIERTO",
+    "criterios": {
+      "chisteJugable": 9,
+      "punchline": 9,
+      "acidez": 8,
+      "fuentes": 6
+    },
+    "promedio": 8,
+    "pasa": true,
+    "nota": "El chiste (atrapar lo que viaja gratis como el andén) es directo, está en los objetos y el punchline es de los buenos; baja fuentes porque la URL de la quote no figura en el event (solo 'fuente: Ámbito') y el validador exige trazabilidad carácter por carácter.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "catcher",
+      "title": "MOLINETE ABIERTO",
+      "criterios": {
+        "chisteJugable": 8,
+        "punchline": 6,
+        "acidez": 8,
+        "fuentes": 5
+      },
+      "promedio": 6.75,
+      "pasa": false,
+      "nota": "El chiste del andén que atrapa viajantes gratis es jugable y la quote está trazada, pero el catcher quedó sin mecánica de evasión (la boleta que 'corta la línea' del pitch no existe en objetos, todo suma) y un fact inventa que 'la CGT habla de criminalización de la protesta', que no está en la fuente: dudoso.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "catcher",
+      "title": "MOLINETE ABIERTO",
+      "criterios": {
+        "chisteJugable": 9,
+        "punchline": 9,
+        "acidez": 8,
+        "fuentes": 6
+      },
+      "promedio": 8,
+      "pasa": true,
+      "nota": "El chiste (atrapar lo que viaja gratis como el andén) es directo, está en los objetos y el punchline es de los buenos; baja fuentes porque la URL de la quote no figura en el event (solo 'fuente: Ámbito') y el validador exige trazabilidad carácter por carácter.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "catcher",
+      "title": "MOLINETE ABIERTO",
+      "criterios": {
+        "chisteJugable": 7,
+        "punchline": 6,
+        "acidez": 8,
+        "fuentes": 8
+      },
+      "promedio": 7.25,
+      "pasa": true,
+      "nota": "Sí: la premisa del andén bombardeado por la protesta es clara y el submarino azul es buen punchline jugable, pero el pitch prometía que agarrar la boleta de sanción corta la línea y el candidato no tiene ningún objeto negativo — catcher todo-positivo pierde la mitad del chiste; sumá la boleta de Emova con puntos negativos y el corte de línea para redondear.",
+      "factsDudosos": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "2026-10-20-paro-total-subtes",
+  "date": "2026-10-20",
+  "event": "Paro total de subtes: liberaron a Néstor Segovia y otros dos metrodelegados siguen detenidos",
+  "category": "conflicto-laboral",
+  "actors": [
+    "Metrodelegados (AGTSyP)",
+    "Emova (concesionaria del subte)",
+    "Gobierno de la Ciudad de Buenos Aires (Jorge Macri)",
+    "Policía de la Ciudad",
+    "CGT",
+    "Justicia porteña (Unidad de Flagrancia Norte)"
+  ],
+  "summary": "Las seis líneas del subte y el Premetro están paralizadas desde las 10 por tiempo indeterminado, después de que la Policía de la Ciudad detuviera a tres metrodelegados en la estación Juan Manuel de Rosas (línea B), donde habían abierto molinetes y una puerta de emergencia para que pasajeros viajaran sin pagar, en reclamo por una sanción de Emova a un trabajador. Néstor Segovia quedó liberado, pero Claudio Dellecarbonara y Facundo Heredia siguen detenidos y comparecen este miércoles ante la Justicia por resistencia y atentado a la autoridad. La CGT habló de criminalización de la protesta; Jorge Macri, desde España, respaldó el operativo: 'el que bloquea un servicio esencial va preso'.",
+  "conflict": "Pulso por qué rige en el subte: si el servicio es 'esencial' y las medidas de fuerza pueden terminar con delegados presos (posición del Gobierno porteño) o si valen el derecho de huelga del artículo 14 bis y los convenios 87 y 98 de la OIT que invoca la CGT. En el medio, los reclamos de fondo contra Emova: eliminar tercerizaciones del mantenimiento, revertir suspensiones y descuentos salariales, y anular la sanción al trabajador que detonó todo. Si el pulso cae del lado del servicio esencial, cada paro futuro puede terminar en detenciones; si cae del lado sindical, los molinetes abiertos vuelven a ser herramienta de protesta legítima.",
+  "facts": [
+    "El paro empezó cerca de las 10 y afecta a las líneas A, B, C, D, E, H y el Premetro, por tiempo indeterminado (fuente: Ámbito).",
+    "El detonante fue una protesta en la estación Juan Manuel de Rosas donde se abrieron molinetes y una puerta de emergencia para dejar viajar gratis, por una sanción de Emova a un trabajador (fuente: Ámbito).",
+    "Segovia fue liberado; Dellecarbonara y Heredia siguen detenidos con audiencia de intimación el miércoles 21 por 'resistencia y atentado a la autoridad', ordenada por la Unidad de Flagrancia Norte (fiscales Natalia Pla y Matías Vila) (fuente: Ámbito).",
+    "Qué está en disputa: si el subte se puede tratar como servicio esencial que prohíbe medidas de fuerza (posición del Gobierno porteño) o si valen el derecho de huelga del artículo 14 bis y los convenios 87 y 98 de la OIT que invoca la CGT; el sindicato además exige eliminar tercerizaciones y revertir descuentos salariales (fuente: Ámbito).",
+    "Segovia advirtió contra Emova: 'No jueguen con fuego porque vamos a pararle el subte por tiempo indeterminado', y aclaró que su enojo es con la empresa, no con el Gobierno de la Ciudad (fuente: Ámbito, vía C5N)."
+  ],
+  "sources": [
+    {
+      "url": "https://www.ambito.com/informacion-general/paro-total-el-subte-como-fue-la-detencion-claudio-dellecarbonara-y-que-protestan-los-metrodelegados-n6335720",
+      "outlet": "Ámbito",
+      "title": "Paro de subtes: liberaron a Néstor Segovia y otros dos metrodelegados siguen detenidos"
+    }
+  ],
+  "protagonista": {
+    "tipo": "institucion-situacion",
+    "nombre": "El andén sin molinetes",
+    "descripcion": "Un subte entero parado mientras los molinetes están abiertos de par en par y la ciudad entera hace dedo bajo tierra."
+  },
+  "emojis": [
+    "🚇",
+    "⛔",
+    "🎫",
+    "🚨",
+    "🕳️"
+  ],
+  "virality": 8,
+  "gameability": 9,
+  "humorPotential": 8,
+  "shareability": 8
+}

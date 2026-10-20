@@ -1,0 +1,126 @@
+{
+  "game": "catcher",
+  "title": "MOLINETE ABIERTO",
+  "emoji": "🚇🎫",
+  "duration": 20,
+  "difficulty": 5,
+  "intro": "Sos el andén de la B con los molinetes volando: agarrá lo que viaja gratis y esquivá lo que manda preso. Acá el único subte lleno de gente es el que no anda.",
+  "player": {
+    "emoji": "🚇",
+    "label": "El andén de la B, sin molinetes ni vergüenza",
+    "image": "avatar.svg"
+  },
+  "catch": [
+    {
+      "emoji": "🧍",
+      "label": "Viajante gratis",
+      "points": 80,
+      "weight": 3
+    },
+    {
+      "emoji": "🧍‍♀️",
+      "label": "Otra que no paga",
+      "points": 80,
+      "weight": 3
+    },
+    {
+      "emoji": "🎫",
+      "label": "Molinete abierto",
+      "points": 60,
+      "weight": 2
+    },
+    {
+      "emoji": "📢",
+      "label": "Reclamo de fondo",
+      "points": 100,
+      "weight": 2
+    }
+  ],
+  "avoid": [
+    {
+      "emoji": "🚔",
+      "label": "Resistencia y atentado",
+      "points": -120,
+      "weight": 2
+    },
+    {
+      "emoji": "⚖️",
+      "label": "Intimación del miércoles",
+      "points": -100,
+      "weight": 2
+    },
+    {
+      "emoji": "✈️",
+      "label": "Jefe desde España",
+      "points": -150,
+      "weight": 1
+    }
+  ],
+  "special": [
+    {
+      "emoji": "🔓",
+      "label": "Libertad!",
+      "points": 200,
+      "weight": 1,
+      "effect": "none"
+    }
+  ],
+  "missPenalty": -30,
+  "missLabel": "Se te escapó un pasajero",
+  "ranking": {
+    "titulo": "¿QUIÉN PARÓ MÁS LA CIUDAD?",
+    "titulos": [
+      "Metrodelegado de Oro",
+      "Molinetero Mayor",
+      "Pasajero Sin Tarifa",
+      "Tercerizado del Mantenimiento",
+      "Turista Desorientado en el Premetro"
+    ],
+    "unidad": "puntos de paz social"
+  },
+  "outro": {
+    "whatHappened": "Las seis líneas del subte y el Premetro están paradas desde las 10 por tiempo indeterminado. Todo empezó cuando la Policía detuvo a tres metrodelegados en la estación Juan Manuel de Rosas, donde habían abierto molinetes y una puerta de emergencia para que la gente viajara gratis en reclamo de una sanción de Emova a un trabajador. Néstor Segovia quedó liberado; Dellecarbonara y Heredia siguen detenidos y comparecen este miércoles ante la Justicia porteña.",
+    "quote": {
+      "text": "No jueguen con fuego porque vamos a pararle el subte por tiempo indeterminado",
+      "who": "Néstor Segovia, a Emova",
+      "source": "https://www.ambito.com/informacion-general/paro-total-el-subte-como-fue-la-detencion-claudio-dellecarbonara-y-que-protestan-los-metrodelegados-n6335720"
+    },
+    "moments": [
+      {
+        "emoji": "🎫",
+        "text": "Abren molinetes y una puerta de emergencia en la estación Rosas para viajar gratis, por una sanción de Emova a un trabajador",
+        "source": "https://www.ambito.com/informacion-general/paro-total-el-subte-como-fue-la-detencion-claudio-dellecarbonara-y-que-protestan-los-metrodelegados-n6335720"
+      },
+      {
+        "emoji": "🚨",
+        "text": "La Policía de la Ciudad detiene a tres metrodelegados en el andén",
+        "source": "https://www.ambito.com/informacion-general/paro-total-el-subte-como-fue-la-detencion-claudio-dellecarbonara-y-que-protestan-los-metrodelegados-n6335720"
+      },
+      {
+        "emoji": "⛔",
+        "text": "Desde las 10 quedan paradas las seis líneas y el Premetro, por tiempo indeterminado",
+        "source": "https://www.ambito.com/informacion-general/paro-total-el-subte-como-fue-la-detencion-claudio-dellecarbonara-y-que-protestan-los-metrodelegados-n6335720"
+      },
+      {
+        "emoji": "🔓",
+        "text": "Segovia es liberado; Dellecarbonara y Heredia siguen detenidos y van a audiencia el miércoles",
+        "source": "https://www.ambito.com/informacion-general/paro-total-el-subte-como-fue-la-detencion-claudio-dellecarbonara-y-que-protestan-los-metrodelegados-n6335720"
+      }
+    ],
+    "facts": [
+      "El paro afecta a las líneas A, B, C, D, E, H y el Premetro desde las 10, por tiempo indeterminado.",
+      "El detonante fue la apertura de molinetes y una puerta de emergencia en la estación Rosas, por una sanción de Emova a un trabajador.",
+      "Dellecarbonara y Heredia siguen detenidos y comparecen el miércoles por 'resistencia y atentado a la autoridad', tras intervención de la Unidad de Flagrancia Norte.",
+      "La disputa de fondo: si el subte es servicio esencial que prohíbe el paro o si vale el derecho de huelga del artículo 14 bis y los convenios 87 y 98 de la OIT; el sindicato también exige eliminar tercerizaciones y revertir descuentos salariales."
+    ],
+    "fiction": "Los pasajeros, molinetes y boletas que caen del cielo no cayeron de verdad: es el andén convertido en máquina arcade. El jefe volador no representa a ninguna persona real; acá nadie es un muñeco, el que cae es todo el servicio.",
+    "sources": [
+      {
+        "title": "Paro de subtes: liberaron a Néstor Segovia y otros dos metrodelegados siguen detenidos",
+        "url": "https://www.ambito.com/informacion-general/paro-total-el-subte-como-fue-la-detencion-claudio-dellecarbonara-y-que-protestan-los-metrodelegados-n6335720",
+        "outlet": "Ámbito",
+        "type": "media"
+      }
+    ]
+  }
+}
