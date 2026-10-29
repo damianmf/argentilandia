@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-29-oro-bcra-coberturas-agn",
+  "date": "2026-10-29",
+  "event": "El BCRA defendió en su informe trimestral las operaciones financieras con sus reservas de oro que cuestionó la AGN: dice que usó coberturas de rutina (zero-cost collars) desde 2006, resignó parte de la suba a cambio de un piso de protección, y capturó ~70% de la suba del metal con una \"ganancia inédita\". El oro subió 66% en 2025 — un evento que el propio Central estima de probabilidad 0,01% — y eso activó los calls vendidos. Sobre por qué nadie se enteró: \"confidencialidad esencial\" para no alertar al mercado.",
+  "title": "El oro del BCRA: el Gobierno defendió las operaciones que cuestionó la AGN y dijo que tuvo una ganancia \"inédita\"",
+  "category": "economia",
+  "summary": "Tras las críticas de la AGN, el BCRA explicó y defendió su estrategia de coberturas con las reservas de oro: 61,7 toneladas administradas con derivados desde 2006. La suba excepcional del metal activó los calls vendidos, pero el Central dice que igual obtuvo una \"ganancia inédita\" y que el secreto era necesario para no alertar al mercado.",
+  "conflict": "La AGN cuestionó las operaciones del BCRA con sus reservas de oro y el Gobierno/BCRA salió a defenderlas: si el pulso auditoría-vs-Central cae del lado de la AGN, el riesgo es mayor control y exigencia de disclosure sobre la administración de las reservas; el BCRA sostiene que la confidencialidad es lo que protege el resultado patrimonial.",
+  "facts": [
+    "El BCRA mantiene 61,7 toneladas de oro, adquiridas entre 2004 y 2011, y usa derivados para administrarlas desde 2006 (coberturas en 13 de los últimos 20 años). [Fuente: Clarín]",
+    "En 2024 y 2025 usó zero-cost collars: compra de puts (piso ante caídas) financiada con venta de calls (resignación de parte de las subas). [Fuente: Clarín]",
+    "El oro subió 66% en 2025, un movimiento que el BCRA califica de probabilidad estadística de 0,01%; eso activó los calls vendidos. [Fuente: Clarín]",
+    "El Central dice que la estrategia capturó ~70% de la suba total y generó una \"ganancia inédita\"; y que las coberturas no tocan las tenencias físicas ni generan gravámenes. [Fuente: Clarín]",
+    "El BCRA justificó la confidencialidad de las operaciones: \"un alto estándar de confidencialidad\" para que el mercado no anticipe sus movimientos. [Fuente: Clarín]",
+    "EN DISPUTA: la AGN cuestionó estas operaciones y el Gobierno/BCRA salió a defenderlas. Si el pulso cae del lado de la AGN, el riesgo es mayor control/exigencia de disclosure sobre la administración de reservas; el BCRA sostiene que la confidencialidad es lo que protege el resultado patrimonial. [Fuente: Clarín]"
+  ],
+  "actors": [
+    "El BCRA — banco central defendiendo sus coberturas con oro y su derecho al secreto en su informe trimestral (avatar: muñeco de atributos, lingote bajo paño morado con candado, banda 'BCRA'; cargo público)",
+    "La AGN — auditora que cuestionó las operaciones y no recibió el mapa del tesoro (avatar: muñeco con lupa y salacot de juez, gesto de enfado; cargo público)"
+  ],
+  "sources": [
+    {
+      "outlet": "Clarín",
+      "title": "El oro del BCRA: el Gobierno defendió las operaciones que cuestionó la AGN y dijo que tuvo una ganancia \"inédita\"",
+      "url": "https://www.clarin.com/economia/oro-bcra-gobierno-defendio-operaciones-cuestiono-agn-dijo-ganancia-inedita_0_wV1DKztVMJ.html"
+    }
+  ],
+  "virality": 9,
+  "gameability": 9,
+  "humorPotential": 9,
+  "shareability": 9,
+  "humorNotes": "Todo el chiste es sobre la situación: lingotes que nadie puede ver, un 'piso' que se paga con techo, y una estrategia que funcionó gracias a algo con 0,01% de probabilidad. Sin personas concretas caricaturizadas más allá de los cargos."
+}

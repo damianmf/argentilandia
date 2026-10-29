@@ -1,0 +1,115 @@
+{
+  "game": "search",
+  "title": "BUSCANDO EL LINGOTE PERDIDO",
+  "emoji": "🪙🔍",
+  "duration": 40,
+  "intro": "Sos el auditor de la AGN con permiso de entrar a la bóveda del Central. Spoiler: 61,7 toneladas de oro, todas bajo paños morados con candado porque 'la confidencialidad es esencial'. Tocá con la lupa y encontrá los lingotes antes de gastar el presupuesto de inspección.",
+  "player": {
+    "emoji": "🔍",
+    "label": "Auditor de la AGN con salacot y lupa",
+    "image": "avatar.svg"
+  },
+  "grid": {
+    "width": 6,
+    "height": 5
+  },
+  "find": [
+    {
+      "emoji": "🪙",
+      "label": "Lingote visible (¡milagro!)",
+      "points": 150,
+      "count": 2
+    },
+    {
+      "emoji": "🥇",
+      "label": "El ~70% de la suba capturado",
+      "points": 100,
+      "count": 3
+    },
+    {
+      "emoji": "🔒",
+      "label": "Paño morado con candado",
+      "points": 50,
+      "count": 3
+    },
+    {
+      "emoji": "🎲",
+      "label": "Evento de probabilidad 0,01%",
+      "points": 200,
+      "count": 1
+    }
+  ],
+  "traps": [
+    {
+      "emoji": "📜",
+      "label": "Documento 'confidencial esencial'",
+      "points": -60,
+      "count": 4
+    },
+    {
+      "emoji": "📈",
+      "label": "La suba del 66% resignada",
+      "points": -40,
+      "count": 3
+    }
+  ],
+  "maxTouches": 12,
+  "difficulty": 5,
+  "ranking": {
+    "titulo": "¿QUIÉN VIO EL ORO QUE NADIE VE?",
+    "titulos": [
+      "Auditor General del Tesoro Invisible",
+      "Lupa Certificada del Arcano",
+      "Becario de Paños Morados",
+      "Turista de la Bóveda",
+      "Se Fue con un Folder en la Cara"
+    ],
+    "unidad": "lingotes hallados"
+  },
+  "outro": {
+    "whatHappened": "Tras el cuestionamiento de la AGN, el BCRA publicó un informe defendiendo sus operaciones financieras con las reservas de oro. Explicó que usa coberturas (zero-cost collars) desde 2006: compra un piso de protección pagando con parte de las subas. Con el oro subiendo 66% en 2025 —un evento que el propio Central estima de probabilidad 0,01%— se activaron los calls vendidos, pero sostiene que capturó ~70% de la suba con una 'ganancia inédita'. Sobre el secreto: 'confidencialidad esencial' para no alertar al mercado.",
+    "quote": {
+      "text": "un alto estándar de confidencialidad",
+      "who": "el BCRA, en su informe trimestral, explicando por qué nadie sabía nada",
+      "source": "https://www.clarin.com/economia/oro-bcra-gobierno-defendio-operaciones-cuestiono-agn-dijo-ganancia-inedita_0_wV1DKztVMJ.html"
+    },
+    "moments": [
+      {
+        "emoji": "🏦",
+        "text": "El BCRA administra 61,7 toneladas de oro compradas entre 2004 y 2011, con derivados desde 2006.",
+        "source": "https://www.clarin.com/economia/oro-bcra-gobierno-defendio-operaciones-cuestiono-agn-dijo-ganancia-inedita_0_wV1DKztVMJ.html"
+      },
+      {
+        "emoji": "🚀",
+        "text": "El oro subió 66% en 2025, un movimiento que el Central califica de probabilidad 0,01%, y activó los calls vendidos.",
+        "source": "https://www.clarin.com/economia/oro-bcra-gobierno-defendio-operaciones-cuestiono-agn-dijo-ganancia-inedita_0_wV1DKztVMJ.html"
+      },
+      {
+        "emoji": "🏅",
+        "text": "El BCRA defendió la estrategia: capturó ~70% de la suba y logró una 'ganancia inédita', sin tocar el oro físico.",
+        "source": "https://www.clarin.com/economia/oro-bcra-gobierno-defendio-operaciones-cuestiono-agn-dijo-ganancia-inedita_0_wV1DKztVMJ.html"
+      },
+      {
+        "emoji": "🔐",
+        "text": "Justificó el secreto de las operaciones para que el mercado no anticipe sus movimientos, en plena disputa con la AGN.",
+        "source": "https://www.clarin.com/economia/oro-bcra-gobierno-defendio-operaciones-cuestiono-agn-dijo-ganancia-inedita_0_wV1DKztVMJ.html"
+      }
+    ],
+    "facts": [
+      "El BCRA mantiene 61,7 toneladas de oro y usa derivados para administrarlas desde 2006.",
+      "En 2024 y 2025 usó zero-cost collars: piso ante caídas financiado con la resignación de parte de las subas.",
+      "El oro subió 66% en 2025, evento que el propio BCRA estima de probabilidad 0,01%, y activó los calls vendidos.",
+      "El Central afirma que la estrategia capturó ~70% de la suba con una 'ganancia inédita'.",
+      "El BCRA justificó la confidencialidad de las operaciones para que el mercado no anticipe sus movimientos."
+    ],
+    "fiction": "El juego inventa la bóveda jugable, los paños morados literalmente sobre cada lingote y la caza por cuadrícula: nadie dice que el oro esté tapado con candados a la vista del público. El auditor con lupa es la caricatura del rol de la AGN, no una persona real. Y los lingotes con probabilidad 0,01% de aparecer en realidad sí aparecen: eso es más generoso que la estadística del Central.",
+    "sources": [
+      {
+        "title": "El oro del BCRA: el Gobierno defendió las operaciones que cuestionó la AGN y dijo que tuvo una ganancia \"inédita\"",
+        "url": "https://www.clarin.com/economia/oro-bcra-gobierno-defendio-operaciones-cuestiono-agn-dijo-ganancia-inedita_0_wV1DKztVMJ.html",
+        "outlet": "Clarín",
+        "type": "media"
+      }
+    ]
+  }
+}

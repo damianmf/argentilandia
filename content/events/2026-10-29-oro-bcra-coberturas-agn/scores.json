@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-10-29",
+  "pitch": {
+    "motor": "search",
+    "nombre": "BUSCANDO EL LINGOTE PERDIDO",
+    "chiste": "Sos el auditor de la AGN con tu lupa en un bóveda gigante con 61,7 toneladas de oro. El problema: todo está bajo paños morados con candado porque 'la confidencialidad es esencial'. Encontrá los lingotes escondidos antes de que se acabe el presupuesto, y esquivá los folders de 'documento confidencial' que te tapan la vista.",
+    "scoreChiste": 9
+  },
+  "umbrales": {
+    "criterio": 6,
+    "promedio": 7
+  },
+  "elegido": {
+    "n": 3,
+    "game": "search",
+    "title": "BUSCANDO EL LINGOTE PERDIDO",
+    "criterios": {
+      "chisteJugable": 9,
+      "punchline": 8,
+      "acidez": 8,
+      "fuentes": 8
+    },
+    "promedio": 8.25,
+    "pasa": true,
+    "nota": "La literalización del paño morado y la 'confidencialidad' como mecánica de búsqueda es el chiste de la noticia jugado; pierde un poco porque el pitch prometía esquivar folders confidenciales y el candidato solo trae objetos positivos (sin dilema), y faltan moments/outro.sources visibles para validar trazabilidad completa.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "search",
+      "title": "BUSCANDO EL LINGOTE PERDIDO",
+      "criterios": {
+        "chisteJugable": 8,
+        "punchline": 8,
+        "acidez": 8,
+        "fuentes": 7
+      },
+      "promedio": 7.75,
+      "pasa": true,
+      "nota": "La metáfora de buscar el oro tapado por 'confidencialidad esencial' es directa y jugable, con el dato incómodo como objeto; le falta el marco de ranking satírico propio y sus facts declaran menos fuentes que las disponibles, pero nada rojo.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "search",
+      "title": "EL ORO ESTÁ, CONFIÁ",
+      "criterios": {
+        "chisteJugable": 9,
+        "punchline": 8,
+        "acidez": 8,
+        "fuentes": 5
+      },
+      "promedio": 7.5,
+      "pasa": false,
+      "nota": "El chiste es excelentísimo (buscar el oro que nadie puede ver, 'confiá'), pero el candidato viene incompleto: sin outro.sources ni outro.moments trazables — en un motor search, donde el outro es la mitad del juego, eso no pasa el umbral.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "search",
+      "title": "BUSCANDO EL LINGOTE PERDIDO",
+      "criterios": {
+        "chisteJugable": 9,
+        "punchline": 8,
+        "acidez": 8,
+        "fuentes": 8
+      },
+      "promedio": 8.25,
+      "pasa": true,
+      "nota": "La literalización del paño morado y la 'confidencialidad' como mecánica de búsqueda es el chiste de la noticia jugado; pierde un poco porque el pitch prometía esquivar folders confidenciales y el candidato solo trae objetos positivos (sin dilema), y faltan moments/outro.sources visibles para validar trazabilidad completa.",
+      "factsDudosos": []
+    }
+  ]
+}
