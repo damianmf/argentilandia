@@ -1,0 +1,115 @@
+{
+  "game": "catcher",
+  "title": "QUE NO SE TE CAIGA EL ONCE",
+  "emoji": "🩺⚽",
+  "duration": 20,
+  "intro": "Sos el ayudante de Ponzio: del cielo llueve el mediocampo de River. Agarrá los sanos y esquivá lumbares, desgarros y amarillas antes de tener que hacer debutar a toda la pensión.",
+  "player": {
+    "emoji": "🧢",
+    "label": "Ayudante de campo de Ponzio",
+    "image": "avatar.svg"
+  },
+  "catch": [
+    {
+      "emoji": "⚽",
+      "label": "Lucas Silva, la manija del mediocampo",
+      "points": 100,
+      "weight": 3
+    },
+    {
+      "emoji": "🧤",
+      "label": "Martínez Quarta, vuelto de las amarillas",
+      "points": 100,
+      "weight": 2
+    },
+    {
+      "emoji": "🦶",
+      "label": "Acuña y su dedo sanado",
+      "points": 80,
+      "weight": 3
+    },
+    {
+      "emoji": "🌱",
+      "label": "Juvenil de la pensión, sano por ahora",
+      "points": 60,
+      "weight": 3
+    }
+  ],
+  "avoid": [
+    {
+      "emoji": "🩻",
+      "label": "Molestia lumbar tipo Moreno",
+      "points": -100,
+      "weight": 2
+    },
+    {
+      "emoji": "🦵",
+      "label": "Desgarro tipo Vera",
+      "points": -120,
+      "weight": 2
+    },
+    {
+      "emoji": "🟨",
+      "label": "Amarilla número cinco",
+      "points": -80,
+      "weight": 3
+    }
+  ],
+  "special": [
+    {
+      "emoji": "🏥",
+      "label": "Alta médica exprés, ojo con esa",
+      "points": -200,
+      "weight": 1,
+      "effect": "none"
+    }
+  ],
+  "difficulty": 5,
+  "ranking": {
+    "titulo": "¿QUIÉN ARMÓ EL ONCE MENOS ENFERMERO?",
+    "titulos": [
+      "Jefe de Pediatría del Club",
+      "Fisioterapeuta de Primera",
+      "Ayudante de Campo Aprobado",
+      "Guateque de la Pensión",
+      "Enfermero Desbordado",
+      "Lujo de Juvenil Desconocido"
+    ],
+    "unidad": "puntos de plantel sano"
+  },
+  "outro": {
+    "whatHappened": "El Superclásico se juega este domingo en La Bombonera por la 15° fecha del Torneo Clausura 2026. River llega con la enfermería activa: Aníbal Moreno está prácticamente descartado por una molestia lumbar y Fausto Vera se desgarró, así que Lucas Silva se perfila como titular junto a los juveniles Andrada y Galván. En Boca, Arruabarrena define entre Villa y Velasco para acompañar a Merentiel, con Belmonte al banco tras su alta médica de urgencia.",
+    "moments": [
+      {
+        "emoji": "🩻",
+        "text": "Aníbal Moreno, prácticamente descartado por una molestia lumbar a horas del Superclásico.",
+        "source": "https://perfil.com/deportes/duelo-de-ajedrez-los-once-que-se-perfilan-y-las-piezas-que-mueven-arruabarrena-y-ponzio-de-cara-al-superclasico-atF0N0U0QLlD"
+      },
+      {
+        "emoji": "🦵",
+        "text": "Fausto Vera se desgarra y el mediocampo millonario queda en reconstrucción.",
+        "source": "https://perfil.com/deportes/duelo-de-ajedrez-los-once-que-se-perfilan-y-las-piezas-que-mueven-arruabarrena-y-ponzio-de-cara-al-superclasico-atF0N0U0QLlD"
+      },
+      {
+        "emoji": "🌱",
+        "text": "Lucas Silva toma la manija junto a los juveniles Andrada y Galván para rearmar el equipo.",
+        "source": "https://perfil.com/deportes/duelo-de-ajedrez-los-once-que-se-perfilan-y-las-piezas-que-mueven-arruabarrena-y-ponzio-de-cara-al-superclasico-atF0N0U0QLlD"
+      }
+    ],
+    "facts": [
+      "River no contaría con Aníbal Moreno (molestia lumbar) ni Fausto Vera (desgarro) para el Superclásico.",
+      "Lucas Silva se perfila como titular en el mediocampo junto a los juveniles Andrada y Galván.",
+      "Vuelven Martínez Quarta (cumplió suspensión por cinco amarillas) y Acuña (traumatismo en el dedo superado).",
+      "Boca duda entre Villa y Velasco para acompañar a Merentiel, con Belmonte en el banco tras su alta médica."
+    ],
+    "fiction": "La lluvia de jugadores y lesiones, la ficha que se rompe y el especial del 'alta exprés' son exageración satírica del juego. Los avatares son caricaturas de los roles (ayudante de campo, camisetas), no retratos de las personas.",
+    "sources": [
+      {
+        "title": "Superclásico: los once que se perfilan y las piezas que mueven Arruabarrena y Ponzio",
+        "url": "https://perfil.com/deportes/duelo-de-ajedrez-los-once-que-se-perfilan-y-las-piezas-que-mueven-arruabarrena-y-ponzio-de-cara-al-superclasico-atF0N0U0QLlD",
+        "outlet": "Perfil",
+        "type": "media"
+      }
+    ]
+  }
+}

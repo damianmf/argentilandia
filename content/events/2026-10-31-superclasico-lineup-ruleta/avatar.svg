@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <rect x="56" y="126" width="16" height="30" rx="7" fill="#1d2433"/>
+  <rect x="88" y="126" width="16" height="30" rx="7" fill="#1d2433"/>
+  <rect x="24" y="90" width="32" height="12" rx="6" fill="#f0f0f0" transform="rotate(20 24 90)"/>
+  <circle cx="27" cy="106" r="8" fill="#f2c89b"/>
+  <rect x="42" y="72" width="76" height="60" rx="14" fill="#f0f0f0"/><rect x="42" y="118" width="76" height="10" fill="#1d2433"/><rect x="74" y="119" width="12" height="8" rx="2" fill="#e10600"/>
+  
+  <rect x="108" y="84" width="34" height="12" rx="6" fill="#1d2433"/>
+        <circle cx="146" cy="88" r="9" fill="#f2c89b"/>
+        <circle cx="141" cy="70" r="11" fill="#c0c0c0"/><circle cx="141" cy="70" r="5" fill="#1d2433"/>
+        <rect x="148" y="66" width="10" height="8" rx="3" fill="#c0c0c0"/>
+  <circle cx="80" cy="46" r="27" fill="#f2c89b"/>
+  <path d="M54 40 q6 -22 26 -22 q20 0 26 22 q-26 -12 -52 0" fill="#5a5f6e"/>
+  
+  <circle cx="70" cy="48" r="7" fill="#ffffff"/><circle cx="90" cy="48" r="7" fill="#ffffff"/>
+        <circle cx="70" cy="49" r="3" fill="#22314a"/><circle cx="90" cy="49" r="3" fill="#22314a"/>
+        <ellipse cx="80" cy="61" rx="5" ry="6.5" fill="#22314a"/>
+  <path d="M53 40 q4 -24 27 -24 q23 0 27 24 z" fill="#e10600"/>
+        <rect x="88" y="34" width="28" height="7" rx="3.5" fill="#e10600"/>
+</svg>

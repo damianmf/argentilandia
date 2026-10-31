@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-10-31",
+  "pitch": {
+    "motor": "catcher",
+    "nombre": "SUPERCLÁSICO: QUE NO SE TE CAIGA EL ONCE",
+    "chiste": "Sos el ayudante de Ponzio armando el once de River. Del cielo caen jugadores buenos... y lesiones: lumbares, desgarros y cinco amarillas que rompen la ficha. Agarrá los jugadores sanos y esquivá la enfermería antes de que el mediocampo quede en manos de los juveniles.",
+    "scoreChiste": 9
+  },
+  "umbrales": {
+    "criterio": 6,
+    "promedio": 7
+  },
+  "elegido": {
+    "n": 1,
+    "game": "catcher",
+    "title": "QUE NO SE TE CAIGA EL ONCE",
+    "criterios": {
+      "chisteJugable": 8,
+      "punchline": 7,
+      "acidez": 6,
+      "fuentes": 8
+    },
+    "promedio": 7.25,
+    "pasa": true,
+    "nota": "El chiste es claro y jugable, pero el catcher quedó sin lado B: no hay evitar (lumbares, desgarros y amarillas del pitch no aparecen como objetos a esquivar), así que atrapar todo gana y el punchline pierde mitad de la mecánica; además la acidez queda verde puro para un rival directo como Boca, que ni asoma.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "catcher",
+      "title": "QUE NO SE TE CAIGA EL ONCE",
+      "criterios": {
+        "chisteJugable": 8,
+        "punchline": 7,
+        "acidez": 6,
+        "fuentes": 8
+      },
+      "promedio": 7.25,
+      "pasa": true,
+      "nota": "El chiste es claro y jugable, pero el catcher quedó sin lado B: no hay evitar (lumbares, desgarros y amarillas del pitch no aparecen como objetos a esquivar), así que atrapar todo gana y el punchline pierde mitad de la mecánica; además la acidez queda verde puro para un rival directo como Boca, que ni asoma.",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "game": "catcher",
+      "title": "QUE NO SE TE CAIGA EL ONCE",
+      "criterios": {
+        "chisteJugable": 6,
+        "punchline": 6,
+        "acidez": 8,
+        "fuentes": 7
+      },
+      "promedio": 6.75,
+      "pasa": false,
+      "nota": "El chiste de la enfermería que cae del cielo es claro, pero la ficha está incompleta: no hay items 'avoid' con las lesiones y amarillas que la propia premisa promete esquivar, y el 'catch' mezcla piezas de River con Belmonte (que es de Boca), rompiendo la coherencia del 'armá el once de River'.",
+      "factsDudosos": []
+    },
+    {
+      "n": 3,
+      "game": "catcher",
+      "title": "QUE NO SE TE CAIGA EL ONCE",
+      "criterios": {
+        "chisteJugable": 8,
+        "punchline": 6,
+        "acidez": 8,
+        "fuentes": 4
+      },
+      "promedio": 6.5,
+      "pasa": false,
+      "nota": "El chiste es claro y jugable (llenar el once evitando la enfermería) pero faltan los objetos 'avoid' —las lumbares/desgarros/amarillas del pitch no aparecen como obstáculos— y el outro no tiene quote ni sources: sin eso no pasa el validador.",
+      "factsDudosos": []
+    }
+  ]
+}
