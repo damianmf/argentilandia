@@ -1,0 +1,65 @@
+{
+  "fecha": "2026-11-01",
+  "pitch": {
+    "motor": "whack",
+    "nombre": "APAGÁ EL MANIJAZO",
+    "chiste": "Sos Kusnetzoff, conductor con extintor de sofá. Chispas de discusión brotan del sillón (gaslighting!, fuentes!, refugio de perros!) y hay que aplanarlas antes de que el tensionómetro explote. Punchline: cada golpe sube el rating, así que apagar la pelea la alimenta. El corte de 20 minutos es la pausa que recarga el extintor.",
+    "scoreChiste": 9
+  },
+  "umbrales": {
+    "criterio": 6,
+    "promedio": 7
+  },
+  "elegido": {
+    "n": 3,
+    "game": "whack",
+    "title": "APAGÁ EL MANIJAZO",
+    "criterios": {
+      "chisteJugable": 8,
+      "punchline": 8,
+      "acidez": 8,
+      "fuentes": 7
+    },
+    "promedio": 7.75,
+    "pasa": true,
+    "nota": "El chiste se juega solo (apagar chispas que alimentan el rating: paradoja clara y con la cita textual como objeto) y la acidez queda en amarillo sano; baja fuentes solo porque 'Colecta sin auditoría' agrega una afirmación que la nota no respalda textualmente.",
+    "factsDudosos": []
+  },
+  "candidatos": [
+    {
+      "n": 1,
+      "game": "whack",
+      "title": "APAGÁ EL MANIJAZO",
+      "criterios": {
+        "chisteJugable": 8,
+        "punchline": 9,
+        "acidez": 7,
+        "fuentes": 4
+      },
+      "promedio": 7,
+      "pasa": false,
+      "nota": "El chiste es redondo (extintor de sofá + rating récord que premia el manijazo) y vive en los objetos, pero el candidato no tiene ni outro ni ranking: sin quote textual, sin sources trazadas y sin momentos, el campo 'fuentes' queda en cero verificable; además 'COLECTA SIN AUDITAR' estira lo que la fuente dice ('inconclusa').",
+      "factsDudosos": []
+    },
+    {
+      "n": 2,
+      "rechazado": true,
+      "motivo": "chatJSON falló tras 3 intentos: gamespec no pasa el schema Zod:\n\"grid.width\": Too big: expected number to be <=8\n\"grid.height\": Too big: expected number to be <=5"
+    },
+    {
+      "n": 3,
+      "game": "whack",
+      "title": "APAGÁ EL MANIJAZO",
+      "criterios": {
+        "chisteJugable": 8,
+        "punchline": 8,
+        "acidez": 8,
+        "fuentes": 7
+      },
+      "promedio": 7.75,
+      "pasa": true,
+      "nota": "El chiste se juega solo (apagar chispas que alimentan el rating: paradoja clara y con la cita textual como objeto) y la acidez queda en amarillo sano; baja fuentes solo porque 'Colecta sin auditoría' agrega una afirmación que la nota no respalda textualmente.",
+      "factsDudosos": []
+    }
+  ]
+}

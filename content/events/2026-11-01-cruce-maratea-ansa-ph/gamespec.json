@@ -1,0 +1,117 @@
+{
+  "game": "whack",
+  "title": "APAGÁ EL MANIJAZO",
+  "emoji": "📺🔥",
+  "duration": 20,
+  "intro": "Sos Andy con extintor de sofá: cada chispa del 'Frente a frente' quiere prender el living. Aplanalas todas… pero ojo: cada golpe sube el rating, así que el fuego TAMBIÉN te llena la mesa.",
+  "player": {
+    "emoji": "🧯",
+    "label": "Conductor con extintor de repuesto bajo el sillón",
+    "image": "avatar.svg"
+  },
+  "grid": {
+    "width": 4,
+    "height": 4
+  },
+  "targets": [
+    {
+      "emoji": "🧨",
+      "label": "¡GASLIGHTING!",
+      "points": 120,
+      "weight": 3
+    },
+    {
+      "emoji": "📰",
+      "label": "¡Fuentes, qué fuentes!",
+      "points": 100,
+      "weight": 3
+    },
+    {
+      "emoji": "🐕",
+      "label": "Refugio 'inconcluso'",
+      "points": 130,
+      "weight": 2
+    },
+    {
+      "emoji": "💸",
+      "label": "Colecta sin auditoría",
+      "points": 150,
+      "weight": 2
+    }
+  ],
+  "noTouch": [
+    {
+      "emoji": "🫖",
+      "label": "Mate de la paz",
+      "points": -150
+    },
+    {
+      "emoji": "🤝",
+      "label": "Donante de buena fe",
+      "points": -100
+    }
+  ],
+  "special": {
+    "emoji": "⏸️",
+    "label": "CORTE DE 20 MIN",
+    "points": 300
+  },
+  "powerup": "El corte de grabación recarga el extintor y congela todas las chispas",
+  "difficulty": 5,
+  "ranking": {
+    "titulo": "¿QUIÉN BAJO MÁS LA PRESIÓN DEL SOFÁ?",
+    "titulos": [
+      "Mediador Supremo del Prime Time",
+      "Tensiómetro bajo control",
+      "Extintor de escritorio",
+      "Sopló en vez de apagar",
+      "Gasolina del manijazo"
+    ],
+    "unidad": "puntos de rating ahorrado"
+  },
+  "outro": {
+    "whatHappened": "En el 'Frente a frente' de PH, la China Ansa le preguntó a Maratea qué se recriminaría si fuera donante de sus colectas, citando una colecta para un refugio de perros que la prensa dio por inconclusa. Maratea negó irregularidades, la acusó de gaslighting y cuestionó sus fuentes. Kusnetzoff cortó la grabación 20 minutos, el clima siguió tenso al volver y el programa marcó rating récord.",
+    "quote": {
+      "text": "Siempre se cumplieron todos los objetivos.",
+      "who": "Maratea, defendiendo sus colectas en pleno aire",
+      "source": "https://www.lanacion.com.ar/espectaculos/que-se-sabe-del-cruce-entre-santiago-maratea-y-la-china-ansa-en-ph-nid01112026/"
+    },
+    "moments": [
+      {
+        "emoji": "🎤",
+        "text": "Ansa repregunta: ¿qué te recriminarías si fueras un donante de tus colectas?",
+        "source": "https://www.lanacion.com.ar/espectaculos/que-se-sabe-del-cruce-entre-santiago-maratea-y-la-china-ansa-en-ph-nid01112026/"
+      },
+      {
+        "emoji": "🔥",
+        "text": "Maratea habla de gaslighting, cuestiona las fuentes y niega irregularidades.",
+        "source": "https://www.lanacion.com.ar/espectaculos/que-se-sabe-del-cruce-entre-santiago-maratea-y-la-china-ansa-en-ph-nid01112026/"
+      },
+      {
+        "emoji": "⏸️",
+        "text": "Kusnetzoff corta la grabación 20 minutos; al volver el clima sigue tenso.",
+        "source": "https://www.lanacion.com.ar/espectaculos/que-se-sabe-del-cruce-entre-santiago-maratea-y-la-china-ansa-en-ph-nid01112026/"
+      },
+      {
+        "emoji": "📈",
+        "text": "El cruce marca rating récord y el conductor hace un mea culpa dudando de si estuvo a la altura.",
+        "source": "https://www.lanacion.com.ar/espectaculos/que-se-sabe-del-cruce-entre-santiago-maratea-y-la-china-ansa-en-ph-nid01112026/"
+      }
+    ],
+    "facts": [
+      "Ansa le preguntó a Maratea qué se recriminaría si fuera un donante de sus colectas, citando una colecta para un refugio de perros reportada como inconclusa.",
+      "Maratea sostuvo que 'siempre se cumplieron todos los objetivos' y acusó a Ansa de gaslighting.",
+      "Kusnetzoff cortó la grabación 20 minutos y luego hizo un mea culpa dudando de si estuvo 'a la altura'.",
+      "El programa marcó rating récord con el cruce."
+    ],
+    "fiction": "El extintor de sofá, las chispas con etiqueta y el tensiónmetro que explota son invento puro. El muñeco de conductor es la caricatura del rol de conductor en vivo, no retrato de persona real. El corte de 20 minutos fue real; el resto del fuego, artillería de juego.",
+    "sources": [
+      {
+        "title": "Qué se sabe del cruce entre Santiago Maratea y la China Ansa en PH — La Nación, 01/11/2026",
+        "url": "https://www.lanacion.com.ar/espectaculos/que-se-sabe-del-cruce-entre-santiago-maratea-y-la-china-ansa-en-ph-nid01112026/",
+        "outlet": "La Nación",
+        "type": "media"
+      }
+    ]
+  }
+}
