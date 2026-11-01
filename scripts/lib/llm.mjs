@@ -70,7 +70,7 @@ async function chat(messages, { temperature = 0.8, maxTokens = 8192, timeoutMs =
       `respuesta del LLM vacía o con formato inesperado (finish_reason: ${choice?.finish_reason ?? 's/d'}, message: ${keys})`,
     );
   }
-  return content;
+  return { content, finishReason: choice?.finish_reason ?? 's/d' };
 }
 
 export async function chatText(options = {}) {
@@ -78,7 +78,7 @@ export async function chatText(options = {}) {
   const messages = [];
   if (system) messages.push({ role: 'system', content: system });
   messages.push({ role: 'user', content: user });
-  return chat(messages, rest);
+  return (await chat(messages, rest)).content;
 }
 
 // Extrae el primer objeto JSON de una respuesta, aunque venga con cercas de
@@ -100,7 +100,9 @@ function extractJSON(text) {
 }
 
 // Llamada con contrato JSON: `validar(json)` devuelve null si está bien o un
-// string con el error; ante error reintenta mostrándoselo al modelo.
+// string con el error; ante error reintenta mostrándoselo al modelo. Los
+// fallos de la llamada en sí (5xx puntual, content vacío) también reintentan:
+// son transitorios y antes abortaban la jornada entera al primer tirón.
 export async function chatJSON({
   system,
   user,
@@ -116,12 +118,24 @@ export async function chatJSON({
   messages.push({ role: 'user', content: user });
   let lastError;
   for (let attempt = 0; attempt <= retries; attempt++) {
-    const content = await chat(messages, { temperature, maxTokens });
+    let content;
+    let finishReason;
+    try {
+      ({ content, finishReason } = await chat(messages, { temperature, maxTokens }));
+    } catch (error) {
+      if (error.message.includes('LLM HTTP 401')) throw error; // reintentar no arregla la key
+      lastError = error.message;
+      continue;
+    }
     let parsed;
     try {
       parsed = extractJSON(content);
     } catch (error) {
-      lastError = error.message;
+      // A distancia (GHA) el log es la única evidencia de lo que contestó el
+      // modelo: sin snippet ni finish_reason no se distingue una truncadura de
+      // una respuesta en prosa (fallo del 1/11: 3 intentos idénticos, cero pistas).
+      lastError = `${error.message} — chars: ${content.length}, finish_reason: ${finishReason}, contenido: ${JSON.stringify(content.slice(0, 300))}`;
+      console.warn(`chatJSON: intento ${attempt + 1}/${retries + 1} rechazado — ${lastError}`);
     }
     if (parsed !== undefined) {
       const error = validar?.(parsed) ?? null;
@@ -134,5 +148,5 @@ export async function chatJSON({
       content: `Tu respuesta anterior fue rechazada: ${lastError}. Respondé de nuevo con SOLO el objeto JSON correcto, sin texto alrededor.`,
     });
   }
-  throw new Error(`JSON rechazado tras ${retries + 1} intentos: ${lastError}`);
+  throw new Error(`chatJSON falló tras ${retries + 1} intentos: ${lastError}`);
 }

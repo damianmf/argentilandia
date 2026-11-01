@@ -71,7 +71,7 @@ async function generarCandidato(n) {
 Reglas duras: difficulty = 5; duration 20 para motores de reflejos (catcher, dodge, runner, whack, fighter) y 30–45 para search; player.image = "avatar.svg"; regla de fuentes del outro (quote y moments trazados a outro.sources, facts solo con fuente).`,
     validar: revisarCandidato,
     retries: 2,
-    maxTokens: 4000,
+    maxTokens: 8192, // 3 candidatos completos: 4000 quedaba justo y truncaba el JSON
   });
   // Normalizaciones del pipeline (no se delegan en el modelo). Piso de 15:
   // la política real (20 reflejos / 30–45 search) la lleva el contrato.

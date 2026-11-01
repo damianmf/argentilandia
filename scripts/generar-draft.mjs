@@ -183,7 +183,10 @@ Candidatos crudos del radar:
 
 ${candidatos}`,
   validar: validarA,
-  maxTokens: 3000,
+  // 8192 y no menos: los descartes obligatorios son una entrada por cada
+  // noticia no preseleccionada (~85) y con 3000 el JSON salía truncado
+  // (fallos intermitentes del draft: "no contiene un objeto JSON parseable").
+  maxTokens: 8192,
 });
 
 if (A.ganador === null) {
@@ -278,7 +281,7 @@ ${contextoJuegoAnterior}${veredictosTexto ? `${veredictosTexto}\n\n` : ''}${cont
 
 Datos del ganador: ${JSON.stringify(ganador, null, 2)}`,
   validar: validarB,
-  maxTokens: 3500,
+  maxTokens: 8192, // margen: 3 pitches con event completo justo no entra en 3500
 });
 
 // Elección automática del pitch: mejor scoreChiste con motor distinto al de ayer.
